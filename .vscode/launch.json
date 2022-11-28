@@ -12,6 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "console" : "integratedTerminal",
             "program": "${workspaceFolder}\\src\\app.ts",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "outFiles": [
