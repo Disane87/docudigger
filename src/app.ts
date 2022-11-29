@@ -12,6 +12,7 @@ import { DateTime } from "luxon";
     const logPath = `./logs/`;
     const debug = true;
     const fallbackExtension = `.pdf`;
+    const yearFilter = 2017;
 
     const logger = winston.createLogger({
         level: `info`,
@@ -92,7 +93,7 @@ import { DateTime } from "luxon";
 
     //Increase for more results
 
-    const possibleYears = await (await page.$$eval(`select[name="orderFilter"] option`, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
+    const possibleYears = yearFilter ? [yearFilter] : await (await page.$$eval(`select[name="orderFilter"] option`, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
     const firstPossibleYear = possibleYears[0];
     const lastPossibleYear = possibleYears[possibleYears.length - 1];
 
