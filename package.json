@@ -5,7 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "prestart": "npx tsc",
-    "start": "node --inspect dist/app.js"
+    "start": "node --inspect dist/app.js",
+    "lint": "eslint . --ext .ts"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,11 @@
     "@types/node": "^18.11.9",
     "@types/prompts": "^2.4.1",
     "@types/puppeteer": "^7.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "typescript": "4.9.3"
   },
   "dependencies": {
@@ -26,6 +32,7 @@
     "prompts": "^2.4.2",
     "puppeteer": "^19.3.0",
     "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-user-preferences": "^2.4.0"
+    "puppeteer-extra-plugin-user-preferences": "^2.4.0",
+    "winston": "^3.8.2"
   }
 }
