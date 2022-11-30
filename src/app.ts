@@ -58,8 +58,12 @@ import { DateTime } from "luxon";
         invoiceSpans: `span.hide-if-no-js .a-declarative[data-action="a-popover"]`,
         orderNr: `.yohtmlc-order-id span:nth-last-child(1) bdi`,
         orderDate: `.order-info .a-box-inner .a-fixed-right-grid-col .a-column.a-span4 div:nth-last-child(1)`,
-        invoiceList: `.a-popover#a-popover-{{index}} ul.invoice-list a[href*=".pdf"]`
+        invoiceList: `.a-popover#a-popover-{{index}} ul.invoice-list a[href*=".pdf"]`,
+        pagination: `.pagination-full ul.a-pagination li:nth-last-child(2) a`,
+        yearFilter: `select[name="orderFilter"] option`
     }
+
+    logger.debug(`Selectors: ${selectors}`)
 
     await page.goto(`https://www.amazon.${amazonLang}/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&`);
     await page.type(`input[type=email]`, name)
@@ -92,8 +96,7 @@ import { DateTime } from "luxon";
     await page.goto(amazon.orderPage, { waitUntil: `domcontentloaded` });
 
     //Increase for more results
-
-    const possibleYears = yearFilter ? [yearFilter] : await (await page.$$eval(`select[name="orderFilter"] option`, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
+    const possibleYears = yearFilter ? [yearFilter] : await (await page.$$eval(selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
     const firstPossibleYear = possibleYears[0];
     const lastPossibleYear = possibleYears[possibleYears.length - 1];
 
@@ -111,7 +114,7 @@ import { DateTime } from "luxon";
 
         // TODO Get pages
         logger.info(`Determining pages...`)
-        const orderPageCount = await (await page.waitForSelector(`.pagination-full ul.a-pagination li:nth-last-child(2) a`)).evaluate(handle => parseInt(handle.innerText));
+        const orderPageCount = await (await page.waitForSelector(selectors.pagination)).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
         logger.info(`Page count: ${orderPageCount}`);
 
         for (const orderPage of [...Array(orderPageCount).keys()]) {
