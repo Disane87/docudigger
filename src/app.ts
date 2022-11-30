@@ -15,9 +15,11 @@ import { ProcessedOrder } from "./interfaces/processed-order";
     const logPath = `./logs/`;
     const debug = true;
     const fallbackExtension = `.pdf`;
-    const yearFilter = 2017;
-    const pageFilter = 1;
+
+    const yearFilter = 2017; // set to null for all
+    const pageFilter = 1; // set to null for all
     const logLevel: string = debug ? LogLevel.debug : LogLevel.trace;
+
     const popoverTimeout = 2000;
 
     const logger = winston.createLogger({
