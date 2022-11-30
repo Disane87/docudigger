@@ -16,8 +16,8 @@ import { ProcessedOrder } from "./interfaces/processed-order";
     const debug = true;
     const fallbackExtension = `.pdf`;
 
-    const yearFilter = 2017; // set to null for all
-    const pageFilter = 1; // set to null for all
+    const yearFilter = null; // set to null for all
+    const pageFilter = null; // set to null for all
     const logLevel: string = debug ? LogLevel.debug : LogLevel.trace;
 
     const popoverTimeout = 2000;
@@ -187,8 +187,8 @@ import { ProcessedOrder } from "./interfaces/processed-order";
 
             for (const order of orders) {
                 for (const [invoiceIndex, invoiceUrl] of order.invoiceUrls.entries()) {
-                    if (invoiceUrl.indexOf(`https://s3.amazonaws.com/`) >= -1) {
-                        logger.warn(`Invoice stored at S3 are not supported yet`);
+                    if (invoiceUrl.includes(`https://s3.amazonaws.com/`)) {
+                        logger.warn(`Invoices stored at S3 are not supported yet`);
                         continue;
                     }
 
