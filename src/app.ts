@@ -188,7 +188,7 @@ import { ProcessedOrder } from "./interfaces/processed-order";
             for (const order of orders) {
                 for (const [invoiceIndex, invoiceUrl] of order.invoiceUrls.entries()) {
                     if (invoiceUrl.includes(`https://s3.amazonaws.com/`)) {
-                        logger.warn(`Invoices stored at S3 are not supported yet`);
+                        logger.warn(`Invoices stored at S3 are not supported yet. Invoice: ${invoiceUrl}`);
                         continue;
                     }
 
