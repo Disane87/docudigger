@@ -2,5 +2,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "conventionalCommits.scopes": ["Gathering", "debugging", "selectors"]
+  "conventionalCommits.scopes": [
+    "Gathering",
+    "debugging",
+    "selectors",
+    "renovate"
+  ]
 }
