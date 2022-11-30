@@ -12,6 +12,7 @@
     "no-async-promise-executor": 0,
     "quotes": ["error", "backtick"],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
-    "no-console": 2
+    "no-console": 1,
+    "semi": "error"
   }
 }
