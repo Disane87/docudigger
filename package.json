@@ -1,35 +1,62 @@
 {
-  "name": "amazon-invoice-scraper",
-  "version": "0.0.1",
-  "description": "Amazon scraper for getting invoices as pdf (useful for taxes or DMS)",
+  "name": "@disane-dev/amazon-invoice-scraper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://repo.disane.dev/Disane/amazon-invoice-scraper.git"
+  },
+  "bugs": {
+    "url": "https://repo.disane.dev/Disane/amazon-invoice-scraper/issues"
+  },
+  "version": "0.0.2",
+  "description": "Amazon scraper for getting invoices automagically as pdf (useful for taxes or DMS)",
+  "homepage": "https://repo.disane.dev/Disane/amazon-invoice-scraper#readme",
   "main": "src/app.ts",
   "scripts": {
     "prestart": "npx tsc",
     "start": "node --inspect dist/app.js",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "np": "npx np",
+    "prepare": "husky install",
+    "release": "standard-version"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Marco Franke",
+  "license": "MIT",
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/commander": "^2.12.2",
     "@types/luxon": "^3.1.0",
     "@types/node": "^18.11.9",
     "@types/prompts": "^2.4.1",
     "@types/puppeteer": "^7.0.4",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
-    "@types/commander": "^2.12.2",
     "config-decorators": "^0.2.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "standard-version": "^9.5.0",
     "typescript": "4.9.3"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.3.0",
     "commander": "^9.4.1",
     "luxon": "^3.1.0",
     "prompts": "^2.4.2",
     "puppeteer": "^19.3.0",
     "puppeteer-extra": "^3.3.4",
     "winston": "^3.8.2"
-  }
+  },
+  "engines": {
+    "npm": ">=9.1.2",
+    "node": ">=18.12.1"
+  },
+  "bin": {
+    "amazon-invoice-scraper": "app.js"
+  },
+  "files": [
+    "./dist",
+    "README.md",
+    "LICENSE.md"
+  ]
 }
