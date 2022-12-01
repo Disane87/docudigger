@@ -1,8 +1,10 @@
-import { DateTime } from "luxon";
+import { Invoice } from "./invoice";
 
 export interface Order {
-    date: DateTime;
+    date: string;
     datePlain: string;
     number: string;
-    invoiceUrls: Array<string>
+    invoices: Array<Invoice>;
+
 }
+
