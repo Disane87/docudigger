@@ -7,32 +7,41 @@ import path from "path";
 
 import { DateTime } from "luxon";
 import { InvoiceStatus } from "./enums/invoice-status.enum";
-import { LogLevel } from "./enums/loglevel";
 import { Invoice } from "./interfaces/invoice";
 import { Order } from "./interfaces/order";
 
+import { Command } from 'commander';
+import { config } from './config';
+
+const program = new Command();
+
 (async () => {
-    const fileDestinationFolder = `./data`;
-    const logPath = `./logs/`;
-    const debug = true;
-    const fallbackExtension = `.pdf`;
 
-    const yearFilter = 2017; // set to null for all
-    const pageFilter = 1; // set to null for all
-    const logLevel: string = debug ? LogLevel.debug : LogLevel.trace;
     const puppeteerArgs = [`--window-size=1920,1080`, `--no-sandbox`, `--disable-setuid-sandbox`];
-
     const popoverTimeout = 2000;
-    const amazonTld = `de`;
 
+    program
+        .option(`-d, --debug true/false`, `Execute in debug mode`, config.debug)
+        .option(`-fbe, --fallback-exentension string`, `Fallback extension when extension can't be determinded by the url`, config.fileFallbackExentension)
+        .option(`-dest, --destination`, `Destination folder where the downloaded files are stored`, config.fileDestinationFolder)
+        .option(`-y, --year-filter int`, `Specify a year to only process it`, config.yearFilter)
+        .option(`-p, --page-filter int`, `Specify a page to only process it`, config.pageFilter)
+        .option(`-atld, --amazon-tld string`, `Amazon TLD to use`, config.amazonTLD)
+        .option(`-l, --log-level string`, `Amazon TLD to use. Depends on --debug`, config.logLevel)
+        .option(`-lp, --log-path string`, `Path where the log files are stored`, config.logPath)
+        .requiredOption(`-u, --username`, `Amazon username to use.`, config.amazonUsername)
+        .requiredOption(`-p, --password`, `Amazon password to use.`, config.amazonPassword)
+        .parse();
+
+    const options = program.opts();
 
     const logger = winston.createLogger({
-        level: logLevel.toString(),
+        level: options.logLevel.toString(),
         format: winston.format.json(),
         // defaultMeta: { service: 'user-service' },
         transports: [
-            new winston.transports.File({ filename: path.join(logPath, `error.log`), level: `error` }),
-            new winston.transports.File({ filename: path.join(logPath, `combined.log`) }),
+            new winston.transports.File({ filename: path.join(options.logPath, `error.log`).normalize(), level: `error` }),
+            new winston.transports.File({ filename: path.join(options.logPath, `combined.log`).normalize() }),
             new winston.transports.Console({
                 format: winston.format.combine(
                     winston.format.colorize(),
@@ -43,25 +52,31 @@ import { Order } from "./interfaces/order";
         ],
     });
 
-    const { name, password } = await prompts([{
-        type: `text`,
-        name: `name`,
-        message: `Your amazaon username`
-    },
-    {
-        type: `password`,
-        name: `password`,
-        message: `Your amazon password`
-    }]);
+    if (!config.amazonUsername && !config.amazonPassword) {
+        const { username, password } = await prompts([{
+            type: `text`,
+            name: `username`,
+            message: `Your amazaon username`
+        },
+        {
+            type: `password`,
+            name: `password`,
+            message: `Your amazon password`
+        }]);
 
-    const browser = await puppeteer.launch({ headless: !debug, args: puppeteerArgs, dumpio: false, devtools: debug, executablePath: executablePath() });
+        options.password = password;
+        options.username = username;
+    }
+
+
+    const browser = await puppeteer.launch({ headless: !options.debug, args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
     const page = await browser.newPage();
 
     const amazon = {
         lang: null,
-        tld: amazonTld,
-        loginPage: `https://www.amazon.${amazonTld}/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&`,
-        orderPage: `https://www.amazon.${amazonTld}/gp/css/order-history`
+        tld: options.amazonTld,
+        loginPage: `https://www.amazon.${options.amazonTld}/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&`,
+        orderPage: `https://www.amazon.${options.amazonTld}/gp/css/order-history`
     };
 
     const selectors = {
@@ -80,17 +95,19 @@ import { Order } from "./interfaces/order";
 
     await page.goto(amazon.loginPage);
 
-    await page.type(`input[type=email]`, name);
+    await page.type(`input[type=email]`, options.username);
     await page.click(`input[type=submit]`);
     await page.waitForNavigation();
-    await page.type(`input[type=password]`, password);
+    await page.type(`input[type=password]`, options.password);
     await page.click(`input[type=submit]`);
     // await page.on('console', code => console.log(code.text()));
 
-    await page.setViewport({
-        width: 1920,
-        height: 1080
-    });
+    if (options.debug) {
+        await page.setViewport({
+            width: 1920,
+            height: 1080
+        });
+    }
 
     await page.waitForNavigation();
     if (page.url().indexOf(`/mfa?`) > -1) {
@@ -107,14 +124,12 @@ import { Order } from "./interfaces/order";
         await page.waitForNavigation();
     }
 
+    amazon.lang = await page.$eval(`html`, el => el.lang);
+    logger.info(`Page language: ${amazon.lang}`);
 
     await page.goto(amazon.orderPage, { waitUntil: `domcontentloaded` });
 
-    amazon.lang = await page.$eval(`html`, el => el.lang);
-    logger.info(`Page language ${amazon.lang}`);
-
-    //Increase for more results
-    const possibleYears = yearFilter ? [yearFilter] : await (await page.$$eval(selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
+    const possibleYears = options.yearFilter ? [options.yearFilter] : await (await page.$$eval(selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
     const firstPossibleYear = possibleYears[0];
     const lastPossibleYear = possibleYears[possibleYears.length - 1];
 
@@ -132,7 +147,7 @@ import { Order } from "./interfaces/order";
         logger.info(`Selected year ${currentYear}`);
 
         logger.info(`Determining pages...`);
-        const orderPageCount = pageFilter ?? await (await page.waitForSelector(selectors.pagination)).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
+        const orderPageCount = options.pageFilter ?? await (await page.waitForSelector(selectors.pagination)).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
         logger.info(`Page count: ${orderPageCount}`);
 
         for (const orderPage of [...Array(orderPageCount).keys()]) {
@@ -270,12 +285,12 @@ import { Order } from "./interfaces/order";
 
             if (fileBuffer) {
                 logger.debug(`Buffer exists`);
-                logger.debug(`Checking if folder exists. If not, create: ${fileDestinationFolder}`);
-                !fs.existsSync(fileDestinationFolder) && fs.mkdirSync(fileDestinationFolder);
+                logger.debug(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
+                !fs.existsSync(options.fileDestinationFolder) && fs.mkdirSync(options.fileDestinationFolder);
 
-                const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? fallbackExtension;
+                const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fallbackExtension;
                 const fileName = `${order.datePlain.replace(`.`, ``).replace(` `, `_`)}_AMZ_${order.number}_${invoiceIndex + 1}`;
-                const fullFilePath = path.join(fileDestinationFolder, `${fileName}${fileExtention}`);
+                const fullFilePath = path.join(options.fileDestinationFolder, `${fileName}${fileExtention}`);
 
                 const pathNormalized = path.normalize(fullFilePath);
                 if (!fs.existsSync(pathNormalized)) {
@@ -301,7 +316,7 @@ import { Order } from "./interfaces/order";
     await browser.close();
 
     fs.writeFileSync(
-        path.join(fileDestinationFolder, `process.json`).normalize(),
+        path.join(options.fileDestinationFolder, `process.json`).normalize(),
         JSON.stringify({ lastRun: DateTime.now().toISO(), orders }, null, 4)
     );
 
