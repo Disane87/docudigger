@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import prompts from "prompts";
 import puppeteer, { ElementHandle, executablePath } from "puppeteer";
 import winston from "winston";
