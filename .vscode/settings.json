@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "conventionalCommits.scopes": [
+    "Gathering",
+    "debugging",
+    "selectors",
+    "renovate"
+  ],
+  "js/ts.implicitProjectConfig.experimentalDecorators": true
+}
