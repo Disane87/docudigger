@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://repo.disane.dev/Disane/amazon-invoice-scraper/issues"
   },
-  "version": "1.0.0-dev.1",
+  "version": "1.0.0-dev.2",
   "description": "Amazon scraper for getting invoices automagically as pdf (useful for taxes or DMS)",
   "homepage": "https://repo.disane.dev/Disane/amazon-invoice-scraper#readme",
   "main": "dist/index.ts",
