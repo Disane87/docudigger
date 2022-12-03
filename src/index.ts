@@ -2,7 +2,7 @@
 import prompts from "prompts";
 import puppeteer, { ElementHandle, executablePath } from "puppeteer";
 import winston, { format } from "winston";
-const { combine, timestamp, label, printf } = format;
+const { timestamp, printf } = format;
 
 import fs from "fs";
 import path from "path";
@@ -38,7 +38,7 @@ const program = new Command();
     const options = program.opts();
 
 
-    const myFormat = printf(({ level, message, label, timestamp }) => {
+    const myFormat = printf(({ level, message, timestamp }) => {
         return `[${timestamp}] ${level}: ${message}`;
     });
 
@@ -264,7 +264,7 @@ const program = new Command();
                             resolve(reader.result.toString());
                         };
 
-                        reader.onerror = (event) => {
+                        reader.onerror = () => {
                             console.log(`[AMZ SCRAPER] onerror`);
                             console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
                             console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
