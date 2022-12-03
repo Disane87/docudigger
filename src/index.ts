@@ -20,7 +20,7 @@ const program = new Command();
 (async () => {
 
     const puppeteerArgs = [`--window-size=1920,1080`, `--no-sandbox`, `--disable-setuid-sandbox`];
-    const popoverTimeout = 2000;
+    const selectorWaitTimeout = 2000;
 
     program
         .option(`-d, --debug true/false`, `Execute in debug mode`, config.debug)
@@ -162,7 +162,16 @@ const program = new Command();
         logger.verbose(`Selected year ${currentYear}`);
 
         logger.info(`Determining pages...`);
-        const orderPageCount = options.pageFilter ?? await (await page.waitForSelector(selectors.pagination)).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
+
+        let orderPageCount: number = null;
+        try {
+            orderPageCount = options.pageFilter ?? await (await page.waitForSelector(selectors.pagination, { timeout: selectorWaitTimeout })).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
+
+        } catch (ex) {
+            orderPageCount = 1;
+            logger.error(`Couldn't get orderPageCount ${orderPageCount} within ${selectorWaitTimeout}ms. Assume only one page.`);
+        }
+
         logger.info(`Page count: ${orderPageCount}`);
 
         for (const orderPage of [...Array(orderPageCount).keys()]) {
@@ -198,15 +207,15 @@ const program = new Command();
                 const popoverSelectorResolved = selectors.popover.replace(`{{index}}`, (orderIndex + 1).toString());
                 try {
 
-                    const popover = await page.waitForSelector(popoverSelectorResolved, { timeout: popoverTimeout });
+                    const popover = await page.waitForSelector(popoverSelectorResolved, { timeout: selectorWaitTimeout });
                     logger.debug(`Got popover ${(orderIndex + 1)} -> ${popover}`);
 
-                    invoiceList = await popover.waitForSelector(selectors.invoiceList);
+                    invoiceList = await popover.waitForSelector(selectors.invoiceList, { timeout: selectorWaitTimeout });
                     invoiceUrls = await invoiceList.$$eval(selectors.invoiceLinks, (handles: Array<HTMLAnchorElement>) => handles.map(a => a.href));
 
                     logger.debug(`Got invoiceUrls ${(orderIndex + 1)} -> ${invoiceUrls}`);
                 } catch (ex) {
-                    logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${popoverTimeout}ms. Skipping`);
+                    logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${selectorWaitTimeout}ms. Skipping`);
                 }
 
                 if (invoiceUrls.length == 0) {
@@ -218,7 +227,97 @@ const program = new Command();
                     logger.debug(`Got invoiceUrls ${(orderIndex + 1)} -> ${invoiceUrls}`);
                 }
                 orders.push(order);
+
+                logger.info(`Processing "${orders.length}" orders`);
+
+                for (const [invoiceIndex, invoice] of order.invoices.entries()) {
+                    const invoiceUrl = invoice.url;
+
+                    const pdfPage = await browser.newPage();
+                    await pdfPage.goto(invoiceUrl);
+                    invoice.status = InvoiceStatus.opened;
+
+                    let fileReaderString: string;
+                    try {
+                        fileReaderString = await pdfPage.evaluate(async url => {
+                            return new Promise<string>(async (resolve, reject) => {
+                                // eslint-disable-next-line no-debugger
+                                console.log(`--- [AMZ SCRAPER] Reading: ${url} ---`);
+                                const reader = new FileReader();
+                                const response = await window.fetch(url, { mode: `no-cors` });
+                                const data = await response.blob();
+
+                                reader.readAsBinaryString(data);
+
+                                console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
+                                console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
+
+                                reader.onloadend = () => {
+
+                                    resolve(reader.result.toString());
+                                };
+
+                                reader.onerror = () => {
+                                    console.log(`[AMZ SCRAPER] onerror`);
+                                    console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
+                                    console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
+                                    console.log(`[AMZ SCRAPER] Reader error: ${reader.error.message}`);
+                                    console.log(`--- [AMZ SCRAPER] Reading: ${url} ENDED ---`);
+                                    reject(reader.error);
+                                    return null;
+                                };
+                            });
+                        }, invoiceUrl);
+                    } catch (ex) {
+                        logger.error(`Error while fetching from url "${invoiceUrl}": ${ex.message}`);
+                    }
+
+
+                    let fileBuffer: Buffer;
+                    if (fileReaderString) {
+                        fileBuffer = Buffer.from(fileReaderString, `binary`);
+                        if (fileBuffer) {
+                            invoice.status = InvoiceStatus.downloaded;
+                            logger.debug(`Created buffer from fileReader.`);
+                        } else {
+                            logger.error(`Failed to create buffer from fileReader for order "${order.number}"`);
+                        }
+                    } else {
+                        logger.error(`FileReaderString is empty returned from page for order "${order.number}" and url "${invoiceUrl}"`);
+                    }
+
+
+                    if (fileBuffer) {
+                        logger.debug(`Buffer exists`);
+                        logger.debug(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
+                        !fs.existsSync(options.fileDestinationFolder) && fs.mkdirSync(options.fileDestinationFolder);
+
+                        const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fallbackExtension;
+                        const fileName = `${order.datePlain.replace(`.`, ``).replace(` `, `_`)}_AMZ_${order.number}_${invoiceIndex + 1}`;
+                        const fullFilePath = path.join(options.fileDestinationFolder, `${fileName}${fileExtention}`);
+
+                        const pathNormalized = path.normalize(fullFilePath);
+                        if (!fs.existsSync(pathNormalized)) {
+                            logger.debug(`Fullpath not exists: ${pathNormalized}`);
+                            try {
+                                logger.info(`Writing file: ${pathNormalized}`);
+                                invoice.status = InvoiceStatus.downloaded;
+                                fs.writeFileSync(pathNormalized, fileBuffer);
+                                invoice.status = InvoiceStatus.saved;
+                            } catch (err) {
+                                logger.error(err);
+                            }
+                        } else {
+                            logger.info(`Invoice "${path.basename(pathNormalized)}" of order "${order.number}" already exists. Skipping file creation.`);
+                            invoice.status = InvoiceStatus.skipped;
+                        }
+                    }
+
+                    logger.debug(`Closing invoice page`);
+                    await pdfPage.close();
+                }
             }
+
 
             if ((orderPage + 1) != orderPageCount) {
                 const nextPageUrl = new URL(`?ie=UTF8&orderFilter=year-${currentYear}&search=&startIndex=${10 * (orderPage + 1)}`, amazon.orderPage);
@@ -234,96 +333,6 @@ const program = new Command();
         logger.info(`Year "${currentYear}" drone. Skipping to next year`);
     }
 
-    logger.info(`Processing "${orders.length}" orders`);
-
-    for (const order of orders) {
-        for (const [invoiceIndex, invoice] of order.invoices.entries()) {
-            const invoiceUrl = invoice.url;
-
-            const pdfPage = await browser.newPage();
-            await pdfPage.goto(invoiceUrl);
-            invoice.status = InvoiceStatus.opened;
-
-            let fileReaderString: string;
-            try {
-                fileReaderString = await pdfPage.evaluate(async url => {
-                    return new Promise<string>(async (resolve, reject) => {
-                        // eslint-disable-next-line no-debugger
-                        console.log(`--- [AMZ SCRAPER] Reading: ${url} ---`);
-                        const reader = new FileReader();
-                        const response = await window.fetch(url, { mode: `no-cors` });
-                        const data = await response.blob();
-
-                        reader.readAsBinaryString(data);
-
-                        console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
-                        console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
-
-                        reader.onloadend = () => {
-
-                            resolve(reader.result.toString());
-                        };
-
-                        reader.onerror = () => {
-                            console.log(`[AMZ SCRAPER] onerror`);
-                            console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
-                            console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
-                            console.log(`[AMZ SCRAPER] Reader error: ${reader.error.message}`);
-                            console.log(`--- [AMZ SCRAPER] Reading: ${url} ENDED ---`);
-                            reject(reader.error);
-                            return null;
-                        };
-                    });
-                }, invoiceUrl);
-            } catch (ex) {
-                logger.error(`Error while fetching from url "${invoiceUrl}": ${ex.message}`);
-            }
-
-
-            let fileBuffer: Buffer;
-            if (fileReaderString) {
-                fileBuffer = Buffer.from(fileReaderString, `binary`);
-                if (fileBuffer) {
-                    invoice.status = InvoiceStatus.downloaded;
-                    logger.debug(`Created buffer from fileReader.`);
-                } else {
-                    logger.error(`Failed to create buffer from fileReader for order "${order.number}"`);
-                }
-            } else {
-                logger.error(`FileReaderString is empty returned from page for order "${order.number}" and url "${invoiceUrl}"`);
-            }
-
-
-            if (fileBuffer) {
-                logger.debug(`Buffer exists`);
-                logger.debug(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
-                !fs.existsSync(options.fileDestinationFolder) && fs.mkdirSync(options.fileDestinationFolder);
-
-                const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fallbackExtension;
-                const fileName = `${order.datePlain.replace(`.`, ``).replace(` `, `_`)}_AMZ_${order.number}_${invoiceIndex + 1}`;
-                const fullFilePath = path.join(options.fileDestinationFolder, `${fileName}${fileExtention}`);
-
-                const pathNormalized = path.normalize(fullFilePath);
-                if (!fs.existsSync(pathNormalized)) {
-                    logger.debug(`Fullpath not exists: ${pathNormalized}`);
-                    try {
-                        logger.info(`Writing file: ${pathNormalized}`);
-                        invoice.status = InvoiceStatus.downloaded;
-                        fs.writeFileSync(pathNormalized, fileBuffer);
-                        invoice.status = InvoiceStatus.saved;
-                    } catch (err) {
-                        logger.error(err);
-                    }
-                } else {
-                    logger.info(`Invoice "${path.basename(pathNormalized)}" of order "${order.number}" already exists. Skipping file creation.`);
-                    invoice.status = InvoiceStatus.skipped;
-                }
-            }
-
-            logger.debug(`Closing invoice page`);
-            await pdfPage.close();
-        }
-    }
 
     const endtimestamp = DateTime.now();
 
