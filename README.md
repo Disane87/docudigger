@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to amazon-invoice-scraper 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="npm (custom registry)" src="https://img.shields.io/npm/v/@disane-dev/amazon-invoice-scraper/latest?registry_uri=https%3A%2F%2Fnpm.disane.dev">
   <img src="https://img.shields.io/badge/npm-%3E%3D9.1.2-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D18.12.1-blue.svg" />
   <a href="#" target="_blank">
