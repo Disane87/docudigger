@@ -1,16 +1,16 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "conventionalCommits.scopes": [
-    "Gathering",
-    "debugging",
-    "selectors",
-    "renovate",
-    "logging",
-    "ci",
-    "docs"
-  ],
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
-  "npm.exclude": "**/@(vendor|node_modules|bower_components|dist|static)/**"
-}
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "conventionalCommits.scopes": [
+      "Gathering",
+      "debugging",
+      "selectors",
+      "renovate",
+      "logging",
+      "ci",
+      "docs"
+    ],
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
+    "npm.exclude": "**/@(vendor|node_modules|bower_components|dist|static)/**"
+  }
