@@ -13,7 +13,7 @@
   "main": "src/app.ts",
   "scripts": {
     "prestart": "npx tsc",
-    "start": "node --inspect dist/app.js",
+    "start": "node --inspect dist/index.js",
     "lint": "eslint . --ext .ts",
     "np": "npx np",
     "prepare": "husky install",
