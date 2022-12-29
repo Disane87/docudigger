@@ -57,12 +57,12 @@ const program = new Command();
         const { username, password } = await prompts([{
             type: `text`,
             name: `username`,
-            message: `Your amazaon username`
+            message: `Your Amazon username`
         },
         {
             type: `password`,
             name: `password`,
-            message: `Your amazon password`
+            message: `Your Amazon password`
         }]);
 
         options.password = password;
