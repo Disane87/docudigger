@@ -27,7 +27,7 @@ export class Config {
 
 
     @ENV(`AMAZON_TLD`)
-    amazonTLD = `de`;
+    amazonTLD = `com`;
 
     @ENV(`AMAZON_USERNAME`)
     amazonUsername = null;

@@ -69,12 +69,12 @@ const program = new Command();
         const { username, password } = await prompts([{
             type: `text`,
             name: `username`,
-            message: `Your amazaon username`
+            message: `Your Amazon username`
         },
         {
             type: `password`,
             name: `password`,
-            message: `Your amazon password`
+            message: `Your Amazon password`
         }]);
 
         options.password = password;
@@ -88,11 +88,12 @@ const program = new Command();
     const amazon = {
         lang: null,
         tld: options.amazonTld,
-        loginPage: `https://www.amazon.${options.amazonTld}/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&`,
+        baseURL: `https://www.amazon.${options.amazonTld}/`,
         orderPage: `https://www.amazon.${options.amazonTld}/gp/css/order-history`
     };
 
     const selectors = {
+        signInCTA: `a.nav-action-button[data-nav-role="signin"]`,
         orderCards: `div.a-box-group.js-order-card`,
         invoiceSpans: `span.hide-if-no-js .a-declarative[data-action="a-popover"]`,
         orderNr: `.yohtmlc-order-id span:nth-last-child(1) bdi`,
@@ -104,9 +105,21 @@ const program = new Command();
         yearFilter: `select[name="orderFilter"] option`
     };
 
-    logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
+    if (options.debug) {
+        await page.setViewport({
+            width: 1920,
+            height: 1080
+        });
+    }
 
-    await page.goto(amazon.loginPage);
+    logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
+    logger.debug(`URLs: ${JSON.stringify(amazon, null, 4)}`);
+
+
+    await page.goto(amazon.baseURL);
+    const signUpUrl = await page.$eval(selectors.signInCTA, (el: HTMLAnchorElement) => el.href);
+    await page.goto(signUpUrl);
+    // await page.waitForNavigation();
 
     await page.type(`input[type=email]`, options.amazonUsername);
     await page.click(`input[type=submit]`);
@@ -115,12 +128,7 @@ const program = new Command();
     await page.click(`input[type=submit]`);
     // await page.on('console', code => console.log(code.text()));
 
-    if (options.debug) {
-        await page.setViewport({
-            width: 1920,
-            height: 1080
-        });
-    }
+
 
     await page.waitForNavigation();
     if (page.url().indexOf(`/mfa?`) > -1) {
