@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@commitlint/cli": "^17.3.0",
-    "commander": "^9.4.1",
+    "commander": "^10.0.0",
     "config-decorators": "^0.2.0",
     "copyfiles": "^2.4.1",
     "luxon": "^3.1.0",
