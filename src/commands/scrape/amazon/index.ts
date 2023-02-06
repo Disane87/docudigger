@@ -5,7 +5,7 @@ import fs from "fs";
 import { DateTime } from "luxon";
 import path from "path";
 import puppeteer, { ElementHandle, executablePath } from "puppeteer";
-import * as Base from "../../../base.class";
+import { BaseCommand } from "../../../base.class";
 import { InvoiceStatus } from "./enums/invoice-status.enum";
 import { login } from "./helpers/auth.helper";
 import { Invoice } from "./interfaces/invoice.interface";
@@ -13,7 +13,7 @@ import { Order } from "./interfaces/order.interface";
 import { AmazonSelectors } from "./interfaces/selectors.interface.interface";
 
 
-export default class Amazon extends Base.BaseCommand<typeof Amazon> {
+export default class Amazon extends BaseCommand<typeof Amazon> {
     static description = `Scrapes amazon invoices`;
     static summary = 'Used to get invoices from amazon';
 
@@ -23,7 +23,7 @@ export default class Amazon extends Base.BaseCommand<typeof Amazon> {
 
     static flags = {
         username: Flags.string({ char: `u`, description: `Username`, required: true, env: "AMAZON_USERNAME" }),
-        password: Flags.string({ char: `p`, description: `Username`, required: true, env: "AMAZON_PASSWORD" }),
+        password: Flags.string({ char: `p`, description: `Password`, required: true, env: "AMAZON_PASSWORD" }),
         fileDestinationFolder: Flags.string({ aliases: [`fileDestinationFolder`], default: `./data/`, description: `Amazon top level domain`, env: "FILE_DESTINATION_FOLDER" }),
         fileFallbackExentension: Flags.string({ aliases: [`fileFallbackExentension`], default: `.pdf`, description: `Amazon top level domain`, env: "FILE_FALLBACK_EXTENSION" }),
         tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: "AMAZON_TLD" }),
@@ -38,18 +38,28 @@ export default class Amazon extends Base.BaseCommand<typeof Amazon> {
             this.log(`${flag}: ${value}`);
         }
 
+        const currentWorkDir = path.dirname(require.main.filename);
+
         const options = this.flags;
 
         const puppeteerArgs = [`--window-size=1920,1080`, `--no-sandbox`, `--disable-setuid-sandbox`];
         const selectorWaitTimeout = 2000;
 
-        let processedOrders: { lastRun: Date, orders: Order[] } = null;
-        processedOrders = JSON.parse((await fs.promises.readFile(path.join(options.fileDestinationFolder, `process.json`).normalize(), "utf8")));
+        let processedOrders: { lastRun: Date, orders: Order[] } = { lastRun: null, orders: [] };
+        if (fs.existsSync(path.join(currentWorkDir, `process.json`).normalize())) {
+            processedOrders = JSON.parse((await fs.promises.readFile(path.join(currentWorkDir, `process.json`).normalize(), "utf8")));
+            if (processedOrders.orders.length == 0) {
+                this.logger.info(`No latest orders. OnlyNew deactivated.`);
+                options.onlyNew = false;
+            }
+        } else {
+            options.onlyNew = false;
+        }
 
         if (options.onlyNew) {
             options.yearFilter = DateTime.now().year;
             options.pageFilter = 1;
-            this.logger.info(`Only invoices since order ${processedOrders.orders[0].number} will be gathered.`)
+            this.logger.info(`Only invoices since order ${processedOrders.orders[0]?.number} will be gathered.`)
         }
 
         this.logger.info(`Options: ${JSON.stringify(options, null, 4)}`);
@@ -147,7 +157,7 @@ export default class Amazon extends Base.BaseCommand<typeof Amazon> {
                         this.logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${selectorWaitTimeout}ms. Skipping`);
                     }
 
-                    if (options.onlyNew && (orderNumber == processedOrders.orders[0].number)) {
+                    if (options.onlyNew && (orderNumber == processedOrders.orders[0]?.number)) {
                         this.logger.info(`Order ${orderNumber} already handled. Skipping`);
                         continue;
                     }
@@ -254,7 +264,7 @@ export default class Amazon extends Base.BaseCommand<typeof Amazon> {
             await browser.close();
         }
         fs.writeFileSync(
-            path.join(options.fileDestinationFolder, `process.json`).normalize(),
+            path.join(currentWorkDir, `process.json`).normalize(),
             JSON.stringify({ lastRun: DateTime.now().toISO(), orders }, null, 4)
         );
     }

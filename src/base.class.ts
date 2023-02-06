@@ -4,7 +4,8 @@ import { createLogger } from './commands/scrape/amazon/helpers/logger.helper';
 import { LogLevel } from './loglevel';
 
 
-export type Flags<T extends typeof Command> = Interfaces.InferredFlags<typeof BaseCommand['globalFlags'] & T['flags']>
+export type Flags<T extends typeof Command> = Interfaces.InferredFlags<typeof BaseCommand['baseFlags'] & T['flags']>
+export type Args<T extends typeof Command> = Interfaces.InferredArgs<T['args']>
 
 export abstract class BaseCommand<T extends typeof Command> extends Command {
     // add the --json flag
@@ -13,24 +14,28 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
     protected logger: winston.Logger = null;
 
     //define flags that can be inherited by any command that extends BaseCommand
-    static globalFlags = {
-        LogLevel: Flags.enum<LogLevel>({
+    static baseFlags = {
+        logLevel: Flags.custom<LogLevel>({
             summary: 'Specify level for logging.',
             options: Object.values(LogLevel),
             default: LogLevel.info
-        }),
+        })(),
 
         debug: Flags.boolean({ char: `d`, default: true }),
         logPath: Flags.string({ char: `l`, description: `Log path`, default: './logs/' })
-
     }
 
     protected flags!: Flags<T>;
 
     public async init(): Promise<void> {
         await super.init()
-        const { flags } = await this.parse(this.constructor as Interfaces.Command.Class)
-        this.flags = flags;
+        const { args, flags } = await this.parse({
+            flags: this.ctor.flags,
+            baseFlags: (super.ctor as typeof BaseCommand).baseFlags,
+            args: this.ctor.args,
+            strict: this.ctor.strict,
+        })
+        this.flags = flags as Flags<T>
 
         this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || './logs/');
 

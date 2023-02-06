@@ -1,4 +1,4 @@
-import { CliUx } from '@oclif/core';
+import { ux } from "@oclif/core";
 import { Browser, Page } from "puppeteer";
 import { AmazonSelectors } from "../interfaces/selectors.interface.interface";
 
@@ -28,8 +28,8 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
     while (!hasMessages) {
 
         if (!options.username && !options.password) {
-            options.username = await CliUx.ux.prompt('What is your amazaon username?');
-            options.password = await CliUx.ux.prompt('What is your password?', { type: 'hide' });
+            options.username = await ux.prompt('What is your amazaon username?');
+            options.password = await ux.prompt('What is your password?', { type: 'hide' });
         }
 
         logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
@@ -88,7 +88,7 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
 
         if (page.url().indexOf(`/mfa?`) > -1) {
             console.info(`MFA detected`);
-            const secondFactor = await CliUx.ux.prompt('What is your two-factor token?', { type: 'mask' })
+            const secondFactor = await ux.prompt('What is your two-factor token?', { type: 'mask' })
             await page.type(`input#auth-mfa-otpcode`, secondFactor);
             await page.click(`input#auth-mfa-remember-device`);
             await page.click(`input[type=submit]`);

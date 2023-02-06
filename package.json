@@ -17,9 +17,9 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
-    "@oclif/core": "^1.21.0",
+    "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.1.8",
+    "@oclif/plugin-plugins": "^2.3.0",
     "luxon": "^3.1.1",
     "puppeteer": "^19.4.0",
     "winston": "^3.8.2"
@@ -51,7 +51,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.2",
     "mocha": "^10",
-    "oclif": "^3",
+    "oclif": "^3.6.3",
     "semantic-release": "^19.0.5",
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",
