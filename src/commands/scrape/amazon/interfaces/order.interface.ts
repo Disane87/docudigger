@@ -1,4 +1,4 @@
-import { Invoice } from "./invoice";
+import { Invoice } from "./invoice.interface";
 
 export interface Order {
     date: string;

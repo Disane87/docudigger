@@ -1,3 +1,19 @@
+*-debug.log
+*-debug.log
+*-error.log
+*-error.log
+/.nyc_output
+/dist
+/dist
+/lib
+/lib
+/package-lock.json
+/tmp
+/tmp
+/yarn.lock
+node_modules
+node_modules
+oclif.manifest.json
 # Logs
 logs
 *.log

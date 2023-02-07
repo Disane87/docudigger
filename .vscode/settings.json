@@ -9,7 +9,9 @@
     "renovate",
     "logging",
     "ci",
-    "docs"
+    "docs",
+    "cli",
+    "logs"
   ],
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "npm.exclude": "**/@(vendor|node_modules|bower_components|dist|static)/**"

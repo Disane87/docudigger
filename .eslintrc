@@ -3,6 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "extends": [
+  
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -13,6 +14,7 @@
     "quotes": ["error", "backtick"],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
     "no-console": 1,
-    "semi": "error"
+    "semi": "error",
+    "empty-brace-spaces": false
   }
 }
