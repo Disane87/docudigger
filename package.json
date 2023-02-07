@@ -1,15 +1,15 @@
 {
-  "name": "document-scraper",
+  "name": "@docudigger/core",
   "version": "0.0.0",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
-    "document-scraper": "./bin/run"
+    "docudigger": "./bin/run"
   },
-  "homepage": "https://github.com/Disane87/document-scraper",
+  "homepage": "https://github.com/Disane87/docudigger",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "Disane87/document-scraper",
+  "repository": "Disane87/docudigger",
   "files": [
     "/bin",
     "/dist",
@@ -21,6 +21,7 @@
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.3.0",
     "luxon": "^3.1.1",
+    "node-cron": "^3.0.2",
     "puppeteer": "^19.4.0",
     "winston": "^3.8.2"
   },
@@ -38,6 +39,7 @@
     "@types/luxon": "^3.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.15",
+    "@types/node-cron": "^3.0.7",
     "@types/puppeteer": "^7.0.4",
     "@types/winston": "^2.4.4",
     "chai": "^4",
@@ -59,8 +61,8 @@
     "typescript": "^4.9.4"
   },
   "oclif": {
-    "bin": "document-scraper",
-    "dirname": "document-scraper",
+    "bin": "docudigger",
+    "dirname": "docudigger",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
@@ -69,7 +71,7 @@
     "topicSeparator": " ",
     "topics": {
       "scrape": {
-        "description": "Say hello to the world and others"
+        "description": "Scrape tha interwebz"
       }
     },
     "hooks": {
@@ -94,9 +96,9 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "bugs": "https://github.com/Disane87/document-scraper/issues",
+  "bugs": "https://github.com/Disane87/docudigger/issues",
   "keywords": [
-    "oclif"
+    "Documents scraper invoices"
   ],
   "types": "dist/index.d.ts"
 }
