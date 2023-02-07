@@ -21,8 +21,11 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
             default: LogLevel.info
         })(),
 
-        debug: Flags.boolean({ char: `d`, default: true }),
-        logPath: Flags.string({ char: `l`, description: `Log path`, default: './logs/' })
+        debug: Flags.boolean({ char: `d`, default: true, env: 'DEBUG' }),
+        logPath: Flags.string({ char: `l`, description: `Log path`, default: './logs/', env: 'LOG_PATH' }),
+        recurring: Flags.boolean({ char: `r`, default: true, env: 'RECURRING' }),
+        recurringCron: Flags.string(({ char: `c`, description: `Cron pattern to execute periodically`, default: '* * * * *', dependsOn: ['recurring'] }))
+
     }
 
     protected flags!: Flags<T>;
@@ -37,7 +40,7 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
         })
         this.flags = flags as Flags<T>
 
-        this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || './logs/');
+        this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || './logs/', this.id);
 
         this.logger.info(`Got flags for plugin ${this.id} -> ${JSON.stringify(flags, null, 4)}`);
     }
