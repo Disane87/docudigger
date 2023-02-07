@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "importHelpers": true,
     "module": "commonjs",
     "esModuleInterop": true,
-    "target": "ES2022",
+    "target": "ES2021",
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "./dist",
@@ -11,5 +13,5 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
   },
-  "lib": ["ES2022"]
+  "include": ["src/**/*", "node_modules/helpers"]
 }

@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to amazon-invoice-scraper 👋</h1>
+<h1 align="center">Welcome to docudigger 👋</h1>
 <p>
   <img alt="npm (custom registry)" src="https://img.shields.io/npm/v/@disane-dev/amazon-invoice-scraper/latest?registry_uri=https%3A%2F%2Fnpm.disane.dev">
   <img src="https://img.shields.io/badge/npm-%3E%3D9.1.2-blue.svg" />
@@ -8,9 +8,9 @@
   </a>
 </p>
 
-> Amazon scraper for getting invoices automagically as pdf (useful for taxes or DMS)
+> Document scraper for getting invoices automagically as pdf (useful for taxes or DMS)
 
-### 🏠 [Homepage](https://repo.disane.dev/Disane/amazon-invoice-scraper#readme)
+### 🏠 [Homepage](https://repo.disane.dev/Disane/docudigger#readme)
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ npm run start
 
 ### as CLI
 ```sh
-npx @disane-dev/amazon-invoice-scraper --help
+npx docudigger --help
 ```
 
 ## Author
@@ -44,7 +44,7 @@ npx @disane-dev/amazon-invoice-scraper --help
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://repo.disane.dev/Disane/amazon-invoice-scraper/issues). You can also take a look at the [contributing guide](https://repo.disane.dev/Disane/amazon-invoice-scraper/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://repo.disane.dev/Disane/docudigger/issues). You can also take a look at the [contributing guide](https://repo.disane.dev/Disane/docudigger/blob/master/CONTRIBUTING.md).
 
 ## Show your support
 
