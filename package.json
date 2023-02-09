@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "@oclif/core": "^2",
+    "@oclif/plugin-commands": "^2.2.7",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.3.0",
     "luxon": "^3.1.1",
@@ -66,7 +67,8 @@
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-commands"
     ],
     "topicSeparator": " ",
     "topics": {

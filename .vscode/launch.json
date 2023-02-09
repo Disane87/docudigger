@@ -22,7 +22,7 @@
       "args": ["config", "example"],
 
       "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
+      "internalConsoleOptions": "neverOpen"
     },
     {
       "type": "node",
@@ -33,7 +33,7 @@
       "args": ["help"],
 
       "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
+      "internalConsoleOptions": "neverOpen"
     },
     {
       "type": "node",
@@ -44,7 +44,18 @@
       "args": ["scrape", "all"],
 
       "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Get all flags",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": ["commands", "--json"],
+
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
