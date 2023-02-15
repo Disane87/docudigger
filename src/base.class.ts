@@ -1,6 +1,6 @@
 import { Command, Flags, Interfaces } from '@oclif/core';
 import winston from 'winston';
-import { createLogger } from './commands/scrape/amazon/helpers/logger.helper';
+import { createLogger } from './helpers/logger.helper';
 import { LogLevel } from './loglevel';
 
 

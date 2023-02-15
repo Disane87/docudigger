@@ -1,6 +1,6 @@
 import { ux } from "@oclif/core";
 import { Browser, Page } from "puppeteer";
-import { AmazonSelectors } from "../interfaces/selectors.interface.interface";
+import { AmazonSelectors } from "../interfaces/selectors.interface";
 
 export const login = async (page: Page, selectors: AmazonSelectors, options, amazonUrls, browser: Browser, logger): Promise<boolean> => {
     let hasMessages = false;

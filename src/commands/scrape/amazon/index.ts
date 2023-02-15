@@ -6,11 +6,12 @@ import { DateTime } from "luxon";
 import path from "path";
 import puppeteer, { ElementHandle, executablePath } from "puppeteer";
 import { BaseCommand } from "../../../base.class";
-import { InvoiceStatus } from "./enums/invoice-status.enum";
-import { login } from "./helpers/auth.helper";
-import { Invoice } from "./interfaces/invoice.interface";
-import { Order } from "./interfaces/order.interface";
-import { AmazonSelectors } from "./interfaces/selectors.interface.interface";
+import { InvoiceStatus } from "../../../enums/invoice-status.enum";
+import { login } from "../../../helpers/auth.helper";
+import { Invoice } from "../../../interfaces/invoice.interface";
+import { Order } from "../../../interfaces/order.interface";
+import { AmazonSelectors } from "../../../interfaces/selectors.interface";
+
 
 
 export default class Amazon extends BaseCommand<typeof Amazon> {

@@ -84,16 +84,16 @@
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "yarn lint",
-    "prepack": "yarn build && oclif manifest && oclif readme",
+    "posttest": "npm run lint",
+    "prepack": "npm shrinkwrap && npm run build && npx oclif manifest && npx oclif readme",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md",
+    "version": "npx oclif readme && git add README.md",
     "semantic-release": "env-cmd npx semantic-release",
     "semantic-release:dry": "npm run lint && npm run build && npm run semantic-release -- -d --no-ci",
     "semantic-release:run": "npm run lint && npm run build && cross-env HUSKY=0  npm run semantic-release -- --no-ci",
     "semantic-release:ci": "npm run lint && npm run build && cross-env HUSKY=0  npm run semantic-release",
-    "postversion": "copyfiles package.json npm-shrinkwrap.json ..",
-    "prepare": "husky install"
+    "postversion": "copyfiles package.json ..",
+    "prepare": "echo husky install"
   },
   "engines": {
     "node": ">=12.0.0"
