@@ -23,7 +23,7 @@
     "@oclif/plugin-plugins": "^2.3.0",
     "luxon": "^3.1.1",
     "node-cron": "^3.0.2",
-    "puppeteer": "^19.4.0",
+    "puppeteer": "^20.0.0",
     "winston": "^3.8.2"
   },
   "devDependencies": {
