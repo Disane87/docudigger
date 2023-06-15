@@ -53,7 +53,7 @@
         "semantic-release": "^19.0.5",
         "shx": "^0.3.4",
         "ts-node": "^10.9.1",
-        "tslib": "^2.4.1",
+        "tslib": "^2.5.3",
         "typescript": "^4.9.4"
       },
       "engines": {
@@ -14042,9 +14042,9 @@
       }
     },
     "node_modules/tslib": {
-      "version": "2.4.1",
-      "resolved": "https://npm.disane.dev/tslib/-/tslib-2.4.1.tgz",
-      "integrity": "sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA=="
+      "version": "2.5.3",
+      "resolved": "https://npm.disane.dev/tslib/-/tslib-2.5.3.tgz",
+      "integrity": "sha512-mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w=="
     },
     "node_modules/tsutils": {
       "version": "3.21.0",
