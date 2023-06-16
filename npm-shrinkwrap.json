@@ -13,7 +13,7 @@
         "@oclif/plugin-commands": "^2.2.7",
         "@oclif/plugin-help": "^5",
         "@oclif/plugin-plugins": "^2.3.0",
-        "luxon": "^3.1.1",
+        "luxon": "^3.3.0",
         "node-cron": "^3.0.2",
         "puppeteer": "^19.4.0",
         "winston": "^3.8.2"
@@ -32,7 +32,7 @@
         "@semantic-release/npm": "^9.0.1",
         "@semantic-release/release-notes-generator": "^10.0.3",
         "@types/chai": "^4",
-        "@types/luxon": "^3.1.0",
+        "@types/luxon": "^3.3.0",
         "@types/mocha": "^10.0.1",
         "@types/node": "^18.11.15",
         "@types/node-cron": "^3.0.7",
@@ -2052,9 +2052,9 @@
       "dev": true
     },
     "node_modules/@types/luxon": {
-      "version": "3.1.0",
-      "resolved": "https://npm.disane.dev/@types%2fluxon/-/luxon-3.1.0.tgz",
-      "integrity": "sha512-gCd/HcCgjqSxfMrgtqxCgYk/22NBQfypwFUG7ZAyG/4pqs51WLTcUzVp1hqTbieDYeHS3WoVEh2Yv/2l+7B0Vg==",
+      "version": "3.3.0",
+      "resolved": "https://npm.disane.dev/@types/luxon/-/luxon-3.3.0.tgz",
+      "integrity": "sha512-uKRI5QORDnrGFYgcdAVnHvEIvEZ8noTpP/Bg+HeUzZghwinDlIS87DEenV5r1YoOF9G4x600YsUXLWZ19rmTmg==",
       "dev": true
     },
     "node_modules/@types/minimatch": {
@@ -7206,9 +7206,9 @@
       }
     },
     "node_modules/luxon": {
-      "version": "3.1.1",
-      "resolved": "https://registry.npmjs.org/luxon/-/luxon-3.1.1.tgz",
-      "integrity": "sha512-Ah6DloGmvseB/pX1cAmjbFvyU/pKuwQMQqz7d0yvuDlVYLTs2WeDHQMpC8tGjm1da+BriHROW/OEIT/KfYg6xw==",
+      "version": "3.3.0",
+      "resolved": "https://npm.disane.dev/luxon/-/luxon-3.3.0.tgz",
+      "integrity": "sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==",
       "engines": {
         "node": ">=12"
       }
