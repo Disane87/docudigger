@@ -13,5 +13,6 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "node_modules/helpers"]
+  "include": ["src/**/*", "node_modules/helpers"],
+  "exclude": ["./scripts"]
 }
