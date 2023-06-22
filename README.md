@@ -24,12 +24,17 @@ npm install
 ```
 
 ## Usage
-### As module
-```sh
+### NPM
+```npm
 npm run start
 ```
 
-### as CLI
+### Console
+```
+./bin/dev --help
+```
+
+### as CLI (when installed from npm)
 ```sh
 npx docudigger --help
 ```
