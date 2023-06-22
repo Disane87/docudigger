@@ -82,7 +82,7 @@
   },
   "scripts": {
     "postinstall": "ts-node ./scripts/postinstall.ts",
-    "start": "./bin/dev scrape amazon",
+    "start": "cd ./bin && dev scrape amazon",
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
