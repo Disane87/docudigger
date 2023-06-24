@@ -35,7 +35,7 @@
         "@types/luxon": "^3.1.0",
         "@types/mocha": "^10.0.1",
         "@types/node": "^18.11.15",
-        "@types/node-cron": "^3.0.7",
+        "@types/node-cron": "^3.0.8",
         "@types/puppeteer": "^7.0.4",
         "@types/winston": "^2.4.4",
         "chai": "^4",
@@ -2081,9 +2081,9 @@
       "integrity": "sha512-VkhBbVo2+2oozlkdHXLrb3zjsRkpdnaU2bXmX8Wgle3PUi569eLRaHGlgETQHR7lLL1w7GiG3h9SnePhxNDecw=="
     },
     "node_modules/@types/node-cron": {
-      "version": "3.0.7",
-      "resolved": "https://npm.disane.dev/@types/node-cron/-/node-cron-3.0.7.tgz",
-      "integrity": "sha512-9PuLtBboc/+JJ7FshmJWv769gDonTpItN0Ol5TMwclpSQNjVyB2SRxSKBcTtbSysSL5R7Oea06kTTFNciCoYwA==",
+      "version": "3.0.8",
+      "resolved": "https://npm.disane.dev/@types/node-cron/-/node-cron-3.0.8.tgz",
+      "integrity": "sha512-+z5VrCvLwiJUohbRSgHdyZnHzAaLuD/E2bBANw+NQ1l05Crj8dIxb/kKK+OEqRitV2Wr/LYLuEBenGDsHZVV5Q==",
       "dev": true
     },
     "node_modules/@types/normalize-package-data": {
