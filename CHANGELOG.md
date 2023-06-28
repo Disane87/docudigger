@@ -1,3 +1,10 @@
+# [1.0.0-dev.8](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2023-06-28)
+
+
+### Bug Fixes
+
+* **files:** :bug: fixes a bug when saving downloaded files ([c8bb712](https://github.com/Disane87/docudigger/commit/c8bb7125536abd08a89b8e1de15a13640f8cab76))
+
 # [1.0.0-dev.7](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2023-06-28)
 
 
