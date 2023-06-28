@@ -10,6 +10,7 @@ export type Args<T extends typeof Command> = Interfaces.InferredArgs<T['args']>
 export abstract class BaseCommand<T extends typeof Command> extends Command {
     // add the --json flag
     static enableJsonFlag = true
+    public abstract pluginName: string;
 
     protected logger: winston.Logger = null;
 

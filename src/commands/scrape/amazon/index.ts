@@ -15,6 +15,7 @@ import { AmazonSelectors } from "../../../interfaces/selectors.interface";
 
 
 export default class Amazon extends BaseCommand<typeof Amazon> {
+    public pluginName: string = "amazon";
     static description = `Scrapes amazon invoices`;
     static summary = 'Used to get invoices from amazon';
 
@@ -64,7 +65,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         }
 
         this.logger.info(`Options: ${JSON.stringify(options, null, 4)}`);
-        const browser = await puppeteer.launch({ headless: false, args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
+        const browser = await puppeteer.launch({ headless: 'new', args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
         const page = await browser.newPage();
         const amazon = {
             lang: null,
@@ -225,7 +226,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                             !fs.existsSync(options.fileDestinationFolder) && fs.mkdirSync(options.fileDestinationFolder);
                             const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fileFallbackExentension;
                             const fileName = `${order.datePlain.replace(`.`, ``).replace(` `, `_`)}_AMZ_${order.number}_${invoiceIndex + 1}`;
-                            const fullFilePath = path.join(options.fileDestinationFolder, `${fileName}${fileExtention}`);
+                            const fullFilePath = path.join(options.fileDestinationFolder, this.pluginName, `${fileName}${fileExtention}`);
                             const pathNormalized = path.normalize(fullFilePath);
                             if (!fs.existsSync(pathNormalized)) {
                                 this.logger.debug(`Fullpath not exists: ${pathNormalized}`);

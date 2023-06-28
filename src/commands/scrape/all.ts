@@ -11,6 +11,7 @@ import cron from 'node-cron';
 
 
 export default class All extends BaseCommand<typeof All> {
+    public pluginName: string = 'all';
     static description = `Scrapes all websites periodically`;
     static summary = '';
 
