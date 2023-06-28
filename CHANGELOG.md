@@ -1,3 +1,10 @@
+# [1.0.0-dev.4](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2023-06-28)
+
+
+### Bug Fixes
+
+* build fixes ([8d8ef53](https://github.com/Disane87/docudigger/commit/8d8ef531d8432dcb222cbf29f6a88c1d98fb8006))
+
 # [1.0.0-dev.3](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2023-06-28)
 
 

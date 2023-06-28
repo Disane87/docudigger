@@ -29,7 +29,7 @@ $ npm install -g @disane-dev/docudigger
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
-@disane-dev/docudigger/1.0.0-dev.3 win32-x64 node-v18.16.0
+@disane-dev/docudigger/1.0.0-dev.4 win32-x64 node-v18.16.0
 $ docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND
@@ -50,6 +50,8 @@ USAGE
 * [`docudigger plugins:uninstall PLUGIN...`](#docudigger-pluginsuninstall-plugin-1)
 * [`docudigger plugins:uninstall PLUGIN...`](#docudigger-pluginsuninstall-plugin-2)
 * [`docudigger plugins update`](#docudigger-plugins-update)
+* [`docudigger scrape all`](#docudigger-scrape-all)
+* [`docudigger scrape amazon`](#docudigger-scrape-amazon)
 
 ## `docudigger commands`
 
@@ -337,6 +339,70 @@ FLAGS
 
 DESCRIPTION
   Update installed plugins.
+```
+
+## `docudigger scrape all`
+
+Scrapes all websites periodically
+
+```
+USAGE
+  $ docudigger scrape all [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l <value>] [-c <value> -r]
+
+FLAGS
+  -c, --recurringCron=<value>  [default: * * * * *] Cron pattern to execute periodically
+  -d, --debug
+  -l, --logPath=<value>        [default: ./logs/] Log path
+  -r, --recurring
+  --logLevel=<option>          [default: info] Specify level for logging.
+                               <options: trace|debug|info|warn|error>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Scrapes all websites periodically
+
+EXAMPLES
+  $ docudigger scrape all
+```
+
+## `docudigger scrape amazon`
+
+Used to get invoices from amazon
+
+```
+USAGE
+  $ docudigger scrape amazon -u <value> -p <value> [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l
+    <value>] [-c <value> -r] [--fileDestinationFolder <value>] [--fileFallbackExentension <value>] [-t <value>]
+    [--yearFilter <value>] [--pageFilter <value>] [--onlyNew]
+
+FLAGS
+  -c, --recurringCron=<value>        [default: * * * * *] Cron pattern to execute periodically
+  -d, --debug
+  -l, --logPath=<value>              [default: ./logs/] Log path
+  -p, --password=<value>             (required) Password
+  -r, --recurring
+  -t, --tld=<value>                  [default: de] Amazon top level domain
+  -u, --username=<value>             (required) Username
+  --fileDestinationFolder=<value>    [default: ./data/] Amazon top level domain
+  --fileFallbackExentension=<value>  [default: .pdf] Amazon top level domain
+  --logLevel=<option>                [default: info] Specify level for logging.
+                                     <options: trace|debug|info|warn|error>
+  --onlyNew                          Gets only new invoices
+  --pageFilter=<value>               Filters a page
+  --yearFilter=<value>               Filters a year
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Used to get invoices from amazon
+
+  Scrapes amazon invoices
+
+EXAMPLES
+  $ docudigger scrape amazon
 ```
 <!-- commandsstop -->
 ### NPM

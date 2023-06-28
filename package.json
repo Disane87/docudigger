@@ -1,6 +1,6 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.0.0-dev.3",
+  "version": "1.0.0-dev.4",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
@@ -16,8 +16,8 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json",
     "/package.json",
-    "/README.md",    
-    "/CHANGELOG.md"    
+    "/README.md",
+    "/CHANGELOG.md"
   ],
   "dependencies": {
     "@oclif/core": "^2",
@@ -95,14 +95,12 @@
     "prepack": "npm shrinkwrap && npx oclif manifest",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "npx oclif readme && git add .",
-    
     "presemantic-release": "npm run build",
     "semantic-release": "env-cmd npx semantic-release",
     "semantic-release:dry": "npm run semantic-release -- -d --no-ci",
     "semantic-release:run": "cross-env HUSKY=0  npm run semantic-release -- --no-ci",
     "semantic-release:ci": "cross-env HUSKY=0  npm run semantic-release",
     "postsemantic-release": "//npm run clean",
-   
     "prepare": "echo husky install",
     "clean": "shx rm -rf dist && npx mkdirp ./dist"
   },
