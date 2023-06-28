@@ -85,7 +85,7 @@
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "start": "cd ./bin && dev scrape amazon",
     "build": "shx rm -rf dist && tsc -b",
-    "lint": "eslint . --ext .ts --config .eslintrc",
+    "lint": "eslint ./src --ext .ts --config .eslintrc --fix",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "npm run lint",
     "prepack": "npm shrinkwrap && npm run build && npx oclif manifest && npx oclif readme",

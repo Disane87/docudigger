@@ -13,25 +13,24 @@ import { Order } from "../../../interfaces/order.interface";
 import { AmazonSelectors } from "../../../interfaces/selectors.interface";
 
 
-
 export default class Amazon extends BaseCommand<typeof Amazon> {
-    public pluginName: string = "amazon";
+    public pluginName = `amazon`;
     static description = `Scrapes amazon invoices`;
-    static summary = 'Used to get invoices from amazon';
+    static summary = `Used to get invoices from amazon`;
 
     static examples = [
         `<%= config.bin %> <%= command.id %>`,
     ];
 
     static flags = {
-        username: Flags.string({ char: `u`, description: `Username`, required: true, env: "AMAZON_USERNAME" }),
-        password: Flags.string({ char: `p`, description: `Password`, required: true, env: "AMAZON_PASSWORD" }),
-        fileDestinationFolder: Flags.string({ aliases: [`fileDestinationFolder`], default: `./data/`, description: `Amazon top level domain`, env: "FILE_DESTINATION_FOLDER" }),
-        fileFallbackExentension: Flags.string({ aliases: [`fileFallbackExentension`], default: `.pdf`, description: `Amazon top level domain`, env: "FILE_FALLBACK_EXTENSION" }),
-        tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: "AMAZON_TLD" }),
-        yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: "YEAR_FILTER" }),
-        pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: "PAGE_FILTER" }),
-        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: "ONLY_NEW", default: false }),
+        username: Flags.string({ char: `u`, description: `Username`, required: true, env: `AMAZON_USERNAME` }),
+        password: Flags.string({ char: `p`, description: `Password`, required: true, env: `AMAZON_PASSWORD` }),
+        fileDestinationFolder: Flags.string({ aliases: [`fileDestinationFolder`], default: `./data/`, description: `Amazon top level domain`, env: `FILE_DESTINATION_FOLDER` }),
+        fileFallbackExentension: Flags.string({ aliases: [`fileFallbackExentension`], default: `.pdf`, description: `Amazon top level domain`, env: `FILE_FALLBACK_EXTENSION` }),
+        tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: `AMAZON_TLD` }),
+        yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `YEAR_FILTER` }),
+        pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `PAGE_FILTER` }),
+        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `ONLY_NEW`, default: false }),
     };
 
     public async run(): Promise<void> {
@@ -49,7 +48,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
 
         let processedOrders: { lastRun: Date, orders: Order[] } = { lastRun: null, orders: [] };
         if (fs.existsSync(path.join(currentWorkDir, `process.json`).normalize())) {
-            processedOrders = JSON.parse((await fs.promises.readFile(path.join(currentWorkDir, `process.json`).normalize(), "utf8")));
+            processedOrders = JSON.parse((await fs.promises.readFile(path.join(currentWorkDir, `process.json`).normalize(), `utf8`)));
             if (processedOrders.orders.length == 0) {
                 this.logger.info(`No latest orders. OnlyNew deactivated.`);
                 options.onlyNew = false;
@@ -61,11 +60,11 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         if (options.onlyNew) {
             options.yearFilter = DateTime.now().year;
             options.pageFilter = 1;
-            this.logger.info(`Only invoices since order ${processedOrders.orders[0]?.number} will be gathered.`)
+            this.logger.info(`Only invoices since order ${processedOrders.orders[0]?.number} will be gathered.`);
         }
 
         this.logger.info(`Options: ${JSON.stringify(options, null, 4)}`);
-        const browser = await puppeteer.launch({ headless: 'new', args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
+        const browser = await puppeteer.launch({ headless: `new`, args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
         const page = await browser.newPage();
         const amazon = {
             lang: null,
@@ -184,22 +183,22 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                             fileReaderString = await pdfPage.evaluate(async url => {
                                 return new Promise<string>(async (resolve, reject) => {
                                     // eslint-disable-next-line no-debugger
-                                    console.log(`--- [AMZ SCRAPER] Reading: ${url} ---`);
+                                    // console.log(`--- [AMZ SCRAPER] Reading: ${url} ---`);
                                     const reader = new FileReader();
                                     const response = await window.fetch(url, { mode: `no-cors` });
                                     const data = await response.blob();
                                     reader.readAsBinaryString(data);
-                                    console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
-                                    console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
+                                    // console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
+                                    // console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
                                     reader.onloadend = () => {
                                         resolve(reader.result.toString());
                                     };
                                     reader.onerror = () => {
-                                        console.log(`[AMZ SCRAPER] onerror`);
-                                        console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
-                                        console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
-                                        console.log(`[AMZ SCRAPER] Reader error: ${reader.error.message}`);
-                                        console.log(`--- [AMZ SCRAPER] Reading: ${url} ENDED ---`);
+                                        // console.log(`[AMZ SCRAPER] onerror`);
+                                        // console.log(`[AMZ SCRAPER] Reader result: ${reader.result}`);
+                                        // console.log(`[AMZ SCRAPER] Reader ready state: ${reader.readyState}`);
+                                        // console.log(`[AMZ SCRAPER] Reader error: ${reader.error.message}`);
+                                        // console.log(`--- [AMZ SCRAPER] Reading: ${url} ENDED ---`);
                                         reject(reader.error);
                                         return null;
                                     };

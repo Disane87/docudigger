@@ -13,11 +13,11 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
 
             if (hasMessages) {
                 if (type == `Error`) {
-                    console.error(messages);
+                    logger.error(messages);
                 }
 
                 if (type == `Warning`) {
-                    console.warn(messages);
+                    logger.warn(messages);
                 }
             }
 
@@ -28,8 +28,8 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
     while (!hasMessages) {
 
         if (!options.username && !options.password) {
-            options.username = await ux.prompt('What is your amazaon username?');
-            options.password = await ux.prompt('What is your password?', { type: 'hide' });
+            options.username = await ux.prompt(`What is your amazaon username?`);
+            options.password = await ux.prompt(`What is your password?`, { type: `hide` });
         }
 
         logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
@@ -56,7 +56,7 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
         if (authWarning?.length > 0) {
             const captchaImageUrl = await page.$eval(selectors.captchaImage, (image: HTMLImageElement) => image.src);
             if (captchaImageUrl) {
-                console.error(`Auth with captcha is currently unsupported`);
+                logger.error(`Auth with captcha is currently unsupported`);
 
                 // const captchaImagePage = await browser.newPage();
                 // const captchaResponse = await captchaImagePage.goto(captchaImageUrl);
@@ -87,8 +87,8 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
         // }
 
         if (page.url().indexOf(`/mfa?`) > -1) {
-            console.info(`MFA detected`);
-            const secondFactor = await ux.prompt('What is your two-factor token?', { type: 'mask' })
+            logger.info(`MFA detected`);
+            const secondFactor = await ux.prompt(`What is your two-factor token?`, { type: `mask` });
             await page.type(`input#auth-mfa-otpcode`, secondFactor);
             await page.click(`input#auth-mfa-remember-device`);
             await page.click(`input[type=submit]`);
