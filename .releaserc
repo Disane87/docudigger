@@ -20,7 +20,7 @@
       "@semantic-release/git",
       {
         "message": "chore(release): 📢 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
-        "assets": ["package.json", "npm-shrinkwrap.json"]
+        "assets": ["CHANGELOG.md", "package.json", "package-lock.json", "npm-shrinkwrap.json", "README.md"]
       }
     ]
   ],

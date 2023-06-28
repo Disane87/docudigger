@@ -1,3 +1,10 @@
+# [1.0.0-dev.6](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2023-06-28)
+
+
+### Bug Fixes
+
+* :construction_worker: build system fixes ([e478e6d](https://github.com/Disane87/docudigger/commit/e478e6d16a9f96b64f6704ba769246e8eebf980c))
+
 # [1.0.0-dev.5](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2023-06-28)
 
 
