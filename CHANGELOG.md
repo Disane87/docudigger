@@ -1,3 +1,10 @@
+# [1.0.0-dev.11](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2023-06-28)
+
+
+### Bug Fixes
+
+* **ci:** :rocket: build pipeline ([3acefe4](https://github.com/Disane87/docudigger/commit/3acefe4d9f75b651802d519e9aaea0a1489222b3))
+
 # [1.0.0-dev.10](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2023-06-28)
 
 

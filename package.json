@@ -1,6 +1,6 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.0.0-dev.10",
+  "version": "1.0.0-dev.11",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
@@ -94,7 +94,7 @@
     "posttest": "npm run lint",
     "prepack": "npm shrinkwrap && npx oclif manifest",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "npx oclif readme && git add .",
+    "version": "npx oclif readme",
     "presemantic-release": "npm run build",
     "semantic-release": "env-cmd npx semantic-release",
     "semantic-release:dry": "npm run semantic-release -- -d --no-ci",
