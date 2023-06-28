@@ -1,3 +1,10 @@
+# [1.0.0-dev.3](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2023-06-28)
+
+
+### Bug Fixes
+
+* fixed errors in release pipeline ([154cffb](https://github.com/Disane87/docudigger/commit/154cffb239e676263139c718a0eae207634fffec))
+
 # [1.0.0-dev.2](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2023-06-28)
 
 
