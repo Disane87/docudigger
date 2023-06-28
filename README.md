@@ -22,15 +22,20 @@
 ```sh
 npm install
 ```
-
 ## Usage
+<!-- usage -->
+<!-- usagestop -->
+
+### Commands
+<!-- commands -->
+<!-- commandsstop -->
 ### NPM
 ```npm
 npm run start
 ```
 
 ### Console
-```
+```sh
 ./bin/dev --help
 ```
 
