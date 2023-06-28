@@ -1,2 +1,9 @@
-node_modules
-.git
+*
+!./scripts/
+!./scripts/
+!.env.example
+!.package.json
+!puppeteer-path.js
+!puppeteer.config.cjs
+!./src
+**/*.md

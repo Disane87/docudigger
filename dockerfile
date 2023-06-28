@@ -1,21 +1,32 @@
-FROM node:slim
-WORKDIR /usr/src/app
+FROM ghcr.io/puppeteer/puppeteer:20.7.3
+USER node
+WORKDIR /home/node/docudigger
+# USER root
 
-# We don't need the standalone Chromium
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-ENV AMAZON_USERNAME = ${AMAZON_USERNAME}
-ENV AMAZON_PASSWORD = ${AMAZON_PASSWORD}
-ENV AMAZON_TLD = ${AMAZON_TLD}
-ENV AMAZON_YEAR_FILTER = ${AMAZON_YEAR_FILTER}
-ENV AMAZON_PAGE_FILTER = ${AMAZON_PAGE_FILTER}
-ENV AMAZON_ONLY_NEW = ${AMAZON_ONLY_NEW}
-ENV FILE_DESTINATION_FOLDER = "./data/"
-ENV FILE_FALLBACK_EXTENSION = ".pdf"
-ENV DEBUG = ${AMAZON_PASSWORD}
-ENV LOG_PATH = ${LOG_PATH}
-ENV LOG_LEVEL = ${LOG_LEVEL}
-ENV RECURRING = true
-ENV RECURRING_PATTERN = ${RECURRING_PATTERN}
+RUN mkdir -p data 
+RUN mkdir -p logs
 
-RUN npm install -g concurrently
-CMD ["concurrently","npx docudigger scrape all"]
+ENV AMAZON_USERNAME ${AMAZON_USERNAME}
+ENV AMAZON_PASSWORD ${AMAZON_PASSWORD}
+ENV AMAZON_TLD ${AMAZON_TLD}
+ENV AMAZON_YEAR_FILTER ${AMAZON_YEAR_FILTER}
+ENV AMAZON_PAGE_FILTER ${AMAZON_PAGE_FILTER}
+ENV AMAZON_ONLY_NEW true
+ENV FILE_DESTINATION_FOLDER "data"
+ENV FILE_FALLBACK_EXTENSION ".pdf"
+ENV DEBUG ${DEBUG}
+ENV LOG_PATH "./logs"
+ENV LOG_LEVEL ${LOG_LEVEL}
+ENV RECURRING  true
+ENV RECURRING_PATTERN "*/30 * * * *"
+
+ENV NODE_ENV production
+ENV NPM_CONFIG_PREFIX /home/node/.npm-global
+ENV PATH $PATH:/home/node/.npm-global/bin
+
+
+RUN npm install -g concurrently --ignore-scripts
+RUN npm install -g "@disane-dev/docudigger" --ignore-scripts
+RUN npm install -g puppeteer
+
+CMD ["concurrently","docudigger scrape amazon"]
