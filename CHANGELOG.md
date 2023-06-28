@@ -1,3 +1,11 @@
+# [1.0.0-dev.12](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2023-06-28)
+
+
+### Bug Fixes
+
+* **files:** :bug: pdfs are not written on docker/linux environments ([f45a142](https://github.com/Disane87/docudigger/commit/f45a142c6c300256b06dbbe70f03f062c9d4bda3)), closes [#68](https://github.com/Disane87/docudigger/issues/68)
+* **files:** :bug: pdfs are not written on docker/linux environments ([a432a5b](https://github.com/Disane87/docudigger/commit/a432a5b976b11e5af658da63299d9c6efb39022d))
+
 # [1.0.0-dev.11](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2023-06-28)
 
 
