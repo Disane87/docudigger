@@ -1,3 +1,10 @@
+# [1.0.0-dev.7](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2023-06-28)
+
+
+### Bug Fixes
+
+* :green_heart: ci changes ([9a019f8](https://github.com/Disane87/docudigger/commit/9a019f8c28a592237d5164ef24229cb0d9f9bbad))
+
 # [1.0.0-dev.6](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2023-06-28)
 
 
