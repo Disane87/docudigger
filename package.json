@@ -99,7 +99,7 @@
     "semantic-release:run": "cross-env HUSKY=0  npm run semantic-release -- --no-ci",
     "semantic-release:ci": "cross-env HUSKY=0  npm run semantic-release",
     "postsemantic-release": "//npm run clean",
-    "postbuild": "npm run copy:readme && npm run copy:package.json",
+    "postbuild": "npm run copy:readme && npm run copy:package.json && npm run copy:bin",
     "copy:readme": "copyfiles README.md ./dist",
     "copy:readme:back": "copyfiles README.md ..",
     "copy:bin": "copyfiles ./bin/* ./dist/bin/",
