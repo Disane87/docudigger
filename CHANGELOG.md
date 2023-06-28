@@ -1,3 +1,10 @@
+# [1.0.0-dev.9](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2023-06-28)
+
+
+### Bug Fixes
+
+* **ci:** :rocket: deploy fixed ([66adb01](https://github.com/Disane87/docudigger/commit/66adb01f847241685ca0a2f21a706f4e4d754547))
+
 # [1.0.0-dev.8](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2023-06-28)
 
 
