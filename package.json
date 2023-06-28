@@ -84,7 +84,8 @@
   "scripts": {
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "start": "cd ./bin && dev scrape amazon",
-    "prebuild": "npx mkdirp ./dist && npm run lint",
+    "prelint": "npm run clean",
+    "prebuild": "npm run lint",
     "build": "tsc -b",
     "lint": "eslint ./src --ext .ts --config .eslintrc --fix",
     "postpack": "shx rm -f oclif.manifest.json",
@@ -100,7 +101,7 @@
     "postbuild": "copyfiles package.json ./dist && copyfiles README.md ./dist",
     "copy:readme": "copyfiles README.md ./dist",
     "prepare": "echo husky install",
-    "clean": "shx rm -rf dist"
+    "clean": "shx rm -rf dist && npx mkdirp ./dist"
   },
   "engines": {
     "node": ">=12.0.0"
