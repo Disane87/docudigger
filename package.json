@@ -1,6 +1,6 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.0.0-dev.2",
+  "version": "1.0.0-dev.3",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
@@ -102,7 +102,7 @@
     "postbuild": "npm run copy:readme && npm run copy:package.json && npm run copy:bin",
     "copy:readme": "copyfiles README.md ./dist",
     "copy:readme:back": "copyfiles README.md ..",
-    "copy:bin": "copyfiles ./bin/* ./dist/bin/",
+    "copy:bin": "copyfiles ./bin/* ./dist/",
     "copy:package.json": "copyfiles package.json ./dist",
     "copy:package.json:back": "copyfiles package.json ..",
     "prepare": "echo husky install",
