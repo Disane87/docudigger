@@ -20,10 +20,10 @@ export const createLogger = (logLevel: string, logPath: string, context = `DocuD
         level: logLevel.toString(),
         format: logFormat,
         transports:  [
+            new winston.transports.Console(),
             new winston.transports.File({ filename: path.join(logPath, `error.log`).normalize(), level: `error` }),
             new winston.transports.File({ filename: path.join(logPath, `verbose.log`).normalize(), level: `verbose` }),
-            new winston.transports.File({ filename: path.join(logPath, `combined.log`).normalize() }),
-            new winston.transports.Console()
+            new winston.transports.File({ filename: path.join(logPath, `combined.log`).normalize() })
         ]
     });
 };

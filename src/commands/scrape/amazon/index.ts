@@ -35,9 +35,9 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
 
     public async run(): Promise<void> {
 
-        for (const [flag, value] of Object.entries(this.flags)) {
-            this.log(`${flag}: ${value}`);
-        }
+        // for (const [flag, value] of Object.entries(this.flags)) {
+        //     this.log(`${flag}: ${value}`);
+        // }
 
         const currentWorkDir = path.dirname(require.main.filename);
 
@@ -222,11 +222,15 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                         if (fileBuffer) {
                             this.logger.debug(`Buffer exists`);
                             this.logger.info(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
-                            !fs.existsSync(options.fileDestinationFolder) && fs.mkdirSync(options.fileDestinationFolder);
+
+                            const destPluginFileFolder = path.join(options.fileDestinationFolder, this.pluginName);
                             const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fileFallbackExentension;
-                            const fileName = `${order.datePlain.replace(`.`, ``).replace(` `, `_`)}_AMZ_${order.number}_${invoiceIndex + 1}`;
-                            const fullFilePath = path.join(options.fileDestinationFolder, this.pluginName, `${fileName}${fileExtention}`);
+                            const fileName = `${order.date}_AMZ_${order.number}_${invoiceIndex + 1}`;
+                            const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtention}`);
                             const pathNormalized = path.normalize(fullFilePath);
+                            
+                            !fs.existsSync(destPluginFileFolder) && fs.mkdirSync(destPluginFileFolder);
+
                             if (!fs.existsSync(pathNormalized)) {
                                 this.logger.debug(`Fullpath not exists: ${pathNormalized}`);
                                 try {

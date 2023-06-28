@@ -43,7 +43,7 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
 
         this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || `./logs/`, this.id);
 
-        this.logger.info(`Got flags for plugin ${this.id} -> ${JSON.stringify(flags, null, 4)}`);
+        // this.logger.info(`Got flags for plugin ${this.id} -> ${JSON.stringify(flags, null, 4)}`);
     }
 
     protected async catch(err: Error & { exitCode?: number }): Promise<unknown> {

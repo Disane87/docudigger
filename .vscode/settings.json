@@ -12,7 +12,9 @@
     "docs",
     "cli",
     "logs",
-    "lint"
+    "lint",
+    "docker",
+    "files"
   ],
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "npm.exclude": "**/@(vendor|node_modules|bower_components|dist|static)/**"
