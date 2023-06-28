@@ -28,9 +28,11 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         fileDestinationFolder: Flags.string({ aliases: [`fileDestinationFolder`], default: `./data/`, description: `Amazon top level domain`, env: `FILE_DESTINATION_FOLDER` }),
         fileFallbackExentension: Flags.string({ aliases: [`fileFallbackExentension`], default: `.pdf`, description: `Amazon top level domain`, env: `FILE_FALLBACK_EXTENSION` }),
         tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: `AMAZON_TLD` }),
-        yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `YEAR_FILTER` }),
-        pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `PAGE_FILTER` }),
-        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `ONLY_NEW`, default: false }),
+        yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `AMAZON_YEAR_FILTER` }),
+        pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `AMAZON_PAGE_FILTER` }),
+        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `AMAZON_ONLY_NEW`, parse: async (input) => {
+            return !!input;
+        }}),
     };
 
     public async run(): Promise<void> {
@@ -38,17 +40,15 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         // for (const [flag, value] of Object.entries(this.flags)) {
         //     this.log(`${flag}: ${value}`);
         // }
-
-        const currentWorkDir = path.dirname(require.main.filename);
-
         const options = this.flags;
 
         const puppeteerArgs = [`--window-size=1920,1080`, `--no-sandbox`, `--disable-setuid-sandbox`];
         const selectorWaitTimeout = 2000;
+        const processJsonFile = path.resolve(path.join(`./`, `process.json`)).normalize();
 
         let processedOrders: { lastRun: Date, orders: Order[] } = { lastRun: null, orders: [] };
-        if (fs.existsSync(path.join(currentWorkDir, `process.json`).normalize())) {
-            processedOrders = JSON.parse((await fs.promises.readFile(path.join(currentWorkDir, `process.json`).normalize(), `utf8`)));
+        if (fs.existsSync(processJsonFile)) {
+            processedOrders = JSON.parse((await fs.promises.readFile(processJsonFile, `utf8`)));
             if (processedOrders.orders.length == 0) {
                 this.logger.info(`No latest orders. OnlyNew deactivated.`);
                 options.onlyNew = false;
@@ -159,8 +159,8 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                     }
 
                     if (options.onlyNew && (orderNumber == processedOrders.orders[0]?.number)) {
-                        this.logger.info(`Order ${orderNumber} already handled. Skipping`);
-                        continue;
+                        this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
+                        process.exit();
                     }
 
                     if (invoiceUrls.length == 0) {
@@ -223,13 +223,15 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                             this.logger.debug(`Buffer exists`);
                             this.logger.info(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
 
-                            const destPluginFileFolder = path.join(options.fileDestinationFolder, this.pluginName);
+                            const destPluginFileFolder = path.resolve(path.join(options.fileDestinationFolder, this.pluginName, `/`), `./`);
                             const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fileFallbackExentension;
                             const fileName = `${order.date}_AMZ_${order.number}_${invoiceIndex + 1}`;
                             const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtention}`);
                             const pathNormalized = path.normalize(fullFilePath);
                             
-                            !fs.existsSync(destPluginFileFolder) && fs.mkdirSync(destPluginFileFolder);
+                            if(!fs.existsSync(destPluginFileFolder)){
+                                fs.mkdirSync(destPluginFileFolder, { recursive: true });
+                            }
 
                             if (!fs.existsSync(pathNormalized)) {
                                 this.logger.debug(`Fullpath not exists: ${pathNormalized}`);
@@ -269,8 +271,10 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
             await browser.close();
         }
         fs.writeFileSync(
-            path.join(currentWorkDir, `process.json`).normalize(),
+            processJsonFile,
             JSON.stringify({ lastRun: DateTime.now().toISO(), orders }, null, 4)
         );
+        this.logger.info(`All done. Exiting`);
+        process.exit();
     }
 }
