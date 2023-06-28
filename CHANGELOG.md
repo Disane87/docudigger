@@ -1,3 +1,10 @@
+# [1.0.0-dev.5](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2023-06-28)
+
+
+### Bug Fixes
+
+* fixed build config ([9f71b2b](https://github.com/Disane87/docudigger/commit/9f71b2be3821add5e92c033971c6c15a77de85a4))
+
 # [1.0.0-dev.4](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2023-06-28)
 
 

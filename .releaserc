@@ -6,13 +6,13 @@
     [
       "@semantic-release/npm",
       {
-        "tarballDir": "./dist/archive"
+        "tarballDir": "./archive"
       }
     ],
     [
       "@semantic-release/github",
       {
-        "assets": ["./dist/archive/*.tgz"],
+        "assets": ["./archive/*.tgz"],
         "fail": true
       }
     ],

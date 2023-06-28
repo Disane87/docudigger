@@ -1,7 +1,0 @@
-FROM node:slim
-WORKDIR /usr/src/app
-
-COPY . .
-ENTRYPOINT ["tail"]
-#ENTRYPOINT ["npx", "oclif", "pack", "tarballs"]
-CMD ["-f","/dev/null"]
