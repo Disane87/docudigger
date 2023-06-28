@@ -91,7 +91,7 @@
     "posttest": "npm run lint",
     "prepack": "npm shrinkwrap && npx oclif manifest",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "npx oclif readme && npm run copy:readme && git add ../README.md ",
+    "version": "npx oclif readme && git add ../README.md ",
     "postversion": "npm run copy:package.json:back && npm run copy:readme:back ",
     "presemantic-release": "npm run build",
     "semantic-release": "env-cmd npx semantic-release",

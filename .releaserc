@@ -6,19 +6,22 @@
     [
       "@semantic-release/npm",
       {
-        "pkgRoot": "dist"
+        "pkgRoot": "dist",
+        "tarballDir": "./dist/archive"
       }
     ],
     [
       "@semantic-release/github",
       {
-        "assets": ["dist/**"]
+        "assets": ["./dist/archive/*.tgz"],
+        "fail": true
       }
     ],
     [
       "@semantic-release/git",
       {
-        "message": "chore(release): 📢 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        "message": "chore(release): 📢 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+        "assets": ["package.json", "npm-shrinkwrap.json"]
       }
     ]
   ],
