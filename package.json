@@ -87,6 +87,7 @@
   "scripts": {
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "start": "cd ./bin && dev scrape amazon",
+    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape amazon",
     "prebuild": "npm run lint",
     "build": "tsc -b",
     "lint": "eslint ./src --ext .ts --config .eslintrc --fix",

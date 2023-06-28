@@ -5,10 +5,15 @@
       "type": "node",
       "request": "launch",
       "name": "Scrape amazon",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}/bin/dev",
-      "args": ["scrape", "amazon", "--onlyNew"],
-
+      "args": [
+        "scrape",
+        "amazon",
+        "--onlyNew"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "envFile": "${workspaceFolder}/.env"
@@ -17,10 +22,14 @@
       "type": "node",
       "request": "launch",
       "name": "Write env",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}/bin/dev",
-      "args": ["config", "example"],
-
+      "args": [
+        "config",
+        "example"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -28,10 +37,13 @@
       "type": "node",
       "request": "launch",
       "name": "Help",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}/bin/dev",
-      "args": ["help"],
-
+      "args": [
+        "help"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -39,10 +51,14 @@
       "type": "node",
       "request": "launch",
       "name": "Scape all",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}/bin/dev",
-      "args": ["scrape", "all"],
-
+      "args": [
+        "scrape",
+        "all"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -50,12 +66,23 @@
       "type": "node",
       "request": "launch",
       "name": "Get all flags",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}/bin/dev",
-      "args": ["commands", "--json"],
-
+      "args": [
+        "commands",
+        "--json"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Docker Node.js Launch",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run: debug",
+      "platform": "node"
     }
   ]
 }
