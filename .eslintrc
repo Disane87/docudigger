@@ -14,7 +14,6 @@
     "quotes": ["error", "backtick"],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
     "no-console": 1,
-    "semi": "error",
-    // "empty-brace-spaces": "warn"
+    "semi": "error"
   }
 }

@@ -84,7 +84,7 @@
   "scripts": {
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "start": "cd ./bin && dev scrape amazon",
-    "build": "shx rm -rf dist && tsc -b",
+    "build": "npm run clean && tsc -b",
     "lint": "eslint ./src --ext .ts --config .eslintrc --fix",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "npm run lint",
@@ -95,8 +95,10 @@
     "semantic-release:dry": "npm run lint && npm run build && npm run semantic-release -- -d --no-ci",
     "semantic-release:run": "npm run lint && npm run build && cross-env HUSKY=0  npm run semantic-release -- --no-ci",
     "semantic-release:ci": "npm run lint && npm run build && cross-env HUSKY=0  npm run semantic-release",
-    "postversion": "copyfiles package.json ..",
-    "prepare": "echo husky install"
+    "postsemantic-release": "npm run clean",
+    "postbuild": "copyfiles package.json ./dist",
+    "prepare": "echo husky install",
+    "clean": "shx rm -rf dist"
   },
   "engines": {
     "node": ">=12.0.0"
