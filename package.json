@@ -100,7 +100,7 @@
     "semantic-release:dry": "npm run semantic-release -- -d --no-ci",
     "semantic-release:run": "cross-env HUSKY=0  npm run semantic-release -- --no-ci",
     "semantic-release:ci": "cross-env HUSKY=0  npm run semantic-release",
-    "postsemantic-release": "//npm run clean",
+    "postsemantic-release": "npm run clean",
     "prepare": "echo husky install",
     "clean": "shx rm -rf dist && npx mkdirp ./dist"
   },
