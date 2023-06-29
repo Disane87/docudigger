@@ -1,3 +1,14 @@
+*-debug.log
+*-error.log
+/.nyc_output
+/dist
+/archive
+/lib
+/package-lock.json
+/tmp
+/yarn.lock
+node_modules
+oclif.manifest.json
 # Logs
 logs
 *.log
@@ -9,6 +20,9 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# .npmrc
+.npmrc
 
 # Runtime data
 pids
@@ -131,3 +145,4 @@ dist
 
 .history
 data
+process.json

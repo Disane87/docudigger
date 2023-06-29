@@ -1,0 +1,12 @@
+*
+!./scripts/
+!./scripts/
+!./dist/
+!./bin/
+!.env.example
+!.package.json
+!package.json
+!package-lock.json
+!pm-shrinkwrap.json
+!./src
+**/*.md

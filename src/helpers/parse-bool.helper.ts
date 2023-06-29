@@ -1,0 +1,1 @@
+export const parseBool = async (input) =>  !!input ;

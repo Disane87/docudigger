@@ -1,21 +1,98 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
       "type": "node",
       "request": "launch",
-      "autoAttachChildProcesses": true,
-      "name": "Launch Program",
-      "skipFiles": ["<node_internals>/**"],
+      "name": "Scrape amazon",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": [
+        "scrape",
+        "amazon",
+        "--onlyNew"
+      ],
       "console": "integratedTerminal",
-      "program": "${workspaceFolder}\\src\\app.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
-      //   "args": ["--arg1", "value1", "--arg2", "value2"],
+      "internalConsoleOptions": "neverOpen",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Write env",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": [
+        "config",
+        "example"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Help",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": [
+        "help"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Scape all",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": [
+        "scrape",
+        "all"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Get all flags",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/dev",
+      "args": [
+        "commands",
+        "--json"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Docker: Attach to Node",
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/home/node/docudigger",
+      "preLaunchTask": "docker-run: debug",
+      "trace": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "console",
+      "sourceMaps": true,
+      "skipFiles": [
+          "<node_internals>/**"
+      ]
     }
   ]
 }

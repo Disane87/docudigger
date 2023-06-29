@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "node-build",
+			"type": "npm",
+			"script": "build",
+		},
+		{
+			"type": "docker-build",
+			"label": "docker-build",
+			"platform": "node",
+			"dockerBuild": {
+				"dockerfile": "${workspaceFolder}/dockerfile.debug",
+				"context": "${workspaceFolder}",
+				"pull": true
+			},
+			"dependsOn": [
+				"node-build"
+			]
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: release",
+			"dependsOn": [
+				"docker-build"
+			],
+			"platform": "node",
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: debug",
+			"dependsOn": [
+				"docker-build"
+			],
+			"dockerRun": {
+				"portsPublishAll": true,
+				"env": {
+					"NODE_ENV": "development"
+				},
+				"envFiles": [".env"],
+				"command": "npm run start:debug",
+				"ports": [{
+					"containerPort": 9229,
+					"hostPort": 9229,
+				}]
+			},
+			"node": {
+				"enableDebugging": true
+			}
+		}
+	]
+}

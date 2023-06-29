@@ -1,0 +1,16 @@
+FROM ghcr.io/puppeteer/puppeteer:20.7.3
+USER node
+WORKDIR /home/node/docudigger
+
+ENV NODE_ENV=production
+ENV NPM_CONFIG_PREFIX /home/node/.npm-global
+ENV PATH $PATH:/home/node/.npm-global/bin
+
+COPY ["./dist/","./bin/","package*.json", "package-lock*.json", "npm-shrinkwrap*.json", "./"]
+RUN npm install --production --silent --ignore-scripts
+RUN npm install -g puppeteer --production --silent 
+# RUN mv node_modules ../
+COPY . .
+EXPOSE 9229
+# RUN chown -R node /home/node/docudigger
+CMD ["npm", "run", "start:debug"]

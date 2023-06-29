@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to amazon-invoice-scraper 👋</h1>
+<h1 align="center">Welcome to docudigger 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="npm (custom registry)" src="https://img.shields.io/npm/v/@disane-dev/amazon-invoice-scraper/latest?registry_uri=https%3A%2F%2Fnpm.disane.dev">
   <img src="https://img.shields.io/badge/npm-%3E%3D9.1.2-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D18.12.1-blue.svg" />
   <a href="#" target="_blank">
@@ -8,30 +8,140 @@
   </a>
 </p>
 
-> Amazon scraper for getting invoices automagically as pdf (useful for taxes or DMS)
+> Document scraper for getting invoices automagically as pdf (useful for taxes or DMS)
 
-### 🏠 [Homepage](https://repo.disane.dev/Disane/amazon-invoice-scraper#readme)
+### 🏠 [Homepage](https://repo.disane.dev/Disane/docudigger#readme)
 
 ## Prerequisites
 
 - npm >=9.1.2
 - node >=18.12.1
 
+
+## Configuration
+All settings can be changed via `CLI`, env variable (even when using docker).
+
+
+| Setting  |  Description  | Default value  |
+|---|---|---|
+| AMAZON_USERNAME  | Your Amazon username  | `null`  |
+| AMAZON_PASSWORD  | Your amazon password  | `null`  |
+| AMAZON_TLD  |  Amazon top level domain  | `de`  |
+| AMAZON_YEAR_FILTER  | Only extracts invoices from this year (i.e. 2023)  | `2023` |
+| AMAZON_PAGE_FILTER  | Only extracts invoices from this page (i.e. 2)  | `null`  |
+| AMAZON_ONLY_NEW  | Tracks already scraped documents and starts a new run at the last scraped one  | `true`  |
+| FILE_DESTINATION_FOLDER  | Destination path for all scraped documents  | `./documents/` |
+| FILE_FALLBACK_EXTENSION  | Fallback extension when no extension can be determined  | `.pdf`   |
+| DEBUG  | Debug flag (sets the loglevel to DEBUG)  | `false`  |
+| LOG_PATH  | Sets the log path   | `./logs/` |
+| LOG_LEVEL  | Log level (see https://github.com/winstonjs/winston#logging-levels)  | `info`  |
+| RECURRING  | Flag for executing the script periodically. Needs 'RECURRING_PATTERN' to be set. Default `true`when using docker container  | `false`  |
+| RECURRING_PATTERN  | Cron pattern to execute periodically. Needs RECURRING to true  | `*/30 * * * *`  |
+| TZ  | Timezone used for docker enviroments  | `Europe/Berlin`  |
+
 ## Install
 
 ```sh
 npm install
 ```
-
 ## Usage
-### As module
-```sh
-npm run start
+<!-- usage -->
+```sh-session
+$ npm install -g @disane-dev/docudigger
+$ docudigger COMMAND
+running command...
+$ docudigger (--version)
+@disane-dev/docudigger/1.0.0-dev.13 win32-x64 node-v18.16.0
+$ docudigger --help [COMMAND]
+USAGE
+  $ docudigger COMMAND
+...
+```
+<!-- usagestop -->
+
+## `docudigger scrape all`
+
+Scrapes all websites periodically (defgault for docker environment)
+
+```
+USAGE
+  $ docudigger scrape all [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l <value>] [-c <value> -r]
+
+FLAGS
+  -c, --recurringCron=<value>  [default: * * * * *] Cron pattern to execute periodically
+  -d, --debug
+  -l, --logPath=<value>        [default: ./logs/] Log path
+  -r, --recurring
+  --logLevel=<option>          [default: info] Specify level for logging.
+                               <options: trace|debug|info|warn|error>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Scrapes all websites periodically
+
+EXAMPLES
+  $ docudigger scrape all
 ```
 
-### as CLI
+## `docudigger scrape amazon`
+
+Used to get invoices from amazon
+
+```
+USAGE
+  $ docudigger scrape amazon -u <value> -p <value> [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l
+    <value>] [-c <value> -r] [--fileDestinationFolder <value>] [--fileFallbackExentension <value>] [-t <value>]
+    [--yearFilter <value>] [--pageFilter <value>] [--onlyNew]
+
+FLAGS
+  -c, --recurringCron=<value>        [default: * * * * *] Cron pattern to execute periodically
+  -d, --debug
+  -l, --logPath=<value>              [default: ./logs/] Log path
+  -p, --password=<value>             (required) Password
+  -r, --recurring
+  -t, --tld=<value>                  [default: de] Amazon top level domain
+  -u, --username=<value>             (required) Username
+  --fileDestinationFolder=<value>    [default: ./data/] Amazon top level domain
+  --fileFallbackExentension=<value>  [default: .pdf] Amazon top level domain
+  --logLevel=<option>                [default: info] Specify level for logging.
+                                     <options: trace|debug|info|warn|error>
+  --onlyNew                          Gets only new invoices
+  --pageFilter=<value>               Filters a page
+  --yearFilter=<value>               Filters a year
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Used to get invoices from amazon
+
+  Scrapes amazon invoices
+
+EXAMPLES
+  $ docudigger scrape amazon
+```
+
+## Docker
 ```sh
-npx amazon-invoice-scraper --help
+docker run \ 
+  -e AMAZON_USERNAME='[YOUR MAIL]' \ 
+  -e AMAZON_PASSWORD='[YOUR PW]' \
+  -e AMAZON_TLD='de' \ 
+  -e AMAZON_YEAR_FILTER='2020' \
+  -e AMAZON_PAGE_FILTER='1' \
+  -e LOG_LEVEL='info' \
+  -v "C:/temp/docudigger/:/home/node/docudigger" \
+  ghcr.io/disane87/docudigger
+```
+
+## Dev-Time 🪲
+### NPM
+```npm
+npm install
+[Change created .env for your needs]
+npm run start
 ```
 
 ## Author
@@ -44,7 +154,7 @@ npx amazon-invoice-scraper --help
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://repo.disane.dev/Disane/amazon-invoice-scraper/issues). You can also take a look at the [contributing guide](https://repo.disane.dev/Disane/amazon-invoice-scraper/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://repo.disane.dev/Disane/docudigger/issues). You can also take a look at the [contributing guide](https://repo.disane.dev/Disane/docudigger/blob/master/CONTRIBUTING.md).
 
 ## Show your support
 
