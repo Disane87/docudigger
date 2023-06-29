@@ -34,7 +34,7 @@
     [
       "@semantic-release/npm",
       {
-        "tarballDir": "./archive"
+        "tarballDir": "./archive/"
       }
     ],
     [
@@ -50,22 +50,7 @@
         "assets": ["./archive/*.tgz"],
         "fail": true
       }
-    ],
-    ["@codedependant/semantic-release-docker", {
-      "dockerTags": [ 
-        "{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-        "{{major}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-        "{{major}}.{{minor}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-        "{{version}}"
-      ],
-      "dockerRegistry": "ghcr.io",
-      "dockerFile": "dockerfile",
-      "dockerLogin": false,
-      "dockerProject": "disane87/docudigger",
-      "dockerArgs": {
-        "DOCUDIGGER_VERSION": "{{next.version}}"
-      }
-    }]
+    ]
   ],
   "branches": [
     "main",
