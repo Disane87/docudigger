@@ -99,7 +99,7 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "npx oclif readme",
     "presemantic-release": "npm run build",
-    "semantic-release": "env-cmd --verbose npx semantic-release",
+    "semantic-release": "env-cmd npx semantic-release",
     "semantic-release:dry": "npm run semantic-release -- -d --no-ci",
     "semantic-release:run": "npm run semantic-release -- --no-ci",
     "semantic-release:ci": "npm run semantic-release",
