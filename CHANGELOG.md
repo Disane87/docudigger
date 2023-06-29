@@ -44,6 +44,14 @@
 ### Bug Fixes
 
 * :bug: fixed bug while handling the recurrance and grafully shutdowns ([ede3746](https://github.com/disane87/docudigger/commit/ede3746027539a1f0fcf0134799783c7c7cdca9c))
+* fixed .releaserc ([f2a6d84](https://github.com/disane87/docudigger/commit/f2a6d848f1d981527ea12f36baa31d62dc2455ff))
+
+# [1.0.0-dev.13](https://github.com/disane87/docudigger/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2023-06-29)
+
+
+### Bug Fixes
+
+* :bug: fixed bug while handling the recurrance and grafully shutdowns ([ede3746](https://github.com/disane87/docudigger/commit/ede3746027539a1f0fcf0134799783c7c7cdca9c))
 
 # [1.0.0-dev.12](https://github.com/Disane87/docudigger/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2023-06-28)
 
