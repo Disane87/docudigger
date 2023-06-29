@@ -44,7 +44,7 @@
     "@types/chai": "^4",
     "@types/luxon": "^3.3.0",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^20.3.2",
+    "@types/node": "^18.11.9",
     "@types/node-cron": "^3.0.8",
     "@types/puppeteer": "^7.0.4",
     "@types/winston": "^2.4.4",
