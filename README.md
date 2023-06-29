@@ -51,7 +51,7 @@ $ npm install -g @disane-dev/docudigger
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
-@disane-dev/docudigger/1.0.0 win32-x64 node-v18.16.0
+@disane-dev/docudigger/1.0.1 win32-x64 node-v18.16.0
 $ docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND

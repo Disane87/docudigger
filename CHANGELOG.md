@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/disane87/docudigger/compare/v1.0.0...v1.0.1) (2023-06-29)
+
+
+### Bug Fixes
+
+* removed npmrc ([f8eeebf](https://github.com/disane87/docudigger/commit/f8eeebf6997d93bffd103f6a1662b84a373a6a26))
+
 # [1.0.0](https://github.com/disane87/docudigger/compare/...v1.0.0) (2023-06-29)
 
 
