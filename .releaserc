@@ -59,11 +59,10 @@
         "{{version}}"
       ],
       "dockerRegistry": "ghcr.io",
-      "dockerFile": "Dockerfile",
+      "dockerFile": "dockerfile",
       "dockerLogin": false,
-      "dockerProject": "@disane-dev",
+      "dockerProject": "Disane87/docudigger",
       "dockerArgs": {
-        "API_TOKEN": true, 
         "DOCUDIGGER_VERSION": "{{next.version}}"
       }
     }]

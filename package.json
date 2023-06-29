@@ -1,15 +1,15 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.0.0-dev.12",
+  "version": "1.0.0-dev.13",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
     "docudigger": "./bin/run"
   },
-  "homepage": "https://github.com/Disane87/docudigger",
+  "homepage": "https://github.com/disane87/docudigger",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "Disane87/docudigger",
+  "repository": "disane87/docudigger",
   "files": [
     "/bin",
     "/dist",
@@ -61,7 +61,7 @@
     "husky": "^8.0.3",
     "mocha": "^10",
     "oclif": "^3.9.1",
-    "semantic-release": "^21.0.5",
+    "semantic-release": "^21.0.6",
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.0",
@@ -101,12 +101,12 @@
     "presemantic-release": "npm run build",
     "semantic-release": "env-cmd --verbose npx semantic-release",
     "semantic-release:dry": "npm run semantic-release -- -d --no-ci",
-    "semantic-release:run": "HUSKY=0 npm run semantic-release -- --no-ci",
-    "semantic-release:ci": "HUSKY=0 npm run semantic-release",
+    "semantic-release:run": "npm run semantic-release -- --no-ci",
+    "semantic-release:ci": "npm run semantic-release",
     "postsemantic-release": "npm run clean",
     "prepare": "echo husky install",
     "clean": "shx rm -rf dist && npx mkdirp ./dist && shx rm -rf archive && npx mkdirp ./archive",
-    "build:image": "cross-var docker build --build-arg DOCUDIGGER_VERSION=$npm_package_version --pull --rm -f dockerfile -t docudigger:latest .",
+    "build:image": "cross-var docker build --build-arg DOCUDIGGER_VERSION=$npm_package_version --pull --rm -f dockerfile -t \"ghcr.io/disane87/docudigger:$npm_package_version\" .",
     "prestart:docker": "npm run build:image",
     "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" docudigger"
   },

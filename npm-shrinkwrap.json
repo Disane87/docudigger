@@ -1,12 +1,12 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.0.0-dev.12",
+  "version": "1.0.0-dev.13",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@disane-dev/docudigger",
-      "version": "1.0.0-dev.12",
+      "version": "1.0.0-dev.13",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
@@ -54,7 +54,7 @@
         "husky": "^8.0.3",
         "mocha": "^10",
         "oclif": "^3.9.1",
-        "semantic-release": "^21.0.5",
+        "semantic-release": "^21.0.6",
         "shx": "^0.3.4",
         "ts-node": "^10.9.1",
         "tslib": "^2.6.0",
@@ -16485,9 +16485,9 @@
       }
     },
     "node_modules/semantic-release": {
-      "version": "21.0.5",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-21.0.5.tgz",
-      "integrity": "sha512-mCc7Hx9Ro/1Clk9tLLgwQIQuiEzx+1OX12EazvNysnx1VG4eaNJE9b9IyWtTxyFxaFYi7nM5VB5ZDVzheHTDPA==",
+      "version": "21.0.6",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-21.0.6.tgz",
+      "integrity": "sha512-NDyosObAwUNzPpdf+mpL49Xy+5iYHjdWM34LBNdbdYv9vBLbw+eCCDihxcqPh+f9m4ZzlBrYCkHUaZv2vPGW9A==",
       "dev": true,
       "dependencies": {
         "@semantic-release/commit-analyzer": "^10.0.0",
