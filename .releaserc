@@ -60,7 +60,6 @@
       ],
       "dockerRegistry": "ghcr.io",
       "dockerFile": "dockerfile",
-      "dockerFile": "dockerfile",
       "dockerLogin": false,
       "dockerProject": "disane87/docudigger",
       "dockerArgs": {
