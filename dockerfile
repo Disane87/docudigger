@@ -1,4 +1,7 @@
+ARG DOCUDIGGER_VERSION
+
 FROM ghcr.io/puppeteer/puppeteer:20.7.3
+ARG DOCUDIGGER_VERSION
 USER node
 WORKDIR /home/node/docudigger
 # USER root
@@ -20,13 +23,16 @@ ENV LOG_LEVEL ${LOG_LEVEL}
 ENV RECURRING  true
 ENV RECURRING_PATTERN "*/30 * * * *"
 
+ENV DOCUDIGGER_VERSION $DOCUDIGGER_VERSION
+
+
 ENV NODE_ENV production
 ENV NPM_CONFIG_PREFIX /home/node/.npm-global
 ENV PATH $PATH:/home/node/.npm-global/bin
 
 
 RUN npm install -g concurrently --ignore-scripts
-RUN npm install -g "@disane-dev/docudigger@v1.0.0-dev.8" --ignore-scripts
+RUN npm install -g @disane-dev/docudigger@$DOCUDIGGER_VERSION --ignore-scripts
 RUN npm install -g puppeteer
 
-CMD ["concurrently","docudigger scrape amazon"]
+CMD ["concurrently","docudigger scrape all"]

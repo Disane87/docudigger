@@ -78,11 +78,21 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
-      "name": "Docker Node.js Launch",
-      "type": "docker",
-      "request": "launch",
+      "name": "Docker: Attach to Node",
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/home/node/docudigger",
       "preLaunchTask": "docker-run: debug",
-      "platform": "node"
+      "trace": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "console",
+      "sourceMaps": true,
+      "skipFiles": [
+          "<node_internals>/**"
+      ]
     }
   ]
 }

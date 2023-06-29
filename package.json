@@ -30,6 +30,7 @@
     "winston": "^3.9.0"
   },
   "devDependencies": {
+    "@codedependant/semantic-release-docker": "^4.3.0",
     "@commitlint/config-conventional": "^17.6.6",
     "@oclif/test": "^2.3.25",
     "@saithodev/semantic-release-gitea": "^2.1.0",
@@ -50,6 +51,7 @@
     "chai": "^4",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.43.0",
     "eslint-config-oclif": "^4",
@@ -87,7 +89,7 @@
   "scripts": {
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "start": "cd ./bin && dev scrape amazon",
-    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape amazon",
+    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape all",
     "prebuild": "npm run lint",
     "build": "tsc -b",
     "lint": "eslint ./src --ext .ts --config .eslintrc --fix",
@@ -97,14 +99,14 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "npx oclif readme",
     "presemantic-release": "npm run build",
-    "semantic-release": "env-cmd npx semantic-release",
+    "semantic-release": "env-cmd --verbose npx semantic-release",
     "semantic-release:dry": "npm run semantic-release -- -d --no-ci",
-    "semantic-release:run": "cross-env HUSKY=0  npm run semantic-release -- --no-ci",
-    "semantic-release:ci": "cross-env HUSKY=0  npm run semantic-release",
+    "semantic-release:run": "HUSKY=0 npm run semantic-release -- --no-ci",
+    "semantic-release:ci": "HUSKY=0 npm run semantic-release",
     "postsemantic-release": "npm run clean",
     "prepare": "echo husky install",
     "clean": "shx rm -rf dist && npx mkdirp ./dist && shx rm -rf archive && npx mkdirp ./archive",
-    "build:image": "docker build --pull --rm -f dockerfile -t docudigger:latest .",
+    "build:image": "cross-var docker build --build-arg DOCUDIGGER_VERSION=$npm_package_version --pull --rm -f dockerfile -t docudigger:latest .",
     "prestart:docker": "npm run build:image",
     "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" docudigger"
   },
