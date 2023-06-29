@@ -1,3 +1,15 @@
+# [1.1.0-dev.1](https://github.com/disane87/docudigger/compare/v1.0.1...v1.1.0-dev.1) (2023-06-29)
+
+
+### Features
+
+* :sparkles: support for SUBFOLDER_FOR_PAGES to enable creating documents in subfolders for each plugin ([f2eb3cf](https://github.com/disane87/docudigger/commit/f2eb3cfed4211f90f94583a73f63a0c277ff3cdc)), closes [#80](https://github.com/disane87/docudigger/issues/80)
+
+
+### Bug Fixes
+
+* **deps:** update dependency luxon to ^3.1.0 [security] ([#76](https://github.com/disane87/docudigger/issues/76)) ([c587c32](https://github.com/disane87/docudigger/commit/c587c3281cfc230c897708d08fa7c70993057b0e))
+
 ## [1.0.1](https://github.com/disane87/docudigger/compare/v1.0.0...v1.0.1) (2023-06-29)
 
 

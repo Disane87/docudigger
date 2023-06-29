@@ -33,6 +33,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `AMAZON_YEAR_FILTER` }),
         pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `AMAZON_PAGE_FILTER` }),
         onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `AMAZON_ONLY_NEW`, parse: parseBool }),
+        sunFolderForPages: Flags.boolean({ aliases: [`sunFolderForPages`], description: `Creates subfolders for every scraped page/plugin`, env: `SUBFOLDER_FOR_PAGES`, parse: parseBool }),
     };
 
     public async run(): Promise<void> {
@@ -225,7 +226,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                             this.logger.debug(`Buffer exists`);
                             this.logger.info(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
 
-                            const destPluginFileFolder = path.resolve(path.join(options.fileDestinationFolder, this.pluginName, `/`), `./`);
+                            const destPluginFileFolder = path.resolve(path.join(options.fileDestinationFolder, options.sunFolderForPages ? this.pluginName : ``, `/`), `./`);
                             const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fileFallbackExentension;
                             const fileName = `${order.date}_AMZ_${order.number}_${invoiceIndex + 1}`;
                             const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtention}`);

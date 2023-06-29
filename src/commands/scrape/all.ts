@@ -18,11 +18,13 @@ export default class All extends BaseCommand<typeof All> {
     };
 
     public async run(): Promise<void> {
-        await this.runAll();
+        
 
         if(!this.flags.recurring){
             return;
         }
+
+        await this.runAll();
 
         cron.schedule(this.flags.recurringCron, async () =>{
             

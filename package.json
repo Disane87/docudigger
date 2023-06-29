@@ -1,6 +1,6 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.0.1",
+  "version": "1.1.0-dev.1",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
@@ -22,10 +22,9 @@
   "dependencies": {
     "@oclif/core": "^2",
     "@oclif/plugin-commands": "^2.2.16",
-    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-help": "^5.2.10",
     "@oclif/plugin-plugins": "^3.1.5",
-    "config-decorators": "^0.2.0",
-    "luxon": "^3.3.0",
+    "luxon": "^3.1.0",
     "node-cron": "^3.0.2",
     "puppeteer": "^20.7.3",
     "winston": "^3.9.0"
@@ -41,7 +40,7 @@
     "@semantic-release/github": "^9.0.3",
     "@semantic-release/npm": "^10.0.4",
     "@semantic-release/release-notes-generator": "^11.0.3",
-    "@types/chai": "^4",
+    "@types/chai": "^4.3.5",
     "@types/luxon": "^3.3.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.3.2",
@@ -67,7 +66,7 @@
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.0",
-    "typescript": "^5.1.5"
+    "typescript": "^5.1.6"
   },
   "oclif": {
     "bin": "docudigger",
@@ -112,7 +111,9 @@
     "prestart:docker": "npm run build:image",
     "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" docudigger",
     "prepush:docker": "cross-var npm run build:image",
-    "push:docker": "cross-var docker push ghcr.io/disane87/docudigger:$npm_package_version"
+    "push:docker": "cross-var docker push ghcr.io/disane87/docudigger:$npm_package_version",
+    "check:updates": "npx npm-check -u",
+    "test:actions": "act -s GITHUB_TOKEN=\"$(gh auth token)\""
   },
   "engines": {
     "node": ">=12.0.0"
