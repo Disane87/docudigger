@@ -18,19 +18,22 @@ export default class All extends BaseCommand<typeof All> {
     };
 
     public async run(): Promise<void> {
-        this.runAll();
+        await this.runAll();
 
         if(!this.flags.recurring){
             return;
         }
 
-        cron.schedule(this.flags.recurringCron, () =>{
+        cron.schedule(this.flags.recurringCron, async () =>{
             
-            this.runAll();
+            await this.runAll();
+            
         });
+
     }
 
-    private runAll(){
+    private runAll(): Promise<unknown>{
         this.logger.info(`runAll`);
+        return Promise.all([this.config.runCommand(`scrape:amazon`)]);
     }
 }

@@ -2,6 +2,8 @@ import { Command, Flags, Interfaces } from '@oclif/core';
 import winston from 'winston';
 import { createLogger } from './helpers/logger.helper';
 import { LogLevel } from './loglevel';
+import { parseBool } from './helpers/parse-bool.helper';
+import { exitListener } from './helpers/exit.helper';
 
 
 export type Flags<T extends typeof Command> = Interfaces.InferredFlags<typeof BaseCommand[`baseFlags`] & T[`flags`]>
@@ -11,6 +13,7 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
     // add the --json flag
     static enableJsonFlag = true;
     public abstract pluginName: string;
+
 
     protected logger: winston.Logger = null;
 
@@ -22,10 +25,10 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
             default: LogLevel.info
         })(),
 
-        debug: Flags.boolean({ char: `d`, default: true, env: `DEBUG` }),
+        debug: Flags.boolean({ char: `d`, default: true, env: `DEBUG`, parse: parseBool  }),
         logPath: Flags.string({ char: `l`, description: `Log path`, default: `./logs/`, env: `LOG_PATH` }),
-        recurring: Flags.boolean({ char: `r`, default: true, env: `RECURRING` }),
-        recurringCron: Flags.string(({ char: `c`, description: `Cron pattern to execute periodically`, default: `* * * * *`, dependsOn: [`recurring`] }))
+        recurring: Flags.boolean({ char: `r`, default: true, env: `RECURRING`, parse: parseBool  }),
+        recurringCron: Flags.string(({ char: `c`, description: `Cron pattern to execute periodically`, env: `RECURRING_PATTERN`, default: `* * * * *`, dependsOn: [`recurring`] }))
 
     };
 
@@ -33,6 +36,7 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
 
     public async init(): Promise<void> {
         await super.init();
+
         const { args, flags } = await this.parse({
             flags: this.ctor.flags,
             baseFlags: (super.ctor as typeof BaseCommand).baseFlags,
@@ -42,6 +46,8 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
         this.flags = flags as Flags<T>;
 
         this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || `./logs/`, this.id);
+        exitListener(this.logger);
+
 
         // this.logger.info(`Got flags for plugin ${this.id} -> ${JSON.stringify(flags, null, 4)}`);
     }

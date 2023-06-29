@@ -11,6 +11,8 @@ import { login } from "../../../helpers/auth.helper";
 import { Invoice } from "../../../interfaces/invoice.interface";
 import { Order } from "../../../interfaces/order.interface";
 import { AmazonSelectors } from "../../../interfaces/selectors.interface";
+import { parseBool } from "../../../helpers/parse-bool.helper";
+import { exit } from "../../../helpers/exit.helper";
 
 
 export default class Amazon extends BaseCommand<typeof Amazon> {
@@ -30,9 +32,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: `AMAZON_TLD` }),
         yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `AMAZON_YEAR_FILTER` }),
         pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `AMAZON_PAGE_FILTER` }),
-        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `AMAZON_ONLY_NEW`, parse: async (input) => {
-            return !!input;
-        }}),
+        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `AMAZON_ONLY_NEW`, parse: parseBool }),
     };
 
     public async run(): Promise<void> {
@@ -50,10 +50,11 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         if (fs.existsSync(processJsonFile)) {
             processedOrders = JSON.parse((await fs.promises.readFile(processJsonFile, `utf8`)));
             if (processedOrders.orders.length == 0) {
-                this.logger.info(`No latest orders. OnlyNew deactivated.`);
+                this.logger.warn(`No latest orders. OnlyNew deactivated.`);
                 options.onlyNew = false;
             }
         } else {
+            this.logger.warn(`process.json not found. Full run needed. OnlyNew deactivated. `);
             options.onlyNew = false;
         }
 
@@ -63,7 +64,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
             this.logger.info(`Only invoices since order ${processedOrders.orders[0]?.number} will be gathered.`);
         }
 
-        this.logger.info(`Options: ${JSON.stringify(options, null, 4)}`);
+        this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
         const browser = await puppeteer.launch({ headless: `new`, args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
         const page = await browser.newPage();
         const amazon = {
@@ -101,7 +102,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
             });
         }
         amazon.lang = await page.$eval(`html`, el => el.lang);
-        this.logger.info(`Page language: ${amazon.lang}`);
+        this.logger.debug(`Page language: ${amazon.lang}`);
         await page.goto(amazon.orderPage, { waitUntil: `domcontentloaded` });
         const possibleYears = options.yearFilter ? [options.yearFilter] : await (await page.$$eval(amazonSelectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
         const firstPossibleYear = possibleYears[0];
@@ -140,7 +141,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
                         invoices: [],
                         number: orderNumber
                     };
-                    this.logger.info(`Got Order: ${orderNumber}`);
+                    this.logger.debug(`Got Order: ${orderNumber}`);
                     this.logger.info(`Order date: ${orderDate}`);
                     const invoiceSpan = await orderCard.$(amazonSelectors.invoiceSpans);
                     invoiceSpan.click();
@@ -160,7 +161,8 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
 
                     if (options.onlyNew && (orderNumber == processedOrders.orders[0]?.number)) {
                         this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
-                        process.exit();
+                        // exit(this.logger, options.recurring);
+                        return;
                     }
 
                     if (invoiceUrls.length == 0) {
@@ -274,7 +276,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
             processJsonFile,
             JSON.stringify({ lastRun: DateTime.now().toISO(), orders }, null, 4)
         );
-        this.logger.info(`All done. Exiting`);
-        process.exit();
+
+        exit(this.logger,options.recurring);
     }
 }
