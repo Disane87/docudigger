@@ -1,9 +1,10 @@
 ARG DOCUDIGGER_VERSION
-
 FROM ghcr.io/puppeteer/puppeteer:20.7.3
 ARG DOCUDIGGER_VERSION
 USER node
 WORKDIR /home/node/docudigger
+
+
 # USER root
 
 RUN mkdir -p data 
@@ -24,6 +25,10 @@ ENV RECURRING  true
 ENV RECURRING_PATTERN "*/30 * * * *"
 
 ENV DOCUDIGGER_VERSION $DOCUDIGGER_VERSION
+
+LABEL org.opencontainers.image.source=https://github.com/Disane87/docudigger
+LABEL org.opencontainers.image.description="Website scraper for getting invoices automagically as pdf (useful for taxes or DMS)"
+LABEL org.opencontainers.image.licenses="MIT"
 
 
 ENV NODE_ENV production
