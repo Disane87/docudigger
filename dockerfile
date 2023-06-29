@@ -1,5 +1,5 @@
 ARG DOCUDIGGER_VERSION
-FROM ghcr.io/puppeteer/puppeteer:20.7.3
+FROM ghcr.io/puppeteer/puppeteer:20.7.4
 ARG DOCUDIGGER_VERSION
 USER node
 WORKDIR /home/node/docudigger
