@@ -24,7 +24,6 @@
     "@oclif/plugin-commands": "^2.2.16",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^3.1.5",
-    "config-decorators": "^0.2.0",
     "luxon": "^3.1.0",
     "node-cron": "^3.0.2",
     "puppeteer": "^20.7.3",
