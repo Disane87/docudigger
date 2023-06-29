@@ -90,7 +90,7 @@
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "start": "cd ./bin && dev scrape amazon",
     "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape all",
-    "prebuild": "npm run lint",
+    "prebuild": "npm run clean && npm run lint",
     "build": "tsc -b",
     "lint": "eslint ./src --ext .ts --config .eslintrc --fix",
     "postpack": "shx rm -f oclif.manifest.json",
