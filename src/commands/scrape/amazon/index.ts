@@ -4,8 +4,6 @@ import { Flags } from "@oclif/core";
 import fs from "fs";
 import { DateTime } from "luxon";
 import path from "path";
-import puppeteer, { ElementHandle, Page, executablePath } from "puppeteer";
-import { BaseCommand } from "../../../base.class";
 import { InvoiceStatus } from "../../../enums/invoice-status.enum";
 import { login } from "../../../helpers/auth.helper";
 import { exit } from "../../../helpers/exit.helper";
@@ -16,9 +14,12 @@ import { Invoice } from "../../../interfaces/invoice.interface";
 import { Order } from "../../../interfaces/order.interface";
 import { ProcessedOrders } from "../../../interfaces/processed-order.interface";
 import { AmazonSelectors } from "../../../interfaces/selectors.interface";
+import { ScrapeCommand } from "../../../classes/scrape-command.class";
+import { Page } from "../../../classes/puppeteer.class";
+import { ElementHandle } from "puppeteer";
 
 
-export default class Amazon extends BaseCommand<typeof Amazon> {
+export default class Amazon extends ScrapeCommand<typeof Amazon> {
     public pluginName = `amazon`;
     static description = `Scrapes amazon invoices`;
     static summary = `Used to get invoices from amazon`;
@@ -36,7 +37,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `AMAZON_YEAR_FILTER` }),
         pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `AMAZON_PAGE_FILTER` }),
         onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `AMAZON_ONLY_NEW`, parse: parseBool }),
-        sunFolderForPages: Flags.boolean({ aliases: [`sunFolderForPages`], description: `Creates subfolders for every scraped page/plugin`, env: `SUBFOLDER_FOR_PAGES`, parse: parseBool }),
+        subFolderForPages: Flags.boolean({ aliases: [`subFolderForPages`], description: `Creates subfolders for every scraped page/plugin`, env: `SUBFOLDER_FOR_PAGES`, parse: parseBool }),
     };
 
     // What is the meaning of life?
@@ -44,20 +45,18 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
     public async run(): Promise<void> {
         const options: AmazonOptions = this.flags;
 
-        const puppeteerArgs = [`--window-size=1920,1080`, `--no-sandbox`, `--disable-setuid-sandbox`];
-        const selectorWaitTimeout = 2000;
         const processJsonFile = path.resolve(path.join(`./`, `process.json`)).normalize();
 
         let processedOrders: ProcessedOrders = { lastRun: null, orders: [] };
         processedOrders = await this.getProcesedOrders(processJsonFile, processedOrders, options);
 
         this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
-        const browser = await puppeteer.launch({ headless: `new`, args: puppeteerArgs, dumpio: false, devtools: options.debug, executablePath: executablePath() });
-        const page = await browser.newPage();
+
+        const page = await this.newPage();
 
         const { amazonSelectors, amazon } = this.getSelectors(options.tld);
 
-        const loginSuccessful = await login(page, amazonSelectors, options, amazon, browser, this.logger);
+        const loginSuccessful = await login(page, amazonSelectors, options, amazon, this.logger);
         if (!loginSuccessful) {
             this.logger.error(`Auth not successful. Exiting.`);
             return;
@@ -78,9 +77,9 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         const orders = new Array<Order>();
         const starttimestamp = DateTime.now();
 
-        await this.processYears(possibleYears, page, options, amazonSelectors, selectorWaitTimeout, amazon, processedOrders, orders, browser);
+        await this.processYears(possibleYears, page, options, amazonSelectors, this.selectorWaitTimeout, amazon, processedOrders, orders);
 
-        await this.endProcess(starttimestamp, orders, options, browser, processJsonFile);
+        await this.endProcess(starttimestamp, orders, options, processJsonFile);
     }
 
     private async goToOrderPage(amazon: AmazonDefinition, page: Page) {
@@ -89,18 +88,18 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         await page.goto(amazon.orderPage, { waitUntil: `domcontentloaded` });
     }
 
-    private async processYears(possibleYears: number[], page: Page, options: AmazonOptions, amazonSelectors: AmazonSelectors, selectorWaitTimeout: number, amazon: AmazonDefinition, processedOrders: { lastRun: Date; orders: Order[]; }, orders: Order[], browser) {
+    private async processYears(possibleYears: number[], page: Page, options: AmazonOptions, amazonSelectors: AmazonSelectors, selectorWaitTimeout: number, amazon: AmazonDefinition, processedOrders: { lastRun: Date; orders: Order[]; }, orders: Order[]) {
         for (const currentYear of possibleYears) {
             const orderPageCount = await this.getOrderPagecount(currentYear, page, options, amazonSelectors, selectorWaitTimeout);
 
             for (const orderPage of [...Array(orderPageCount).keys()]) {
-                await this.processOrderPage(orderPage, page, amazonSelectors, amazon, selectorWaitTimeout, options, processedOrders, orders, browser, orderPageCount, currentYear);
+                await this.processOrderPage(orderPage, page, amazonSelectors, amazon, selectorWaitTimeout, options, processedOrders, orders, orderPageCount, currentYear);
             }
             this.logger.info(`Year "${currentYear}" drone. Skipping to next year`);
         }
     }
 
-    private async processOrderPage(orderPage: number, page: Page, amazonSelectors: AmazonSelectors, amazon: AmazonDefinition, selectorWaitTimeout: number, options: AmazonOptions, processedOrders: { lastRun: Date; orders: Order[]; }, orders: Order[], browser: any, orderPageCount: number, currentYear: number) {
+    private async processOrderPage(orderPage: number, page: Page, amazonSelectors: AmazonSelectors, amazon: AmazonDefinition, selectorWaitTimeout: number, options: AmazonOptions, processedOrders: { lastRun: Date; orders: Order[]; }, orders: Order[], orderPageCount: number, currentYear: number) {
         this.logger.debug(`Checking page ${orderPage + 1} for orders`);
         const orderCards = await page.$$(amazonSelectors.orderCards);
         this.logger.info(`Got ${orderCards.length} orders. Processing...`);
@@ -121,7 +120,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
             orders.push(order);
             this.logger.info(`Processing "${orders.length}" orders`);
 
-            await this.getInvoiceDocumentsFromOrder(order, browser, options);
+            await this.getInvoiceDocumentsFromOrder(order, options);
         }
         const nextPageUrl = this.checkForLastPage(orderPage, orderPageCount, currentYear, amazon);
         if (nextPageUrl) {
@@ -179,10 +178,10 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         }
     }
 
-    private async getInvoiceDocumentsFromOrder(order: Order, browser, options: AmazonOptions) {
+    private async getInvoiceDocumentsFromOrder(order: Order, options: AmazonOptions) {
         for (const [invoiceIndex, invoice] of order.invoices.entries()) {
             const invoiceUrl = invoice.url;
-            const pdfPage = await browser.newPage();
+            const pdfPage = await this.newPage();
 
             await pdfPage.goto(invoiceUrl);
 
@@ -250,13 +249,13 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
         return { orderNumber, order };
     }
 
-    private async endProcess(starttimestamp: DateTime, orders: Order[], options: AmazonOptions, browser, processJsonFile: string) {
+    private async endProcess(starttimestamp: DateTime, orders: Order[], options: AmazonOptions, processJsonFile: string) {
         const endtimestamp = DateTime.now();
         const timeElapsed = endtimestamp.diff(starttimestamp, [`minutes`]);
         const invoiceCount = orders.reduce((prev, order) => prev + order.invoices.length, 0);
         this.logger.info(`Processing done. Processed ${invoiceCount} invoices in ${timeElapsed.minutes.toFixed(2)} minutes.`);
         if (options.debug) {
-            await browser.close();
+            await this.closeBrowser();
         }
         this.writeProcessFile(processJsonFile, orders);
 
@@ -315,7 +314,7 @@ export default class Amazon extends BaseCommand<typeof Amazon> {
     }
 
     private getPaths(options: AmazonOptions, invoiceUrl: string, order: Order, invoiceIndex: number) {
-        const destPluginFileFolder = path.resolve(path.join(options.fileDestinationFolder, options.sunFolderForPages ? this.pluginName : ``, `/`), `./`);
+        const destPluginFileFolder = path.resolve(path.join(options.fileDestinationFolder, options.subFolderForPages ? this.pluginName : ``, `/`), `./`);
         const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fileFallbackExentension;
         const fileName = `${order.date}_AMZ_${order.number}_${invoiceIndex + 1}`;
         const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtention}`);

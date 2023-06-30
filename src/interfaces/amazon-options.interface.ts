@@ -14,5 +14,5 @@ export interface AmazonOptions {
     yearFilter: number,
     pageFilter: number,
     onlyNew: boolean,
-    sunFolderForPages: boolean,
+    subFolderForPages: boolean,
 }
