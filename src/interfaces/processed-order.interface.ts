@@ -1,6 +1,3 @@
-export interface ProcessedOrder {
-    number: string;
-    invoiceCount: number;
+import { Order } from "./order.interface";
 
-    savedInvoices: Array<string>
-}
+export interface ProcessedOrders { lastRun: Date, orders: Order[] }

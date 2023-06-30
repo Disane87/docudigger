@@ -1,5 +1,5 @@
 ARG DOCUDIGGER_VERSION
-FROM ghcr.io/puppeteer/puppeteer:20.7.3
+FROM satantime/puppeteer-node:18-slim
 ARG DOCUDIGGER_VERSION
 USER node
 WORKDIR /home/node/docudigger

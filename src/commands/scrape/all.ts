@@ -1,6 +1,6 @@
 
 
-import { BaseCommand } from "../../base.class";
+import { BaseCommand } from "../../classes/base.class";
 import cron from 'node-cron';
 
 
