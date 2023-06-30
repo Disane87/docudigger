@@ -1,3 +1,11 @@
+# [1.1.0-dev.2](https://github.com/disane87/docudigger/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2023-06-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency puppeteer to v20.7.4 ([d691ed5](https://github.com/disane87/docudigger/commit/d691ed5e7e5f1ca818fc9dab5bff062a3f00b1f0))
+* **docker:** :bug: fixed high ressource utilization of docker container ([6b2c58f](https://github.com/disane87/docudigger/commit/6b2c58f93fc46e0743ea996838bd46fb2a47532d)), closes [#86](https://github.com/disane87/docudigger/issues/86)
+
 # [1.1.0-dev.1](https://github.com/disane87/docudigger/compare/v1.0.1...v1.1.0-dev.1) (2023-06-29)
 
 
