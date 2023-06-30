@@ -1,3 +1,4 @@
+
 # [1.1.0-dev.2](https://github.com/disane87/docudigger/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2023-06-30)
 
 
@@ -5,6 +6,18 @@
 
 * **deps:** update dependency puppeteer to v20.7.4 ([d691ed5](https://github.com/disane87/docudigger/commit/d691ed5e7e5f1ca818fc9dab5bff062a3f00b1f0))
 * **docker:** :bug: fixed high ressource utilization of docker container ([6b2c58f](https://github.com/disane87/docudigger/commit/6b2c58f93fc46e0743ea996838bd46fb2a47532d)), closes [#86](https://github.com/disane87/docudigger/issues/86)
+
+# [1.1.0](https://github.com/disane87/docudigger/compare/v1.0.1...v1.1.0) (2023-06-29)
+
+
+### Features
+
+* :sparkles: support for SUBFOLDER_FOR_PAGES to enable creating documents in subfolders for each plugin ([f2eb3cf](https://github.com/disane87/docudigger/commit/f2eb3cfed4211f90f94583a73f63a0c277ff3cdc)), closes [#80](https://github.com/disane87/docudigger/issues/80)
+
+
+### Bug Fixes
+
+* **deps:** update dependency luxon to ^3.1.0 [security] ([#76](https://github.com/disane87/docudigger/issues/76)) ([c587c32](https://github.com/disane87/docudigger/commit/c587c3281cfc230c897708d08fa7c70993057b0e))
 
 # [1.1.0-dev.1](https://github.com/disane87/docudigger/compare/v1.0.1...v1.1.0-dev.1) (2023-06-29)
 
