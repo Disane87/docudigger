@@ -16,7 +16,7 @@
         "@oclif/plugin-plugins": "^3.1.5",
         "luxon": "^3.1.0",
         "node-cron": "^3.0.2",
-        "puppeteer": "^20.7.4",
+        "puppeteer": "^20.7.3",
         "winston": "^3.9.0"
       },
       "bin": {
@@ -47,6 +47,7 @@
         "cross-env": "^7.0.3",
         "cross-var": "^1.1.0",
         "env-cmd": "^10.1.0",
+        "envfile": "^6.18.0",
         "eslint": "^8.43.0",
         "eslint-config-oclif": "^4",
         "eslint-config-oclif-typescript": "^1.0.3",
@@ -6954,6 +6955,21 @@
       "dev": true,
       "engines": {
         "node": ">=6"
+      }
+    },
+    "node_modules/envfile": {
+      "version": "6.18.0",
+      "resolved": "https://registry.npmjs.org/envfile/-/envfile-6.18.0.tgz",
+      "integrity": "sha512-IsYv64dtlNXTm4huvCBpbXsdZQurYUju9WoYCkSj+SDYpO3v4/dq346QsCnNZ3JcnWw0G3E6+saVkVtmPw98Gg==",
+      "dev": true,
+      "bin": {
+        "envfile": "bin.cjs"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://bevry.me/fund"
       }
     },
     "node_modules/err-code": {
