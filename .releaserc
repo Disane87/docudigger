@@ -50,6 +50,12 @@
         "assets": ["./archive/*.tgz"],
         "fail": true
       }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "publishCmd": "npm run docker:release"
+      }
     ]
   ],
   "branches": [
