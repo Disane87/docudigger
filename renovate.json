@@ -3,11 +3,16 @@
   "extends": [
     "config:base"
   ],
-  "baseBranches": ["dev"],
+  "baseBranches": [
+    "dev"
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["major"],
-      "automerge": false
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
     }
   ]
 }
