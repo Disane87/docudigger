@@ -11,7 +11,7 @@
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^2",
-        "@oclif/plugin-commands": "^2.2.16",
+        "@oclif/plugin-commands": "^2.2.17",
         "@oclif/plugin-help": "^5.2.10",
         "@oclif/plugin-plugins": "^3.1.5",
         "luxon": "^3.1.0",
@@ -1185,11 +1185,11 @@
       "dev": true
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "2.2.16",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-2.2.16.tgz",
-      "integrity": "sha512-ZUfLw0rIBt0adMOgfyd3OU5psRCYBLt8QHmKit3WP5qZMbEMpW2ichOTxBNUFLJQ0AwW+qGxmdO2eGFh3yb5sw==",
+      "version": "2.2.17",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-2.2.17.tgz",
+      "integrity": "sha512-shjVZCopCIbTN8I/i/DR7NwqFRMFau++n3+x2ON7JSNRo+zr/lXQUejxv50D64etQ4dP5wyIyvs+t9iN7j//gg==",
       "dependencies": {
-        "@oclif/core": "^2.8.7",
+        "@oclif/core": "^2.8.10",
         "lodash": "^4.17.11"
       },
       "engines": {
