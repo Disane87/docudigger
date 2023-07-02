@@ -4,19 +4,18 @@ import { Flags } from "@oclif/core";
 import fs from "fs";
 import { DateTime } from "luxon";
 import path from "path";
+import { ElementHandle } from "puppeteer";
+import { Page } from "../../../classes/puppeteer.class";
+import { ScrapeCommand } from "../../../classes/scrape-command.class";
 import { InvoiceStatus } from "../../../enums/invoice-status.enum";
 import { login } from "../../../helpers/auth.helper";
 import { exit } from "../../../helpers/exit.helper";
-import { parseBool } from "../../../helpers/parse-bool.helper";
 import { AmazonOptions } from "../../../interfaces/amazon-options.interface";
 import { AmazonDefinition } from "../../../interfaces/amazon.interface";
 import { Invoice } from "../../../interfaces/invoice.interface";
-import { Order } from "../../../interfaces/order.interface";
-import { ProcessedOrders } from "../../../interfaces/processed-order.interface";
+import { Scrape } from "../../../interfaces/scrape.interface";
 import { AmazonSelectors } from "../../../interfaces/selectors.interface";
-import { ScrapeCommand } from "../../../classes/scrape-command.class";
-import { Page } from "../../../classes/puppeteer.class";
-import { ElementHandle } from "puppeteer";
+import { WebsiteRun } from "../../../interfaces/website-run.interface";
 
 
 export default class Amazon extends ScrapeCommand<typeof Amazon> {
@@ -31,30 +30,33 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     static flags = {
         username: Flags.string({ char: `u`, description: `Username`, required: true, env: `AMAZON_USERNAME` }),
         password: Flags.string({ char: `p`, description: `Password`, required: true, env: `AMAZON_PASSWORD` }),
-        fileDestinationFolder: Flags.string({ aliases: [`fileDestinationFolder`], default: `./data/`, description: `Amazon top level domain`, env: `FILE_DESTINATION_FOLDER` }),
-        fileFallbackExentension: Flags.string({ aliases: [`fileFallbackExentension`], default: `.pdf`, description: `Amazon top level domain`, env: `FILE_FALLBACK_EXTENSION` }),
         tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: `AMAZON_TLD` }),
         yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `AMAZON_YEAR_FILTER` }),
         pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `AMAZON_PAGE_FILTER` }),
-        onlyNew: Flags.boolean({ aliases: [`onlyNew`], description: `Gets only new invoices`, env: `AMAZON_ONLY_NEW`, parse: parseBool }),
-        subFolderForPages: Flags.boolean({ aliases: [`subFolderForPages`], description: `Creates subfolders for every scraped page/plugin`, env: `SUBFOLDER_FOR_PAGES`, parse: parseBool }),
     };
 
-    // What is the meaning of life?
+    private possibleYears: number[] = [];
+    private selectors: AmazonSelectors;
+    private definition: AmazonDefinition;
+    private lastWebsiteRun: WebsiteRun;
 
     public async run(): Promise<void> {
         const options: AmazonOptions = this.flags;
+        this.lastWebsiteRun = await this.getLastWebsiteRun();
 
-        const processJsonFile = path.resolve(path.join(`./`, `process.json`)).normalize();
-
-        let processedOrders: ProcessedOrders = { lastRun: null, orders: [] };
-        processedOrders = await this.getProcesedOrders(processJsonFile, processedOrders, options);
+        if (options.onlyNew) {
+            options.yearFilter = DateTime.now().year;
+            options.pageFilter = 1;
+            this.logger.info(`Only invoices since order ${this.lastWebsiteRun.scrapes[0]?.number} will be gathered.`);
+        }
 
         this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
 
         const page = await this.newPage();
 
         const { amazonSelectors, amazon } = this.getSelectors(options.tld);
+        this.selectors = amazonSelectors;
+        this.definition = amazon;
 
         const loginSuccessful = await login(page, amazonSelectors, options, amazon, this.logger);
         if (!loginSuccessful) {
@@ -69,49 +71,53 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             });
         }
 
-        await this.goToOrderPage(amazon, page);
+        await this.goToOrderPage(amazon);
 
         // Get all orders
-        const possibleYears = await this.getPossibleYears(options, page, amazonSelectors);
+        this.possibleYears = await this.getPossibleYears(options.yearFilter, page);
 
-        const orders = new Array<Order>();
+        const orders = new Array<Scrape>();
         const starttimestamp = DateTime.now();
 
-        await this.processYears(possibleYears, page, options, amazonSelectors, this.selectorWaitTimeout, amazon, processedOrders, orders);
+        await this.processYears(orders);
 
-        await this.endProcess(starttimestamp, orders, options, processJsonFile);
+        await this.endProcess(starttimestamp, orders, options);
     }
 
-    private async goToOrderPage(amazon: AmazonDefinition, page: Page) {
-        amazon.lang = await page.$eval(`html`, el => el.lang);
+    private async goToOrderPage(amazon: AmazonDefinition) {
+        amazon.lang = await this.currentPage.$eval(`html`, el => el.lang);
         this.logger.debug(`Page language: ${amazon.lang}`);
-        await page.goto(amazon.orderPage, { waitUntil: `domcontentloaded` });
+        await this.currentPage.goto(amazon.orderPage, { waitUntil: `domcontentloaded` });
     }
 
-    private async processYears(possibleYears: number[], page: Page, options: AmazonOptions, amazonSelectors: AmazonSelectors, selectorWaitTimeout: number, amazon: AmazonDefinition, processedOrders: { lastRun: Date; orders: Order[]; }, orders: Order[]) {
-        for (const currentYear of possibleYears) {
-            const orderPageCount = await this.getOrderPagecount(currentYear, page, options, amazonSelectors, selectorWaitTimeout);
+    private async processYears(orders: Scrape[]) {
+        for (const currentYear of this.possibleYears) {
+            const orderPageCount = await this.getOrderPageCount(currentYear);
 
             for (const orderPage of [...Array(orderPageCount).keys()]) {
-                await this.processOrderPage(orderPage, page, amazonSelectors, amazon, selectorWaitTimeout, options, processedOrders, orders, orderPageCount, currentYear);
+                await this.processOrderPage(orderPage, orders, orderPageCount, currentYear);
             }
             this.logger.info(`Year "${currentYear}" drone. Skipping to next year`);
         }
     }
 
-    private async processOrderPage(orderPage: number, page: Page, amazonSelectors: AmazonSelectors, amazon: AmazonDefinition, selectorWaitTimeout: number, options: AmazonOptions, processedOrders: { lastRun: Date; orders: Order[]; }, orders: Order[], orderPageCount: number, currentYear: number) {
+    private async processOrderPage(orderPage: number, orders: Scrape[], orderPageCount: number, currentYear: number) {
+        const amazonSelectors = this.selectors;
+        const amazon = this.definition;
+
         this.logger.debug(`Checking page ${orderPage + 1} for orders`);
-        const orderCards = await page.$$(amazonSelectors.orderCards);
+        const orderCards = await this.currentPage.$$(amazonSelectors.orderCards);
         this.logger.info(`Got ${orderCards.length} orders. Processing...`);
+
         for (const [orderIndex, orderCard] of orderCards.entries()) {
 
-            const { orderNumber, order } = await this.getOrder(orderCard, amazonSelectors, amazon);
+            const { orderNumber, order } = await this.getOrder(orderCard);
 
-            await this.clickInvoiceSpan(orderCard, amazonSelectors, orderIndex);
+            await this.clickInvoiceSpan(orderCard, orderIndex);
 
-            const invoiceUrls = await this.getInvoiceUrls(amazonSelectors, orderIndex, page, selectorWaitTimeout);
+            const invoiceUrls = await this.getInvoiceUrls(orderIndex);
 
-            if (options.onlyNew && (orderNumber == processedOrders.orders[0]?.number)) {
+            if (this.flags.onlyNew && (orderNumber == this.lastWebsiteRun.scrapes[0]?.number)) {
                 this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
                 break;
             }
@@ -120,29 +126,30 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             orders.push(order);
             this.logger.info(`Processing "${orders.length}" orders`);
 
-            await this.getInvoiceDocumentsFromOrder(order, options);
+            await this.getInvoiceDocumentsFromOrder(order);
         }
         const nextPageUrl = this.checkForLastPage(orderPage, orderPageCount, currentYear, amazon);
         if (nextPageUrl) {
-            await page.goto(nextPageUrl);
+            await this.currentPage.goto(nextPageUrl);
         }
     }
 
-    private async getOrderPagecount(currentYear: number, page, options: AmazonOptions, amazonSelectors: AmazonSelectors, selectorWaitTimeout: number) {
+    private async getOrderPageCount(currentYear: number) {
+        const amazonSelectors = this.selectors;
         this.logger.info(`Selecting start year ${currentYear}`);
-        await page.select(`select[name="orderFilter"]`, `year-${currentYear}`);
-        await page.waitForNavigation();
+        await this.currentPage.select(`select[name="orderFilter"]`, `year-${currentYear}`);
+        await this.currentPage.waitForNavigation();
         this.logger.debug(`Selected year ${currentYear}`);
         this.logger.debug(`Determining pages...`);
 
         let orderPageCount: number = null;
 
         try {
-            orderPageCount = options.pageFilter ?? await (await page.waitForSelector(amazonSelectors.pagination, { timeout: selectorWaitTimeout }))
+            orderPageCount = this.flags.pageFilter ?? await (await this.currentPage.waitForSelector(amazonSelectors.pagination, { timeout: this.selectorWaitTimeout }))
                 .evaluate((handle: HTMLElement) => parseInt(handle.innerText));
         } catch (ex) {
             orderPageCount = 1;
-            this.logger.error(`Couldn't get orderPageCount ${orderPageCount} within ${selectorWaitTimeout}ms. Assume only one page.`);
+            this.logger.error(`Couldn't get orderPageCount ${orderPageCount} within ${this.selectorWaitTimeout}ms. Assume only one page.`);
         }
         this.logger.info(`Page count: ${orderPageCount}`);
         return orderPageCount;
@@ -160,7 +167,8 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         }
     }
 
-    private async clickInvoiceSpan(orderCard: ElementHandle<Element>, amazonSelectors: AmazonSelectors, orderIndex: number) {
+    private async clickInvoiceSpan(orderCard: ElementHandle<Element>, orderIndex: number) {
+        const amazonSelectors = this.selectors;
         const invoiceSpan = await orderCard.$(amazonSelectors.invoiceSpans);
         invoiceSpan.click();
         this.logger.debug(`Checking popover ${orderIndex + 1}`);
@@ -178,7 +186,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         }
     }
 
-    private async getInvoiceDocumentsFromOrder(order: Order, options: AmazonOptions) {
+    private async getInvoiceDocumentsFromOrder(order: Scrape) {
         for (const [invoiceIndex, invoice] of order.invoices.entries()) {
             const invoiceUrl = invoice.url;
             const pdfPage = await this.newPage();
@@ -195,9 +203,9 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             const fileBuffer = this.getFileBuffer(fileReaderString, invoice, order, invoiceUrl);
             if (fileBuffer) {
                 this.logger.debug(`Buffer exists`);
-                this.logger.info(`Checking if folder exists. If not, create: ${options.fileDestinationFolder}`);
+                this.logger.info(`Checking if folder exists. If not, create: ${this.flags.fileDestinationFolder}`);
 
-                const { destPluginFileFolder, pathNormalized } = this.getPaths(options, invoiceUrl, order, invoiceIndex);
+                const { destPluginFileFolder, pathNormalized } = this.getPaths(invoiceUrl, order, invoiceIndex);
 
                 this.writeFile(destPluginFileFolder, pathNormalized, invoice, fileBuffer, order);
             }
@@ -206,8 +214,8 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         }
     }
 
-    private async getPossibleYears(options: AmazonOptions, page, amazonSelectors: AmazonSelectors): Promise<number[]> {
-        const possibleYears = options.yearFilter ? [options.yearFilter] : await (await page.$$eval(amazonSelectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
+    private async getPossibleYears(yearFilter: number, page: Page): Promise<number[]> {
+        const possibleYears = yearFilter ? [yearFilter] : await (await page.$$eval(this.selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
         const firstPossibleYear = possibleYears[0];
         const lastPossibleYear = possibleYears[possibleYears.length - 1];
         this.logger.debug(`Checking possible years. Got ${possibleYears}`);
@@ -216,12 +224,15 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         return possibleYears;
     }
 
-    private async getInvoiceUrls(amazonSelectors: AmazonSelectors, orderIndex: number, page, selectorWaitTimeout: number): Promise<string[]> {
+    private async getInvoiceUrls(orderIndex: number): Promise<string[]> {
         let invoiceList: ElementHandle<Element>;
         let invoiceUrls = new Array<string>();
+        const amazonSelectors = this.selectors;
+        const selectorWaitTimeout = this.selectorWaitTimeout;
+
         const popoverSelectorResolved = amazonSelectors.popover.replace(`{{index}}`, (orderIndex + 1).toString());
         try {
-            const popover = await page.waitForSelector(popoverSelectorResolved, { timeout: selectorWaitTimeout });
+            const popover = await this.currentPage.waitForSelector(popoverSelectorResolved, { timeout: selectorWaitTimeout });
             this.logger.debug(`Got popover ${(orderIndex + 1)} -> ${popover}`);
             invoiceList = await popover.waitForSelector(amazonSelectors.invoiceList, { timeout: selectorWaitTimeout });
             invoiceUrls = await invoiceList.$$eval(amazonSelectors.invoiceLinks, (handles: Array<HTMLAnchorElement>) => handles.map(a => a.href));
@@ -232,12 +243,15 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         return invoiceUrls;
     }
 
-    private async getOrder(orderCard: ElementHandle<Element>, amazonSelectors: AmazonSelectors, amazon: AmazonDefinition) {
+    private async getOrder(orderCard: ElementHandle<Element>) {
+
+        const amazonSelectors = this.selectors;
+        const amazon = this.definition;
         const orderNumber: string = await orderCard.$eval(amazonSelectors.orderNr, (handle: HTMLElement) => handle.innerText.trim());
 
         const orderDate = await orderCard.$eval(amazonSelectors.orderDate, (handle: HTMLElement) => handle.innerText);
         const orderDateLuxon = DateTime.fromFormat(orderDate, `DDD`, { locale: amazon.lang }).toISODate();
-        const order: Order = {
+        const order: Scrape = {
             date: orderDateLuxon,
             datePlain: orderDate,
             invoices: [],
@@ -249,7 +263,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         return { orderNumber, order };
     }
 
-    private async endProcess(starttimestamp: DateTime, orders: Order[], options: AmazonOptions, processJsonFile: string) {
+    private async endProcess(starttimestamp: DateTime, orders: Scrape[], options: AmazonOptions) {
         const endtimestamp = DateTime.now();
         const timeElapsed = endtimestamp.diff(starttimestamp, [`minutes`]);
         const invoiceCount = orders.reduce((prev, order) => prev + order.invoices.length, 0);
@@ -257,17 +271,11 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         if (options.debug) {
             await this.closeBrowser();
         }
-        this.writeProcessFile(processJsonFile, orders);
+        this.writeProcessFile(orders);
 
         exit(this.logger, options.recurring);
     }
 
-    private writeProcessFile(processJsonFile: string, orders: Order[]) {
-        fs.writeFileSync(
-            processJsonFile,
-            JSON.stringify({ lastRun: DateTime.now().toISO(), orders }, null, 4)
-        );
-    }
     private getSelectors(tld: string): { amazonSelectors: AmazonSelectors, amazon: AmazonDefinition } {
         const amazon: AmazonDefinition = {
             lang: null,
@@ -292,7 +300,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         return { amazonSelectors, amazon };
     }
 
-    private writeFile(destPluginFileFolder: string, pathNormalized: string, invoice: Invoice, fileBuffer: Buffer, order: Order) {
+    private writeFile(destPluginFileFolder: string, pathNormalized: string, invoice: Invoice, fileBuffer: Buffer, order: Scrape) {
         if (!fs.existsSync(destPluginFileFolder)) {
             fs.mkdirSync(destPluginFileFolder, { recursive: true });
         }
@@ -313,16 +321,16 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         }
     }
 
-    private getPaths(options: AmazonOptions, invoiceUrl: string, order: Order, invoiceIndex: number) {
-        const destPluginFileFolder = path.resolve(path.join(options.fileDestinationFolder, options.subFolderForPages ? this.pluginName : ``, `/`), `./`);
-        const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? options.fileFallbackExentension;
+    private getPaths(invoiceUrl: string, order: Scrape, invoiceIndex: number) {
+        const destPluginFileFolder = path.resolve(path.join(this.flags.fileDestinationFolder, this.flags.subFolderForPages ? this.pluginName : ``, `/`), `./`);
+        const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? this.flags.fileFallbackExentension;
         const fileName = `${order.date}_AMZ_${order.number}_${invoiceIndex + 1}`;
         const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtention}`);
         const pathNormalized = path.normalize(fullFilePath);
         return { destPluginFileFolder, pathNormalized };
     }
 
-    private getFileBuffer(fileReaderString: string, invoice: Invoice, order: Order, invoiceUrl: string): Buffer | null {
+    private getFileBuffer(fileReaderString: string, invoice: Invoice, order: Scrape, invoiceUrl: string): Buffer | null {
         if (!fileReaderString) {
             this.logger.error(`FileReaderString is empty returned from page for order "${order.number}" and url "${invoiceUrl}"`);
             return null;
@@ -354,25 +362,5 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
                 };
             });
         }, invoiceUrl);
-    }
-
-    private async getProcesedOrders(processJsonFile: string, processedOrders: { lastRun: Date; orders: Order[]; }, options: AmazonOptions): Promise<ProcessedOrders> {
-        if (fs.existsSync(processJsonFile)) {
-            processedOrders = JSON.parse((await fs.promises.readFile(processJsonFile, `utf8`)));
-            if (processedOrders.orders.length == 0) {
-                this.logger.warn(`No latest orders. OnlyNew deactivated.`);
-                options.onlyNew = false;
-            }
-        } else {
-            this.logger.warn(`process.json not found. Full run needed. OnlyNew deactivated. `);
-            options.onlyNew = false;
-        }
-
-        if (options.onlyNew) {
-            options.yearFilter = DateTime.now().year;
-            options.pageFilter = 1;
-            this.logger.info(`Only invoices since order ${processedOrders.orders[0]?.number} will be gathered.`);
-        }
-        return processedOrders;
     }
 }
