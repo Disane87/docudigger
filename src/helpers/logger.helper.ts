@@ -11,16 +11,23 @@ export const createLogger = (logLevel: string, logPath: string, context = `DocuD
         format.prettyPrint(),
         format.colorize(),
         format.align(),
-        format.printf(info => {
-            return `[${info.timestamp}] [${info.label}] [${info.level}]: ${info.message}`;
+        format.printf((info: any) => {
+            return `[${info.level}] [${info.timestamp}] [${info.label}]: ${info.message}`;
         })
     );
 
     return winston.createLogger({
         level: logLevel.toString(),
         format: logFormat,
-        transports:  [
-            new winston.transports.Console(),
+
+        rejectionHandlers: [
+            new winston.transports.File({ filename: `rejections.log` })
+        ],
+        exceptionHandlers: [
+            new winston.transports.File({ filename: `exceptions.log` })
+        ],
+        transports: [
+            new winston.transports.Console({ handleExceptions: true, handleRejections: true }),
             new winston.transports.File({ filename: path.join(logPath, `error.log`).normalize(), level: `error` }),
             new winston.transports.File({ filename: path.join(logPath, `verbose.log`).normalize(), level: `verbose` }),
             new winston.transports.File({ filename: path.join(logPath, `combined.log`).normalize() })
