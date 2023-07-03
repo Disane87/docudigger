@@ -1,9 +1,9 @@
 name: Semantic release
 on:
   push:
-    branches: [ dev ]
-  pull_request:
     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   DOCKER_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
