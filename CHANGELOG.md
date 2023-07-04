@@ -3,6 +3,14 @@
 
 ### Bug Fixes
 
+* **build:** :green_heart: changed npm install in dockerfile ([852e976](https://github.com/disane87/docudigger/commit/852e97635505b7b505e34e820b496e0a60fcb67f))
+* **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
+
+## [1.1.3-dev.1](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3-dev.1) (2023-07-04)
+
+
+### Bug Fixes
+
 * **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
 
 ## [1.1.3-dev.1](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3-dev.1) (2023-07-04)
