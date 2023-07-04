@@ -1,3 +1,13 @@
+## [1.1.2](https://github.com/disane87/docudigger/compare/v1.1.1...v1.1.2) (2023-07-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @oclif/core to v2.8.11 ([1e74600](https://github.com/disane87/docudigger/commit/1e746007b3841d86b4533161dcb20639165ea94b))
+* **deps:** update dependency @oclif/plugin-commands to v2.2.17 ([7c5f9d7](https://github.com/disane87/docudigger/commit/7c5f9d7c21e6ad51e5684261eeaea3d00a348e8a))
+* **deps:** update dependency @oclif/plugin-help to v5.2.11 ([f182a37](https://github.com/disane87/docudigger/commit/f182a37430d216916ce553b9bf275bda2f39a8a7))
+* **deps:** update dependency @oclif/plugin-plugins to v3.1.6 ([5cfb780](https://github.com/disane87/docudigger/commit/5cfb780e5dbadabe29b3ab4f40465947ebed2212))
+
 ## [1.1.1](https://github.com/disane87/docudigger/compare/v1.1.0...v1.1.1) (2023-06-30)
 
 
