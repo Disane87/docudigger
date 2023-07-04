@@ -1,3 +1,10 @@
+## [1.1.3-dev.3](https://github.com/disane87/docudigger/compare/v1.1.3-dev.2...v1.1.3-dev.3) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed dockerProjectName ([2e3705b](https://github.com/disane87/docudigger/commit/2e3705ba4f03cae04344a3e484749250a3331c02))
+
 ## [1.1.3-dev.2](https://github.com/disane87/docudigger/compare/v1.1.3-dev.1...v1.1.3-dev.2) (2023-07-04)
 
 
