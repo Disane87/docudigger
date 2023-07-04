@@ -1,3 +1,11 @@
+## [1.1.13](https://github.com/disane87/docudigger/compare/v1.1.12...v1.1.13) (2023-07-04)
+
+
+### Bug Fixes
+
+* added docker.yaml ([91ee546](https://github.com/disane87/docudigger/commit/91ee546cdd99917daa882fe360ef5271b59e71b2))
+* Update build-and-release.yaml ([c788cfe](https://github.com/disane87/docudigger/commit/c788cfe1ff7b93c3aa879c971ddf0a690c44491b))
+
 ## [1.1.12](https://github.com/disane87/docudigger/compare/v1.1.11...v1.1.12) (2023-07-04)
 
 
