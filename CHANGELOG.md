@@ -1,3 +1,11 @@
+## [1.1.9](https://github.com/disane87/docudigger/compare/v1.1.8...v1.1.9) (2023-07-04)
+
+
+### Bug Fixes
+
+* docker versions ([c63349c](https://github.com/disane87/docudigger/commit/c63349c3efb3fcfeaedfd6a2504849e7fde9fdef))
+* versions for docker images ([a5eb456](https://github.com/disane87/docudigger/commit/a5eb4561950ab24f3ffad606c790d5c23dcc238f))
+
 ## [1.1.8](https://github.com/disane87/docudigger/compare/v1.1.7...v1.1.8) (2023-07-04)
 
 
