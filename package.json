@@ -1,5 +1,5 @@
 {
-  "name": "@disane87/docudigger",
+  "name": "@disane-dev/docudigger",
   "version": "1.1.5",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
