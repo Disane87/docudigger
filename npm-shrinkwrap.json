@@ -43,6 +43,7 @@
         "@types/winston": "^2.4.4",
         "@typescript-eslint/eslint-plugin": "^5.60.1",
         "chai": "^4",
+        "conventional-changelog-conventionalcommits": "^6.1.0",
         "conventional-changelog-eslint": "^4.0.0",
         "copyfiles": "^2.4.1",
         "cross-env": "^7.0.3",
@@ -616,6 +617,20 @@
       },
       "engines": {
         "node": ">=v14"
+      }
+    },
+    "node_modules/@commitlint/config-conventional/node_modules/conventional-changelog-conventionalcommits": {
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-5.0.0.tgz",
+      "integrity": "sha512-lCDbA+ZqVFQGUj7h9QBKoIpLhl8iihkO0nCTyRNzuXtcd7ubODpYB04IFy31JloiJgG0Uovu8ot8oxRzn7Nwtw==",
+      "dev": true,
+      "dependencies": {
+        "compare-func": "^2.0.0",
+        "lodash": "^4.17.15",
+        "q": "^1.5.1"
+      },
+      "engines": {
+        "node": ">=10"
       }
     },
     "node_modules/@cspotcode/source-map-support": {
@@ -6062,17 +6077,15 @@
       }
     },
     "node_modules/conventional-changelog-conventionalcommits": {
-      "version": "5.0.0",
-      "resolved": "https://npm.disane.dev/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-5.0.0.tgz",
-      "integrity": "sha512-lCDbA+ZqVFQGUj7h9QBKoIpLhl8iihkO0nCTyRNzuXtcd7ubODpYB04IFy31JloiJgG0Uovu8ot8oxRzn7Nwtw==",
+      "version": "6.1.0",
+      "resolved": "https://registry.npmjs.org/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-6.1.0.tgz",
+      "integrity": "sha512-3cS3GEtR78zTfMzk0AizXKKIdN4OvSh7ibNz6/DPbhWWQu7LqE/8+/GqSodV+sywUR2gpJAdP/1JFf4XtN7Zpw==",
       "dev": true,
       "dependencies": {
-        "compare-func": "^2.0.0",
-        "lodash": "^4.17.15",
-        "q": "^1.5.1"
+        "compare-func": "^2.0.0"
       },
       "engines": {
-        "node": ">=10"
+        "node": ">=14"
       }
     },
     "node_modules/conventional-changelog-eslint": {
@@ -15755,7 +15768,7 @@
     },
     "node_modules/q": {
       "version": "1.5.1",
-      "resolved": "https://npm.disane.dev/q/-/q-1.5.1.tgz",
+      "resolved": "https://registry.npmjs.org/q/-/q-1.5.1.tgz",
       "integrity": "sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==",
       "dev": true,
       "engines": {
