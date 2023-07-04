@@ -65,7 +65,7 @@ USAGE
 
 ## `docudigger scrape all`
 
-Scrapes all websites periodically (defgault for docker environment)
+Scrapes all websites periodically (default for docker environment)
 
 ```
 USAGE
