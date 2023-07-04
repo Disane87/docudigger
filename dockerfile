@@ -36,7 +36,7 @@ ENV PATH $PATH:/home/node/.npm-global/bin
 
 
 RUN npm install -g concurrently --ignore-scripts
-RUN npm install -g @disane-dev/docudigger:${DOCUDIGGER_VERSION} --ignore-scripts
+RUN npm install -g @disane-dev/docudigger@${DOCUDIGGER_VERSION} --ignore-scripts
 RUN npm install -g puppeteer
 
 CMD ["concurrently","docudigger scrape all"]
