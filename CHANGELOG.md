@@ -19,6 +19,13 @@
 
 * **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
 
+## [1.1.3-dev.1](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3-dev.1) (2023-07-04)
+
+
+### Bug Fixes
+
+* **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
+
 ## [1.1.2](https://github.com/disane87/docudigger/compare/v1.1.1...v1.1.2) (2023-07-03)
 
 
