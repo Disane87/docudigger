@@ -4,6 +4,7 @@ ARG DOCUDIGGER_VERSION
 USER node
 WORKDIR /home/node/docudigger
 
+COPY ./archive/ .
 
 # USER root
 
@@ -24,7 +25,7 @@ ENV LOG_LEVEL ${LOG_LEVEL}
 ENV RECURRING  true
 ENV RECURRING_PATTERN "*/30 * * * *"
 
-ENV DOCUDIGGER_VERSION $DOCUDIGGER_VERSION
+ENV DOCUDIGGER_VERSION ${DOCUDIGGER_VERSION}
 
 LABEL org.opencontainers.image.source=https://github.com/Disane87/docudigger
 LABEL org.opencontainers.image.description="Website scraper for getting invoices automagically as pdf (useful for taxes or DMS)"
@@ -37,7 +38,9 @@ ENV PATH $PATH:/home/node/.npm-global/bin
 
 
 RUN npm install -g concurrently --ignore-scripts
-RUN npm install -g @disane-dev/docudigger@$DOCUDIGGER_VERSION --ignore-scripts
+RUN npm install -g disane-dev-docudigger-${DOCUDIGGER_VERSION}.tgz --ignore-scripts
 RUN npm install -g puppeteer
+
+RUN rm -rf disane-dev-docudigger-${DOCUDIGGER_VERSION}.tgz
 
 CMD ["concurrently","docudigger scrape all"]
