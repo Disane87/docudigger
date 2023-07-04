@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/disane87/docudigger/compare/v1.1.10...v1.1.11) (2023-07-04)
+
+
+### Bug Fixes
+
+* Update build-and-release.yaml ([0a1f580](https://github.com/disane87/docudigger/commit/0a1f580fafd46a628c2ad103029f3f36e2e953a1))
+
 ## [1.1.10](https://github.com/disane87/docudigger/compare/v1.1.9...v1.1.10) (2023-07-04)
 
 
