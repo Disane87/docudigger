@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/disane87/docudigger/compare/v1.1.5...v1.1.6) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed package name ([c1476a4](https://github.com/disane87/docudigger/commit/c1476a46a93f779d48e671d66a8a417c94d9e7fe))
+
 ## [1.1.5](https://github.com/disane87/docudigger/compare/v1.1.4...v1.1.5) (2023-07-04)
 
 

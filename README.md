@@ -51,11 +51,11 @@ npm install
 ## Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @disane87/docudigger
+$ npm install -g @disane-dev/docudigger
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
-@disane87/docudigger/1.1.5 linux-x64 node-v18.16.1
+@disane-dev/docudigger/1.1.6 linux-x64 node-v18.16.1
 $ docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND
