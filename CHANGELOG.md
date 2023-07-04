@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/disane87/docudigger/compare/v1.1.7...v1.1.8) (2023-07-04)
+
+
+### Bug Fixes
+
+* pipeline ([aeb02f1](https://github.com/disane87/docudigger/commit/aeb02f1e39870561ebeeb3b5acd935b1aff33873))
+
 ## [1.1.7](https://github.com/disane87/docudigger/compare/v1.1.6...v1.1.7) (2023-07-04)
 
 
