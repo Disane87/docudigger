@@ -125,7 +125,7 @@
         "dockerFile": "dockerfile",
         "dockerProject":"disane87",
         "dockerAutoClean": false,
-        "dockerLogin": false,
+        "dockerLogin": true,
         "dockerArgs": {
           "DOCUDIGGER_VERSION": "{{next.version}}"
         }
