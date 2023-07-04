@@ -119,12 +119,11 @@
       {
         "dockerTags": [
           "{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-          "{{major}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-          "{{major}}.{{minor}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
           "{{version}}"
         ],
         "dockerRegistry": "ghcr.io",
         "dockerFile": "dockerfile",
+        "dockerAutoClean": false,
         "dockerLogin": false,
         "dockerArgs": {
           "DOCUDIGGER_VERSION": "{{next.version}}"
