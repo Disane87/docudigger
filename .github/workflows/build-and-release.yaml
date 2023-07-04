@@ -1,7 +1,16 @@
 name: Semantic release
-on:
+on: 
+  workflow_dispatch
   push:
-    branches: [ main ]
+    branches:
+      - 'main'
+      - 'dev'
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'dev'
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -55,10 +64,15 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=semver,pattern={{version}}
-            type=ref,event=branch
-            type=ref,event=tag
+            type=schedule
             type=raw,value=latest,enable={{ is_default_branch }}
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha
+            
             
       
       - name: get-npm-version
