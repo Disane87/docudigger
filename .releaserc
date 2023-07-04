@@ -123,6 +123,7 @@
         ],
         "dockerRegistry": "ghcr.io",
         "dockerFile": "dockerfile",
+        "dockerProject":"disane87/docudigger",
         "dockerAutoClean": false,
         "dockerLogin": false,
         "dockerArgs": {
