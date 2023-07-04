@@ -3,6 +3,7 @@
 !./scripts/
 !./dist/
 !./bin/
+!./archive/
 !.env.example
 !.package.json
 !package.json

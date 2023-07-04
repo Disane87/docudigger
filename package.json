@@ -110,7 +110,7 @@
     "prepare": "husky install && npm install -g @commitlint/cli @commitlint/config-conventional",
     "clean": "shx rm -rf dist && npx mkdirp ./dist && shx rm -rf archive && npx mkdirp ./archive",
     "prebuild:image": "ts-node ./scripts/docker-version.ts",
-    "build:image": "env-cmd cross-var docker build --build-arg DOCUDIGGER_VERSION=$npm_package_version --pull --rm -f dockerfile -t ghcr.io/disane87/docudigger:$RELEASE_DOCKER_VERSION -t ghcr.io/disane87/docudigger:$GIT_BRANCH .",
+    "build:image": "env-cmd cross-var docker build --build-arg DOCUDIGGER_VERSION=$RELEASE_DOCKER_VERSION --pull --rm -f dockerfile -t ghcr.io/disane87/docudigger:$RELEASE_DOCKER_VERSION -t ghcr.io/disane87/docudigger:$GIT_BRANCH .",
     "prestart:docker": "npm run build:image",
     "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" docudigger",
     "prepush:docker": "cross-var npm run build:image",
