@@ -1,4 +1,4 @@
-name: Build/Release
+name: Semantic release
 on:
   push:
     branches: [ main ]
