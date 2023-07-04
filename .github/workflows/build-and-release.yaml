@@ -7,10 +7,10 @@ on:
       - 'dev'
     tags:
       - 'v*.*.*'
-  pull_request:
-    branches:
-      - 'main'
-      - 'dev'
+  #pull_request:
+    #branches:
+      #- 'main'
+      #- 'dev'
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -58,27 +58,22 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ env.GH_TOKEN }}
 
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule
             type=raw,value=latest,enable={{ is_default_branch }}
             type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
+            type=semver,pattern={{version}},value=${{ steps.package-version.outputs.current-version}}
+            type=semver,pattern={{major}}.{{minor}},value=${{ steps.package-version.outputs.current-version}}
+            type=semver,pattern={{major}},value=${{ steps.package-version.outputs.current-version}}
             
-            
-      
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825
