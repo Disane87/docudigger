@@ -56,8 +56,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=branch,
-            type=raw,value=latest,enable={{ !is_default_branch }}
+            type=ref,event=branch,enable={{ !is_default_branch }}
+            type=raw,value=latest,enable={{ is_default_branch }}
             type=semver,pattern={{version}}
       
       - name: get-npm-version
