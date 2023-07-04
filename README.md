@@ -1,6 +1,9 @@
 <h1 align="center">Welcome to docudigger 👋</h1>
 <p>
-  <img alt="npm (custom registry)" src="https://img.shields.io/npm/v/@disane-dev/amazon-invoice-scraper/latest?registry_uri=https%3A%2F%2Fnpm.disane.dev">
+  <img alt="npm" src="https://img.shields.io/npm/v/@disane-dev/docudigger/latest">
+  <img alt="GitHub package.json dependency version (subfolder of monorepo)" src="https://img.shields.io/github/package-json/dependency-version/Disane87/docudigger/puppeteer">
+  
+
   <img src="https://img.shields.io/badge/npm-%3E%3D9.1.2-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D18.12.1-blue.svg" />
   <a href="#" target="_blank">
@@ -85,6 +88,7 @@ DESCRIPTION
 EXAMPLES
   $ docudigger scrape all
 ```
+
 
 ## `docudigger scrape amazon`
 
