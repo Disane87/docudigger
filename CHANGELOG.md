@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/disane87/docudigger/compare/v1.1.3...v1.1.4) (2023-07-04)
+
+
+### Bug Fixes
+
+* **ci:** :green_heart: fixes ci build ([52e4476](https://github.com/disane87/docudigger/commit/52e44767791d3e4173d2d1daabb5c9ce44d6d9fc))
+
 ## [1.1.3](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3) (2023-07-04)
 
 
