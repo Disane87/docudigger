@@ -30,7 +30,6 @@
     "winston": "^3.9.0"
   },
   "devDependencies": {
-    "@codedependant/semantic-release-docker": "^4.3.0",
     "@commitlint/config-conventional": "^17.6.6",
     "@oclif/test": "^2.3.25",
     "@saithodev/semantic-release-gitea": "^2.1.0",

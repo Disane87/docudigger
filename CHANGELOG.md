@@ -6,6 +6,29 @@
 * changed dockerProjectName ([2e3705b](https://github.com/disane87/docudigger/commit/2e3705ba4f03cae04344a3e484749250a3331c02))
 * fixed a bug where shit happens on docker build ([c73ff0d](https://github.com/disane87/docudigger/commit/c73ff0def48fbfc0ba8335c9e0eba1eaa1cadce7))
 * fixed shit 🤎 ([da332fe](https://github.com/disane87/docudigger/commit/da332fec317771024f131f7a45a49b679c885527))
+* **build:** :green_heart: added docker build/publish action. Kudos to [@fwartner](https://github.com/fwartner) ([ac367c5](https://github.com/disane87/docudigger/commit/ac367c53e110886838edd8d72b67e7154d1ee3aa))
+* **build:** :green_heart: changed npm install in dockerfile ([852e976](https://github.com/disane87/docudigger/commit/852e97635505b7b505e34e820b496e0a60fcb67f))
+* **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
+
+## [1.1.3](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed dockerProjectName ([2e3705b](https://github.com/disane87/docudigger/commit/2e3705ba4f03cae04344a3e484749250a3331c02))
+* fixed a bug where shit happens on docker build ([c73ff0d](https://github.com/disane87/docudigger/commit/c73ff0def48fbfc0ba8335c9e0eba1eaa1cadce7))
+* fixed shit 🤎 ([da332fe](https://github.com/disane87/docudigger/commit/da332fec317771024f131f7a45a49b679c885527))
+* **build:** :green_heart: changed npm install in dockerfile ([852e976](https://github.com/disane87/docudigger/commit/852e97635505b7b505e34e820b496e0a60fcb67f))
+* **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
+
+## [1.1.3](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed dockerProjectName ([2e3705b](https://github.com/disane87/docudigger/commit/2e3705ba4f03cae04344a3e484749250a3331c02))
+* fixed a bug where shit happens on docker build ([c73ff0d](https://github.com/disane87/docudigger/commit/c73ff0def48fbfc0ba8335c9e0eba1eaa1cadce7))
+* fixed shit 🤎 ([da332fe](https://github.com/disane87/docudigger/commit/da332fec317771024f131f7a45a49b679c885527))
 * **build:** :green_heart: changed npm install in dockerfile ([852e976](https://github.com/disane87/docudigger/commit/852e97635505b7b505e34e820b496e0a60fcb67f))
 * **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
 
