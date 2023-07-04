@@ -1,3 +1,10 @@
+## [1.1.3-dev.2](https://github.com/disane87/docudigger/compare/v1.1.3-dev.1...v1.1.3-dev.2) (2023-07-04)
+
+
+### Bug Fixes
+
+* fixed a bug where shit happens on docker build ([c73ff0d](https://github.com/disane87/docudigger/commit/c73ff0def48fbfc0ba8335c9e0eba1eaa1cadce7))
+
 ## [1.1.3-dev.1](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3-dev.1) (2023-07-04)
 
 
