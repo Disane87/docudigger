@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/disane87/docudigger/compare/v1.1.6...v1.1.7) (2023-07-04)
+
+
+### Bug Fixes
+
+* docker file fix ([9774244](https://github.com/disane87/docudigger/commit/9774244b9059331c254ee2cb327613b5a6441a8c))
+
 ## [1.1.6](https://github.com/disane87/docudigger/compare/v1.1.5...v1.1.6) (2023-07-04)
 
 
