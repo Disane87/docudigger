@@ -113,23 +113,6 @@
         ],
         "fail": true
       }
-    ],
-    [
-      "@codedependant/semantic-release-docker",
-      {
-        "dockerTags": [
-          "{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-          "{{version}}"
-        ],
-        "dockerRegistry": "ghcr.io",
-        "dockerFile": "dockerfile",
-        "dockerProject":"disane87",
-        "dockerAutoClean": false,
-        "dockerLogin": true,
-        "dockerArgs": {
-          "DOCUDIGGER_VERSION": "{{next.version}}"
-        }
-      }
     ]
   ],
   "branches": [
