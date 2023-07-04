@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/disane87/docudigger/compare/v1.1.9...v1.1.10) (2023-07-04)
+
+
+### Bug Fixes
+
+* docker tags ([c257853](https://github.com/disane87/docudigger/commit/c257853249ce5b6f072d2f53d09dcd7597f6ea5e))
+
 ## [1.1.9](https://github.com/disane87/docudigger/compare/v1.1.8...v1.1.9) (2023-07-04)
 
 
