@@ -27,8 +27,8 @@ jobs:
       - run: npm ci
       - run: npm run semantic-release:ci
   docker:
-    needs: build
-
+#     needs: build
+    if: startsWith(github.event.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
