@@ -1,27 +1,40 @@
 name: Semantic release
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 #   pull_request:
 #     branches: [ main ]
 env:
-  GH_TOKEN : ${{ secrets.GH_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  DOCKER_REGISTRY_USER:  ${{ secrets.DOCKER_REGISTRY_USER }}
-  DOCKER_REGISTRY_PASSWORD: $GH_TOKEN
-  
-  jobs:
+  DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_REGISTRY_USER }}
+  DOCKER_REGISTRY_PASSWORD: ${{ secrets.GH_TOKEN }}
+
+jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run semantic-release:ci
+      - uses: actions/checkout@v3
+      # - uses: c-hive/gha-npm-cache@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ env.DOCKER_REGISTRY_USER }}
+          password: ${{ env.DOCKER_REGISTRY_PASSWORD }}
+
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@16c0bc4a6e6ada2cfd8afd41d22d95379cf7c32a
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - run: docker buildx install
+      - run: npm ci
+      - run: npm run semantic-release:ci

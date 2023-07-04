@@ -148,3 +148,4 @@ dist
 data
 process.json
 documents/
+.secrets

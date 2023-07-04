@@ -117,7 +117,7 @@
     "prepush:docker": "cross-var npm run build:image",
     "push:docker": "cross-var docker push ghcr.io/disane87/docudigger -a",
     "check:updates": "npx npm-check -u",
-    "test:actions": "act -s GITHUB_TOKEN=\"$(gh auth token)\""
+    "test:actions": "act --secret-file .secrets"
   },
   "engines": {
     "node": ">=12.0.0"
