@@ -2,8 +2,7 @@ name: Docker release
 on: 
   push:
     tags:
-      - 'v*.*.*'
-
+      - 'v**'
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   REGISTRY: ghcr.io
@@ -11,7 +10,6 @@ env:
 
 jobs:
   docker:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
