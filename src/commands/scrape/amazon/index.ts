@@ -96,7 +96,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             for (const orderPage of [...Array(orderPageCount).keys()]) {
                 await this.processOrderPage(orderPage, orders, orderPageCount, currentYear);
             }
-            this.logger.info(`Year "${currentYear}" drone. Skipping to next year`);
+            this.logger.info(`Year "${currentYear}" done. Skipping to next year`);
         }
     }
 
