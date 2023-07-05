@@ -1,3 +1,10 @@
+## [1.1.18](https://github.com/disane87/docudigger/compare/v1.1.17...v1.1.18) (2023-07-05)
+
+
+### Bug Fixes
+
+* ci test fix ([29c1475](https://github.com/disane87/docudigger/commit/29c14755187805bd21f0ef1e45f97a82b15a1289))
+
 ## [1.1.17](https://github.com/disane87/docudigger/compare/v1.1.16...v1.1.17) (2023-07-05)
 
 
