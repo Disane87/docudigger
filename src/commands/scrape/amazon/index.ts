@@ -40,6 +40,8 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     private definition: AmazonDefinition;
     private lastWebsiteRun: WebsiteRun;
 
+    private currentPage: Page;
+
     public async run(): Promise<void> {
         const options: AmazonOptions = this.flags;
         this.lastWebsiteRun = await this.getLastWebsiteRun();
@@ -52,20 +54,20 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
         this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
 
-        const page = await this.newPage();
+        this.currentPage = await this.newPage();
 
         const { amazonSelectors, amazon } = this.getSelectors(options.tld);
         this.selectors = amazonSelectors;
         this.definition = amazon;
 
-        const loginSuccessful = await login(page, amazonSelectors, options, amazon, this.logger);
+        const loginSuccessful = await login(this.currentPage, amazonSelectors, options, amazon, this.logger);
         if (!loginSuccessful) {
             this.logger.error(`Auth not successful. Exiting.`);
             return;
         }
 
         if (options.debug) {
-            await page.setViewport({
+            await this.currentPage.setViewport({
                 width: 1920,
                 height: 1080
             });
@@ -74,7 +76,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         await this.goToOrderPage(amazon);
 
         // Get all orders
-        this.possibleYears = await this.getPossibleYears(options.yearFilter, page);
+        this.possibleYears = await this.getPossibleYears(options.yearFilter);
 
         const orders = new Array<Scrape>();
         const starttimestamp = DateTime.now();
@@ -214,8 +216,8 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         }
     }
 
-    private async getPossibleYears(yearFilter: number, page: Page): Promise<number[]> {
-        const possibleYears = yearFilter ? [yearFilter] : await (await page.$$eval(this.selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
+    private async getPossibleYears(yearFilter: number): Promise<number[]> {
+        const possibleYears = yearFilter ? [yearFilter] : await (await this.currentPage.$$eval(this.selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n);
         const firstPossibleYear = possibleYears[0];
         const lastPossibleYear = possibleYears[possibleYears.length - 1];
         this.logger.debug(`Checking possible years. Got ${possibleYears}`);

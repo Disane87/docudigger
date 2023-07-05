@@ -14,7 +14,7 @@ export class Puppeteer {
     }
 
     public async setup(): Promise<Browser> {
-        this.browser = await puppeteer.launch({ headless: `new`, args: this.arguments, dumpio: false, devtools: this.debug, executablePath: this.getExecutablePath() });
+        this.browser = await puppeteer.launch({ headless: false, args: this.arguments, dumpio: false, devtools: this.debug, executablePath: this.getExecutablePath() });
         return this.browser;
     }
 
