@@ -5,8 +5,8 @@ on:
     branches:
       - 'main'
       - 'dev'
-    tags:
-      - 'v*.*.*'
+#     tags:
+#       - 'v*.*.*'
   #pull_request:
     #branches:
       #- 'main'
@@ -67,10 +67,12 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: |
+            latest=false
           tags: |
             type=raw,value=latest,enable={{ is_default_branch }}
             type=ref,event=branch
-            type=semver,pattern={{version}},value=${{ steps.package-version.outputs.current-version}}
+            type=semver,pattern={{raw}},value=${{ steps.package-version.outputs.current-version}}
             type=semver,pattern={{major}}.{{minor}},value=${{ steps.package-version.outputs.current-version}}
             type=semver,pattern={{major}},value=${{ steps.package-version.outputs.current-version}}
             
