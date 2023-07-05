@@ -32,14 +32,14 @@ export abstract class ScrapeCommand<T extends typeof Command> extends BaseComman
 
     public processJsonFile: string;
 
-    public currentPage: Page;
+    // public currentPage: Page;
 
     public async init(): Promise<void> {
         await super.init();
         await this.initFlags();
 
         this.processJsonFile = path.resolve(path.join(this.flags.fileDestinationFolder, `process.json`)).normalize();
-        this.browser = await new Puppeteer(false, this.pupeteerArgs).setup();
+        this.browser = await new Puppeteer(true, this.pupeteerArgs).setup();
 
     }
 
@@ -55,8 +55,7 @@ export abstract class ScrapeCommand<T extends typeof Command> extends BaseComman
     }
 
     public async newPage(): Promise<Page> {
-        this.currentPage = await this.browser.newPage();
-        return this.currentPage;
+        return await this.browser.newPage();
     }
 
     public async closeBrowser() {
