@@ -74,7 +74,6 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
         await this.goToOrderPage(amazon);
 
-        // Get all orders
         this.possibleYears = await this.getPossibleYears(options.yearFilter);
 
         const orders = new Array<Scrape>();
