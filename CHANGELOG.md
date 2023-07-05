@@ -1,3 +1,10 @@
+## [1.1.17-dev.1](https://github.com/disane87/docudigger/compare/v1.1.16...v1.1.17-dev.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* :bug: fixed a bug that headless is "false" it must bew "new" ([07f87e8](https://github.com/disane87/docudigger/commit/07f87e89ec677ba274ee248e8c6e9f28cd228c1f)), closes [#126](https://github.com/disane87/docudigger/issues/126)
+
 ## [1.1.16](https://github.com/disane87/docudigger/compare/v1.1.15...v1.1.16) (2023-07-05)
 
 
