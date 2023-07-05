@@ -80,7 +80,6 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         const starttimestamp = DateTime.now();
 
         await this.processYears(orders);
-
         await this.endProcess(starttimestamp, orders, options);
     }
 
@@ -145,7 +144,9 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         let orderPageCount: number = null;
 
         try {
-            orderPageCount = this.flags.pageFilter ?? await (await this.currentPage.waitForSelector(amazonSelectors.pagination, { timeout: this.selectorWaitTimeout }))
+            orderPageCount = this.flags.pageFilter ?? await (
+                await this.currentPage.waitForSelector(amazonSelectors.pagination, { timeout: this.selectorWaitTimeout })
+                )
                 .evaluate((handle: HTMLElement) => parseInt(handle.innerText));
         } catch (ex) {
             orderPageCount = 1;
