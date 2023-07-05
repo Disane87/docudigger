@@ -5,8 +5,8 @@ on:
     branches:
       - 'main'
       - 'dev'
-    tags:
-      - 'v*.*.*'
+    # tags:
+    #   - 'v*.*.*'
   #pull_request:
     #branches:
       #- 'main'
@@ -43,7 +43,7 @@ jobs:
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@c85d0e205a72a294fe064f618a87dbac13084086 # v2.8.1
+        uses: sigstore/cosign-installer@db0f512372e476bcdfc58b21303b1407a4313ccc # v2.6.0
         with:
           cosign-release: 'v1.13.1'
 
@@ -69,8 +69,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest,enable={{ is_default_branch }}
+            type=raw,value=${{ steps.package-version.outputs.current-version}}
             type=ref,event=branch
-            type=semver,pattern={{version}},value=${{ steps.package-version.outputs.current-version}}
             type=semver,pattern={{major}}.{{minor}},value=${{ steps.package-version.outputs.current-version}}
             type=semver,pattern={{major}},value=${{ steps.package-version.outputs.current-version}}
             
