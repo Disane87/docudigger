@@ -1,12 +1,12 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@disane-dev/docudigger",
-      "version": "1.1.15",
+      "version": "1.1.16",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
@@ -57,7 +57,7 @@
         "husky": "^8.0.3",
         "mocha": "^10",
         "oclif": "^3.9.1",
-        "semantic-release": "^21.0.7",
+        "semantic-release": "^21.0.6",
         "shx": "^0.3.4",
         "ts-node": "^10.9.1",
         "tslib": "^2.6.0",
