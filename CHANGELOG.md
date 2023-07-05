@@ -1,3 +1,10 @@
+## [1.1.20](https://github.com/disane87/docudigger/compare/v1.1.19...v1.1.20) (2023-07-05)
+
+
+### Bug Fixes
+
+* removed line feeds ([e7cdefe](https://github.com/disane87/docudigger/commit/e7cdefe0fc24c56d7f85fb9b592c1fdb33c46377))
+
 ## [1.1.19](https://github.com/disane87/docudigger/compare/v1.1.18...v1.1.19) (2023-07-05)
 
 
