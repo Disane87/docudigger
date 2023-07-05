@@ -1,3 +1,13 @@
+## [1.1.16](https://github.com/disane87/docudigger/compare/v1.1.15...v1.1.16) (2023-07-05)
+
+
+### Bug Fixes
+
+* :bug: fixed a bug where the currentpage was changed during runtime ([ca51618](https://github.com/disane87/docudigger/commit/ca51618f1a76ded3ce0427960490e84b86672cc4)), closes [#119](https://github.com/disane87/docudigger/issues/119)
+* removed console-log for example hook ([be1c16e](https://github.com/disane87/docudigger/commit/be1c16e74a184ced1b30648deda5de3a7aa4b7aa)), closes [#117](https://github.com/disane87/docudigger/issues/117)
+* removed magic string for login check ([af78807](https://github.com/disane87/docudigger/commit/af788073e45e9603f01ea765a14a7cba3e409f5f))
+* **docker:** :bug: logfolder was not correctly set in docker enviroments ([80395fa](https://github.com/disane87/docudigger/commit/80395fa6d296c8e337bba8d8bf47a1c92ba9f25a)), closes [#118](https://github.com/disane87/docudigger/issues/118)
+
 ## [1.1.16-dev.1](https://github.com/disane87/docudigger/compare/v1.1.15...v1.1.16-dev.1) (2023-07-05)
 
 
