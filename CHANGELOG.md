@@ -1,3 +1,13 @@
+## [1.1.22](https://github.com/disane87/docudigger/compare/v1.1.21...v1.1.22) (2023-07-05)
+
+
+### Bug Fixes
+
+* release ([6ccd4b1](https://github.com/disane87/docudigger/commit/6ccd4b14f71b1c4613d5466a211b739861f9a59f))
+* run docker buld upon release creation ([938829b](https://github.com/disane87/docudigger/commit/938829b5105cfed0f6b52900f1e21106a91afcb0))
+* typo fixed ([221c975](https://github.com/disane87/docudigger/commit/221c97574a76923777c53240a7972e0390fc376d))
+* update base.class.ts ([4706161](https://github.com/disane87/docudigger/commit/47061615dfb215ef7b5b0908cb93ab025f4a1cbd))
+
 ## [1.1.21](https://github.com/disane87/docudigger/compare/v1.1.20...v1.1.21) (2023-07-05)
 
 
