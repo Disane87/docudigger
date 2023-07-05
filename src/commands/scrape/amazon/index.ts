@@ -17,7 +17,6 @@ import { Scrape } from "../../../interfaces/scrape.interface";
 import { AmazonSelectors } from "../../../interfaces/selectors.interface";
 import { WebsiteRun } from "../../../interfaces/website-run.interface";
 
-
 export default class Amazon extends ScrapeCommand<typeof Amazon> {
     public pluginName = `amazon`;
     static description = `Scrapes amazon invoices`;
@@ -75,7 +74,6 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
         await this.goToOrderPage(amazon);
 
-        // Get all orders
         this.possibleYears = await this.getPossibleYears(options.yearFilter);
 
         const orders = new Array<Scrape>();
