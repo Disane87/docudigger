@@ -4,7 +4,7 @@ on:
     tags:
       - 'v*'
 env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  GH_TOKEN: ${{ secrets.AUTH_GH }}
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
