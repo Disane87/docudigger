@@ -1,8 +1,7 @@
 name: Docker release
-on: 
-  push:
-    tags:
-      - "v**"
+on:
+  release:
+    types: [created]
 env:
   GH_TOKEN: ${{ secrets.AUTH_GH }}
   REGISTRY: ghcr.io
