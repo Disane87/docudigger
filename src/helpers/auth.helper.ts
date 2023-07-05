@@ -1,13 +1,14 @@
 import { ux } from "@oclif/core";
 import { AmazonSelectors } from "../interfaces/selectors.interface";
 import { Page } from "../classes/puppeteer.class";
+import { AmazonDefinition } from "../interfaces/amazon.interface";
 
-export const login = async (page: Page, selectors: AmazonSelectors, options, amazonUrls, logger): Promise<boolean> => {
+export const login = async (page: Page, selectors: AmazonSelectors, options, amazonUrls: AmazonDefinition, logger): Promise<boolean> => {
     let hasMessages = false;
 
     const checkForAuthMessages = async (type: `Error` | `Warning`) => {
         // Check if this is the sign in page again i.e. for false password
-        if (page.url().indexOf(`/ap/signin`) > -1) {
+        if (page.url().indexOf(amazonUrls.loginPage) > -1) {
             const messages = (await page.$$eval(selectors[`auth${type}`], handles => handles.map((listItem: HTMLUListElement) => listItem.innerText))) || [];
             hasMessages = messages.length > 0;
 
@@ -85,6 +86,7 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
 
         //     logger.error(`Password or username incorrect. Please try again`);
         // }
+        
 
         if (page.url().indexOf(`/mfa?`) > -1) {
             logger.info(`MFA detected`);
@@ -95,7 +97,7 @@ export const login = async (page: Page, selectors: AmazonSelectors, options, ama
 
             await page.waitForNavigation();
         }
-
+        logger.info(`Logged in`);
         return true;
     }
 
