@@ -67,6 +67,8 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: |
+            latest=false
           tags: |
             type=raw,value=latest,enable={{ is_default_branch }}
             type=raw,value=${{ steps.package-version.outputs.current-version}}
