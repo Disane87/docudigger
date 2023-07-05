@@ -4,8 +4,6 @@ ARG DOCUDIGGER_VERSION
 USER node
 WORKDIR /home/node/docudigger
 
-COPY ./archive/ .
-
 # USER root
 
 RUN mkdir -p data 
@@ -38,9 +36,7 @@ ENV PATH $PATH:/home/node/.npm-global/bin
 
 
 RUN npm install -g concurrently --ignore-scripts
-RUN npm install -g disane-dev-docudigger-${DOCUDIGGER_VERSION}.tgz --ignore-scripts
+RUN npm install -g @disane-dev/docudigger@${DOCUDIGGER_VERSION} --ignore-scripts
 RUN npm install -g puppeteer
-
-RUN rm -rf disane-dev-docudigger-${DOCUDIGGER_VERSION}.tgz
 
 CMD ["concurrently","docudigger scrape all"]

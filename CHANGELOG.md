@@ -1,3 +1,112 @@
+## [1.1.15](https://github.com/disane87/docudigger/compare/v1.1.14...v1.1.15) (2023-07-04)
+
+
+### Bug Fixes
+
+* Update build-and-release.yaml ([81a623f](https://github.com/disane87/docudigger/commit/81a623ff995c1a26025d7448428672a9a259dffa))
+
+## [1.1.14](https://github.com/disane87/docudigger/compare/v1.1.13...v1.1.14) (2023-07-04)
+
+
+### Bug Fixes
+
+* Update build-and-release.yaml ([a91b3aa](https://github.com/disane87/docudigger/commit/a91b3aafc50c4f24a61ace65f39ebf825c7b296f))
+
+## [1.1.13](https://github.com/disane87/docudigger/compare/v1.1.12...v1.1.13) (2023-07-04)
+
+
+### Bug Fixes
+
+* added docker.yaml ([91ee546](https://github.com/disane87/docudigger/commit/91ee546cdd99917daa882fe360ef5271b59e71b2))
+* Update build-and-release.yaml ([c788cfe](https://github.com/disane87/docudigger/commit/c788cfe1ff7b93c3aa879c971ddf0a690c44491b))
+
+## [1.1.12](https://github.com/disane87/docudigger/compare/v1.1.11...v1.1.12) (2023-07-04)
+
+
+### Bug Fixes
+
+* Update build-and-release.yaml ([4d85064](https://github.com/disane87/docudigger/commit/4d85064d50a3e928ea5f8a974aa648afd399c353))
+
+## [1.1.11](https://github.com/disane87/docudigger/compare/v1.1.10...v1.1.11) (2023-07-04)
+
+
+### Bug Fixes
+
+* Update build-and-release.yaml ([0a1f580](https://github.com/disane87/docudigger/commit/0a1f580fafd46a628c2ad103029f3f36e2e953a1))
+
+## [1.1.10](https://github.com/disane87/docudigger/compare/v1.1.9...v1.1.10) (2023-07-04)
+
+
+### Bug Fixes
+
+* docker tags ([c257853](https://github.com/disane87/docudigger/commit/c257853249ce5b6f072d2f53d09dcd7597f6ea5e))
+
+## [1.1.9](https://github.com/disane87/docudigger/compare/v1.1.8...v1.1.9) (2023-07-04)
+
+
+### Bug Fixes
+
+* docker versions ([c63349c](https://github.com/disane87/docudigger/commit/c63349c3efb3fcfeaedfd6a2504849e7fde9fdef))
+* versions for docker images ([a5eb456](https://github.com/disane87/docudigger/commit/a5eb4561950ab24f3ffad606c790d5c23dcc238f))
+
+## [1.1.8](https://github.com/disane87/docudigger/compare/v1.1.7...v1.1.8) (2023-07-04)
+
+
+### Bug Fixes
+
+* pipeline ([aeb02f1](https://github.com/disane87/docudigger/commit/aeb02f1e39870561ebeeb3b5acd935b1aff33873))
+
+## [1.1.7](https://github.com/disane87/docudigger/compare/v1.1.6...v1.1.7) (2023-07-04)
+
+
+### Bug Fixes
+
+* docker file fix ([9774244](https://github.com/disane87/docudigger/commit/9774244b9059331c254ee2cb327613b5a6441a8c))
+
+## [1.1.6](https://github.com/disane87/docudigger/compare/v1.1.5...v1.1.6) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed package name ([c1476a4](https://github.com/disane87/docudigger/commit/c1476a46a93f779d48e671d66a8a417c94d9e7fe))
+
+## [1.1.5](https://github.com/disane87/docudigger/compare/v1.1.4...v1.1.5) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed package name ([71f7c33](https://github.com/disane87/docudigger/commit/71f7c339d24839687861366ec7222e17e1c37be2))
+
+## [1.1.4](https://github.com/disane87/docudigger/compare/v1.1.3...v1.1.4) (2023-07-04)
+
+
+### Bug Fixes
+
+* **ci:** :green_heart: fixes ci build ([52e4476](https://github.com/disane87/docudigger/commit/52e44767791d3e4173d2d1daabb5c9ce44d6d9fc))
+
+## [1.1.3](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed dockerProjectName ([2e3705b](https://github.com/disane87/docudigger/commit/2e3705ba4f03cae04344a3e484749250a3331c02))
+* fixed a bug where shit happens on docker build ([c73ff0d](https://github.com/disane87/docudigger/commit/c73ff0def48fbfc0ba8335c9e0eba1eaa1cadce7))
+* fixed shit 🤎 ([da332fe](https://github.com/disane87/docudigger/commit/da332fec317771024f131f7a45a49b679c885527))
+* **build:** :green_heart: added docker build/publish action. Kudos to [@fwartner](https://github.com/fwartner) ([ac367c5](https://github.com/disane87/docudigger/commit/ac367c53e110886838edd8d72b67e7154d1ee3aa))
+* **build:** :green_heart: changed npm install in dockerfile ([852e976](https://github.com/disane87/docudigger/commit/852e97635505b7b505e34e820b496e0a60fcb67f))
+* **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
+
+## [1.1.3](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3) (2023-07-04)
+
+
+### Bug Fixes
+
+* changed dockerProjectName ([2e3705b](https://github.com/disane87/docudigger/commit/2e3705ba4f03cae04344a3e484749250a3331c02))
+* fixed a bug where shit happens on docker build ([c73ff0d](https://github.com/disane87/docudigger/commit/c73ff0def48fbfc0ba8335c9e0eba1eaa1cadce7))
+* fixed shit 🤎 ([da332fe](https://github.com/disane87/docudigger/commit/da332fec317771024f131f7a45a49b679c885527))
+* **build:** :green_heart: changed npm install in dockerfile ([852e976](https://github.com/disane87/docudigger/commit/852e97635505b7b505e34e820b496e0a60fcb67f))
+* **build:** :green_heart: docker builds from semanticn release pipeline ([6f4af3f](https://github.com/disane87/docudigger/commit/6f4af3f9acdc4f3e35be86ffe1155929bac2514a))
+
 ## [1.1.3](https://github.com/disane87/docudigger/compare/v1.1.2...v1.1.3) (2023-07-04)
 
 

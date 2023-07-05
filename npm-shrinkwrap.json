@@ -1,12 +1,12 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.1.3",
+  "version": "1.1.15",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@disane-dev/docudigger",
-      "version": "1.1.3",
+      "version": "1.1.15",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
@@ -23,7 +23,6 @@
         "docudigger": "bin/run"
       },
       "devDependencies": {
-        "@codedependant/semantic-release-docker": "^4.3.0",
         "@commitlint/config-conventional": "^17.6.6",
         "@oclif/test": "^2.3.25",
         "@saithodev/semantic-release-gitea": "^2.1.0",
@@ -549,7 +548,7 @@
       "version": "4.3.0",
       "resolved": "https://registry.npmjs.org/@codedependant/semantic-release-docker/-/semantic-release-docker-4.3.0.tgz",
       "integrity": "sha512-5Vkvsu9nqPSrpEu9ss5/39oXPYp86ZmCGPqrABZkzGoNSczgz2W6RTGB7KsHwFWJmE9kfq1kRoFt17wRnSIbRQ==",
-      "dev": true,
+      "extraneous": true,
       "dependencies": {
         "@semantic-release/error": "^3.0.0",
         "debug": "^4.1.1",
@@ -562,7 +561,7 @@
       "version": "3.0.0",
       "resolved": "https://registry.npmjs.org/@semantic-release/error/-/error-3.0.0.tgz",
       "integrity": "sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==",
-      "dev": true,
+      "extraneous": true,
       "engines": {
         "node": ">=14.17"
       }
@@ -571,7 +570,7 @@
       "version": "4.1.0",
       "resolved": "https://registry.npmjs.org/execa/-/execa-4.1.0.tgz",
       "integrity": "sha512-j5W0//W7f8UxAn8hXVnwG8tLwdiUy4FJLcSupCg6maBYZDpyBvTApK7KyuI4bKj8KOh1r2YH+6ucuYtJv1bTZA==",
-      "dev": true,
+      "extraneous": true,
       "dependencies": {
         "cross-spawn": "^7.0.0",
         "get-stream": "^5.0.0",
@@ -594,7 +593,7 @@
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/human-signals/-/human-signals-1.1.1.tgz",
       "integrity": "sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==",
-      "dev": true,
+      "extraneous": true,
       "engines": {
         "node": ">=8.12.0"
       }
@@ -1714,6 +1713,47 @@
       "dev": true,
       "dependencies": {
         "@octokit/openapi-types": "^18.0.0"
+      }
+    },
+    "node_modules/@overtheairbrew/semantic-release-dockerbuildx": {
+      "version": "1.3.1",
+      "resolved": "https://registry.npmjs.org/@overtheairbrew/semantic-release-dockerbuildx/-/semantic-release-dockerbuildx-1.3.1.tgz",
+      "integrity": "sha512-17pQX3BUkQiQzfzGXMJZg80Y7ilth0U0zchcpudBSuqHAshsJmiv+PQDlstXiLRzEEhk/Ia5E0Gve8BZ/n8EtQ==",
+      "extraneous": true,
+      "dependencies": {
+        "@semantic-release/error": "^3.0.0",
+        "@types/semver": "^7.3.10",
+        "handlebars": "^4.7.7",
+        "semver": "^7.3.7",
+        "source-map-support": "^0.5.21"
+      }
+    },
+    "node_modules/@overtheairbrew/semantic-release-dockerbuildx/node_modules/@semantic-release/error": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/@semantic-release/error/-/error-3.0.0.tgz",
+      "integrity": "sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==",
+      "extraneous": true,
+      "engines": {
+        "node": ">=14.17"
+      }
+    },
+    "node_modules/@overtheairbrew/semantic-release-dockerbuildx/node_modules/source-map": {
+      "version": "0.6.1",
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+      "extraneous": true,
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/@overtheairbrew/semantic-release-dockerbuildx/node_modules/source-map-support": {
+      "version": "0.5.21",
+      "resolved": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz",
+      "integrity": "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==",
+      "extraneous": true,
+      "dependencies": {
+        "buffer-from": "^1.0.0",
+        "source-map": "^0.6.0"
       }
     },
     "node_modules/@pkgjs/parseargs": {
@@ -5395,6 +5435,12 @@
       "engines": {
         "node": "*"
       }
+    },
+    "node_modules/buffer-from": {
+      "version": "1.1.2",
+      "resolved": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz",
+      "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
+      "extraneous": true
     },
     "node_modules/builtin-modules": {
       "version": "3.2.0",
