@@ -2,7 +2,7 @@ name: Docker release
 on: 
   push:
     tags:
-      - 'v*.*.*'
+      - '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-[a-zA-Z\d][-a-zA-Z.\d]*)?(\+[a-zA-Z\d][-a-zA-Z.\d]*)?$'
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
