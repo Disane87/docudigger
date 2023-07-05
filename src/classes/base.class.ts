@@ -9,10 +9,8 @@ export type BaseFlags<T extends typeof Command> = Interfaces.InferredFlags<typeo
 export type BaseArgs<T extends typeof Command> = Interfaces.InferredArgs<T[`args`]>
 
 export abstract class BaseCommand<T extends typeof Command> extends Command {
-    // add the --json flag
     static enableJsonFlag = true;
     public abstract pluginName: string;
-
 
     protected logger: winston.Logger = null;
 
@@ -39,9 +37,6 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
 
         this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || `./logs/`, this.id);
         exitListener(this.logger);
-
-
-        // this.logger.info(`Got flags for plugin ${this.id} -> ${JSON.stringify(flags, null, 4)}`);
     }
 
     protected async initFlags(){
