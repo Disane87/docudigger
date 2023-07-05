@@ -5,7 +5,6 @@ import { LogLevel } from '../loglevel';
 import { parseBool } from '../helpers/parse-bool.helper';
 import { exitListener } from '../helpers/exit.helper';
 
-
 export type BaseFlags<T extends typeof Command> = Interfaces.InferredFlags<typeof BaseCommand[`baseFlags`] & T[`flags`]>
 export type BaseArgs<T extends typeof Command> = Interfaces.InferredArgs<T[`args`]>
 
