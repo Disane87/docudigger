@@ -153,6 +153,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             this.logger.error(`Couldn't get orderPageCount ${orderPageCount} within ${this.selectorWaitTimeout}ms. Assume only one page.`);
         }
         this.logger.info(`Page count: ${orderPageCount}`);
+        
         return orderPageCount;
     }
 

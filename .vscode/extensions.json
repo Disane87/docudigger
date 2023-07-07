@@ -13,6 +13,7 @@
         "christian-kohler.path-intellisense",
         "gruntfuggly.todo-tree",
         "redhat.vscode-yaml",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
