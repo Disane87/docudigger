@@ -10,10 +10,16 @@ on:
 env:
   GH_TOKEN: ${{ secrets.AUTH_GH }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  NEW_RELEASE_PUBLISHED: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      NEW_RELEASE_PUBLISHED: ${{ steps.semantic-release.outputs.new_release_published }}
+      NEXT_VERSION: ${{ steps.semantic-release.outputs.version }}
     strategy:
       matrix:
         node-version: [18.x]
@@ -26,4 +32,69 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-      - run: npm run semantic-release:ci
+      - id: semantic-release
+        run: npm run semantic-release:ci
+  docker:
+    needs: build
+    runs-on: ubuntu-latest
+    if: needs.build.outputs.NEW_RELEASE_PUBLISHED
+    steps:
+      - env: 
+          NEW_RELEASE_PUBLISHED: ${{ needs.build.outputs.NEW_RELEASE_PUBLISHED }}
+          NEXT_VERSION: ${{ needs.build.outputs.NEXT_VERSION }}
+        run: echo "Creating docker release for version $NEXT_VERSION"
+        
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install cosign
+        if: github.event_name != 'pull_request'
+        uses: sigstore/cosign-installer@c85d0e205a72a294fe064f618a87dbac13084086 # v2.8.1
+        with:
+          cosign-release: 'v1.13.1'
+
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@16c0bc4a6e6ada2cfd8afd41d22d95379cf7c32a
+
+      - name: Log into registry ${{ env.REGISTRY }}
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ env.GH_TOKEN }}
+          
+      - name: Echo Version
+        run: |
+          echo "Docker: $NEXT_VERSION"
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: |
+            latest=false
+          tags: |
+            type=raw,value=latest,enable={{ is_default_branch }}
+            type=raw,value=${{ needs.build.outputs.NEXT_VERSION }}
+            type=semver,pattern={{version}},value=${{ needs.build.outputs.NEXT_VERSION }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ needs.build.outputs.NEXT_VERSION }}
+            type=semver,pattern={{major}},value=${{ needs.build.outputs.NEXT_VERSION }}
+            type=ref,event=branch
+            #type=sha
+
+            
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825
+        with:
+          context: .
+          build-args: |
+            DOCUDIGGER_VERSION=${{ needs.build.outputs.NEXT_VERSION }}
+          platforms: linux/amd64,linux/arm/v7
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

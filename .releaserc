@@ -113,7 +113,11 @@
         ],
         "fail": true
       }
-    ]
+    ],
+    ["@semantic-release/exec", {
+       "verifyReleaseCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT",
+       "successCmd": "echo \"new_release_published=${'true'}\" >> $GITHUB_OUTPUT"
+    }]
   ],
   "branches": [
     "main",

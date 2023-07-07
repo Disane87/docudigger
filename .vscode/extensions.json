@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "vivaxy.vscode-conventional-commits",
+        "aaron-bond.better-comments",
+        "joshbolduc.commitlint",
+        "ms-azuretools.vscode-docker",
+        "dweizhe.docthis-customize-tags",
+        "dbaeumer.vscode-eslint",
+        "me-dutour-mathieu.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "xyz.local-history",
+        "christian-kohler.path-intellisense",
+        "gruntfuggly.todo-tree",
+        "redhat.vscode-yaml",
+        "github.vscode-github-actions"
+    ]
+}
