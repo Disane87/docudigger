@@ -16,7 +16,7 @@
         "@oclif/plugin-plugins": "^3.1.5",
         "luxon": "^3.1.0",
         "node-cron": "^3.0.2",
-        "puppeteer": "^20.7.3",
+        "puppeteer": "^20.8.0",
         "winston": "^3.9.0"
       },
       "bin": {
@@ -542,60 +542,6 @@
       },
       "engines": {
         "node": ">=6.9.0"
-      }
-    },
-    "node_modules/@codedependant/semantic-release-docker": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/@codedependant/semantic-release-docker/-/semantic-release-docker-4.3.0.tgz",
-      "integrity": "sha512-5Vkvsu9nqPSrpEu9ss5/39oXPYp86ZmCGPqrABZkzGoNSczgz2W6RTGB7KsHwFWJmE9kfq1kRoFt17wRnSIbRQ==",
-      "extraneous": true,
-      "dependencies": {
-        "@semantic-release/error": "^3.0.0",
-        "debug": "^4.1.1",
-        "execa": "^4.0.2",
-        "handlebars": "^4.7.7",
-        "semver": "^7.3.2"
-      }
-    },
-    "node_modules/@codedependant/semantic-release-docker/node_modules/@semantic-release/error": {
-      "version": "3.0.0",
-      "resolved": "https://registry.npmjs.org/@semantic-release/error/-/error-3.0.0.tgz",
-      "integrity": "sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==",
-      "extraneous": true,
-      "engines": {
-        "node": ">=14.17"
-      }
-    },
-    "node_modules/@codedependant/semantic-release-docker/node_modules/execa": {
-      "version": "4.1.0",
-      "resolved": "https://registry.npmjs.org/execa/-/execa-4.1.0.tgz",
-      "integrity": "sha512-j5W0//W7f8UxAn8hXVnwG8tLwdiUy4FJLcSupCg6maBYZDpyBvTApK7KyuI4bKj8KOh1r2YH+6ucuYtJv1bTZA==",
-      "extraneous": true,
-      "dependencies": {
-        "cross-spawn": "^7.0.0",
-        "get-stream": "^5.0.0",
-        "human-signals": "^1.1.1",
-        "is-stream": "^2.0.0",
-        "merge-stream": "^2.0.0",
-        "npm-run-path": "^4.0.0",
-        "onetime": "^5.1.0",
-        "signal-exit": "^3.0.2",
-        "strip-final-newline": "^2.0.0"
-      },
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sindresorhus/execa?sponsor=1"
-      }
-    },
-    "node_modules/@codedependant/semantic-release-docker/node_modules/human-signals": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/human-signals/-/human-signals-1.1.1.tgz",
-      "integrity": "sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==",
-      "extraneous": true,
-      "engines": {
-        "node": ">=8.12.0"
       }
     },
     "node_modules/@colors/colors": {
@@ -1713,47 +1659,6 @@
       "dev": true,
       "dependencies": {
         "@octokit/openapi-types": "^18.0.0"
-      }
-    },
-    "node_modules/@overtheairbrew/semantic-release-dockerbuildx": {
-      "version": "1.3.1",
-      "resolved": "https://registry.npmjs.org/@overtheairbrew/semantic-release-dockerbuildx/-/semantic-release-dockerbuildx-1.3.1.tgz",
-      "integrity": "sha512-17pQX3BUkQiQzfzGXMJZg80Y7ilth0U0zchcpudBSuqHAshsJmiv+PQDlstXiLRzEEhk/Ia5E0Gve8BZ/n8EtQ==",
-      "extraneous": true,
-      "dependencies": {
-        "@semantic-release/error": "^3.0.0",
-        "@types/semver": "^7.3.10",
-        "handlebars": "^4.7.7",
-        "semver": "^7.3.7",
-        "source-map-support": "^0.5.21"
-      }
-    },
-    "node_modules/@overtheairbrew/semantic-release-dockerbuildx/node_modules/@semantic-release/error": {
-      "version": "3.0.0",
-      "resolved": "https://registry.npmjs.org/@semantic-release/error/-/error-3.0.0.tgz",
-      "integrity": "sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==",
-      "extraneous": true,
-      "engines": {
-        "node": ">=14.17"
-      }
-    },
-    "node_modules/@overtheairbrew/semantic-release-dockerbuildx/node_modules/source-map": {
-      "version": "0.6.1",
-      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
-      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
-      "extraneous": true,
-      "engines": {
-        "node": ">=0.10.0"
-      }
-    },
-    "node_modules/@overtheairbrew/semantic-release-dockerbuildx/node_modules/source-map-support": {
-      "version": "0.5.21",
-      "resolved": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz",
-      "integrity": "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==",
-      "extraneous": true,
-      "dependencies": {
-        "buffer-from": "^1.0.0",
-        "source-map": "^0.6.0"
       }
     },
     "node_modules/@pkgjs/parseargs": {
@@ -5436,12 +5341,6 @@
         "node": "*"
       }
     },
-    "node_modules/buffer-from": {
-      "version": "1.1.2",
-      "resolved": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz",
-      "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
-      "extraneous": true
-    },
     "node_modules/builtin-modules": {
       "version": "3.2.0",
       "resolved": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-3.2.0.tgz",
@@ -6421,11 +6320,11 @@
       }
     },
     "node_modules/cross-fetch": {
-      "version": "3.1.6",
-      "resolved": "https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.1.6.tgz",
-      "integrity": "sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==",
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/cross-fetch/-/cross-fetch-4.0.0.tgz",
+      "integrity": "sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==",
       "dependencies": {
-        "node-fetch": "^2.6.11"
+        "node-fetch": "^2.6.12"
       }
     },
     "node_modules/cross-spawn": {
@@ -6740,13 +6639,13 @@
       }
     },
     "node_modules/degenerator": {
-      "version": "4.0.3",
-      "resolved": "https://registry.npmjs.org/degenerator/-/degenerator-4.0.3.tgz",
-      "integrity": "sha512-2wY8vmCfxrQpe2PKGYdiWRre5HQRwsAXbAAWRbC+z2b80MEpnWc8A3a9k4TwqwN3Z/Fm3uhNm5vYUZIbMhyRxQ==",
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/degenerator/-/degenerator-4.0.4.tgz",
+      "integrity": "sha512-MTZdZsuNxSBL92rsjx3VFWe57OpRlikyLbcx2B5Dmdv6oScqpMrvpY7zHLMymrUxo3U5+suPUMsNgW/+SZB1lg==",
       "dependencies": {
-        "ast-types": "^0.13.2",
-        "escodegen": "^1.8.1",
-        "esprima": "^4.0.0",
+        "ast-types": "^0.13.4",
+        "escodegen": "^1.14.3",
+        "esprima": "^4.0.1",
         "vm2": "^3.9.19"
       },
       "engines": {
@@ -11198,9 +11097,9 @@
       }
     },
     "node_modules/node-fetch": {
-      "version": "2.6.11",
-      "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.11.tgz",
-      "integrity": "sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==",
+      "version": "2.6.12",
+      "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.12.tgz",
+      "integrity": "sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==",
       "dependencies": {
         "whatwg-url": "^5.0.0"
       },
@@ -15172,12 +15071,12 @@
       }
     },
     "node_modules/pac-resolver": {
-      "version": "6.0.1",
-      "resolved": "https://registry.npmjs.org/pac-resolver/-/pac-resolver-6.0.1.tgz",
-      "integrity": "sha512-dg497MhVT7jZegPRuOScQ/z0aV/5WR0gTdRu1md+Irs9J9o+ls5jIuxjo1WfaTG+eQQkxyn5HMGvWK+w7EIBkQ==",
+      "version": "6.0.2",
+      "resolved": "https://registry.npmjs.org/pac-resolver/-/pac-resolver-6.0.2.tgz",
+      "integrity": "sha512-EQpuJ2ifOjpZY5sg1Q1ZeAxvtLwR7Mj3RgY8cysPGbsRu3RBXyJFWxnMus9PScjxya/0LzvVDxNh/gl0eXBU4w==",
       "dependencies": {
-        "degenerator": "^4.0.1",
-        "ip": "^1.1.5",
+        "degenerator": "^4.0.4",
+        "ip": "^1.1.8",
         "netmask": "^2.0.2"
       },
       "engines": {
@@ -15836,27 +15735,27 @@
       }
     },
     "node_modules/puppeteer": {
-      "version": "20.7.4",
-      "resolved": "https://registry.npmjs.org/puppeteer/-/puppeteer-20.7.4.tgz",
-      "integrity": "sha512-4JLZeRLXQAjQwWa6yv8cpjEgVapgrvDjBBcI/UCJ+EM6na6aR7hQFnQV4ffjFlUKPpvB2Y1vztVqOEhjfC+yUQ==",
+      "version": "20.8.0",
+      "resolved": "https://registry.npmjs.org/puppeteer/-/puppeteer-20.8.0.tgz",
+      "integrity": "sha512-DnTwtQMUzWGkJYN3rvUW8y2LciFMnM0YR9cgwWmYmMLhUnYQw1XX+Q+5cAO8+AADglVuJCz0kaopd0lMI5j04g==",
       "hasInstallScript": true,
       "dependencies": {
         "@puppeteer/browsers": "1.4.3",
         "cosmiconfig": "8.2.0",
-        "puppeteer-core": "20.7.4"
+        "puppeteer-core": "20.8.0"
       },
       "engines": {
         "node": ">=16.3.0"
       }
     },
     "node_modules/puppeteer-core": {
-      "version": "20.7.4",
-      "resolved": "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-20.7.4.tgz",
-      "integrity": "sha512-7YZ1LmTo+5yM9uBNFTMJpE+lJjcIoNjKVarsYIk7o5WhgQNI9o5XgiQK5f71y1vWwr7sT/eGG75HXAehjnTBTg==",
+      "version": "20.8.0",
+      "resolved": "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-20.8.0.tgz",
+      "integrity": "sha512-sQcuH6nv9jnFiaaePk53+C0O9BaJP6OaPmYKqJ3sWhziThv6uaaosK49Kg3g1HUUEP9KYhbOhedPIUCXJSQUxw==",
       "dependencies": {
         "@puppeteer/browsers": "1.4.3",
         "chromium-bidi": "0.4.16",
-        "cross-fetch": "3.1.6",
+        "cross-fetch": "4.0.0",
         "debug": "4.3.4",
         "devtools-protocol": "0.0.1135028",
         "ws": "8.13.0"
@@ -18246,9 +18145,9 @@
       }
     },
     "node_modules/tar-stream": {
-      "version": "3.1.4",
-      "resolved": "https://registry.npmjs.org/tar-stream/-/tar-stream-3.1.4.tgz",
-      "integrity": "sha512-IlHr7ZOW6XaVBCrSCokUJG4IqUuRcWW76B8XbrtCotbaDh6zVGE7WPCzaSz1CN+acFmWiwoa+cE4RZsom0RzXg==",
+      "version": "3.1.6",
+      "resolved": "https://registry.npmjs.org/tar-stream/-/tar-stream-3.1.6.tgz",
+      "integrity": "sha512-B/UyjYwPpMBv+PaFSWAmtYjwdrlEaZQEhMIBFNC5oEG8lpiW8XjcSdmEaClj28ArfKScKHs2nshz3k2le6crsg==",
       "dependencies": {
         "b4a": "^1.6.4",
         "fast-fifo": "^1.2.0",
