@@ -10,7 +10,7 @@
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
-        "@oclif/core": "^2",
+        "@oclif/core": "^2.8.12",
         "@oclif/plugin-commands": "^2.2.16",
         "@oclif/plugin-help": "^5.2.10",
         "@oclif/plugin-plugins": "^3.1.5",
@@ -40,7 +40,7 @@
         "@types/node-cron": "^3.0.8",
         "@types/puppeteer": "^7.0.4",
         "@types/winston": "^2.4.4",
-        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/eslint-plugin": "^5.60.1",
         "chai": "^4",
         "conventional-changelog-conventionalcommits": "^6.1.0",
         "conventional-changelog-eslint": "^4.0.0",
@@ -1110,9 +1110,9 @@
       }
     },
     "node_modules/@oclif/core": {
-      "version": "2.8.11",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-2.8.11.tgz",
-      "integrity": "sha512-9wYW6KRSWfB/D+tqeyl/jxmEz/xPXkFJGVWfKaptqHz6FPWNJREjAM945MuJL2Y8NRhMe+ScRlZ3WpdToX5aVQ==",
+      "version": "2.8.12",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-2.8.12.tgz",
+      "integrity": "sha512-4I0HFP2HHORs5QTEJSUFSks7altrgFJum379TH21eN+csg1JOFlMM0XrkbeIc68RVeVjms/3itpRRnLSdEHBKA==",
       "dependencies": {
         "@types/cli-progress": "^3.11.0",
         "ansi-escapes": "^4.3.2",
@@ -1134,6 +1134,7 @@
         "object-treeify": "^1.1.33",
         "password-prompt": "^1.1.2",
         "semver": "^7.5.3",
+        "slice-ansi": "^4.0.0",
         "string-width": "^4.2.3",
         "strip-ansi": "^6.0.1",
         "supports-color": "^8.1.1",
@@ -4105,8 +4106,6 @@
       "version": "2.0.0",
       "resolved": "https://npm.disane.dev/astral-regex/-/astral-regex-2.0.0.tgz",
       "integrity": "sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==",
-      "dev": true,
-      "peer": true,
       "engines": {
         "node": ">=8"
       }
@@ -17611,8 +17610,6 @@
       "version": "4.0.0",
       "resolved": "https://npm.disane.dev/slice-ansi/-/slice-ansi-4.0.0.tgz",
       "integrity": "sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==",
-      "dev": true,
-      "peer": true,
       "dependencies": {
         "ansi-styles": "^4.0.0",
         "astral-regex": "^2.0.0",
