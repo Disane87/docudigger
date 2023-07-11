@@ -1,3 +1,10 @@
+## [2.0.0-dev.3](https://github.com/disane87/docudigger/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2023-07-11)
+
+
+### 🛠️ Fixes
+
+* **deps:** update dependency puppeteer to v20.8.1 ([2af99f6](https://github.com/disane87/docudigger/commit/2af99f62b03255983713d0960d44d795690519cf))
+
 ## [2.0.0-dev.2](https://github.com/disane87/docudigger/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2023-07-11)
 
 
