@@ -1,12 +1,12 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "1.1.23-dev.1",
+  "version": "2.0.0-dev.1",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@disane-dev/docudigger",
-      "version": "1.1.23-dev.1",
+      "version": "2.0.0-dev.1",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
@@ -16,7 +16,7 @@
         "@oclif/plugin-plugins": "^3.1.5",
         "luxon": "^3.1.0",
         "node-cron": "^3.0.2",
-        "puppeteer": "^20.8.0",
+        "puppeteer": "^20.7.3",
         "winston": "^3.9.0"
       },
       "bin": {
