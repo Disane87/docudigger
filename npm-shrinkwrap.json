@@ -24,7 +24,7 @@
       },
       "devDependencies": {
         "@commitlint/config-conventional": "^17.6.6",
-        "@oclif/test": "^2.3.25",
+        "@oclif/test": "^2.3.28",
         "@saithodev/semantic-release-gitea": "^2.1.0",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "^10.0.1",
@@ -1325,9 +1325,9 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "2.3.27",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-2.3.27.tgz",
-      "integrity": "sha512-qDzV2w5SIBFPPgBCg8/417A4O+fNhKYWZQIZ8gA8qoix51HRVFx9aj5ao32SN9NFTuqOl75pcH7GxKGU3oXlQA==",
+      "version": "2.3.28",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-2.3.28.tgz",
+      "integrity": "sha512-Eee3efwfHHdgZIwOUGFEe8p4d8YEWFYKHoAezxdXzXVOtV4L9r7Oq6KH8dXGBy8yjYDleydwn0PqoZGhFeLxYQ==",
       "dev": true,
       "dependencies": {
         "@oclif/core": "^2.8.11",
