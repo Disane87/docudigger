@@ -1,3 +1,10 @@
+## [2.0.0-dev.2](https://github.com/disane87/docudigger/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2023-07-11)
+
+
+### 🛠️ Fixes
+
+* when using pageFilter and yearFilter the debug logs are false ([6d31d0c](https://github.com/disane87/docudigger/commit/6d31d0cd82a500e8df86a6f081d1220605cbfd3a)), closes [#132](https://github.com/disane87/docudigger/issues/132)
+
 # [2.0.0-dev.1](https://github.com/disane87/docudigger/compare/v1.1.23...v2.0.0-dev.1) (2023-07-11)
 
 
