@@ -11,7 +11,7 @@
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^2",
-        "@oclif/plugin-commands": "^2.2.16",
+        "@oclif/plugin-commands": "^2.2.18",
         "@oclif/plugin-help": "^5.2.10",
         "@oclif/plugin-plugins": "^3.1.5",
         "luxon": "^3.1.0",
@@ -24,7 +24,7 @@
       },
       "devDependencies": {
         "@commitlint/config-conventional": "^17.6.6",
-        "@oclif/test": "^2.3.28",
+        "@oclif/test": "^2.3.25",
         "@saithodev/semantic-release-gitea": "^2.1.0",
         "@semantic-release/changelog": "^6.0.3",
         "@semantic-release/commit-analyzer": "^10.0.1",
@@ -1157,9 +1157,9 @@
       "dev": true
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "2.2.17",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-2.2.17.tgz",
-      "integrity": "sha512-shjVZCopCIbTN8I/i/DR7NwqFRMFau++n3+x2ON7JSNRo+zr/lXQUejxv50D64etQ4dP5wyIyvs+t9iN7j//gg==",
+      "version": "2.2.18",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-2.2.18.tgz",
+      "integrity": "sha512-nY7qQXxhNOUpWL9shKwDD/oEgfp1lVnab5IPB1BPn7Ni5L+5UCgahI8DtyviZbMsi+IUjeBFyX0z5ErNVSlU+Q==",
       "dependencies": {
         "@oclif/core": "^2.8.10",
         "lodash": "^4.17.11"
