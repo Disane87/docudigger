@@ -128,7 +128,7 @@
       "semantic-release-github-pullrequest", {
         "assets": ["CHANGELOG.md"],
         "baseRef": "main",
-        "branch": "version-pr<%= nextRelease.version %>"
+        "branch": "version-pr-<%= nextRelease.version %>"
       }
     ]
   ],
