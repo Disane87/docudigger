@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/disane87/docudigger/compare/v2.0.1...v2.0.2) (2023-07-11)
+
+
+### 🛠️ Fixes
+
+* fixed a bug where delivery notes are gathered instead of invoices ([55d285d](https://github.com/disane87/docudigger/commit/55d285d4ff6089cb744904e4bf6a2caba5ec60fb))
+
 ## [2.0.1](https://github.com/disane87/docudigger/compare/v2.0.0...v2.0.1) (2023-07-11)
 
 
