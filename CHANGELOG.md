@@ -1,3 +1,10 @@
+## [2.0.0-dev.4](https://github.com/disane87/docudigger/compare/v2.0.0-dev.3...v2.0.0-dev.4) (2023-07-11)
+
+
+### 🛠️ Fixes
+
+* ci changes ([c2f1f0a](https://github.com/disane87/docudigger/commit/c2f1f0a887e4f695a6d60fd188dbb9bbe4f255f1))
+
 ## [2.0.0-dev.3](https://github.com/disane87/docudigger/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2023-07-11)
 
 
