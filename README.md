@@ -32,7 +32,7 @@ All settings can be changed via `CLI`, env variable (even when using docker).
 | AMAZON_TLD  |  Amazon top level domain  | `de`  |
 | AMAZON_YEAR_FILTER  | Only extracts invoices from this year (i.e. 2023)  | `2023` |
 | AMAZON_PAGE_FILTER  | Only extracts invoices from this page (i.e. 2)  | `null`  |
-| AMAZON_ONLY_NEW  | Tracks already scraped documents and starts a new run at the last scraped one  | `true`  |
+| ONLY_NEW  | Tracks already scraped documents and starts a new run at the last scraped one  | `true`  |
 | FILE_DESTINATION_FOLDER  | Destination path for all scraped documents  | `./documents/` |
 | FILE_FALLBACK_EXTENSION  | Fallback extension when no extension can be determined  | `.pdf`   |
 | DEBUG  | Debug flag (sets the loglevel to DEBUG)  | `false`  |
