@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/disane87/docudigger/compare/v1.1.23...v2.0.0) (2023-07-11)
+
+
+### Bug Fixes
+
+* :bug: fixed changed `ONLY_NEW` flag ([73f80fc](https://github.com/disane87/docudigger/commit/73f80fc7be783ed0d14e47ecc4cef788d219d075)), closes [#147](https://github.com/disane87/docudigger/issues/147)
+* :bug: fixed changed references for `ONLY_NEW` flag ([b0f9641](https://github.com/disane87/docudigger/commit/b0f96418ccfe944c971fefd854f91c172b27a826)), closes [#174](https://github.com/disane87/docudigger/issues/174)
+* :bug: fixed changed references for `ONLY_NEW` flag ([89614c6](https://github.com/disane87/docudigger/commit/89614c6f6de580ee5afbfe241d0c8fcb1f7de9da))
+* **deps:** update dependency @oclif/core to v2.8.12 ([c2bc7f1](https://github.com/disane87/docudigger/commit/c2bc7f15d6ef4005e9b6f9f3b9fa99908f9863eb))
+* **deps:** update dependency puppeteer to v20.8.0 ([95dbd01](https://github.com/disane87/docudigger/commit/95dbd01f04daf06e0832a3cbdb2ee492ee090782))
+* **deps:** update dependency winston to v3.10.0 ([ffa8fca](https://github.com/disane87/docudigger/commit/ffa8fca58b24e6c562ea78584d27417c338afd6a))
+
+
+### BREAKING CHANGES
+
+* Flag changed from `AMAZON_ONLY_NEW` to `ONLY_NEW` because this flag is global
+* Flag changed from `AMAZON_ONLY_NEW` to `ONLY_NEW` because this flag is global
+* fixes #174
+
 ## [1.1.22](https://github.com/disane87/docudigger/compare/v1.1.21...v1.1.22) (2023-07-05)
 
 
