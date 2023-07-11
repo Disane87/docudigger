@@ -1,3 +1,11 @@
+## [2.0.0-dev.5](https://github.com/disane87/docudigger/compare/v2.0.0-dev.4...v2.0.0-dev.5) (2023-07-11)
+
+
+### 🛠️ Fixes
+
+* removed auto-pr ([79a8d17](https://github.com/disane87/docudigger/commit/79a8d17a9b5fb17a1433deb1eab4f82bac446162))
+* **deps:** update dependency @oclif/plugin-help to v5.2.12 ([baf6013](https://github.com/disane87/docudigger/commit/baf601346088deeff9d2ddecb5b5b963d354a967))
+
 ## [2.0.0-dev.4](https://github.com/disane87/docudigger/compare/v2.0.0-dev.3...v2.0.0-dev.4) (2023-07-11)
 
 
