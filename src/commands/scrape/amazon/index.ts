@@ -39,16 +39,23 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     private definition: AmazonDefinition;
     private lastWebsiteRun: WebsiteRun;
 
+    private lastScrapeWithInvoices: Scrape;
+
     private currentPage: Page;
 
     public async run(): Promise<void> {
         const options: AmazonOptions = this.flags;
         this.lastWebsiteRun = await this.getLastWebsiteRun();
 
+        // Get the latest scrape with order number from the last website run which contains minimum one invoice and all with status saved
+        if(this.lastWebsiteRun?.scrapes.length > 0){
+            this.lastScrapeWithInvoices = this.lastWebsiteRun.scrapes.find(scrape => scrape.invoices.length > 0 && scrape.invoices.every(invoice => invoice.status == InvoiceStatus.saved));
+        }
+        
         if (options.onlyNew) {
             options.yearFilter = DateTime.now().year;
             options.pageFilter = 1;
-            this.logger.info(`Only invoices since order ${this.lastWebsiteRun.scrapes[0]?.number} will be gathered.`);
+            this.logger.info(`Only invoices since order ${this.lastScrapeWithInvoices.number} will be gathered.`);
         }
 
         this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
@@ -96,7 +103,13 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             for (const orderPage of [...Array(orderPageCount).keys()]) {
                 await this.processOrderPage(orderPage, orders, orderPageCount, currentYear);
             }
-            this.logger.info(`Year "${currentYear}" done. Skipping to next year`);
+
+            if(this.flags.yearFilter != currentYear){
+                this.logger.info(`Year "${currentYear}" done. Skipping to next year`);
+            } else {
+                this.logger.info(`Year "${currentYear}" done. Skipping next years`);
+
+            }
         }
     }
 
@@ -116,7 +129,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
             const invoiceUrls = await this.getInvoiceUrls(orderIndex);
 
-            if (this.flags.onlyNew && (orderNumber == this.lastWebsiteRun.scrapes[0]?.number)) {
+            if (this.flags.onlyNew && (orderNumber == this.lastScrapeWithInvoices.number)) {
                 this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
                 break;
             }
@@ -160,8 +173,15 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     private checkForLastPage(orderPage: number, orderPageCount: number, currentYear: number, amazon: AmazonDefinition): string | null {
         if ((orderPage + 1) != orderPageCount) {
             const nextPageUrl = new URL(`?ie=UTF8&orderFilter=year-${currentYear}&search=&startIndex=${10 * (orderPage + 1)}`, amazon.orderPage);
-            this.logger.info(`Page "${orderPage + 1}" done. Skipping to next page.`);
-            this.logger.debug(`Nextpage url: ${nextPageUrl}`);
+            
+            if(this.flags.pageFilter != orderPage + 1){
+                this.logger.info(`Page "${orderPage + 1}" done. Skipping to next page.`);
+                this.logger.debug(`Nextpage url: ${nextPageUrl}`);
+            } else {
+                this.logger.info(`Page "${orderPage + 1}" done. Skipping next pages`);
+
+            }
+
             return nextPageUrl.toString();
         } else {
             this.logger.info(`Last page "${orderPageCount}" reached. Going to next year.`);

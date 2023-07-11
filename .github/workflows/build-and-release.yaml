@@ -5,6 +5,7 @@ on:
     paths:
       - 'src/**'
       - 'dockerfile'
+      - '.releaserc'
     branches:
       - 'main'
       - 'dev'
