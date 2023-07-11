@@ -70,7 +70,6 @@ export abstract class ScrapeCommand<T extends typeof Command> extends BaseComman
             const websiteScrapes = this.processedWebsites[this.pluginName.toLowerCase()];
             const documentCount = websiteScrapes.scrapes.length;
 
-
             if (documentCount === 0) {
                 this.logger.warn(`No latest orders. OnlyNew deactivated.`);
                 this.flags.onlyNew = false;

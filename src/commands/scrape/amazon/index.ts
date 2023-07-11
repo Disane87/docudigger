@@ -39,16 +39,23 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     private definition: AmazonDefinition;
     private lastWebsiteRun: WebsiteRun;
 
+    private lastScrapeWithInvoices: Scrape;
+
     private currentPage: Page;
 
     public async run(): Promise<void> {
         const options: AmazonOptions = this.flags;
         this.lastWebsiteRun = await this.getLastWebsiteRun();
 
+        // Get the latest scrape with order number from the last website run which contains minimum one invoice and all with status saved
+        if(this.lastWebsiteRun?.scrapes.length > 0){
+            this.lastScrapeWithInvoices = this.lastWebsiteRun.scrapes.find(scrape => scrape.invoices.length > 0 && scrape.invoices.every(invoice => invoice.status == InvoiceStatus.saved));
+        }
+        
         if (options.onlyNew) {
             options.yearFilter = DateTime.now().year;
             options.pageFilter = 1;
-            this.logger.info(`Only invoices since order ${this.lastWebsiteRun.scrapes[0]?.number} will be gathered.`);
+            this.logger.info(`Only invoices since order ${this.lastScrapeWithInvoices.number} will be gathered.`);
         }
 
         this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
@@ -116,7 +123,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
             const invoiceUrls = await this.getInvoiceUrls(orderIndex);
 
-            if (this.flags.onlyNew && (orderNumber == this.lastWebsiteRun.scrapes[0]?.number)) {
+            if (this.flags.onlyNew && (orderNumber == this.lastScrapeWithInvoices.number)) {
                 this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
                 break;
             }
