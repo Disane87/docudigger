@@ -1,10 +1,3 @@
-## [1.1.23](https://github.com/disane87/docudigger/compare/v1.1.22...v1.1.23) (2023-07-07)
-
-
-### Bug Fixes
-
-* line feeds ([d3cab24](https://github.com/disane87/docudigger/commit/d3cab2484bb244f0f852e2a5dc73c6cda6d2e7ec))
-
 ## [1.1.22](https://github.com/disane87/docudigger/compare/v1.1.21...v1.1.22) (2023-07-05)
 
 
