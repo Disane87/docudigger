@@ -123,13 +123,6 @@
         "verifyReleaseCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT",
         "successCmd": "echo \"new_release_published=${'true'}\" >> $GITHUB_OUTPUT"
       }
-    ],
-    [
-      "semantic-release-github-pullrequest", {
-        "assets": ["CHANGELOG.md"],
-        "baseRef": "main",
-        "branch": "version-pr-<%= nextRelease.version %>"
-      }
     ]
   ],
   "branches": [
