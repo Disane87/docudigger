@@ -1,3 +1,16 @@
+## [2.0.1](https://github.com/disane87/docudigger/compare/v2.0.0...v2.0.1) (2023-07-11)
+
+
+### 🛠️ Fixes
+
+* ci changes ([c2f1f0a](https://github.com/disane87/docudigger/commit/c2f1f0a887e4f695a6d60fd188dbb9bbe4f255f1))
+* determine latest orders differently ([1a0401b](https://github.com/disane87/docudigger/commit/1a0401b5424efeabf790c8d9ff29d0db1cd1dcaa)), closes [#150](https://github.com/disane87/docudigger/issues/150)
+* handle exception on writing `process.json` ([9c93fdf](https://github.com/disane87/docudigger/commit/9c93fdfdaaa36cc1fc8fef378001c51b1183716a)), closes [#151](https://github.com/disane87/docudigger/issues/151)
+* removed auto-pr ([79a8d17](https://github.com/disane87/docudigger/commit/79a8d17a9b5fb17a1433deb1eab4f82bac446162))
+* when using pageFilter and yearFilter the debug logs are false ([6d31d0c](https://github.com/disane87/docudigger/commit/6d31d0cd82a500e8df86a6f081d1220605cbfd3a)), closes [#132](https://github.com/disane87/docudigger/issues/132)
+* **deps:** update dependency @oclif/plugin-help to v5.2.12 ([baf6013](https://github.com/disane87/docudigger/commit/baf601346088deeff9d2ddecb5b5b963d354a967))
+* **deps:** update dependency puppeteer to v20.8.1 ([2af99f6](https://github.com/disane87/docudigger/commit/2af99f62b03255983713d0960d44d795690519cf))
+
 ## [2.0.0-dev.5](https://github.com/disane87/docudigger/compare/v2.0.0-dev.4...v2.0.0-dev.5) (2023-07-11)
 
 
