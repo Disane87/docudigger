@@ -99,9 +99,13 @@ export abstract class ScrapeCommand<T extends typeof Command> extends BaseComman
             processedWebsite.scrapes.push(...documents);
         }
 
-        fs.writeFileSync(
-            this.processJsonFile,
-            JSON.stringify(this.processedWebsites, null, 4)
-        );
+        try {
+            fs.writeFileSync(
+                this.processJsonFile,
+                JSON.stringify(this.processedWebsites, null, 4)
+            );
+        } catch(ex){
+            this.logger.error(`Error writing process.json file: ${ex}`);
+        }
     }
 }
