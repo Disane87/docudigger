@@ -54,6 +54,15 @@ body:
       description: Provide us an industry
     validations:
       required: false
+      
+  - type: textarea
+    id: website-description
+    attributes:
+      label: Describe the company
+      placeholder: The company is a local energy provider in germany
+      
+    validations:
+      required: true
 
   - type: checkboxes
     id: website-needs-auth
