@@ -135,9 +135,10 @@ body:
         > :memo: You can save the HTML files right after the login procedure
   - type: textarea
     id: html
-    render: html
+    
     attributes:
       label: Paste your html here
+      render: html
     validations:
       required: false
 
