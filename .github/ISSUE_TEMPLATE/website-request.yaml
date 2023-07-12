@@ -125,6 +125,8 @@ body:
         Provide us some screenshots how the actually site looks like. This will help us to understand the way the site works.
   - type: textarea
     id: screenshots
+    attributes:
+      label: Paste your screenshots here
     validations:
       required: true
   - type: markdown
@@ -136,6 +138,8 @@ body:
         > :memo: You can save the HTML files right after the login procedure
   - type: textarea
     id: html
+    attributes:
+      label: Paste your html here
     validations:
       required: false
 
