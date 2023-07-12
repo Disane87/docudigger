@@ -26,6 +26,8 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         `<%= config.bin %> <%= command.id %>`,
     ];
 
+    public test = ``;
+
     static flags = {
         username: Flags.string({ char: `u`, description: `Username`, required: true, env: `AMAZON_USERNAME` }),
         password: Flags.string({ char: `p`, description: `Password`, required: true, env: `AMAZON_PASSWORD` }),
