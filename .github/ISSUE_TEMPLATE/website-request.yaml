@@ -1,6 +1,6 @@
 name: Website request
 description: Request for a new website to be scraped
-title: "[WR]: website.tld "
+title: "[WR] website.tld "
 labels: ["enhancement", "plugin", "triage"]
 
 body:
