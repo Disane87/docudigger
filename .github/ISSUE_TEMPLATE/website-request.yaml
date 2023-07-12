@@ -2,14 +2,14 @@ name: Website request
 description: Request for a new website to be scraped
 title: "[WR]: website.tld "
 labels: ["enhancement", "plugin", "triage"]
-assignees:
-  - octocat
+
 body:
   - type: markdown
     attributes:
       value: |
         # Website request
         To add a scraper for a specific webpage, we need some information about the page.
+  
   - type: markdown
     attributes:
       value: |
@@ -41,7 +41,6 @@ body:
       description: We need this information to determine which type of scraping we use
       options:
         - Commerce (like amazon etc.)
-        - Energy (i.e. your local energy company)
         - Energy (i.e. your local energy company)
         - Telecommunication (like Vodafone)
         - other
