@@ -8,55 +8,121 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        # Website request
+        To add a scraper for a specific webpage, we need some information about the page.
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic information
+        
   - type: input
-    id: contact
+    id: website
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: Which website do you want to crawl? 
+      description: We need the entire domain with TLD to crawl like 
+      placeholder: http://test.com
     validations:
-      required: false
-  - type: textarea
-    id: what-happened
+      required: true
+
+  - type: dropdown
+    id: provides-services
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: What services do they provide?
+      description: We need this information to determine which type of scraping we use
+      options:
+        - Orders (with n invoices)
+        - Contracts (with recurring calculation in a defined interval)
     validations:
       required: true
   - type: dropdown
-    id: version
+    id: website-industry
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: In which industry does the company operate?
+      description: We need this information to determine which type of scraping we use
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - Commerce (like amazon etc.)
+        - Energy (i.e. your local energy company)
+        - Energy (i.e. your local energy company)
+        - Telecommunication (like Vodafone)
+        - other
+    validations:
+      required: true
+  
+  - type: input
+    id: industry
+    attributes:
+      label: If you choose other...
+      description: Provide us an industry
     validations:
       required: true
   - type: dropdown
-    id: browsers
+    id: website-needs-auth
     attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
+      label: Does the webpage have/needs an authentication?
+      description: We need this information to determine which type of scraping we use and if its usable within docker
       options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+        - Yes
+        - No
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: website-needs-2fa
+    attributes:
+      label: Do they provide a two factor auth?
+      description: Currently scraping documents via Docker container doesn't work with a seconds factor. We need this information to config this plugins as a 2fas-able one.
+      options:
+        - Yes
+        - No
+    validations:
+      required: true
+
+  - type: dropdown
+    id: website-provides-credentials
+    attributes:
+      label: Would you provide us the credentials (privately)?
+      description: It would be beneficial to have the credentials. But if not, its totally fine
+      options:
+        - Yes
+        - No
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-collaborates
+    attributes:
+      label: Are you willing to collaborate to get this scraper up and running?
+      description: It would be beneficial to have the credentials. But if not, its totally fine
+      options:
+        - Yes
+        - No
+    validations:
+      required: true
+  - type: input
+    id: color
+    attributes:
+      label: What color (hex) represents the company? 
+      description: This is needed for a specific tag for this website and logs in the application. If you're unsure about this, please head up to https://www.color-hex.com/color-palettes/ and check if you find the main color of the company.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Record the way you download your documents
+        To add a scraper for a specific webpage, we need some information about the page.
+
+        The chance is pretty high, we don't use your service website. So you have to provide us a way to code this entire process. Luckily Chrome have a recorder fur Puppeteer (the library we use to scrape the page). Please study the following link ([Puppeteer Recorder with Chrome DevTools (testingbot.com)](https://testingbot.com/support/puppeteer/recorder.html#)) and create a `.js`with the recording.
+
+        
+
+        
+        
   - type: textarea
-    id: logs
+    id: recorded-code
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Your recorded code
+      description: Ensure you only click the parts that are needed to get a download of the desired document. Its important that you provide us a recording with `@puppeteer/replay`
+    validations:
+      required: true
+  
