@@ -94,6 +94,7 @@ body:
     attributes:
       label: What color (hex) represents the company? 
       description: This is needed for a specific tag for this website and logs in the application. If you're unsure about this, please head up to https://www.color-hex.com/color-palettes/ and check if you find the main color of the company.
+      value: #
     validations:
       required: true
 
@@ -110,17 +111,29 @@ body:
     attributes:
       label: Your recorded code
       description: Ensure you only click the parts that are needed to get a download of the desired document. Its important that you provide us a recording with `@puppeteer/replay`
+      value: ```js
+             ```
     validations:
       required: true
-
+      
   - type: markdown
     attributes:
       value: |
         ## Screenshots
         Provide us some screenshots how the actually site looks like. This will help us to understand the way the site works.
-        
+  - type: textarea
+    id: screenshots
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
         ## HTML-Files (optional, but would be a big help)
         If you don't provide us credentials, it could help if you provide us the saved HTML files. Every browser supports saving the current document.
         
         > :memo: You can save the HTML files right after the login procedure
+  - type: textarea
+    id: html
+    validations:
+    required: true
 
