@@ -55,49 +55,41 @@ body:
       description: Provide us an industry
     validations:
       required: true
-  - type: dropdown
+
+  - type: checkboxes
     id: website-needs-auth
     attributes:
       label: Does the webpage have/needs an authentication?
       description: We need this information to determine which type of scraping we use and if its usable within docker
       options:
-        - Yes
-        - No
-    validations:
-      required: true
-      
-  - type: dropdown
+      - label: Yes, the website needs an authentication
+        required: false
+  - type: checkboxes
     id: website-needs-2fa
     attributes:
       label: Do they provide a two factor auth?
       description: Currently scraping documents via Docker container doesn't work with a seconds factor. We need this information to config this plugins as a 2fas-able one.
       options:
-        - Yes
-        - No
-    validations:
-      required: true
+      - label: Yes, the website needs an seconds factor
+        required: false
 
-  - type: dropdown
+  - type: checkboxes
     id: website-provides-credentials
     attributes:
       label: Would you provide us the credentials (privately)?
       description: It would be beneficial to have the credentials. But if not, its totally fine
       options:
-        - Yes
-        - No
-    validations:
-      required: true
-
-  - type: dropdown
+      - label: Yes, I would share my credentials
+        required: false
+  - type: checkboxes
     id: user-collaborates
     attributes:
       label: Are you willing to collaborate to get this scraper up and running?
-      description: It would be beneficial to have the credentials. But if not, its totally fine
+      description: We need your help to get this scraper running.
       options:
-        - Yes
-        - No
-    validations:
-      required: true
+      - label: Yes, I would collaborate on this actively.
+        required: false
+
   - type: input
     id: color
     attributes:
@@ -114,10 +106,6 @@ body:
 
         The chance is pretty high, we don't use your service website. So you have to provide us a way to code this entire process. Luckily Chrome have a recorder fur Puppeteer (the library we use to scrape the page). Please study the following link ([Puppeteer Recorder with Chrome DevTools (testingbot.com)](https://testingbot.com/support/puppeteer/recorder.html#)) and create a `.js`with the recording.
 
-        
-
-        
-        
   - type: textarea
     id: recorded-code
     attributes:
