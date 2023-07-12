@@ -111,8 +111,10 @@ body:
     attributes:
       label: Your recorded code
       description: Ensure you only click the parts that are needed to get a download of the desired document. Its important that you provide us a recording with `@puppeteer/replay`
-      value: ```js
-             ```
+      value: |
+        ```js
+        Paste your code here
+        ```
     validations:
       required: true
       
@@ -135,5 +137,5 @@ body:
   - type: textarea
     id: html
     validations:
-    required: true
+      required: false
 
