@@ -35,13 +35,13 @@ All settings can be changed via `CLI`, env variable (even when using docker).
 | ONLY_NEW  | Tracks already scraped documents and starts a new run at the last scraped one  | `true`  |
 | FILE_DESTINATION_FOLDER  | Destination path for all scraped documents  | `./documents/` |
 | FILE_FALLBACK_EXTENSION  | Fallback extension when no extension can be determined  | `.pdf`   |
-| DEBUG  | Debug flag (sets the loglevel to DEBUG)  | `false`  |
-| SUBFOLDER_FOR_PAGES  | Creates subfolders for every scraped page/plugin  | `false`  |
+| DEBUG  | Debug flag (sets the log level to DEBUG)  | `false`  |
+| SUBFOLDER_FOR_PAGES  | Creates sub folders for every scraped page/plugin  | `false`  |
 | LOG_PATH  | Sets the log path   | `./logs/` |
 | LOG_LEVEL  | Log level (see https://github.com/winstonjs/winston#logging-levels)  | `info`  |
 | RECURRING  | Flag for executing the script periodically. Needs 'RECURRING_PATTERN' to be set. Default `true`when using docker container  | `false`  |
 | RECURRING_PATTERN  | Cron pattern to execute periodically. Needs RECURRING to true  | `*/30 * * * *`  |
-| TZ  | Timezone used for docker enviroments  | `Europe/Berlin`  |
+| TZ  | Timezone used for docker environments  | `Europe/Berlin`  |
 
 ## Install
 
