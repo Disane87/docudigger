@@ -50,6 +50,8 @@ All settings can be changed via `CLI`, env variable (even when using docker).
 ## Usage
 > :memo: **Attention**: Make sure you have an `.env` file present (with the variables from above) in the work directory or use the appropriate cli arguments.
 
+> :memo: **Attention**: If you want to use an `.env` file, make sure you use `env-cmd` (https://www.npmjs.com/package/env-cmd)
+
 <!-- usage -->
 ```sh-session
 
