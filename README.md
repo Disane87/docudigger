@@ -48,9 +48,9 @@ All settings can be changed via `CLI`, env variable (even when using docker).
 > :warning: **Attention**: There is no need to install this locally. Just use `npx`
 
 ## Usage
-> :memo: **Attention**: Make sure you have an `.env` file present (with the variables from above) in the work directory or use the appropriate cli arguments.
+> :hammer: Make sure you have an `.env` file present (with the variables from above) in the work directory or use the appropriate cli arguments.
 
-> :memo: **Attention**: If you want to use an `.env` file, make sure you use `env-cmd` (https://www.npmjs.com/package/env-cmd)
+> :ambulance: If you want to use an `.env` file, make sure you use `env-cmd` (https://www.npmjs.com/package/env-cmd)
 
 <!-- usage -->
 ```sh-session
