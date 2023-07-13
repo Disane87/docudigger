@@ -45,21 +45,24 @@ All settings can be changed via `CLI`, env variable (even when using docker).
 
 ## Install
 
-```sh
-npm install
-```
+> :warning: **Attention**: There is no need to install this locally. Just use `npx`
+
 ## Usage
+:memo: **Attention**: Make sure you have an `.env` file present (with the variables from above) in the work directory or use the appropriate cli arguments.
+
 <!-- usage -->
 ```sh-session
-$ npm install -g @disane-dev/docudigger
-$ docudigger COMMAND
+
+$ npx docudigger COMMAND
 running command...
-$ docudigger (--version)
+
+$ npx docudigger (--version)
 @disane-dev/docudigger/2.0.2 linux-x64 node-v18.16.1
-$ docudigger --help [COMMAND]
+
+$ npx docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND
-...
+
 ```
 <!-- usagestop -->
 
@@ -69,7 +72,7 @@ Scrapes all websites periodically (default for docker environment)
 
 ```
 USAGE
-  $ docudigger scrape all [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l <value>] [-c <value> -r]
+  $ npx docudigger scrape all [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l <value>] [-c <value> -r]
 
 FLAGS
   -c, --recurringCron=<value>  [default: * * * * *] Cron pattern to execute periodically
@@ -96,7 +99,7 @@ Used to get invoices from amazon
 
 ```
 USAGE
-  $ docudigger scrape amazon -u <value> -p <value> [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l
+  $ npx docudigger scrape amazon -u <value> -p <value> [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l
     <value>] [-c <value> -r] [--fileDestinationFolder <value>] [--fileFallbackExentension <value>] [-t <value>]
     [--yearFilter <value>] [--pageFilter <value>] [--onlyNew]
 
