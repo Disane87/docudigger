@@ -48,7 +48,7 @@ All settings can be changed via `CLI`, env variable (even when using docker).
 > :warning: **Attention**: There is no need to install this locally. Just use `npx`
 
 ## Usage
-:memo: **Attention**: Make sure you have an `.env` file present (with the variables from above) in the work directory or use the appropriate cli arguments.
+> :memo: **Attention**: Make sure you have an `.env` file present (with the variables from above) in the work directory or use the appropriate cli arguments.
 
 <!-- usage -->
 ```sh-session
