@@ -11,7 +11,12 @@
     {
       "matchUpdateTypes": [
         "minor",
-        "patch"
+        "patch",
+        "digest",
+        "pin",
+        "lockFileMaintenance", 
+        "rollback", 
+        "bump"
       ],
       "automerge": true,
       "ignoreTests": true
