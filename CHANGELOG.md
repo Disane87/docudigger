@@ -1,3 +1,10 @@
+## [2.0.1-dev.3](https://github.com/disane87/docudigger/compare/v2.0.1-dev.2...v2.0.1-dev.3) (2023-10-31)
+
+
+### 🛠️ Fixes
+
+* :bug: fixed new headless debug ([ff10111](https://github.com/disane87/docudigger/commit/ff10111d2787a51ff6c848151438c3405a3de845)), closes [#226](https://github.com/disane87/docudigger/issues/226)
+
 ## [2.0.1-dev.2](https://github.com/disane87/docudigger/compare/v2.0.1-dev.1...v2.0.1-dev.2) (2023-10-31)
 
 
