@@ -1,4 +1,4 @@
-FROM satantime/puppeteer-node:20-slim
+FROM satantime/puppeteer-node:21-slim
 USER node
 WORKDIR /home/node/docudigger
 
