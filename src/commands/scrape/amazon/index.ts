@@ -59,9 +59,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   private selectors: AmazonSelectors;
   private definition: AmazonDefinition;
   private lastWebsiteRun: WebsiteRun;
-
   private lastScrapeWithInvoices: Scrape;
-
   private currentPage: Page;
 
   public async run(): Promise<void> {
