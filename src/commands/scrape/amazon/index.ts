@@ -455,7 +455,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       popover: `#a-popover-{{index}}`,
       invoiceList: `ul.invoice-list`,
       invoiceLinks: `a[href*="invoice.pdf"]`,
-      pagination: `.pagination-full ul.a-pagination li:nth-last-child(2) a`,
+      pagination: `ul.a-pagination li:nth-last-child(2) a`,
       yearFilter: `select[name="timeFilter"]`,
       authError: `#auth-error-message-box .a-unordered-list li`,
       authWarning: `#auth-warning-message-box .a-unordered-list li`,
