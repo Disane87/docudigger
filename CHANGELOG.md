@@ -1,3 +1,13 @@
+## [2.0.1-dev.2](https://github.com/disane87/docudigger/compare/v2.0.1-dev.1...v2.0.1-dev.2) (2023-10-31)
+
+
+### 🛠️ Fixes
+
+* :bug: fixed changed amazon selectors ([6c4ea0a](https://github.com/disane87/docudigger/commit/6c4ea0ab1cfb10eda4031fc5624a970a59c284c1)), closes [#221](https://github.com/disane87/docudigger/issues/221)
+* fixed build errors ([16ae7af](https://github.com/disane87/docudigger/commit/16ae7af6167f1a4bd5c57e22771f46afd577a2ab))
+* unsued variables removed ([7876d50](https://github.com/disane87/docudigger/commit/7876d50fc0a581d396b1913a1139d0139ba1b8ce))
+* **deps:** update dependency @oclif/core to v2.9.1 ([#171](https://github.com/disane87/docudigger/issues/171)) ([3bc803e](https://github.com/disane87/docudigger/commit/3bc803ee5f42774df44d7098c08fe689985c1428))
+
 ## [2.0.1-dev.1](https://github.com/disane87/docudigger/compare/v2.0.0...v2.0.1-dev.1) (2023-07-12)
 
 
