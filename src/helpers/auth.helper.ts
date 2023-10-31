@@ -97,12 +97,6 @@ export const login = async (
     // Check if this is the sign in page again i.e. for false password
     checkForAuthMessages(`Error`);
     checkForAuthMessages(`Warning`);
-    // if (page.url().indexOf(`/ap/signin?`) > -1) {
-    //     const errors = await page.$$eval(selectors.authError, handles => handles.map((listItem: HTMLUListElement) => listItem.innerText));
-    //     authError = errors.length > 0;
-
-    //     logger.error(`Password or username incorrect. Please try again`);
-    // }
 
     if (page.url().indexOf(`/mfa?`) > -1) {
       logger.info(`MFA detected`);
