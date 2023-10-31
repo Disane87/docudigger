@@ -1,3 +1,10 @@
+## [2.0.1-dev.4](https://github.com/disane87/docudigger/compare/v2.0.1-dev.3...v2.0.1-dev.4) (2023-10-31)
+
+
+### 🛠️ Fixes
+
+* :bug: amazon changed pagination css classes ([9be1b26](https://github.com/disane87/docudigger/commit/9be1b26bdea2e0d3e7e4c706b175a057fe1cf13d)), closes [#227](https://github.com/disane87/docudigger/issues/227)
+
 ## [2.0.1-dev.3](https://github.com/disane87/docudigger/compare/v2.0.1-dev.2...v2.0.1-dev.3) (2023-10-31)
 
 
