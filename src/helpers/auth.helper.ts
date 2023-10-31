@@ -62,6 +62,10 @@ export const login = async (
       return false;
     }
 
+    if (authWarning?.length > 0) {
+      return false;
+    }
+
     const hasCaptcha = !!(await page.$(`form.cvf-widget-form-captcha`));
 
     if (hasCaptcha) {
