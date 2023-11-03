@@ -805,9 +805,9 @@
       }
     },
     "node_modules/@oclif/core": {
-      "version": "3.10.0",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.10.0.tgz",
-      "integrity": "sha512-gXats+3wTQRztZS2gy8rcZgkKqLY/FexCzcAkNe8Z4E+268hagAHMFxA8tsiUcOKaywgQAL55TCHD1bgni54GA==",
+      "version": "3.10.1",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.10.1.tgz",
+      "integrity": "sha512-zBjujYmLyEu7T6PBlaPqmsum/Cc5KMwc6XmcKzUC/PUQspENGd4z0n4eBlNlKjfO/1sLdts99xUlSoIYXoFimg==",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
         "ansi-styles": "^4.3.0",
