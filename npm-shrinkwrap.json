@@ -978,12 +978,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.0",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.0.tgz",
-      "integrity": "sha512-bjezbUX2C9DpjNu3aLxScaL+C7aMnPPAQ/zaK3R7nsNw8kUSd6Sub2PYv2IbcxqNYH98Fw7YGZnVNw7m0F7dDA==",
+      "version": "3.1.1",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.1.tgz",
+      "integrity": "sha512-88y8E6z0ZVyBdk4RGgZtr2PFYXmfXbnZEqVtKw4K7xf5xIakqN/l8BAoDkBbBU25ELKGoQb4maHfoa9uyfTOtw==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.9.1",
+        "@oclif/core": "^3.10.1",
         "chai": "^4.3.10",
         "fancy-test": "^3.0.1"
       },
