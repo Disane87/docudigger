@@ -9208,9 +9208,9 @@
       }
     },
     "node_modules/envfile": {
-      "version": "6.18.0",
-      "resolved": "https://registry.npmjs.org/envfile/-/envfile-6.18.0.tgz",
-      "integrity": "sha512-IsYv64dtlNXTm4huvCBpbXsdZQurYUju9WoYCkSj+SDYpO3v4/dq346QsCnNZ3JcnWw0G3E6+saVkVtmPw98Gg==",
+      "version": "6.19.0",
+      "resolved": "https://registry.npmjs.org/envfile/-/envfile-6.19.0.tgz",
+      "integrity": "sha512-JL6ypQVcNvtWv9Uenlst4cJLHPqRaLY0acOwPZoquLPLOlQpq/yoEQlBcnEubsXwiy/rw9dPnHEZqOUJp6h+Zg==",
       "dev": true,
       "bin": {
         "envfile": "bin.cjs"
