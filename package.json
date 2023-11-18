@@ -60,7 +60,7 @@
     "eslint-config-oclif": "^5.0.0",
     "eslint-config-oclif-typescript": "^3.0.11",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-config-standard-with-typescript": "^40.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^5.0.1",
