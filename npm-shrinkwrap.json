@@ -805,9 +805,9 @@
       }
     },
     "node_modules/@oclif/core": {
-      "version": "3.11.0",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.11.0.tgz",
-      "integrity": "sha512-9A2LhDQATf1vrRqPoO0gGuBrey0jt3kDafC+eazxTNWV2EvlEpgY2587iyrxPK/fL2xg7f+0mtxYaSHdO2k8eg==",
+      "version": "3.12.0",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.12.0.tgz",
+      "integrity": "sha512-mT1Vpd1E20IJ7P6GDYOivylPdTHq/xVgFjeCDjitFW86UAklFM8BEFyFB7KpsTvpmjRbCoda3yU10lSI1224lw==",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
         "ansi-styles": "^4.3.0",
@@ -815,6 +815,7 @@
         "chalk": "^4.1.2",
         "clean-stack": "^3.0.1",
         "cli-progress": "^3.12.0",
+        "color": "^4.2.3",
         "debug": "^4.3.4",
         "ejs": "^3.1.9",
         "get-package-type": "^0.1.0",
@@ -838,6 +839,18 @@
       },
       "engines": {
         "node": ">=18.0.0"
+      }
+    },
+    "node_modules/@oclif/core/node_modules/color": {
+      "version": "4.2.3",
+      "resolved": "https://registry.npmjs.org/color/-/color-4.2.3.tgz",
+      "integrity": "sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==",
+      "dependencies": {
+        "color-convert": "^2.0.1",
+        "color-string": "^1.9.0"
+      },
+      "engines": {
+        "node": ">=12.5.0"
       }
     },
     "node_modules/@oclif/plugin-commands": {
