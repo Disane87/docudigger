@@ -17286,9 +17286,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.0.3",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.0.3.tgz",
-      "integrity": "sha512-Bq7t1bJvAKYwW3DKQIzok3jkXv7yUIMneoSec1qUr9wfSqzRTZQB0UUDovwlT/L+3TBMVoRyw1WeX+YDvfRJNA==",
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.0.4.tgz",
+      "integrity": "sha512-2rebdu1Ow9/TRolMI7s1IsJmKH7RpwlBzIKZFtE8eFiDmGenX6GEsWaxSEtgMXmzCSSQ1DbCRDv0hwcwVGIJuA==",
       "dev": true,
       "dependencies": {
         "@oclif/core": "^3.0.4",
