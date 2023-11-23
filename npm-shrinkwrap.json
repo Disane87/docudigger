@@ -9399,9 +9399,9 @@
       }
     },
     "node_modules/envfile": {
-      "version": "6.21.0",
-      "resolved": "https://registry.npmjs.org/envfile/-/envfile-6.21.0.tgz",
-      "integrity": "sha512-1zqoQF7RBu7npb8IOMhJmMslyOhxpHxkZ66lGUcl//R0EPrIgNPH8kFJbj3IypZ3klyZPE1qMOt6qCQe/ghAZw==",
+      "version": "6.22.0",
+      "resolved": "https://registry.npmjs.org/envfile/-/envfile-6.22.0.tgz",
+      "integrity": "sha512-G9vwmk9O+eJzHh6JEfva0aTmyKtbolqGx9l/KnEVslsR3hl5XZ+g+wgY/j8gTJoikgP5upt6wxXM+E19o36iUg==",
       "dev": true,
       "bin": {
         "envfile": "bin.cjs"
