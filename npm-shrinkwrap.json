@@ -48,7 +48,7 @@
         "cross-env": "^7.0.3",
         "cross-var": "^1.1.0",
         "env-cmd": "^10.1.0",
-        "envfile": "^6.18.0",
+        "envfile": "^7.0.0",
         "eslint": "^8.52.0",
         "eslint-config-oclif": "^5.0.0",
         "eslint-config-oclif-typescript": "^3.0.11",
@@ -9399,15 +9399,15 @@
       }
     },
     "node_modules/envfile": {
-      "version": "6.22.0",
-      "resolved": "https://registry.npmjs.org/envfile/-/envfile-6.22.0.tgz",
-      "integrity": "sha512-G9vwmk9O+eJzHh6JEfva0aTmyKtbolqGx9l/KnEVslsR3hl5XZ+g+wgY/j8gTJoikgP5upt6wxXM+E19o36iUg==",
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/envfile/-/envfile-7.0.0.tgz",
+      "integrity": "sha512-q6GTPMuGokB1Kz72+1mj8/O+sZQUhoae3JcAGEVJdN7Y/o2zv/PjLzbVdB+nsUBjIXLgRUb2W3hDKDJOPvtpMQ==",
       "dev": true,
       "bin": {
         "envfile": "bin.cjs"
       },
       "engines": {
-        "node": ">=10"
+        "node": ">=8"
       },
       "funding": {
         "url": "https://bevry.me/fund"
