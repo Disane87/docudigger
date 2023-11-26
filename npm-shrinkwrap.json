@@ -9467,9 +9467,9 @@
       }
     },
     "node_modules/eslint-config-oclif-typescript": {
-      "version": "3.0.20",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif-typescript/-/eslint-config-oclif-typescript-3.0.20.tgz",
-      "integrity": "sha512-HwEaMFD1Va+IpWInTxwPCS5f16tlGz/ZjF8xXzOb09Mht92TQJ3GP21/SN+kdD4xMalxL0FkGoifLg2mgiOqtg==",
+      "version": "3.0.21",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif-typescript/-/eslint-config-oclif-typescript-3.0.21.tgz",
+      "integrity": "sha512-LkZo5FbaqD6lbPiGfPINK4RqPQAf/zaqY3cM3h6Zjda5ntpC3ZkBfDQEArKERa3Yr4ucHiaDIUVNIZcUmNcjPA==",
       "dev": true,
       "dependencies": {
         "@typescript-eslint/eslint-plugin": "^6.12.0",
@@ -9479,7 +9479,7 @@
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-mocha": "^10.2.0",
         "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-perfectionist": "^2.4.0"
+        "eslint-plugin-perfectionist": "^2.4.2"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -9871,12 +9871,12 @@
       }
     },
     "node_modules/eslint-plugin-perfectionist": {
-      "version": "2.4.0",
-      "resolved": "https://registry.npmjs.org/eslint-plugin-perfectionist/-/eslint-plugin-perfectionist-2.4.0.tgz",
-      "integrity": "sha512-til+vyf56wAUgFv5guBA1Zo5lTw9xj2kCeK/g+9NBtsRy1rkGrlqnvxYNuFExcK3VsPhUUtx5UdScEDz9ahQ5Q==",
+      "version": "2.4.2",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-perfectionist/-/eslint-plugin-perfectionist-2.4.2.tgz",
+      "integrity": "sha512-PaNwDCH+VYvG9uACKF4Vb3jBM8SjCPJXBpiFvTKUuJI07aqKWp+Q4NEa1hD4dj+ZVE0oYqAKX7DviEidiBlqIg==",
       "dev": true,
       "dependencies": {
-        "@typescript-eslint/utils": "^6.10.0",
+        "@typescript-eslint/utils": "^6.12.0",
         "minimatch": "^9.0.3",
         "natural-compare-lite": "^1.4.0"
       },
