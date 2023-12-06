@@ -933,9 +933,9 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "4.1.9",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-4.1.9.tgz",
-      "integrity": "sha512-7FS6LGkZXe8XSlDE3DCdnzVexXSdfLmNtNqKjYdxS6oBKuKsOplvkQy9ptB0rlKkOTlar3tr/5W97dfDZYEpVA==",
+      "version": "4.1.10",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-4.1.10.tgz",
+      "integrity": "sha512-+tb9ME7J0Uje/XWxh60OBqkuysIValn+O70AAodWbHDTkQmmW+g50uEuyQUQW5iPKMeiZBVg9p+AhpT8d9R9jA==",
       "dependencies": {
         "@oclif/core": "^3.10.2",
         "chalk": "^5.3.0",
@@ -945,7 +945,7 @@
         "semver": "^7.5.4",
         "shelljs": "^0.8.5",
         "validate-npm-package-name": "^5.0.0",
-        "yarn": "^1.22.18"
+        "yarn": "^1.22.21"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -19383,9 +19383,9 @@
       }
     },
     "node_modules/yarn": {
-      "version": "1.22.19",
-      "resolved": "https://registry.npmjs.org/yarn/-/yarn-1.22.19.tgz",
-      "integrity": "sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==",
+      "version": "1.22.21",
+      "resolved": "https://registry.npmjs.org/yarn/-/yarn-1.22.21.tgz",
+      "integrity": "sha512-ynXaJsADJ9JiZ84zU25XkPGOvVMmZ5b7tmTSpKURYwgELdjucAOydqIOrOfTxVYcNXe91xvLZwcRh68SR3liCg==",
       "hasInstallScript": true,
       "bin": {
         "yarn": "bin/yarn.js",
