@@ -14203,9 +14203,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.0.4",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.0.4.tgz",
-      "integrity": "sha512-2rebdu1Ow9/TRolMI7s1IsJmKH7RpwlBzIKZFtE8eFiDmGenX6GEsWaxSEtgMXmzCSSQ1DbCRDv0hwcwVGIJuA==",
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.1.0.tgz",
+      "integrity": "sha512-4E6z1HOdUYXHu/cbbSv0gnbFJfR9BGc9Oa+e9l8SkRoicGnrEPMpuZyY2vxWPGwMndN6ijxxuFlVmw1/j+MJpg==",
       "dev": true,
       "dependencies": {
         "@oclif/core": "^3.0.4",
