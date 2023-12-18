@@ -991,12 +991,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.4",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.4.tgz",
-      "integrity": "sha512-7MPqp1KulzsKoUW73sMewuDNeb8WhUGzAou1U7LcMRyP4qigFPHjJp1V/XnAjez4pA2OK4X+xbaPvf1GRuIjog==",
+      "version": "3.1.5",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.5.tgz",
+      "integrity": "sha512-SYA44is3O/2BRQKBmp/6M1VgqRXnYQpsnBIxljICrrPLhEUQh14Ev/8IuL11ULijZMZDeWM+9sPMsj06jsJyBA==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.12.0",
+        "@oclif/core": "^3.15.0",
         "chai": "^4.3.10",
         "fancy-test": "^3.0.4"
       },
