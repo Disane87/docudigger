@@ -805,9 +805,9 @@
       }
     },
     "node_modules/@oclif/core": {
-      "version": "3.15.0",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.15.0.tgz",
-      "integrity": "sha512-A1EVh4gv7mqAJ9OGVxLugaLcHvQnGwvOnPToP8OT9AldJ0LwVExOwhhlnOstYca33MIpGH00twYxWMS5nxMuDQ==",
+      "version": "3.15.1",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.15.1.tgz",
+      "integrity": "sha512-d4457zVo2agLoJG97CmdY6M3BeP5sogBP3BtP65hUvJH6wA6Us1hdY3UiPPtD/ZzZImq7cATVMABuCF9tM+rWA==",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
         "ansi-styles": "^4.3.0",
@@ -826,7 +826,7 @@
         "js-yaml": "^3.14.1",
         "natural-orderby": "^2.0.3",
         "object-treeify": "^1.1.33",
-        "password-prompt": "^1.1.2",
+        "password-prompt": "^1.1.3",
         "slice-ansi": "^4.0.0",
         "string-width": "^4.2.3",
         "strip-ansi": "^6.0.1",
