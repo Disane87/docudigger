@@ -964,12 +964,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.8",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.8.tgz",
-      "integrity": "sha512-QtBK+gq7mOSns1DhB4URNNvanYiLfwyJ4dY4iL1qyv0ishmRLMRsXnRwlml8e9RHqKg17Sj+I3dnMqWyfJV3rw==",
+      "version": "3.1.9",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.9.tgz",
+      "integrity": "sha512-MU/EaXNtnxqBUZ719iR/s0uGOQ4vil68I9Q3l6a6kQLmmYVETAVtUTmx3vqxFjgkSfg43XhrF/G3ddvIeAgmpA==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.15.1",
+        "@oclif/core": "^3.16.0",
         "chai": "^4.3.10",
         "fancy-test": "^3.0.8"
       },
