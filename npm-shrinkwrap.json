@@ -1819,12 +1819,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.10",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.10.tgz",
-      "integrity": "sha512-Jv91n9M9V8z/WheKFSQQ65Pc6mlackg4kO8XbXrIiK3kd/Z2xVojCB3Fq6dN19Ow3OZB0Uc0J+8H62XOR0Pblw==",
+      "version": "3.1.11",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.11.tgz",
+      "integrity": "sha512-Mod6K0rpZmSXKnwGyymZhXqajISw1pth6fJMBZtvNFA3XRNwobQ/jcd/oKOapDFIA46E6SLjP+Mlc7xt4hcbNw==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.16.0",
+        "@oclif/core": "^3.18.1",
         "chai": "^4.4.0",
         "fancy-test": "^3.0.8"
       },
