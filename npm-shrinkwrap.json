@@ -8636,12 +8636,12 @@
       }
     },
     "node_modules/eslint-config-oclif-typescript": {
-      "version": "3.0.38",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif-typescript/-/eslint-config-oclif-typescript-3.0.38.tgz",
-      "integrity": "sha512-pOPAVh92YtJP8Lp2njVz25gwk4Zqy4IgE03kyr6HBGyMLQHVqOZv/a2kj6FKDs98w1OfwiDnhh52lx0cRNN1lw==",
+      "version": "3.0.39",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif-typescript/-/eslint-config-oclif-typescript-3.0.39.tgz",
+      "integrity": "sha512-xXYckWvrKSojpeYGjN2Q+pvyh4OA2QEYV///uGRkyt33LCpkFtKz2MiswQ4PnX/VMLfK5tRGQZYgkR6r6QJn3g==",
       "dev": true,
       "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.18.1",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
         "@typescript-eslint/parser": "^6.19.0",
         "eslint-config-xo-space": "^0.34.0",
         "eslint-import-resolver-typescript": "^3.6.1",
