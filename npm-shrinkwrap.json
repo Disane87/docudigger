@@ -1821,14 +1821,14 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.12",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.12.tgz",
-      "integrity": "sha512-KEIN5v6bMKqVydU686bt0zt5AeFpH6OOspacDF+ZhCbp8ymrkJ1h1ZLsVedhcsLJ9BJxowN7GFYo1HrZ45uujA==",
+      "version": "3.1.13",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.13.tgz",
+      "integrity": "sha512-ztjXyoN4D2qUIhRPiWp8fdaSCZ8e3tZ0hGGXUPRk0tWzGVfii3R5tjaJpn804HEzRJjbuRDmSscvU7iMVUro1A==",
       "dev": true,
       "dependencies": {
         "@oclif/core": "^3.18.1",
         "chai": "^4.4.1",
-        "fancy-test": "^3.0.8"
+        "fancy-test": "^3.0.9"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -9333,9 +9333,9 @@
       }
     },
     "node_modules/fancy-test": {
-      "version": "3.0.8",
-      "resolved": "https://registry.npmjs.org/fancy-test/-/fancy-test-3.0.8.tgz",
-      "integrity": "sha512-vHkT59Kf0Byiqzwc2My1fD9VDYsAPkT+jVqdMqqtwtdLwz19x+hHI2oAxNwfyfEDSK+VrLB4+B96sZbOLVEHdA==",
+      "version": "3.0.9",
+      "resolved": "https://registry.npmjs.org/fancy-test/-/fancy-test-3.0.9.tgz",
+      "integrity": "sha512-9sDjNM5oRLpIQfpjSSmp8J0bYCg1Hb9GWofdv+Dl5f/Phjp2XJZM7L2qsSulpMTsahz0EPsS6T6/QH0ldzfgqw==",
       "dev": true,
       "dependencies": {
         "@types/chai": "*",
@@ -9344,7 +9344,7 @@
         "@types/sinon": "*",
         "lodash": "^4.17.13",
         "mock-stdin": "^1.0.0",
-        "nock": "^13.4.0",
+        "nock": "^13.5.0",
         "sinon": "^16.1.3",
         "stdout-stderr": "^0.1.9"
       },
@@ -12414,9 +12414,9 @@
       }
     },
     "node_modules/nock": {
-      "version": "13.4.0",
-      "resolved": "https://registry.npmjs.org/nock/-/nock-13.4.0.tgz",
-      "integrity": "sha512-W8NVHjO/LCTNA64yxAPHV/K47LpGYcVzgKd3Q0n6owhwvD0Dgoterc25R4rnZbckJEb6Loxz1f5QMuJpJnbSyQ==",
+      "version": "13.5.0",
+      "resolved": "https://registry.npmjs.org/nock/-/nock-13.5.0.tgz",
+      "integrity": "sha512-9hc1eCS2HtOz+sE9W7JQw/tXJktg0zoPSu48s/pYe73e25JW9ywiowbqnUSd7iZPeVawLcVpPZeZS312fwSY+g==",
       "dev": true,
       "dependencies": {
         "debug": "^4.1.0",
