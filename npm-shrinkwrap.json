@@ -1871,11 +1871,11 @@
       }
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "3.1.1",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.1.1.tgz",
-      "integrity": "sha512-02qkdnolNfa5qFUlf2rOO004J0ZWREg/YaxYFFpwkxm/E8vFyi0EgmwsOD5R8ahN2MqqSA7VpjJCD2y1sDeWBA==",
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.1.2.tgz",
+      "integrity": "sha512-2IKJ9/bsScS59sDtZH6k52UAkzjyUx4w82dA5oLazs1Aph7XK8HeJXYvyRxdYDc9P+IYEXwmg1INLZ4R1rm9Ew==",
       "dependencies": {
-        "@oclif/core": "^3.18.1",
+        "@oclif/core": "^3.18.2",
         "lodash.pickby": "^4.6.0",
         "lodash.sortby": "^4.7.0",
         "lodash.template": "^4.5.0",
