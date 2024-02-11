@@ -5077,14 +5077,14 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.14",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.14.tgz",
-      "integrity": "sha512-HzzK6Zwddx2HMeyDGBrD1Ky/OXvsR2uiRKsIA+p0n+HNhEUhb9J/xWQ+apql1G+a8UkUKMfaBbDeYQj9JF+6mQ==",
+      "version": "3.1.15",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.15.tgz",
+      "integrity": "sha512-/+MO813qxvu+LLHdC8iO/SPJi/z7IaDBPJi15hx6r3r9N5FEpoHR2NTgM8rS/wHuo/ITaafWEis/+pFkXs6CJg==",
       "dev": true,
       "dependencies": {
         "@oclif/core": "^3.18.2",
         "chai": "^4.4.1",
-        "fancy-test": "^3.0.9"
+        "fancy-test": "^3.0.10"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -12589,9 +12589,9 @@
       }
     },
     "node_modules/fancy-test": {
-      "version": "3.0.9",
-      "resolved": "https://registry.npmjs.org/fancy-test/-/fancy-test-3.0.9.tgz",
-      "integrity": "sha512-9sDjNM5oRLpIQfpjSSmp8J0bYCg1Hb9GWofdv+Dl5f/Phjp2XJZM7L2qsSulpMTsahz0EPsS6T6/QH0ldzfgqw==",
+      "version": "3.0.10",
+      "resolved": "https://registry.npmjs.org/fancy-test/-/fancy-test-3.0.10.tgz",
+      "integrity": "sha512-6pwRQ7gqW57FKoTyRPPmcZktHLvrX+LS5ZQdXvQTMAq6vOVGCUrtJ4WP2BD4sZisRBnasaT4981L/8Q+qfh3wg==",
       "dev": true,
       "dependencies": {
         "@types/chai": "*",
@@ -12600,7 +12600,7 @@
         "@types/sinon": "*",
         "lodash": "^4.17.13",
         "mock-stdin": "^1.0.0",
-        "nock": "^13.5.0",
+        "nock": "^13.5.1",
         "sinon": "^16.1.3",
         "stdout-stderr": "^0.1.9"
       },
@@ -15640,9 +15640,9 @@
       }
     },
     "node_modules/nock": {
-      "version": "13.5.0",
-      "resolved": "https://registry.npmjs.org/nock/-/nock-13.5.0.tgz",
-      "integrity": "sha512-9hc1eCS2HtOz+sE9W7JQw/tXJktg0zoPSu48s/pYe73e25JW9ywiowbqnUSd7iZPeVawLcVpPZeZS312fwSY+g==",
+      "version": "13.5.1",
+      "resolved": "https://registry.npmjs.org/nock/-/nock-13.5.1.tgz",
+      "integrity": "sha512-+s7b73fzj5KnxbKH4Oaqz07tQ8degcMilU4rrmnKvI//b0JMBU4wEXFQ8zqr+3+L4eWSfU3H/UoIVGUV0tue1Q==",
       "dev": true,
       "dependencies": {
         "debug": "^4.1.0",
