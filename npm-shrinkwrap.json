@@ -5077,12 +5077,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.1.15",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.15.tgz",
-      "integrity": "sha512-/+MO813qxvu+LLHdC8iO/SPJi/z7IaDBPJi15hx6r3r9N5FEpoHR2NTgM8rS/wHuo/ITaafWEis/+pFkXs6CJg==",
+      "version": "3.1.16",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.1.16.tgz",
+      "integrity": "sha512-LeoojG2tD8XDN9HzEt1j+JUKSyYz7qGp55SfvnXCa8d7k4Hq9jTzTiubu+s2mE4Nq9Ns5X40NZNSm85COxbsqw==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.18.2",
+        "@oclif/core": "^3.19.1",
         "chai": "^4.4.1",
         "fancy-test": "^3.0.10"
       },
