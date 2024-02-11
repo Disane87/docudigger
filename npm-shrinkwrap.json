@@ -11376,14 +11376,14 @@
       }
     },
     "node_modules/eslint-config-oclif-typescript": {
-      "version": "3.0.46",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif-typescript/-/eslint-config-oclif-typescript-3.0.46.tgz",
-      "integrity": "sha512-yZu2T2suCo+uYEcmQkjnty0cviF6FxV7wFWvDPQEXTR2cmQJCZwwFjhUCfjkj8g4upCxA345cKUjVkfDq5hEYg==",
+      "version": "3.0.47",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif-typescript/-/eslint-config-oclif-typescript-3.0.47.tgz",
+      "integrity": "sha512-rTsvSeUwEd4TvH76LTtobUWkTqH1C0ArhpY/5dSngQsXW5oqwGBckSO3I6qfasw6cPIUOa6+3lftsqNUHbovRA==",
       "dev": true,
       "dependencies": {
         "@typescript-eslint/eslint-plugin": "^6.21.0",
         "@typescript-eslint/parser": "^6.21.0",
-        "eslint-config-xo-space": "^0.34.0",
+        "eslint-config-xo-space": "^0.35.0",
         "eslint-import-resolver-typescript": "^3.6.1",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-mocha": "^10.2.0",
@@ -11392,6 +11392,42 @@
       },
       "engines": {
         "node": ">=18.0.0"
+      }
+    },
+    "node_modules/eslint-config-oclif-typescript/node_modules/eslint-config-xo": {
+      "version": "0.44.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-xo/-/eslint-config-xo-0.44.0.tgz",
+      "integrity": "sha512-YG4gdaor0mJJi8UBeRJqDPO42MedTWYMaUyucF5bhm2pi/HS98JIxfFQmTLuyj6hGpQlAazNfyVnn7JuDn+Sew==",
+      "dev": true,
+      "dependencies": {
+        "confusing-browser-globals": "1.0.11"
+      },
+      "engines": {
+        "node": ">=18"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      },
+      "peerDependencies": {
+        "eslint": ">=8.56.0"
+      }
+    },
+    "node_modules/eslint-config-oclif-typescript/node_modules/eslint-config-xo-space": {
+      "version": "0.35.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-xo-space/-/eslint-config-xo-space-0.35.0.tgz",
+      "integrity": "sha512-+79iVcoLi3PvGcjqYDpSPzbLfqYpNcMlhsCBRsnmDoHAn4npJG6YxmHpelQKpXM7v/EeZTUKb4e1xotWlei8KA==",
+      "dev": true,
+      "dependencies": {
+        "eslint-config-xo": "^0.44.0"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      },
+      "peerDependencies": {
+        "eslint": ">=8.56.0"
       }
     },
     "node_modules/eslint-config-prettier": {
