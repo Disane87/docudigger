@@ -16372,9 +16372,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.4.14",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.4.14.tgz",
-      "integrity": "sha512-enFajaycY4ctpeIwsU8pY7qWYyfgGVZjLjjrT2qLQB99mhAMWShDQ6nxH/EO7d3pszSxEoFW6l/zCznJO7xGjg==",
+      "version": "4.4.15",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.4.15.tgz",
+      "integrity": "sha512-L2X3I+iTWpuMTzr1McDf2k8YwS57P+C9Yeqvo2jzXZ/sotkhoNW0RwDO4nZFqHvyn6I9Dj4Q8OVGVa85c6M0EQ==",
       "dev": true,
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.511.0",
@@ -16392,7 +16392,7 @@
         "got": "^11",
         "lodash.template": "^4.5.0",
         "normalize-package-data": "^3.0.3",
-        "semver": "^7.3.8",
+        "semver": "^7.6.0",
         "yeoman-environment": "^3.15.1",
         "yeoman-generator": "^5.8.0"
       },
