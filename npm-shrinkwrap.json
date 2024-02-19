@@ -9025,9 +9025,9 @@
       }
     },
     "node_modules/eslint-config-oclif": {
-      "version": "5.0.1",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.1.tgz",
-      "integrity": "sha512-gCeKEu/J95zDCyDs6DJCCpHMMrqOsxv1H3V+L3Nvk/iSzn+qkkVxyg0YOtAQD60KzwuC0i5B+gniY8VbZBrvMA==",
+      "version": "5.0.2",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.2.tgz",
+      "integrity": "sha512-5Ut0Rb1UfTJD54KMIA34SiJ7j3uUHfgn73LqkNEZx+mgTAAAL1+6/6uN0RJhmyp+9/HBIlO3v3pCX0pRR5knWQ==",
       "dev": true,
       "dependencies": {
         "eslint-config-xo-space": "^0.34.0",
