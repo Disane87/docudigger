@@ -9025,13 +9025,13 @@
       }
     },
     "node_modules/eslint-config-oclif": {
-      "version": "5.0.0",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.0.tgz",
-      "integrity": "sha512-yPxtUzU6eFL+WoW8DbRf7uoHxgiu0B/uY7k7rgHwFHij66WoI3qhBNhKI5R5FS5JeTuBOXKrNqQVDsSH0D/JvA==",
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.1.tgz",
+      "integrity": "sha512-gCeKEu/J95zDCyDs6DJCCpHMMrqOsxv1H3V+L3Nvk/iSzn+qkkVxyg0YOtAQD60KzwuC0i5B+gniY8VbZBrvMA==",
       "dev": true,
       "dependencies": {
         "eslint-config-xo-space": "^0.34.0",
-        "eslint-plugin-mocha": "^10.1.0",
+        "eslint-plugin-mocha": "^10.3.0",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-unicorn": "^48.0.1"
       },
