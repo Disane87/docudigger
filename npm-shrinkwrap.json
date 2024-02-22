@@ -2631,9 +2631,9 @@
       }
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "3.1.4",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.1.4.tgz",
-      "integrity": "sha512-Bfj+/2WVdDULK9/2cMSSjifbcPt/khnipPdZRQsGIdoJEox54J4QwBXTTUQzHh+//vmB1ulZEtROZ4q2gwL7Ag==",
+      "version": "3.1.5",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.1.5.tgz",
+      "integrity": "sha512-zIOzwC7LGxUbvc7qrlOInxAd9zLJFTe4yZ8xawiJhwtm+7cWotTRbNqyXlv1K07Sll1UMJGRGzbKikktyO8BPw==",
       "dependencies": {
         "@oclif/core": "^3.19.2",
         "lodash.pickby": "^4.6.0",
