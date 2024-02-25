@@ -149,7 +149,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     private async getOrderPageCount(currentYear: number) {
         const amazonSelectors = this.selectors;
         this.logger.info(`Selecting start year ${currentYear}`);
-        await this.currentPage.select(`select[name="orderFilter"]`, `year-${currentYear}`);
+        await this.currentPage.select(`select[name="timeFilter"]`, `year-${currentYear}`);
         await this.currentPage.waitForNavigation();
         this.logger.debug(`Selected year ${currentYear}`);
         this.logger.debug(`Determining pages...`);
@@ -310,11 +310,11 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             invoiceSpans: `span.hide-if-no-js .a-declarative[data-action="a-popover"]`,
             orderNr: `.yohtmlc-order-id span:nth-last-child(1) bdi`,
             orderDate: `.order-info .a-box-inner .a-fixed-right-grid-col .a-column.a-span4 div:nth-last-child(1)`,
-            popover: `#a-popover-{{index}}`,
+            popover: `#a-popover-content-{{index}}`,
             invoiceList: `ul.invoice-list`,
             invoiceLinks: `a[href*="invoice.pdf"]`,
-            pagination: `.pagination-full ul.a-pagination li:nth-last-child(2) a`,
-            yearFilter: `select[name="orderFilter"] option`,
+            pagination: `ul.a-pagination li:nth-last-child(2) a`,
+            yearFilter: `select[name="timeFilter"] option`,
             authError: `#auth-error-message-box .a-unordered-list li`,
             authWarning: `#auth-warning-message-box .a-unordered-list li`,
             captchaImage: `div#image-captcha-section img#auth-captcha-image`
