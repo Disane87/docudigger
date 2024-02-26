@@ -11896,12 +11896,12 @@
       }
     },
     "node_modules/eslint-config-oclif": {
-      "version": "5.0.2",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.2.tgz",
-      "integrity": "sha512-5Ut0Rb1UfTJD54KMIA34SiJ7j3uUHfgn73LqkNEZx+mgTAAAL1+6/6uN0RJhmyp+9/HBIlO3v3pCX0pRR5knWQ==",
+      "version": "5.0.3",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.3.tgz",
+      "integrity": "sha512-H3pvoSCfni23l81agc7/r8jxQ7bVIKNqbLsN8eYG8w2wEpsACskplK3VEPzIrO8NSFDcxQJIxoVXxp94kXexTA==",
       "dev": true,
       "dependencies": {
-        "eslint-config-xo-space": "^0.34.0",
+        "eslint-config-xo-space": "^0.35.0",
         "eslint-plugin-mocha": "^10.3.0",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-unicorn": "^48.0.1"
@@ -11927,42 +11927,6 @@
       },
       "engines": {
         "node": ">=18.0.0"
-      }
-    },
-    "node_modules/eslint-config-oclif-typescript/node_modules/eslint-config-xo": {
-      "version": "0.44.0",
-      "resolved": "https://registry.npmjs.org/eslint-config-xo/-/eslint-config-xo-0.44.0.tgz",
-      "integrity": "sha512-YG4gdaor0mJJi8UBeRJqDPO42MedTWYMaUyucF5bhm2pi/HS98JIxfFQmTLuyj6hGpQlAazNfyVnn7JuDn+Sew==",
-      "dev": true,
-      "dependencies": {
-        "confusing-browser-globals": "1.0.11"
-      },
-      "engines": {
-        "node": ">=18"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      },
-      "peerDependencies": {
-        "eslint": ">=8.56.0"
-      }
-    },
-    "node_modules/eslint-config-oclif-typescript/node_modules/eslint-config-xo-space": {
-      "version": "0.35.0",
-      "resolved": "https://registry.npmjs.org/eslint-config-xo-space/-/eslint-config-xo-space-0.35.0.tgz",
-      "integrity": "sha512-+79iVcoLi3PvGcjqYDpSPzbLfqYpNcMlhsCBRsnmDoHAn4npJG6YxmHpelQKpXM7v/EeZTUKb4e1xotWlei8KA==",
-      "dev": true,
-      "dependencies": {
-        "eslint-config-xo": "^0.44.0"
-      },
-      "engines": {
-        "node": ">=12"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      },
-      "peerDependencies": {
-        "eslint": ">=8.56.0"
       }
     },
     "node_modules/eslint-config-prettier": {
@@ -12025,30 +11989,30 @@
       }
     },
     "node_modules/eslint-config-xo": {
-      "version": "0.43.1",
-      "resolved": "https://registry.npmjs.org/eslint-config-xo/-/eslint-config-xo-0.43.1.tgz",
-      "integrity": "sha512-azv1L2PysRA0NkZOgbndUpN+581L7wPqkgJOgxxw3hxwXAbJgD6Hqb/SjHRiACifXt/AvxCzE/jIKFAlI7XjvQ==",
+      "version": "0.44.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-xo/-/eslint-config-xo-0.44.0.tgz",
+      "integrity": "sha512-YG4gdaor0mJJi8UBeRJqDPO42MedTWYMaUyucF5bhm2pi/HS98JIxfFQmTLuyj6hGpQlAazNfyVnn7JuDn+Sew==",
       "dev": true,
       "dependencies": {
         "confusing-browser-globals": "1.0.11"
       },
       "engines": {
-        "node": ">=12"
+        "node": ">=18"
       },
       "funding": {
         "url": "https://github.com/sponsors/sindresorhus"
       },
       "peerDependencies": {
-        "eslint": ">=8.27.0"
+        "eslint": ">=8.56.0"
       }
     },
     "node_modules/eslint-config-xo-space": {
-      "version": "0.34.0",
-      "resolved": "https://registry.npmjs.org/eslint-config-xo-space/-/eslint-config-xo-space-0.34.0.tgz",
-      "integrity": "sha512-8ZI0Ta/loUIL1Wk/ouWvk2ZWN8X6Un49MqnBf2b6uMjC9c5Pcfr1OivEOrvd3niD6BKgMNH2Q9nG0CcCWC+iVA==",
+      "version": "0.35.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-xo-space/-/eslint-config-xo-space-0.35.0.tgz",
+      "integrity": "sha512-+79iVcoLi3PvGcjqYDpSPzbLfqYpNcMlhsCBRsnmDoHAn4npJG6YxmHpelQKpXM7v/EeZTUKb4e1xotWlei8KA==",
       "dev": true,
       "dependencies": {
-        "eslint-config-xo": "^0.43.0"
+        "eslint-config-xo": "^0.44.0"
       },
       "engines": {
         "node": ">=12"
@@ -12057,7 +12021,7 @@
         "url": "https://github.com/sponsors/sindresorhus"
       },
       "peerDependencies": {
-        "eslint": ">=8.27.0"
+        "eslint": ">=8.56.0"
       }
     },
     "node_modules/eslint-import-resolver-node": {
