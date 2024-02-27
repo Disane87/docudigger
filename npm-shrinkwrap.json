@@ -2582,9 +2582,9 @@
       }
     },
     "node_modules/@oclif/core": {
-      "version": "3.19.7",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.19.7.tgz",
-      "integrity": "sha512-8Vq2shLqRd7+3CpAEG8VZ8b8F6ldkzhNh8pEFPPeY4bTO0xOGJB3WiggZ/zQ30EvLhZQwU/eJpN8Vw7M2x6NcA==",
+      "version": "3.20.0",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.20.0.tgz",
+      "integrity": "sha512-8BajhglY8frYGAS1whAukeouFZUN9MgQoLfNXtScPVEAjPlaD2BbSIAYQH2yF2qb/iVvbj/1DwYS3gqicYOq1A==",
       "dependencies": {
         "@types/cli-progress": "^3.11.5",
         "ansi-escapes": "^4.3.2",
