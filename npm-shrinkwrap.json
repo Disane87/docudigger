@@ -2631,11 +2631,11 @@
       }
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "3.1.6",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.1.6.tgz",
-      "integrity": "sha512-JSfP/PHYS9K58quYcfteuQnZsLCqgJpl7SpImFkfOctbSUB2tYoz/S/A6eBDHIvEvOGOvvpjTeNU20XEW45Bng==",
+      "version": "3.1.7",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.1.7.tgz",
+      "integrity": "sha512-jgNkKU6rODKbzYF8Oi9mHT4unukW2GuSVnaVvJ6sXnj2N0MOzUF4HBAVgku4waR9haVrmgvCgOPfExpc04wJ5Q==",
       "dependencies": {
-        "@oclif/core": "^3.19.6",
+        "@oclif/core": "^3.20.0",
         "lodash.pickby": "^4.6.0",
         "lodash.sortby": "^4.7.0",
         "lodash.template": "^4.5.0",
