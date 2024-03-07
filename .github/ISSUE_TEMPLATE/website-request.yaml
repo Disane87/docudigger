@@ -1,0 +1,153 @@
+name: Website request
+description: Request for a new website to be scraped
+title: "[WR] website.tld "
+labels: ["enhancement", "plugin", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Website request
+        To add a scraper for a specific webpage, we need some information about the page.
+  
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic information
+        
+  - type: input
+    id: website
+    attributes:
+      label: Which website do you want to crawl? 
+      description: We need the entire domain with TLD to crawl like 
+      placeholder: http://test.com
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provides-services
+    attributes:
+      label: What services do they provide?
+      description: We need this information to determine which type of scraping we use
+      options:
+        - Orders (with n invoices)
+        - Contracts (with recurring calculation in a defined interval)
+    validations:
+      required: true
+  - type: dropdown
+    id: website-industry
+    attributes:
+      label: In which industry does the company operate?
+      description: We need this information to determine which type of scraping we use
+      options:
+        - Commerce (like amazon etc.)
+        - Energy (i.e. your local energy company)
+        - Telecommunication (like Vodafone)
+        - other
+    validations:
+      required: true
+  
+  - type: input
+    id: industry
+    attributes:
+      label: If you choose other...
+      description: Provide us an industry
+    validations:
+      required: false
+      
+  - type: textarea
+    id: website-description
+    attributes:
+      label: Describe the company
+      placeholder: The company is a local energy provider in germany
+      
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: website-needs-auth
+    attributes:
+      label: Does the webpage have/needs an authentication?
+      description: We need this information to determine which type of scraping we use and if its usable within docker
+      options:
+      - label: Yes, the website needs an authentication
+        required: false
+  - type: checkboxes
+    id: website-needs-2fa
+    attributes:
+      label: Do they provide a two factor auth?
+      description: Currently scraping documents via Docker container doesn't work with a seconds factor. We need this information to config this plugins as a 2fas-able one.
+      options:
+      - label: Yes, the website needs an seconds factor
+        required: false
+
+  - type: checkboxes
+    id: website-provides-credentials
+    attributes:
+      label: Would you provide us the credentials (privately)?
+      description: It would be beneficial to have the credentials. But if not, its totally fine
+      options:
+      - label: Yes, I would share my credentials
+        required: false
+  - type: checkboxes
+    id: user-collaborates
+    attributes:
+      label: Are you willing to collaborate to get this scraper up and running?
+      description: We need your help to get this scraper running.
+      options:
+      - label: Yes, I would collaborate on this actively.
+        required: false
+
+  - type: input
+    id: color
+    attributes:
+      label: What color (hex) represents the company? 
+      description: This is needed for a specific tag for this website and logs in the application. If you're unsure about this, please head up to https://www.color-hex.com/color-palettes/ and check if you find the main color of the company.
+      value: #
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Record the way you download your documents
+        To add a scraper for a specific webpage, we need some information about the page.
+
+        The chance is pretty high, we don't use your service website. So you have to provide us a way to code this entire process. Luckily Chrome have a recorder fur Puppeteer (the library we use to scrape the page). Please study the following link ([Puppeteer Recorder with Chrome DevTools (testingbot.com)](https://testingbot.com/support/puppeteer/recorder.html#)) and create a `.js`with the recording.
+
+  - type: textarea
+    id: recorded-code
+    attributes:
+      label: Your recorded code
+      description: Ensure you only click the parts that are needed to get a download of the desired document. Its important that you provide us a recording with `@puppeteer/replay`
+      render: javascript
+    validations:
+      required: true
+      
+  - type: markdown
+    attributes:
+      value: |
+        ## Screenshots
+        Provide us some screenshots how the actually site looks like. This will help us to understand the way the site works.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Paste your screenshots here
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## HTML-Files (optional, but would be a big help)
+        If you don't provide us credentials, it could help if you provide us the saved HTML files. Every browser supports saving the current document.
+        
+        > :memo: You can save the HTML files right after the login procedure
+  - type: textarea
+    id: html
+    
+    attributes:
+      label: Paste your html here
+      render: html
+    validations:
+      required: false
+
