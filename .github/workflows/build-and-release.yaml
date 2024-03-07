@@ -15,6 +15,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   NEW_RELEASE_PUBLISHED: false
+  HUSKY: 0
 
 jobs:
   build:
