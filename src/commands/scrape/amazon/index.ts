@@ -87,7 +87,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
     this.logger.debug(`Options: ${JSON.stringify(options, null, 4)}`);
 
-    this.currentPage = await this.newPage();
+    this.currentPage = await this.getActivePage();
 
     const { amazonSelectors, amazon } = this.getSelectors(options.tld);
     this.selectors = amazonSelectors;
