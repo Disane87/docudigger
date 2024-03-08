@@ -16599,14 +16599,14 @@
       }
     },
     "node_modules/eslint-config-oclif": {
-      "version": "5.0.4",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.0.4.tgz",
-      "integrity": "sha512-TMg45IJZAzCjvJWjjb8RZJelqZu3u0Qc953jfSgvi3xbL4hvrM03+KE1HEuHn75M5lWgK2NC+igmllwc/wRGtw==",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.1.0.tgz",
+      "integrity": "sha512-T4pFAFV9g1hy797f817bzkBeQB0R9j3AShrI0ohfVecHU54GrzzOTFufh0Ex8bwb89un/NlF8TE5RTiy8SKURQ==",
       "dev": true,
       "dependencies": {
         "eslint-config-xo-space": "^0.35.0",
         "eslint-plugin-mocha": "^10.3.0",
-        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-n": "^15.1.0",
         "eslint-plugin-unicorn": "^48.0.1"
       },
       "engines": {
@@ -16630,6 +16630,96 @@
       },
       "engines": {
         "node": ">=18.0.0"
+      }
+    },
+    "node_modules/eslint-config-oclif/node_modules/brace-expansion": {
+      "version": "1.1.11",
+      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+      "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",
+      "dev": true,
+      "dependencies": {
+        "balanced-match": "^1.0.0",
+        "concat-map": "0.0.1"
+      }
+    },
+    "node_modules/eslint-config-oclif/node_modules/eslint-plugin-es": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-es/-/eslint-plugin-es-4.1.0.tgz",
+      "integrity": "sha512-GILhQTnjYE2WorX5Jyi5i4dz5ALWxBIdQECVQavL6s7cI76IZTDWleTHkxz/QT3kvcs2QlGHvKLYsSlPOlPXnQ==",
+      "dev": true,
+      "dependencies": {
+        "eslint-utils": "^2.0.0",
+        "regexpp": "^3.0.0"
+      },
+      "engines": {
+        "node": ">=8.10.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/mysticatea"
+      },
+      "peerDependencies": {
+        "eslint": ">=4.19.1"
+      }
+    },
+    "node_modules/eslint-config-oclif/node_modules/eslint-plugin-es/node_modules/eslint-utils": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/eslint-utils/-/eslint-utils-2.1.0.tgz",
+      "integrity": "sha512-w94dQYoauyvlDc43XnGB8lU3Zt713vNChgt4EWwhXAP2XkBvndfxF0AgIqKOOasjPIPzj9JqgwkwbCYD0/V3Zg==",
+      "dev": true,
+      "dependencies": {
+        "eslint-visitor-keys": "^1.1.0"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/mysticatea"
+      }
+    },
+    "node_modules/eslint-config-oclif/node_modules/eslint-plugin-n": {
+      "version": "15.7.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-n/-/eslint-plugin-n-15.7.0.tgz",
+      "integrity": "sha512-jDex9s7D/Qial8AGVIHq4W7NswpUD5DPDL2RH8Lzd9EloWUuvUkHfv4FRLMipH5q2UtyurorBkPeNi1wVWNh3Q==",
+      "dev": true,
+      "dependencies": {
+        "builtins": "^5.0.1",
+        "eslint-plugin-es": "^4.1.0",
+        "eslint-utils": "^3.0.0",
+        "ignore": "^5.1.1",
+        "is-core-module": "^2.11.0",
+        "minimatch": "^3.1.2",
+        "resolve": "^1.22.1",
+        "semver": "^7.3.8"
+      },
+      "engines": {
+        "node": ">=12.22.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/mysticatea"
+      },
+      "peerDependencies": {
+        "eslint": ">=7.0.0"
+      }
+    },
+    "node_modules/eslint-config-oclif/node_modules/eslint-visitor-keys": {
+      "version": "1.3.0",
+      "resolved": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz",
+      "integrity": "sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==",
+      "dev": true,
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/eslint-config-oclif/node_modules/minimatch": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz",
+      "integrity": "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==",
+      "dev": true,
+      "dependencies": {
+        "brace-expansion": "^1.1.7"
+      },
+      "engines": {
+        "node": "*"
       }
     },
     "node_modules/eslint-config-prettier": {
