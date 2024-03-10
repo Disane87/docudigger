@@ -10389,12 +10389,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.2.1",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.1.tgz",
-      "integrity": "sha512-FMUR1ziZd9FRknk4R9jis8ermiHQadyCWtmtAOL4n9qfnIh4R8qs3wbH1qAg2p+R0VA0+t3jMSSEcPFGmghBQw==",
+      "version": "3.2.2",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.2.tgz",
+      "integrity": "sha512-QCxkKb3/1vtaoS7R2Wm9nIxG8Y3+X1fpaGn6Mh2VqPaoqNJc5tsCsZhOoaKeSSdQoSm37S6T/Nz04f7Z+7WPUQ==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.19.2",
+        "@oclif/core": "^3.23.0",
         "chai": "^4.4.1",
         "fancy-test": "^3.0.11"
       },
