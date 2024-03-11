@@ -24543,16 +24543,16 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.5.2",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.5.2.tgz",
-      "integrity": "sha512-9xUwaaNvdrN1tSx/jxKD1tsu/sR3ZHFv1f72S8GAZ01xmp5EGyRw97xUT64TFLPQLp/6h3zXm3VUwhZyCv9bkw==",
+      "version": "4.5.4",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.5.4.tgz",
+      "integrity": "sha512-3WVlr9FtTXiS5+kBmMdENvWwSHzhrfEpML6HgXDvyEYub3YeapbE60/sCvvNmgBDZ8vYnbOTf3RgqBt1oFo05Q==",
       "dev": true,
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.525.0",
         "@aws-sdk/client-s3": "^3.515.0",
         "@oclif/core": "^3.21.0",
         "@oclif/plugin-help": "^6.0.14",
-        "@oclif/plugin-not-found": "^3.0.10",
+        "@oclif/plugin-not-found": "^3.0.14",
         "@oclif/plugin-warn-if-update-available": "^3.0.12",
         "async-retry": "^1.3.3",
         "change-case": "^4",
