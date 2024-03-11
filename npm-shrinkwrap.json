@@ -10405,14 +10405,14 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.2.3",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.3.tgz",
-      "integrity": "sha512-/E0+IE8xQVuNX/+SdL+Kp7xhiXTuT5AxoIoMetrTUj9X5mTHQXXRAukFpHrfxagmMfQUqqZh+0LmbpL3r2BmBg==",
+      "version": "3.2.5",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.5.tgz",
+      "integrity": "sha512-ilMTbpkK22ZOGw11/IfumyagMTqEWpzD0ADyKKGcKWT8PXnnqxz9bCGPfBNqPk5pwsX4cvV1oM+OcPEqtJx02A==",
       "dev": true,
       "dependencies": {
         "@oclif/core": "^3.23.0",
         "chai": "^4.4.1",
-        "fancy-test": "^3.0.12"
+        "fancy-test": "^3.0.13"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -17912,9 +17912,9 @@
       }
     },
     "node_modules/fancy-test": {
-      "version": "3.0.12",
-      "resolved": "https://registry.npmjs.org/fancy-test/-/fancy-test-3.0.12.tgz",
-      "integrity": "sha512-pboHMxTnbD72FBl/fgYAmBb6AjiF0OgI1osAnnzzuFgBrzbFQj5so3XlknKC9k3HFJIy0HerCTyDjz/YZ6aBIg==",
+      "version": "3.0.13",
+      "resolved": "https://registry.npmjs.org/fancy-test/-/fancy-test-3.0.13.tgz",
+      "integrity": "sha512-lOXntvGxCLknfTx3zWggtoRGNyk/lSHg6OvR1r8WtUlBRt/lcyYzW9rvHP3eBgxRo6Ii7cvMlvtA53N8TOvmzw==",
       "dev": true,
       "dependencies": {
         "@types/chai": "*",
