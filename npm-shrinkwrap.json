@@ -26527,15 +26527,15 @@
       }
     },
     "node_modules/semantic-release": {
-      "version": "23.0.3",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-23.0.3.tgz",
-      "integrity": "sha512-eUxHZCyvhiMf9bo6LCisZa2428Be39PkXCppUKG6T6tcWpG9vJnCgaSoNwJ00fsYKGyzwKyO59f8AMhOn7clpQ==",
+      "version": "23.0.4",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-23.0.4.tgz",
+      "integrity": "sha512-UlcgO6SEcFtwSF/JMVXKswK+4Af2ypu55WRdLL6IhnKHPCZ9Zap7CV8PN2+wmvAdAPTI76CqouJyGZyb1fp9VA==",
       "dev": true,
       "dependencies": {
         "@semantic-release/commit-analyzer": "^11.0.0",
         "@semantic-release/error": "^4.0.0",
         "@semantic-release/github": "^10.0.0",
-        "@semantic-release/npm": "^11.0.0",
+        "@semantic-release/npm": "^12.0.0",
         "@semantic-release/release-notes-generator": "^12.0.0",
         "aggregate-error": "^5.0.0",
         "cosmiconfig": "^9.0.0",
@@ -27032,6 +27032,33 @@
         "semantic-release": ">=20.1.0"
       }
     },
+    "node_modules/semantic-release/node_modules/@semantic-release/npm": {
+      "version": "12.0.0",
+      "resolved": "https://registry.npmjs.org/@semantic-release/npm/-/npm-12.0.0.tgz",
+      "integrity": "sha512-72TVYQCH9NvVsO/y13eF8vE4bNnfls518+4KcFwJUKi7AtA/ZXoNgSg9gTTfw5eMZMkiH0izUrpGXgZE/cSQhA==",
+      "dev": true,
+      "dependencies": {
+        "@semantic-release/error": "^4.0.0",
+        "aggregate-error": "^5.0.0",
+        "execa": "^8.0.0",
+        "fs-extra": "^11.0.0",
+        "lodash-es": "^4.17.21",
+        "nerf-dart": "^1.0.0",
+        "normalize-url": "^8.0.0",
+        "npm": "^10.5.0",
+        "rc": "^1.2.8",
+        "read-pkg": "^9.0.0",
+        "registry-auth-token": "^5.0.0",
+        "semver": "^7.1.2",
+        "tempy": "^3.0.0"
+      },
+      "engines": {
+        "node": ">=20.8.1"
+      },
+      "peerDependencies": {
+        "semantic-release": ">=20.1.0"
+      }
+    },
     "node_modules/semantic-release/node_modules/aggregate-error": {
       "version": "5.0.0",
       "resolved": "https://registry.npmjs.org/aggregate-error/-/aggregate-error-5.0.0.tgz",
@@ -27130,6 +27157,20 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
+    "node_modules/semantic-release/node_modules/fs-extra": {
+      "version": "11.2.0",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-11.2.0.tgz",
+      "integrity": "sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==",
+      "dev": true,
+      "dependencies": {
+        "graceful-fs": "^4.2.0",
+        "jsonfile": "^6.0.1",
+        "universalify": "^2.0.0"
+      },
+      "engines": {
+        "node": ">=14.14"
+      }
+    },
     "node_modules/semantic-release/node_modules/get-stream": {
       "version": "6.0.1",
       "resolved": "https://registry.npmjs.org/get-stream/-/get-stream-6.0.1.tgz",
@@ -27221,6 +27262,18 @@
       },
       "engines": {
         "node": "^18.17 || >=20.6.1"
+      }
+    },
+    "node_modules/semantic-release/node_modules/jsonfile": {
+      "version": "6.1.0",
+      "resolved": "https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz",
+      "integrity": "sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==",
+      "dev": true,
+      "dependencies": {
+        "universalify": "^2.0.0"
+      },
+      "optionalDependencies": {
+        "graceful-fs": "^4.1.6"
       }
     },
     "node_modules/semantic-release/node_modules/lru-cache": {
@@ -27360,6 +27413,15 @@
       "resolved": "https://registry.npmjs.org/universal-user-agent/-/universal-user-agent-7.0.2.tgz",
       "integrity": "sha512-0JCqzSKnStlRRQfCdowvqy3cy0Dvtlb8xecj/H8JFZuCze4rwjPZQOgvFvn0Ws/usCHQFGpyr+pB9adaGwXn4Q==",
       "dev": true
+    },
+    "node_modules/semantic-release/node_modules/universalify": {
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/universalify/-/universalify-2.0.1.tgz",
+      "integrity": "sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==",
+      "dev": true,
+      "engines": {
+        "node": ">= 10.0.0"
+      }
     },
     "node_modules/semantic-release/node_modules/url-join": {
       "version": "5.0.0",
