@@ -10523,12 +10523,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.2.5",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.5.tgz",
-      "integrity": "sha512-ilMTbpkK22ZOGw11/IfumyagMTqEWpzD0ADyKKGcKWT8PXnnqxz9bCGPfBNqPk5pwsX4cvV1oM+OcPEqtJx02A==",
+      "version": "3.2.6",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.6.tgz",
+      "integrity": "sha512-UZAHGAG31lJUyLkGpE94E2Tt+cstGZ4FnS/fvcjeZMkUzlh78HcSHOQWj6FhT8Sd4v62TYYobXNADxEgp+qnng==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.23.0",
+        "@oclif/core": "^3.25.2",
         "chai": "^4.4.1",
         "fancy-test": "^3.0.13"
       },
