@@ -47,7 +47,7 @@
     "@types/node-cron": "^3.0.11",
     "@types/puppeteer": "^7.0.4",
     "@types/winston": "^2.4.4",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
     "chai": "^5.1.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "conventional-changelog-eslint": "^5.0.0",
