@@ -10441,12 +10441,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.2.6",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.6.tgz",
-      "integrity": "sha512-UZAHGAG31lJUyLkGpE94E2Tt+cstGZ4FnS/fvcjeZMkUzlh78HcSHOQWj6FhT8Sd4v62TYYobXNADxEgp+qnng==",
+      "version": "3.2.7",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.7.tgz",
+      "integrity": "sha512-Eq1w24z7PUQZaq1MiJbb0/OFcb/KN0tIYO2lSJZ5QFLSNxKYw7ctijSG2huFnH28ex8cWVaU00/x7Tzzzofp4w==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.25.2",
+        "@oclif/core": "^3.26.0",
         "chai": "^4.4.1",
         "fancy-test": "^3.0.13"
       },
