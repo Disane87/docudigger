@@ -9202,13 +9202,13 @@
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available": {
-      "version": "3.0.13",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.0.13.tgz",
-      "integrity": "sha512-AUaPaZvqWdABIkkOmU21tk1b0UgsFidjzu9IfiDSvOPAtOiktoCgk+CiaiMVGR6aTKrJmpJi+YJchdwYuKEyQA==",
+      "version": "3.0.15",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.0.15.tgz",
+      "integrity": "sha512-JtPTJFjL6izMCe5dDS2ix2PyWAD2DeJ5Atzd2HHRifbPcmOxaUE62FKTnarIwfPHLMF/nN33liwo9InAdirozg==",
       "dev": true,
       "hasShrinkwrap": true,
       "dependencies": {
-        "@oclif/core": "^3.21.0",
+        "@oclif/core": "^3.26.0",
         "chalk": "^5.3.0",
         "debug": "^4.1.0",
         "http-call": "^5.2.2",
@@ -9267,9 +9267,9 @@
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/@oclif/core": {
-      "version": "3.21.0",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.21.0.tgz",
-      "integrity": "sha512-xR7qGPOWtOnYmdYocSn6oEh2oTQLsPOXoj3HYGpb26V3WulwF8Cm33WPnMsSISv4ben3Rtc5i59u9O5NnuG42g==",
+      "version": "3.26.0",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.26.0.tgz",
+      "integrity": "sha512-TpMdfD4tfA2tVVbd4l0PrP02o5KoUXYmudBbTC7CeguDo/GLoprw4uL8cMsaVA26+cbcy7WYtOEydQiHVtJixA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -9289,6 +9289,7 @@
         "indent-string": "^4.0.0",
         "is-wsl": "^2.2.0",
         "js-yaml": "^3.14.1",
+        "minimatch": "^9.0.3",
         "natural-orderby": "^2.0.3",
         "object-treeify": "^1.1.33",
         "password-prompt": "^1.1.3",
@@ -9359,6 +9360,22 @@
         "js-yaml": "bin/js-yaml.js"
       }
     },
+    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/@oclif/core/node_modules/minimatch": {
+      "version": "9.0.3",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.3.tgz",
+      "integrity": "sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "brace-expansion": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16 || 14 >=14.17"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/@oclif/core/node_modules/supports-color": {
       "version": "8.1.1",
       "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz",
@@ -9403,6 +9420,19 @@
       },
       "engines": {
         "node": ">=8"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/ansi-escapes/node_modules/type-fest": {
+      "version": "0.21.3",
+      "resolved": "https://registry.npmjs.org/type-fest/-/type-fest-0.21.3.tgz",
+      "integrity": "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==",
+      "dev": true,
+      "license": "(MIT OR CC0-1.0)",
+      "engines": {
+        "node": ">=10"
       },
       "funding": {
         "url": "https://github.com/sponsors/sindresorhus"
@@ -9475,6 +9505,16 @@
       "dev": true,
       "license": "MIT"
     },
+    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/brace-expansion": {
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz",
+      "integrity": "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "balanced-match": "^1.0.0"
+      }
+    },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/braces": {
       "version": "3.0.2",
       "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz",
@@ -9524,6 +9564,19 @@
       "dependencies": {
         "escape-string-regexp": "4.0.0"
       },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/clean-stack/node_modules/escape-string-regexp": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz",
+      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
+      "dev": true,
+      "license": "MIT",
       "engines": {
         "node": ">=10"
       },
@@ -9690,19 +9743,6 @@
       "license": "MIT",
       "dependencies": {
         "is-arrayish": "^0.2.1"
-      }
-    },
-    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/escape-string-regexp": {
-      "version": "4.0.0",
-      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz",
-      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
-      "dev": true,
-      "license": "MIT",
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/esprima": {
@@ -10371,19 +10411,6 @@
       },
       "engines": {
         "node": "*"
-      }
-    },
-    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/type-fest": {
-      "version": "0.21.3",
-      "resolved": "https://registry.npmjs.org/type-fest/-/type-fest-0.21.3.tgz",
-      "integrity": "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==",
-      "dev": true,
-      "license": "(MIT OR CC0-1.0)",
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/which": {
@@ -22501,9 +22528,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.6.2",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.6.2.tgz",
-      "integrity": "sha512-k0QUbKBYhG+iam1wL5AJ8AimLemPTX8DhxnRnhrSJnuVn6BciFwrJ19MYKPmt3w47d2MZtyOfKfyZFBlvfr1gA==",
+      "version": "4.6.3",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.6.3.tgz",
+      "integrity": "sha512-T/61U0IcslqHwZTo1W/6//BoSz/rv24ckM0s7S+ROI7x/GzQyMcjq7NHGdytRISb6ripxU5GI2CsEc1Vo5vhnA==",
       "dev": true,
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.535.0",
@@ -22514,7 +22541,7 @@
         "@oclif/core": "^3.21.0",
         "@oclif/plugin-help": "^6.0.18",
         "@oclif/plugin-not-found": "^3.0.14",
-        "@oclif/plugin-warn-if-update-available": "^3.0.12",
+        "@oclif/plugin-warn-if-update-available": "^3.0.14",
         "async-retry": "^1.3.3",
         "chalk": "^4",
         "change-case": "^4",
