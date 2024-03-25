@@ -1672,9 +1672,9 @@
       }
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "3.2.1",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.2.1.tgz",
-      "integrity": "sha512-U17sPJPZx563vODY9rxcLq93mAMuBd7pRUpYDkmsTNtoooytOF/1p1HKLXB2Ep7rBRxuyU5osUjulwc//p78LA==",
+      "version": "3.2.2",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-3.2.2.tgz",
+      "integrity": "sha512-agPybbeetCh75P+8fcim/WXaV7WdBcyXhX34AJ6cPAr/aTddlBkgmta+dgxa6yZ++L+K9jXXtZpsiVjtjHkD2g==",
       "hasShrinkwrap": true,
       "dependencies": {
         "@oclif/core": "^3.26.0",
@@ -1989,6 +1989,18 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
+    "node_modules/@oclif/plugin-commands/node_modules/clean-stack/node_modules/escape-string-regexp": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz",
+      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
     "node_modules/@oclif/plugin-commands/node_modules/cli-progress": {
       "version": "3.12.0",
       "resolved": "https://registry.npmjs.org/cli-progress/-/cli-progress-3.12.0.tgz",
@@ -2117,18 +2129,6 @@
       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
       "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
       "license": "MIT"
-    },
-    "node_modules/@oclif/plugin-commands/node_modules/escape-string-regexp": {
-      "version": "4.0.0",
-      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz",
-      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      }
     },
     "node_modules/@oclif/plugin-commands/node_modules/esprima": {
       "version": "4.0.1",
