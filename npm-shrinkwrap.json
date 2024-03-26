@@ -4860,9 +4860,9 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "4.3.9",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-4.3.9.tgz",
-      "integrity": "sha512-UEZDj5B+goDKivraSyIY0CrDYhH1QYbmyqYs0AjSVaytrBcf5wSxLjg20rOT/R+Ou0glYXbtvY7sN4YFd/7SSw==",
+      "version": "4.3.10",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-4.3.10.tgz",
+      "integrity": "sha512-DYdkGDFNRVgdTW4RUPk+i5JTjQGZphDKs3j1uL/bxRYO7dIRSrohgeso6jAiPSE+igQtAXa8KqKhsanK4za0XA==",
       "hasShrinkwrap": true,
       "dependencies": {
         "@oclif/core": "^3.25.2",
@@ -5002,12 +5002,6 @@
       "bin": {
         "js-yaml": "bin/js-yaml.js"
       }
-    },
-    "node_modules/@oclif/plugin-plugins/node_modules/@oclif/core/node_modules/sprintf-js": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz",
-      "integrity": "sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==",
-      "license": "BSD-3-Clause"
     },
     "node_modules/@oclif/plugin-plugins/node_modules/@oclif/core/node_modules/supports-color": {
       "version": "8.1.1",
@@ -5187,6 +5181,18 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
+    "node_modules/@oclif/plugin-plugins/node_modules/clean-stack/node_modules/escape-string-regexp": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz",
+      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
     "node_modules/@oclif/plugin-plugins/node_modules/cli-progress": {
       "version": "3.12.0",
       "resolved": "https://registry.npmjs.org/cli-progress/-/cli-progress-3.12.0.tgz",
@@ -5260,6 +5266,12 @@
         "node": ">= 8"
       }
     },
+    "node_modules/@oclif/plugin-plugins/node_modules/cross-spawn/node_modules/isexe": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
+      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
+      "license": "ISC"
+    },
     "node_modules/@oclif/plugin-plugins/node_modules/cross-spawn/node_modules/which": {
       "version": "2.0.2",
       "resolved": "https://registry.npmjs.org/which/-/which-2.0.2.tgz",
@@ -5330,18 +5342,6 @@
       "resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
       "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
       "license": "MIT"
-    },
-    "node_modules/@oclif/plugin-plugins/node_modules/escape-string-regexp": {
-      "version": "4.0.0",
-      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz",
-      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=10"
-      },
-      "funding": {
-        "url": "https://github.com/sponsors/sindresorhus"
-      }
     },
     "node_modules/@oclif/plugin-plugins/node_modules/esprima": {
       "version": "4.0.1",
@@ -5620,12 +5620,6 @@
       "engines": {
         "node": ">=8"
       }
-    },
-    "node_modules/@oclif/plugin-plugins/node_modules/isexe": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
-      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
-      "license": "ISC"
     },
     "node_modules/@oclif/plugin-plugins/node_modules/jake": {
       "version": "10.8.7",
@@ -9034,6 +9028,12 @@
       "funding": {
         "url": "https://github.com/chalk/slice-ansi?sponsor=1"
       }
+    },
+    "node_modules/@oclif/plugin-plugins/node_modules/sprintf-js": {
+      "version": "1.0.3",
+      "resolved": "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz",
+      "integrity": "sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==",
+      "license": "BSD-3-Clause"
     },
     "node_modules/@oclif/plugin-plugins/node_modules/string-width": {
       "version": "4.2.3",
