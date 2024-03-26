@@ -23,7 +23,7 @@
     "@oclif/core": "^3.23.0",
     "@oclif/plugin-commands": "^3.2.0",
     "@oclif/plugin-help": "^6.0.17",
-    "@oclif/plugin-plugins": "^4.3.2",
+    "@oclif/plugin-plugins": "^5.0.0",
     "luxon": "^3.4.4",
     "node-cron": "^3.0.3",
     "puppeteer": "^22.4.0",
