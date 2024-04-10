@@ -23805,6 +23805,35 @@
         "node": ">=0.10.0"
       }
     },
+    "node_modules/read-package-up": {
+      "version": "11.0.0",
+      "resolved": "https://registry.npmjs.org/read-package-up/-/read-package-up-11.0.0.tgz",
+      "integrity": "sha512-MbgfoNPANMdb4oRBNg5eqLbB2t2r+o5Ua1pNt8BqGp4I0FJZhuVSOj3PaBPni4azWuSzEdNn2evevzVmEk1ohQ==",
+      "dev": true,
+      "dependencies": {
+        "find-up-simple": "^1.0.0",
+        "read-pkg": "^9.0.0",
+        "type-fest": "^4.6.0"
+      },
+      "engines": {
+        "node": ">=18"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/read-package-up/node_modules/type-fest": {
+      "version": "4.15.0",
+      "resolved": "https://registry.npmjs.org/type-fest/-/type-fest-4.15.0.tgz",
+      "integrity": "sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==",
+      "dev": true,
+      "engines": {
+        "node": ">=16"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
     "node_modules/read-pkg": {
       "version": "9.0.1",
       "resolved": "https://registry.npmjs.org/read-pkg/-/read-pkg-9.0.1.tgz",
@@ -24331,9 +24360,9 @@
       "peer": true
     },
     "node_modules/semantic-release": {
-      "version": "23.0.7",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-23.0.7.tgz",
-      "integrity": "sha512-PFxXQE57zrYiCbWKkdsVUF08s0SifEw3WhDhrN47ZEUWQiLl21FI9Dg/H8g7i/lPx0IkF6u7PjJbgxPceXKBeg==",
+      "version": "23.0.8",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-23.0.8.tgz",
+      "integrity": "sha512-yZkuWcTTfh5h/DrR4Q4QvJSARJdb6wjwn/sN0qKMYEkvwaVFek8YWfrgtL8oWaRdl0fLte0Y1wWMzLbwoaII1g==",
       "dev": true,
       "dependencies": {
         "@semantic-release/commit-analyzer": "^12.0.0",
@@ -24359,7 +24388,7 @@
         "micromatch": "^4.0.2",
         "p-each-series": "^3.0.0",
         "p-reduce": "^3.0.0",
-        "read-pkg-up": "^11.0.0",
+        "read-package-up": "^11.0.0",
         "resolve-from": "^5.0.0",
         "semver": "^7.3.2",
         "semver-diff": "^4.0.0",
@@ -24669,18 +24698,18 @@
       }
     },
     "node_modules/semantic-release/node_modules/@octokit/auth-token": {
-      "version": "5.0.1",
-      "resolved": "https://registry.npmjs.org/@octokit/auth-token/-/auth-token-5.0.1.tgz",
-      "integrity": "sha512-RTmWsLfig8SBoiSdgvCht4BXl1CHU89Co5xiQ5JF19my/sIRDFCQ1RPrmK0exgqUZuNm39C/bV8+/83+MJEjGg==",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/@octokit/auth-token/-/auth-token-5.1.0.tgz",
+      "integrity": "sha512-JH+5PhVMjpbBuKlykiseCHa2uZdEd8Qm/N9Kpqncx4o/wkGF38gqVjIP2gZqfaP3nxFZPpg0FwGClKzBi6nS2g==",
       "dev": true,
       "engines": {
         "node": ">= 18"
       }
     },
     "node_modules/semantic-release/node_modules/@octokit/core": {
-      "version": "6.1.1",
-      "resolved": "https://registry.npmjs.org/@octokit/core/-/core-6.1.1.tgz",
-      "integrity": "sha512-uVypPdnZV7YoEa69Ky2kTSw3neFLGT0PZ54OwUMDph7w6TmhF0ZnoVcvb/kYnjDHCFo2mfoeRDYifLKhLNasUg==",
+      "version": "6.1.2",
+      "resolved": "https://registry.npmjs.org/@octokit/core/-/core-6.1.2.tgz",
+      "integrity": "sha512-hEb7Ma4cGJGEUNOAVmyfdB/3WirWMg5hDuNFVejGEDFqupeOysLc2sG6HJxY2etBp5YQu5Wtxwi020jS9xlUwg==",
       "dev": true,
       "dependencies": {
         "@octokit/auth-token": "^5.0.0",
@@ -24695,19 +24724,10 @@
         "node": ">= 18"
       }
     },
-    "node_modules/semantic-release/node_modules/@octokit/core/node_modules/@octokit/types": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.0.0.tgz",
-      "integrity": "sha512-jSOgEoFZvjg78txlb7cuRTAEvyyQkIEB4Nujg5ZN7E1xaICsr8A0X045Nwb1wUWNrBUHBHZNtcsDIhk8d8ipCw==",
-      "dev": true,
-      "dependencies": {
-        "@octokit/openapi-types": "^21.0.0"
-      }
-    },
     "node_modules/semantic-release/node_modules/@octokit/endpoint": {
-      "version": "10.0.1",
-      "resolved": "https://registry.npmjs.org/@octokit/endpoint/-/endpoint-10.0.1.tgz",
-      "integrity": "sha512-3dWmFR0boYb6YzmzIhO5KsfQrlQIV4cyVslOxjvSG6Q3NLjPjwEtGcbNaevy97jlptA3+UlaOYpaQnzm3JVspg==",
+      "version": "10.1.0",
+      "resolved": "https://registry.npmjs.org/@octokit/endpoint/-/endpoint-10.1.0.tgz",
+      "integrity": "sha512-ogZ5uLMeGBZUzS32fNt9j+dNw3kkEn5CSw4CVkN1EvCNdFYWrQ5diQR6Hh52VrPR0oayIoYTqQFL/l8RqkV0qw==",
       "dev": true,
       "dependencies": {
         "@octokit/types": "^13.0.0",
@@ -24715,15 +24735,6 @@
       },
       "engines": {
         "node": ">= 18"
-      }
-    },
-    "node_modules/semantic-release/node_modules/@octokit/endpoint/node_modules/@octokit/types": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.0.0.tgz",
-      "integrity": "sha512-jSOgEoFZvjg78txlb7cuRTAEvyyQkIEB4Nujg5ZN7E1xaICsr8A0X045Nwb1wUWNrBUHBHZNtcsDIhk8d8ipCw==",
-      "dev": true,
-      "dependencies": {
-        "@octokit/openapi-types": "^21.0.0"
       }
     },
     "node_modules/semantic-release/node_modules/@octokit/graphql": {
@@ -24740,28 +24751,19 @@
         "node": ">= 18"
       }
     },
-    "node_modules/semantic-release/node_modules/@octokit/graphql/node_modules/@octokit/types": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.0.0.tgz",
-      "integrity": "sha512-jSOgEoFZvjg78txlb7cuRTAEvyyQkIEB4Nujg5ZN7E1xaICsr8A0X045Nwb1wUWNrBUHBHZNtcsDIhk8d8ipCw==",
-      "dev": true,
-      "dependencies": {
-        "@octokit/openapi-types": "^21.0.0"
-      }
-    },
     "node_modules/semantic-release/node_modules/@octokit/openapi-types": {
-      "version": "21.1.0",
-      "resolved": "https://registry.npmjs.org/@octokit/openapi-types/-/openapi-types-21.1.0.tgz",
-      "integrity": "sha512-wWfyybx64JhezyPHkHXm3kP33U1ceJ+1y8q5sCKGdqzQA7cGBZjo1PCYlNnVV/c1RR6rDGAn1DxJ5LwrJC4z7Q==",
+      "version": "22.0.1",
+      "resolved": "https://registry.npmjs.org/@octokit/openapi-types/-/openapi-types-22.0.1.tgz",
+      "integrity": "sha512-1yN5m1IMNXthoBDUXFF97N1gHop04B3H8ws7wtOr8GgRyDO1gKALjwMHARNBoMBiB/2vEe/vxstrApcJZzQbnQ==",
       "dev": true
     },
     "node_modules/semantic-release/node_modules/@octokit/plugin-paginate-rest": {
-      "version": "10.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-10.0.0.tgz",
-      "integrity": "sha512-G1Z67qOiFneKDJyMafHQkWnKm1kU3FfbRZLzxgsFg4dOa3pRNdABbdk+xo/oev6P88lnbt7GKdBNB6dJZuPphA==",
+      "version": "11.0.1",
+      "resolved": "https://registry.npmjs.org/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-11.0.1.tgz",
+      "integrity": "sha512-6pPLXJOKXXhPkMlDU2pd6LCkiuAccTTJAsMlN7P/WbK3b1xbH/d90SGbdmz6yBadJJqM0xg80KRS5dYUHbo3oQ==",
       "dev": true,
       "dependencies": {
-        "@octokit/types": "^12.6.0"
+        "@octokit/types": "^13.3.0"
       },
       "engines": {
         "node": ">= 18"
@@ -24771,9 +24773,9 @@
       }
     },
     "node_modules/semantic-release/node_modules/@octokit/plugin-retry": {
-      "version": "7.0.4",
-      "resolved": "https://registry.npmjs.org/@octokit/plugin-retry/-/plugin-retry-7.0.4.tgz",
-      "integrity": "sha512-JRJRYR91W/H8NHrmsBD7UUYJ/heKlrvwV+zSXtmN6BdXvuHbHLrY/8Zv1T1jdxLpL7oUTcwG72PdN+XNxADWmA==",
+      "version": "7.1.0",
+      "resolved": "https://registry.npmjs.org/@octokit/plugin-retry/-/plugin-retry-7.1.0.tgz",
+      "integrity": "sha512-6mc4xNtT6eoDBGrJJn0sFALUmIba2f7Wx+G8XV9GkBLcyX5PogBdx2mDMW5yPPqSD/y23tYagkjOLX9sT7O6jA==",
       "dev": true,
       "dependencies": {
         "@octokit/request-error": "^6.0.0",
@@ -24785,15 +24787,6 @@
       },
       "peerDependencies": {
         "@octokit/core": ">=6"
-      }
-    },
-    "node_modules/semantic-release/node_modules/@octokit/plugin-retry/node_modules/@octokit/types": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.0.0.tgz",
-      "integrity": "sha512-jSOgEoFZvjg78txlb7cuRTAEvyyQkIEB4Nujg5ZN7E1xaICsr8A0X045Nwb1wUWNrBUHBHZNtcsDIhk8d8ipCw==",
-      "dev": true,
-      "dependencies": {
-        "@octokit/openapi-types": "^21.0.0"
       }
     },
     "node_modules/semantic-release/node_modules/@octokit/plugin-throttling": {
@@ -24812,24 +24805,15 @@
         "@octokit/core": "^6.0.0"
       }
     },
-    "node_modules/semantic-release/node_modules/@octokit/plugin-throttling/node_modules/@octokit/types": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.0.0.tgz",
-      "integrity": "sha512-jSOgEoFZvjg78txlb7cuRTAEvyyQkIEB4Nujg5ZN7E1xaICsr8A0X045Nwb1wUWNrBUHBHZNtcsDIhk8d8ipCw==",
-      "dev": true,
-      "dependencies": {
-        "@octokit/openapi-types": "^21.0.0"
-      }
-    },
     "node_modules/semantic-release/node_modules/@octokit/request": {
-      "version": "9.0.1",
-      "resolved": "https://registry.npmjs.org/@octokit/request/-/request-9.0.1.tgz",
-      "integrity": "sha512-kL+cAcbSl3dctYLuJmLfx6Iku2MXXy0jszhaEIjQNaCp4zjHXrhVAHeuaRdNvJjW9qjl3u1MJ72+OuBP0YW/pg==",
+      "version": "9.1.0",
+      "resolved": "https://registry.npmjs.org/@octokit/request/-/request-9.1.0.tgz",
+      "integrity": "sha512-1mDzqKSiryRKZM++MhO6WQBukWbikes6AN6UTxB5vpRnNUbPDkVfUhpSvZ3aXYEFnbcV8DZkikOnCr3pdgMD3Q==",
       "dev": true,
       "dependencies": {
         "@octokit/endpoint": "^10.0.0",
         "@octokit/request-error": "^6.0.1",
-        "@octokit/types": "^12.0.0",
+        "@octokit/types": "^13.1.0",
         "universal-user-agent": "^7.0.2"
       },
       "engines": {
@@ -24837,9 +24821,9 @@
       }
     },
     "node_modules/semantic-release/node_modules/@octokit/request-error": {
-      "version": "6.0.3",
-      "resolved": "https://registry.npmjs.org/@octokit/request-error/-/request-error-6.0.3.tgz",
-      "integrity": "sha512-qs234vM5iSQ6ahMtdwQv4F4qPCJxz18Jfbe70+fCA96Mj18MMC27WgBkt07p2iW4fbJdHsje5Fhr6ancjeyXOg==",
+      "version": "6.1.0",
+      "resolved": "https://registry.npmjs.org/@octokit/request-error/-/request-error-6.1.0.tgz",
+      "integrity": "sha512-xcLJv4IgfWIOEEVZwfhUN3yHNWJL0AMw1J1Ba8BofM9RdDTbapg6MO4zNxlPS4XXX9aAIsbDRa47K57EhgeVAw==",
       "dev": true,
       "dependencies": {
         "@octokit/types": "^13.0.0"
@@ -24848,13 +24832,13 @@
         "node": ">= 18"
       }
     },
-    "node_modules/semantic-release/node_modules/@octokit/request-error/node_modules/@octokit/types": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.0.0.tgz",
-      "integrity": "sha512-jSOgEoFZvjg78txlb7cuRTAEvyyQkIEB4Nujg5ZN7E1xaICsr8A0X045Nwb1wUWNrBUHBHZNtcsDIhk8d8ipCw==",
+    "node_modules/semantic-release/node_modules/@octokit/types": {
+      "version": "13.4.0",
+      "resolved": "https://registry.npmjs.org/@octokit/types/-/types-13.4.0.tgz",
+      "integrity": "sha512-WlMegy3lPXYWASe3k9Jslc5a0anrYAYMWtsFrxBTdQjS70hvLH6C+PGvHbOsgy3RA3LouGJoU/vAt4KarecQLQ==",
       "dev": true,
       "dependencies": {
-        "@octokit/openapi-types": "^21.0.0"
+        "@octokit/openapi-types": "^22.0.1"
       }
     },
     "node_modules/semantic-release/node_modules/@semantic-release/commit-analyzer": {
@@ -24888,13 +24872,13 @@
       }
     },
     "node_modules/semantic-release/node_modules/@semantic-release/github": {
-      "version": "10.0.2",
-      "resolved": "https://registry.npmjs.org/@semantic-release/github/-/github-10.0.2.tgz",
-      "integrity": "sha512-SP5ihhv/uQa8vPuWKmbJrrzfv8lRUkDFC6qwgaWoorrflN1DEW0IGCa9w/PxUp8Ad3dbvXZPmpXdGiP3eyTzhg==",
+      "version": "10.0.3",
+      "resolved": "https://registry.npmjs.org/@semantic-release/github/-/github-10.0.3.tgz",
+      "integrity": "sha512-nSJQboKrG4xBn7hHpRMrK8lt5DgqJg50ZMz9UbrsfTxuRk55XVoQEadbGZ2L9M0xZAC6hkuwkDhQJKqfPU35Fw==",
       "dev": true,
       "dependencies": {
         "@octokit/core": "^6.0.0",
-        "@octokit/plugin-paginate-rest": "^10.0.0",
+        "@octokit/plugin-paginate-rest": "^11.0.0",
         "@octokit/plugin-retry": "^7.0.0",
         "@octokit/plugin-throttling": "^9.0.0",
         "@semantic-release/error": "^4.0.0",
