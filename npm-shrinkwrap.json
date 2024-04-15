@@ -16390,13 +16390,13 @@
       }
     },
     "node_modules/eslint-config-oclif": {
-      "version": "5.1.1",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.1.1.tgz",
-      "integrity": "sha512-cyvKKwNnNkrYmumgrd72I8WxXJBL2DDI8fX2/wX5v4O0kl7Poj2ceR4ylP6DWXpCbD48+qXGwjIjiz2cVVVrzQ==",
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.1.2.tgz",
+      "integrity": "sha512-rtS1qwKpTlmt/3yX+2a5GpAoNkUe5/CL3KUCqpzi0TNoxZwq25F1MJIMZS3AzHRK+F2XMwGnA5oL6X3koCwbkA==",
       "dev": true,
       "dependencies": {
         "eslint-config-xo-space": "^0.35.0",
-        "eslint-plugin-mocha": "^10.4.1",
+        "eslint-plugin-mocha": "^10.4.2",
         "eslint-plugin-n": "^15.1.0",
         "eslint-plugin-unicorn": "^48.0.1"
       },
@@ -16830,9 +16830,9 @@
       }
     },
     "node_modules/eslint-plugin-mocha": {
-      "version": "10.4.1",
-      "resolved": "https://registry.npmjs.org/eslint-plugin-mocha/-/eslint-plugin-mocha-10.4.1.tgz",
-      "integrity": "sha512-G85ALUgKaLzuEuHhoW3HVRgPTmia6njQC3qCG6CEvA8/Ja9PDZnRZOuzekMki+HaViEQXINuYsmhp5WR5/4MfA==",
+      "version": "10.4.2",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-mocha/-/eslint-plugin-mocha-10.4.2.tgz",
+      "integrity": "sha512-cur4dVYnSEWTBwdqIBQFxa/9siAhesu0TX+lbJ4ClE9j0eNMNe6BSx3vkFFNz6tGoveyMyELFXa30f3fvuAVDg==",
       "dev": true,
       "dependencies": {
         "eslint-utils": "^3.0.0",
