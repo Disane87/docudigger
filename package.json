@@ -30,7 +30,7 @@
     "winston": "^3.12.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^18.6.2",
+    "@commitlint/config-conventional": "^19.0.0",
     "@oclif/test": "^3.2.1",
     "@saithodev/semantic-release-gitea": "^2.1.0",
     "@semantic-release/changelog": "^6.0.3",
