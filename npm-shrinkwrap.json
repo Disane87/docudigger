@@ -9712,12 +9712,12 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "3.2.13",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.13.tgz",
-      "integrity": "sha512-H/3K2C55d1gW2YetrYK+hF2DDTRt5lpa0uSjARh9kOxDM2aERnS24pWQcCzLDZKsLnG998/bQmPW9mzvpGM2Wg==",
+      "version": "3.2.14",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-3.2.14.tgz",
+      "integrity": "sha512-k0SmNoBLI76aJAfqhTye69gkv7TK3SBVptLkhbu+74/P44GXHxaxcCB727QpMpdFZeVqaPfKYz1ns7halBHaSw==",
       "dev": true,
       "dependencies": {
-        "@oclif/core": "^3.26.5",
+        "@oclif/core": "^3.26.6",
         "chai": "^4.4.1",
         "fancy-test": "^3.0.14"
       },
