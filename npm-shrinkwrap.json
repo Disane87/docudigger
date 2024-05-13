@@ -20174,9 +20174,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.10.9",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.10.9.tgz",
-      "integrity": "sha512-Rz+I3KBD/gBEZOzKioaLO817PpZldl11K2xvbssAaxman5eGMWtzayn4CgMixB7jcI8TONyLF5MuHdKVn2JBWA==",
+      "version": "4.10.10",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.10.10.tgz",
+      "integrity": "sha512-9QqSWjRVsztlYOKSPlvmQNa7wwMl9Emtbp2x4N756pFrNQpKXUCgM8B2Us4vTblK8+f4FMaiQNu4hYe4/2sagQ==",
       "dev": true,
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.574.0",
