@@ -57,7 +57,7 @@ jobs:
           cosign-release: "v1.13.1"
 
       - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@be3701b2116d2f723573ca9e8cdb4ca85d3cdaf0
+        uses: docker/setup-buildx-action@5138f76647652447004da686b2411557eaf65f33
 
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'
