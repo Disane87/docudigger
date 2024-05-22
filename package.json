@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^18.6.2",
-    "@oclif/test": "^3.2.1",
+    "@oclif/test": "^4.0.0",
     "@saithodev/semantic-release-gitea": "^2.1.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.1.0",
