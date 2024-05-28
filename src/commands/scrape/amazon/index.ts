@@ -17,7 +17,7 @@ import { WebsiteRun } from "../../../interfaces/website-run.interface";
 
 export default class Amazon extends ScrapeCommand<typeof Amazon> {
   public pluginName = `amazon`;
-  static description = `Scrapes amazon invoices`;
+  static description = `Scrapes amazon invoices from orders`;
   static summary = `Used to get invoices from amazon`;
 
   static examples = [`<%= config.bin %> <%= command.id %>`];
