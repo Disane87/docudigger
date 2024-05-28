@@ -7,7 +7,6 @@ import { Scrape } from "../interfaces/scrape.interface";
 import { WebsiteRun } from "../interfaces/website-run.interface";
 import { BaseCommand, BaseFlags } from "./base.class";
 import { Browser, Page, Puppeteer } from "./puppeteer.class";
-import { isRunningInDocker } from "../helpers/process.helper";
 
 export type ScrapeFlags<T extends typeof Command> = Interfaces.InferredFlags<
   (typeof ScrapeCommand)[`baseFlags`] & T[`flags`]
@@ -72,11 +71,7 @@ export abstract class ScrapeCommand<
     this.processJsonFile = path
       .resolve(path.join(this.flags.fileDestinationFolder, `process.json`))
       .normalize();
-      
-    this.logger.debug(`processJsonFile: ${this.processJsonFile}`);
-    this.logger.debug(`fileDestinationFolder: ${this.flags.fileDestinationFolder}`);
-    this.logger.debug(`Running in Docker: ${isRunningInDocker()}`);
-    this.browser = await new Puppeteer(true, this.pupeteerArgs, isRunningInDocker()).setup();
+    this.browser = await new Puppeteer(true, this.pupeteerArgs).setup();
   }
 
   protected async initFlags() {
@@ -118,7 +113,7 @@ export abstract class ScrapeCommand<
   }
 
   public async getLastWebsiteRun(): Promise<WebsiteRun | undefined | null> {
-    if (fs.existsSync(this.processJsonFile) && this.processJsonFile) {
+    if (fs.existsSync(this.processJsonFile)) {
       this.processedWebsites = JSON.parse(
         await fs.promises.readFile(this.processJsonFile, `utf8`),
       );

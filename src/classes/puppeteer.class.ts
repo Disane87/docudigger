@@ -6,19 +6,16 @@ export { Browser, Page };
 export class Puppeteer {
   public browser: Browser;
   private debug: boolean;
-
-  private inDocker: boolean;
   private arguments: string[];
 
-  constructor(debug: boolean, pupeteerArgs: string[], inDocker: boolean = false) {
+  constructor(debug: boolean, pupeteerArgs: string[]) {
     this.debug = debug;
     this.arguments = pupeteerArgs;
-    this.inDocker = inDocker;
   }
 
   public async setup(): Promise<Browser> {
     this.browser = await puppeteer.launch({
-      headless: this.inDocker || (!this.debug ?? false),
+      headless: true,
       args: this.arguments,
       dumpio: false,
       devtools: this.debug,
