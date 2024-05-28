@@ -1,6 +1,6 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "conventionalCommits.scopes": [
     "Gathering",
@@ -16,7 +16,8 @@
     "docker",
     "files",
     "build",
-    "package"
+    "package",
+    "deps"
   ],
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "npm.exclude": "**/@(vendor|node_modules|bower_components|dist|static)/**"

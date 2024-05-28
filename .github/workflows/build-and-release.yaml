@@ -1,20 +1,21 @@
 name: Semantic release
-on: 
+on:
   workflow_dispatch:
   push:
     paths:
-      - 'src/**'
-      - 'dockerfile'
-      - '.releaserc'
+      - "src/**"
+      - "dockerfile"
+      - ".releaserc"
     branches:
-      - 'main'
-      - 'dev'
+      - "main"
+      - "dev"
 env:
   GH_TOKEN: ${{ secrets.AUTH_GH }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   NEW_RELEASE_PUBLISHED: false
+  HUSKY: 0
 
 jobs:
   build:
@@ -24,11 +25,11 @@ jobs:
       NEXT_VERSION: ${{ steps.semantic-release.outputs.version }}
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
@@ -41,38 +42,38 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.build.outputs.NEW_RELEASE_PUBLISHED
     steps:
-      - env: 
+      - env:
           NEW_RELEASE_PUBLISHED: ${{ needs.build.outputs.NEW_RELEASE_PUBLISHED }}
           NEXT_VERSION: ${{ needs.build.outputs.NEXT_VERSION }}
         run: echo "Creating docker release for version $NEXT_VERSION"
-        
+
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@c85d0e205a72a294fe064f618a87dbac13084086 # v2.8.1
+        uses: sigstore/cosign-installer@59acb6260d9c0ba8f4a2f9d9b48431a222b68e20 # v4.5.0
         with:
-          cosign-release: 'v1.13.1'
+          cosign-release: "v1.13.1"
 
       - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@16c0bc4a6e6ada2cfd8afd41d22d95379cf7c32a
+        uses: docker/setup-buildx-action@5138f76647652447004da686b2411557eaf65f33
 
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        uses: docker/login-action@70fccc794acd729b2b22dd6a326895f286447728
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ env.GH_TOKEN }}
-          
+
       - name: Echo Version
         run: |
           echo "Docker: $NEXT_VERSION"
 
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           flavor: |
@@ -86,10 +87,9 @@ jobs:
             type=ref,event=branch
             #type=sha
 
-            
       - name: Build and push Docker image
         id: build-and-push
-        uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825
+        uses: docker/build-push-action@2a53c6ccda456d31fb62eedc658aae06e238b7bd
         with:
           context: .
           build-args: |

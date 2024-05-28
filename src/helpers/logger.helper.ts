@@ -11,6 +11,7 @@ export const createLogger = (logLevel: string, logPath: string, context = `DocuD
         format.prettyPrint(),
         format.colorize(),
         format.align(),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         format.printf((info: any) => {
             return `[${info.level}] [${info.timestamp}] [${info.label}]: ${info.message}`;
         })
