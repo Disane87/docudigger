@@ -72,14 +72,14 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         (scrape) =>
           scrape.invoices.length > 0 &&
           scrape.invoices.every(
-            (invoice) => invoice.status == InvoiceStatus.saved,
+            (invoice) => invoice.status == InvoiceStatus.saved || invoice.status == InvoiceStatus.skipped,
           ),
       );
     }
 
     if (options.onlyNew && this.lastScrapeWithInvoices) {
-      options.yearFilter = DateTime.now().year;
-      options.pageFilter = 1;
+      // options.yearFilter = DateTime.now().year;
+      // options.pageFilter = 1;
       this.logger.info(
         `Only invoices since order ${this.lastScrapeWithInvoices.number} will be gathered.`,
       );
@@ -136,12 +136,17 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       const orderPageCount = await this.getOrderPageCount(currentYear);
 
       for (const orderPage of [...Array(orderPageCount).keys()]) {
-        await this.processOrderPage(
+        const ordersProcessed = await this.processOrderPage(
           orderPage,
           orders,
           orderPageCount,
           currentYear,
         );
+
+        if(!ordersProcessed){
+          this.logger.info(`No more orders to process. Exiting.`);
+          return;
+        }
       }
 
       if (this.flags.yearFilter != currentYear) {
@@ -157,7 +162,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     orders: Scrape[],
     orderPageCount: number,
     currentYear: number,
-  ) {
+  ): Promise<boolean> {
     const amazonSelectors = this.selectors;
     const amazon = this.definition;
 
@@ -177,7 +182,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         orderNumber == this.lastScrapeWithInvoices?.number
       ) {
         this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
-        break;
+        return false;
       }
 
       order.invoices = this.getInvoices(invoiceUrls, orderIndex);
@@ -195,6 +200,8 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     if (nextPageUrl) {
       await this.currentPage.goto(nextPageUrl);
     }
+
+    return true;
   }
 
   private async getOrderPageCount(currentYear: number) {
@@ -211,13 +218,16 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     let orderPageCount: number = null;
 
     try {
-      orderPageCount =
-        this.flags.pageFilter ??
-        (await (
+
+      if(this.flags.onlyNew){
+        orderPageCount =  (await (
           await this.currentPage.waitForSelector(amazonSelectors.pagination, {
             timeout: this.selectorWaitTimeout,
           })
         ).evaluate((handle: HTMLElement) => parseInt(handle.innerText)));
+      } else {
+        orderPageCount = this.flags.pageFilter ?? 1;
+      }
     } catch (ex) {
       orderPageCount = 1;
       this.logger.error(
@@ -237,7 +247,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   ): string | null {
     if (orderPage + 1 != orderPageCount) {
       const nextPageUrl = new URL(
-        `?ie=UTF8&orderFilter=year-${currentYear}&search=&startIndex=${
+        `?ie=UTF8&timeFilter=year-${currentYear}&search=&startIndex=${
           10 * (orderPage + 1)
         }`,
         amazon.orderPage,
@@ -336,7 +346,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   }
 
   private async getPossibleYears(yearFilter: number): Promise<number[]> {
-    const possibleYears = yearFilter
+    const possibleYears = yearFilter && !this.flags.onlyNew
       ? [yearFilter]
       : await (
           await this.currentPage.$$eval(
@@ -455,7 +465,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       popover: `#a-popover-{{index}}`,
       invoiceList: `ul.invoice-list`,
       invoiceLinks: `a[href*="invoice.pdf"]`,
-      pagination: `ul.a-pagination li:nth-last-child(2) a`,
+      pagination: `.a-pagination li:nth-last-child(2) a`,
       yearFilter: `select[name="timeFilter"]`,
       authError: `#auth-error-message-box .a-unordered-list li`,
       authWarning: `#auth-warning-message-box .a-unordered-list li`,
