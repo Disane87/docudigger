@@ -110,7 +110,7 @@ export abstract class ScrapeCommand<
       }
       if (arr.length == 1) return arr[0];
     }
-    throw `Unable to get active page`;
+    throw `Unable to get active page. Plase open up a github issue`;
   }
 
   public async closeBrowser() {
