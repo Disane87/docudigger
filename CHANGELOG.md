@@ -1,3 +1,10 @@
+## [2.0.3-dev.2](https://github.com/disane87/docudigger/compare/v2.0.3-dev.1...v2.0.3-dev.2) (2024-05-28)
+
+
+### 🛠️ Fixes
+
+* new version numbers ([578b160](https://github.com/disane87/docudigger/commit/578b1600e0eb3936b85fc311844aa28d8a271b2c))
+
 ## [2.0.3-dev.1](https://github.com/disane87/docudigger/compare/v2.0.2...v2.0.3-dev.1) (2024-05-28)
 
 
