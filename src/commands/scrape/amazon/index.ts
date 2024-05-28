@@ -426,7 +426,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     this.logger.info(
       `Processing done. Processed ${invoiceCount} invoices in ${timeElapsed.minutes.toFixed(
         2,
-      )} minutes.`,
+      )} minutes`,
     );
     if (options.debug) {
       await this.closeBrowser();
