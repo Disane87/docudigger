@@ -1,3 +1,10 @@
+## [2.0.3-dev.5](https://github.com/disane87/docudigger/compare/v2.0.3-dev.4...v2.0.3-dev.5) (2024-05-28)
+
+
+### 🛠️ Fixes
+
+* added docker check for debugging and headless mode ([6882449](https://github.com/disane87/docudigger/commit/6882449163126ca8ac1f61df17a32be1e2d28436))
+
 ## [2.0.3-dev.4](https://github.com/disane87/docudigger/compare/v2.0.3-dev.3...v2.0.3-dev.4) (2024-05-28)
 
 
