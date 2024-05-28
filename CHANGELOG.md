@@ -1,3 +1,10 @@
+## [2.0.3-dev.4](https://github.com/disane87/docudigger/compare/v2.0.3-dev.3...v2.0.3-dev.4) (2024-05-28)
+
+
+### 🛠️ Fixes
+
+* fixed changed paging classes and ignores filter when OnlyNew is set ([6e296cc](https://github.com/disane87/docudigger/commit/6e296cc2438334d7829d24e2c0e7fda87aa88d25)), closes [#715](https://github.com/disane87/docudigger/issues/715) [#790](https://github.com/disane87/docudigger/issues/790) [#791](https://github.com/disane87/docudigger/issues/791)
+
 ## [2.0.3-dev.3](https://github.com/disane87/docudigger/compare/v2.0.3-dev.2...v2.0.3-dev.3) (2024-05-28)
 
 
