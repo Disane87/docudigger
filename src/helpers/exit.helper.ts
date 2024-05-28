@@ -29,7 +29,7 @@ export const exit = (logger: winston.Logger, recurring: boolean) => {
         process.emit(`SIGINT`);
         process.exit();
     } else {
-        logger.info(`Recurring activated. Not terminating. Waitung for next run.`);
+        logger.info(`Recurring activated. Not terminating. Waiting for next run.`);
     }
 };
 // Create a listener for each of the signals that we want to handle
