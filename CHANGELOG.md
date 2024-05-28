@@ -1,3 +1,20 @@
+## [2.0.3-dev.3](https://github.com/disane87/docudigger/compare/v2.0.3-dev.2...v2.0.3-dev.3) (2024-05-28)
+
+
+### 🛠️ Fixes
+
+* fixed changed paging classes and ignores filter when OnlyNew is set ([b768a2c](https://github.com/disane87/docudigger/commit/b768a2cdfe2acbc2a989bfdc637e500f8b381dd6)), closes [#715](https://github.com/disane87/docudigger/issues/715) [#790](https://github.com/disane87/docudigger/issues/790) [#791](https://github.com/disane87/docudigger/issues/791)
+* fixed changed paging classes and ignores filter when OnlyNew is set ([d1f79af](https://github.com/disane87/docudigger/commit/d1f79afc9881afdb102cacc1c060a743c2469be3))
+
+
+### 📔 Docs
+
+* :memo: updated docs to reflect correct usage ([fa3bab0](https://github.com/disane87/docudigger/commit/fa3bab0ef37324155ce13997915c96b9d7553564))
+* added a hint for `env-cmd` ([e313958](https://github.com/disane87/docudigger/commit/e313958f8985ff0b5da0d2f054dac48171a0f535))
+* changes gitmojis ([af62023](https://github.com/disane87/docudigger/commit/af62023a9fa0cc6758144406488de579ba3c7c62))
+* changes readme ([778214d](https://github.com/disane87/docudigger/commit/778214da89e561d9d190283ed81dd75880f70073))
+* fixed typos in readme ([6303f6e](https://github.com/disane87/docudigger/commit/6303f6e9c29d656fc822ebb69d00a43a52e64c92))
+
 ## [2.0.3-dev.2](https://github.com/disane87/docudigger/compare/v2.0.3-dev.1...v2.0.3-dev.2) (2024-05-28)
 
 
