@@ -1,3 +1,10 @@
+## [2.0.3-dev.6](https://github.com/disane87/docudigger/compare/v2.0.3-dev.5...v2.0.3-dev.6) (2024-05-28)
+
+
+### 🛠️ Fixes
+
+* headless must be always true ([44fa55c](https://github.com/disane87/docudigger/commit/44fa55cd8f58b0e764ff9c795df0248eb4da9b42))
+
 ## [2.0.3-dev.5](https://github.com/disane87/docudigger/compare/v2.0.3-dev.4...v2.0.3-dev.5) (2024-05-28)
 
 
