@@ -1,12 +1,12 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "2.0.4-dev.1",
+  "version": "2.0.4-dev.2",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@disane-dev/docudigger",
-      "version": "2.0.4-dev.1",
+      "version": "2.0.4-dev.2",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {

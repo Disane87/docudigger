@@ -1,3 +1,10 @@
+## [2.0.4-dev.2](https://github.com/disane87/docudigger/compare/v2.0.4-dev.1...v2.0.4-dev.2) (2024-05-29)
+
+
+### 🛠️ Fixes
+
+* ignoring filter when OnlyNew is set ([39edcb4](https://github.com/disane87/docudigger/commit/39edcb4b2ed51be2898d7df85a78c2e201b2ef92)), closes [#791](https://github.com/disane87/docudigger/issues/791)
+
 ## [2.0.4-dev.1](https://github.com/disane87/docudigger/compare/v2.0.3...v2.0.4-dev.1) (2024-05-29)
 
 
