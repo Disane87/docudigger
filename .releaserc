@@ -1,12 +1,47 @@
 {
   "plugins": [
-    ["@semantic-release/commit-analyzer", {
-      "preset": "conventionalcommits",
-      "releaseRules": [
-        {"type": "chore", "scope": "deps", "release": false},
-        {"type": "chore", "scope": "renovate", "release": false}
-      ]
-    }],
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          {
+            "type": "chore",
+            "scope": "deps",
+            "release": false
+          },
+          {
+            "type": "chore",
+            "scope": "renovate",
+            "release": false
+          },
+          {
+            "type": "docs",
+            "release": "patch"
+          },
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "fix",
+            "release": "patch"
+          },
+          {
+            "type": "refactor",
+            "release": "patch"
+          },
+          {
+            "type": "style",
+            "release": "patch"
+          },
+          {
+            "type": "test",
+            "release": "patch"
+          }
+        ]
+      }
+    ],
     [
       "@semantic-release/release-notes-generator",
       {
@@ -125,16 +160,17 @@
       "@semantic-release/exec",
       {
         "verifyReleaseCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT",
-        "successCmd": "echo \"new_release_published=${'true'}\" >> $GITHUB_OUTPUT"
-      }
-    ]
-  ],
-  "branches": [
-    "main",
-    {
-      "name": "dev",
-      "prerelease": true,
-      "channel": "dev"
+        "successCmd": "echo \"new_release_published=${"true'
+      }\" >> $GITHUB_OUTPUT"
     }
   ]
+],
+"branches": [
+  "main",
+  {
+    "name": "dev",
+    "prerelease": true,
+    "channel": "dev"
+  }
+]
 }
