@@ -50,19 +50,17 @@ npm install
 ## Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @disane-dev/docudigger
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
-@disane-dev/docudigger/2.0.3-dev.1 linux-x64 node-v20.13.1
+@disane-dev/docudigger/2.0.4-dev.1 linux-x64 node-v20.13.1
 $ docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 ## `docudigger scrape all`
