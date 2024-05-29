@@ -160,17 +160,16 @@
       "@semantic-release/exec",
       {
         "verifyReleaseCmd": "echo \"version=${nextRelease.version}\" >> $GITHUB_OUTPUT",
-        "successCmd": "echo \"new_release_published=${"true'
-      }\" >> $GITHUB_OUTPUT"
+        "successCmd": "echo \"new_release_published=${'true'}\" >> $GITHUB_OUTPUT"
+      }
+    ]
+  ],
+  "branches": [
+    "main",
+    {
+      "name": "dev",
+      "prerelease": true,
+      "channel": "dev"
     }
   ]
-],
-"branches": [
-  "main",
-  {
-    "name": "dev",
-    "prerelease": true,
-    "channel": "dev"
-  }
-]
 }
