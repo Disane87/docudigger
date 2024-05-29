@@ -49,12 +49,18 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
         // Get the latest scrape with order number from the last website run which contains minimum one invoice and all with status saved
         if (this.lastWebsiteRun?.scrapes.length > 0) {
-            this.lastScrapeWithInvoices = this.lastWebsiteRun.scrapes.find(scrape => scrape.invoices.length > 0 && scrape.invoices.every(invoice => invoice.status == InvoiceStatus.saved));
+            this.lastScrapeWithInvoices = this.lastWebsiteRun.scrapes.find(
+            (scrape) =>
+                scrape.invoices.length > 0 &&
+                scrape.invoices.every(
+                (invoice) => invoice.status == InvoiceStatus.saved,
+                ),
+            );
         }
 
         if (options.onlyNew && this.lastScrapeWithInvoices) {
-            options.yearFilter = DateTime.now().year;
-            options.pageFilter = 1;
+            // options.yearFilter = DateTime.now().year;
+            // options.pageFilter = 1;
             this.logger.info(`Only invoices since order ${this.lastScrapeWithInvoices.number} will be gathered.`);
         }
 
