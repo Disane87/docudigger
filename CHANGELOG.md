@@ -1,3 +1,12 @@
+## [2.0.4](https://github.com/disane87/docudigger/compare/v2.0.3...v2.0.4) (2024-05-29)
+
+
+### 🛠️ Fixes
+
+* fixes wrong timestamp format ([ed2e2ef](https://github.com/disane87/docudigger/commit/ed2e2ef59f88d5400cc4a9dab3d903de051142f5)), closes [#794](https://github.com/disane87/docudigger/issues/794)
+* test commit for build ([4692daf](https://github.com/disane87/docudigger/commit/4692daf9c27985db28e267e4aa1f810c68fe08e1))
+* typo fixed ([a658d44](https://github.com/disane87/docudigger/commit/a658d4492c26c72f7db9f28d5b0324dff9056b17))
+
 ## [2.0.4-dev.1](https://github.com/disane87/docudigger/compare/v2.0.3...v2.0.4-dev.1) (2024-05-29)
 
 
