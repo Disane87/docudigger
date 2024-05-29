@@ -3,7 +3,6 @@
   <img alt="npm" src="https://img.shields.io/npm/v/@disane-dev/docudigger/latest">
   <img alt="GitHub package.json dependency version (subfolder of monorepo)" src="https://img.shields.io/github/package-json/dependency-version/Disane87/docudigger/puppeteer">
 
-
   <img src="https://img.shields.io/badge/npm-%3E%3D9.1.2-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D18.12.1-blue.svg" />
   <a href="#" target="_blank">
@@ -56,7 +55,7 @@ $ npm install -g @disane-dev/docudigger
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
-@disane-dev/docudigger/2.0.3 linux-x64 node-v20.13.1
+@disane-dev/docudigger/2.0.4-dev.1 linux-x64 node-v20.13.1
 $ docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND
