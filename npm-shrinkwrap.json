@@ -23078,17 +23078,18 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.11.3",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.11.3.tgz",
-      "integrity": "sha512-GD0m8Z8Ok3x5VfyHbVvjzrXzoKCM8s2Z3EiS5O97HzsSGTFUU1EPGiefSrYBUINOuC9auzNuFkkPbdD/40ib8g==",
+      "version": "4.12.0",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.12.0.tgz",
+      "integrity": "sha512-yTDd7LLAVGKe8c9qt20UgVszMDok3I5mz8l/opy1IC2+0epxR+AQH0BQOJ3sn+vIY6fH89MVRngvfJRq5SJ00g==",
       "dev": true,
+      "license": "MIT",
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.574.0",
         "@aws-sdk/client-s3": "^3.583.0",
         "@inquirer/confirm": "^3.1.6",
         "@inquirer/input": "^2.1.8",
         "@inquirer/select": "^2.3.4",
-        "@oclif/core": "^3.26.5",
+        "@oclif/core": "^4.0.0-beta.12",
         "@oclif/plugin-help": "^6.0.21",
         "@oclif/plugin-not-found": "^3.1.10",
         "@oclif/plugin-warn-if-update-available": "^3.0.19",
@@ -23110,6 +23111,35 @@
       },
       "bin": {
         "oclif": "bin/run.js"
+      },
+      "engines": {
+        "node": ">=18.0.0"
+      }
+    },
+    "node_modules/oclif/node_modules/@oclif/core": {
+      "version": "4.0.0-beta.13",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.0-beta.13.tgz",
+      "integrity": "sha512-ug8CZUCJphgetSZVgd4HQgyewlYVGGG1LIeFXGxjgYsjZ/f5I3nSCj7xpAMEDqjVD/lwmSujtVwa7tvEgLGICw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "ansi-escapes": "^4.3.2",
+        "ansis": "^3.0.1",
+        "clean-stack": "^3.0.1",
+        "cli-spinners": "^2.9.2",
+        "cosmiconfig": "^9.0.0",
+        "debug": "^4.3.4",
+        "ejs": "^3.1.10",
+        "get-package-type": "^0.1.0",
+        "globby": "^11.1.0",
+        "indent-string": "^4.0.0",
+        "is-wsl": "^2.2.0",
+        "minimatch": "^9.0.4",
+        "string-width": "^4.2.3",
+        "supports-color": "^9.4.0",
+        "widest-line": "^3.1.0",
+        "wordwrap": "^1.0.0",
+        "wrap-ansi": "^7.0.0"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -23264,6 +23294,22 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
+    "node_modules/oclif/node_modules/minimatch": {
+      "version": "9.0.4",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.4.tgz",
+      "integrity": "sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "brace-expansion": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16 || 14 >=14.17"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
     "node_modules/oclif/node_modules/p-cancelable": {
       "version": "3.0.0",
       "resolved": "https://registry.npmjs.org/p-cancelable/-/p-cancelable-3.0.0.tgz",
@@ -23288,6 +23334,19 @@
       },
       "funding": {
         "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/oclif/node_modules/supports-color": {
+      "version": "9.4.0",
+      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-9.4.0.tgz",
+      "integrity": "sha512-VL+lNrEoIXww1coLPOmiEmK/0sGigko5COxI09KzHc2VJXJsQ37UaQ+8quuxjDeA7+KnLGTWRyOXSLLR2Wb4jw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=12"
+      },
+      "funding": {
+        "url": "https://github.com/chalk/supports-color?sponsor=1"
       }
     },
     "node_modules/once": {
