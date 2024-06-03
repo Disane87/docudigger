@@ -6905,9 +6905,9 @@
       }
     },
     "node_modules/@oclif/core": {
-      "version": "3.26.8",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.26.8.tgz",
-      "integrity": "sha512-5wZCQqHg6G2mvU+HxmtTIiMSUaXIoSSr0dWcxs345QA3DineXu6Td9BxEpc2EDNinWt4uNcps4kMzwcRtB6Mcw==",
+      "version": "3.26.9",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-3.26.9.tgz",
+      "integrity": "sha512-yB5Yxd62DsHqqCK/60L8IiGpTRIU4J+fzCqfbPRiIYE5+agfN63kppaM+TbqyMBdsnt/PQOnYD8Bhs1quUr6fg==",
       "license": "MIT",
       "dependencies": {
         "@types/cli-progress": "^3.11.5",
