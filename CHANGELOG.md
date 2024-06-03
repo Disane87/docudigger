@@ -1,3 +1,14 @@
+## [2.0.5-dev.1](https://github.com/disane87/docudigger/compare/v2.0.4...v2.0.5-dev.1) (2024-06-03)
+
+
+### 🛠️ Fixes
+
+* first page was skipped ([02b1fb7](https://github.com/disane87/docudigger/commit/02b1fb7a6c71a6f986d84d15df3ad6c714134db1))
+* ignoring filter when OnlyNew is set ([39edcb4](https://github.com/disane87/docudigger/commit/39edcb4b2ed51be2898d7df85a78c2e201b2ef92)), closes [#791](https://github.com/disane87/docudigger/issues/791)
+* **deps:** update dependency @oclif/plugin-help to v6.1.0 ([#802](https://github.com/disane87/docudigger/issues/802)) ([891e7e1](https://github.com/disane87/docudigger/commit/891e7e1d8624767697200a6fa37df848a4250471))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.0 ([#803](https://github.com/disane87/docudigger/issues/803)) ([ddea6b2](https://github.com/disane87/docudigger/commit/ddea6b261359c4b3efd855c34e8c82d3aa0deae5))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.1 ([#805](https://github.com/disane87/docudigger/issues/805)) ([83a6e66](https://github.com/disane87/docudigger/commit/83a6e66bbf43ee6024ea2c6065fe8a390751f66b))
+
 ## [2.0.4-dev.2](https://github.com/disane87/docudigger/compare/v2.0.4-dev.1...v2.0.4-dev.2) (2024-05-29)
 
 
