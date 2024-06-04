@@ -72,7 +72,7 @@ export abstract class ScrapeCommand<
     this.processJsonFile = path
       .resolve(path.join(this.flags.fileDestinationFolder, `process.json`))
       .normalize();
-      
+
     this.logger.debug(`processJsonFile: ${this.processJsonFile}`);
     this.logger.debug(`fileDestinationFolder: ${this.flags.fileDestinationFolder}`);
     this.logger.debug(`Running in Docker: ${isRunningInDocker()}`);
@@ -123,8 +123,7 @@ export abstract class ScrapeCommand<
         await fs.promises.readFile(this.processJsonFile, `utf8`),
       );
 
-      const websiteScrapes =
-        this.processedWebsites[this.pluginName.toLowerCase()];
+      const websiteScrapes = this.processedWebsites[this.pluginName.toLowerCase()];
       const documentCount = websiteScrapes.scrapes.length;
 
       if (documentCount === 0) {
