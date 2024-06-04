@@ -8,16 +8,15 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
+  <a href="https://github.com/disane87/docudigger/pkgs/container/docudigger" target="_blank">
+    <img alt="Docker" src="https://ghcr-badge.egpl.dev/disane87/docudigger/latest_tag?color=%2344cc11&ignore=latest&label=Docker&trim=" />
+  </a>
+  
 </p>
 
 > Document scraper for getting invoices automagically as pdf (useful for taxes or DMS)
 
 ### 🏠 [Homepage](https://repo.disane.dev/Disane/docudigger#readme)
-
-## Prerequisites
-
-- npm >=9.1.2
-- node >=18.12.1
 
 ## Configuration
 
