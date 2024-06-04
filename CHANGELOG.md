@@ -1,3 +1,12 @@
+## [2.0.5-dev.2](https://github.com/disane87/docudigger/compare/v2.0.5-dev.1...v2.0.5-dev.2) (2024-06-04)
+
+
+### 🛠️ Fixes
+
+* fixed a bug where the first year was not correctly selected ([d2c7793](https://github.com/disane87/docudigger/commit/d2c77935805aed708f4672c8d2e28de3ffd554a9))
+* **deps:** update dependency @oclif/core to v3.26.8 ([#811](https://github.com/disane87/docudigger/issues/811)) ([c8c4704](https://github.com/disane87/docudigger/commit/c8c470444bb9df7e5cff23698c3fc24977fa8ac3))
+* **deps:** update dependency @oclif/core to v3.26.9 ([#813](https://github.com/disane87/docudigger/issues/813)) ([4adab6c](https://github.com/disane87/docudigger/commit/4adab6cb095cce0ac1bf6874d5ed9f9fa5c15169))
+
 ## [2.0.5-dev.1](https://github.com/disane87/docudigger/compare/v2.0.4...v2.0.5-dev.1) (2024-06-03)
 
 
