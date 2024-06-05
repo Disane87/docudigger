@@ -16626,10 +16626,11 @@
       }
     },
     "node_modules/enhanced-resolve": {
-      "version": "5.15.1",
-      "resolved": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.1.tgz",
-      "integrity": "sha512-3d3JRbwsCLJsYgvb6NuWEG44jjPSOMuS73L/6+7BZuoKm3W+qXnSoIYVHi8dG7Qcg4inAY4jbzkZ7MnskePeDg==",
+      "version": "5.17.0",
+      "resolved": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.17.0.tgz",
+      "integrity": "sha512-dwDPwZL0dmye8Txp2gzFmA6sxALaSvdRDjPH0viLcKrtlOL3tw62nWWweVD1SdILDTJrbrL6tdWVN58Wo6U3eA==",
       "dev": true,
+      "license": "MIT",
       "dependencies": {
         "graceful-fs": "^4.2.4",
         "tapable": "^2.2.0"
@@ -17749,13 +17750,14 @@
       }
     },
     "node_modules/eslint-plugin-n": {
-      "version": "17.7.0",
-      "resolved": "https://registry.npmjs.org/eslint-plugin-n/-/eslint-plugin-n-17.7.0.tgz",
-      "integrity": "sha512-4Jg4ZKVE4VjHig2caBqPHYNW5na84RVufUuipFLJbgM/G57O6FdpUKJbHakCDJb/yjQuyqVzYWRtU3HNYaZUwg==",
+      "version": "17.8.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-n/-/eslint-plugin-n-17.8.0.tgz",
+      "integrity": "sha512-XefSXUtrnA2R4L0NGLZP2Nq8fCk3ffrg6oALXMLiZFKTlwUIu23tIe4loxEbdO2wtLqO2sU70m5Fm3bj9zdGSg==",
       "dev": true,
+      "license": "MIT",
       "dependencies": {
         "@eslint-community/eslint-utils": "^4.4.0",
-        "enhanced-resolve": "^5.15.0",
+        "enhanced-resolve": "^5.17.0",
         "eslint-plugin-es-x": "^7.5.0",
         "get-tsconfig": "^4.7.0",
         "globals": "^15.0.0",
@@ -17778,6 +17780,7 @@
       "resolved": "https://registry.npmjs.org/globals/-/globals-15.3.0.tgz",
       "integrity": "sha512-cCdyVjIUVTtX8ZsPkq1oCsOsLmGIswqnjZYMJJTGaNApj1yHtLSymKhwH51ttirREn75z3p4k051clwg7rvNKA==",
       "dev": true,
+      "license": "MIT",
       "engines": {
         "node": ">=18"
       },
@@ -17790,6 +17793,7 @@
       "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.4.tgz",
       "integrity": "sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==",
       "dev": true,
+      "license": "ISC",
       "dependencies": {
         "brace-expansion": "^2.0.1"
       },
