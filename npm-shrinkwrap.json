@@ -6988,29 +6988,29 @@
       }
     },
     "node_modules/@oclif/plugin-help": {
-      "version": "6.1.0",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.1.0.tgz",
-      "integrity": "sha512-U+LNKKaZBroHqoSGIpYbQmkTl8aW0NJcO9tr091LJOZ74iqEDiupfBTCMuklW9uTZdWFYApqTmshDuB/I41jxQ==",
+      "version": "6.2.0",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.0.tgz",
+      "integrity": "sha512-LNTrAE3ZwTXJVAFuwx+jSMGJCYHHa7jjSZ+9PgJlHIIA9qC7XcTcORoBByw9otB9q3JcbWmbS0GNCGTvciRdaw==",
       "license": "MIT",
       "dependencies": {
-        "@oclif/core": "^4.0.0-beta.13"
+        "@oclif/core": "^4"
       },
       "engines": {
         "node": ">=18.0.0"
       }
     },
     "node_modules/@oclif/plugin-help/node_modules/@oclif/core": {
-      "version": "4.0.0-beta.13",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.0-beta.13.tgz",
-      "integrity": "sha512-ug8CZUCJphgetSZVgd4HQgyewlYVGGG1LIeFXGxjgYsjZ/f5I3nSCj7xpAMEDqjVD/lwmSujtVwa7tvEgLGICw==",
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.1.tgz",
+      "integrity": "sha512-A+mOOjs5+iv1MUrIwYsdekwhFvjNPWYmS+Ovd6ZsPoP8XAa6YCc7P/omtkbGV4ojfj45p2hBpdnFUg+lOxqY0A==",
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
-        "ansis": "^3.0.1",
+        "ansis": "^3.1.1",
         "clean-stack": "^3.0.1",
         "cli-spinners": "^2.9.2",
         "cosmiconfig": "^9.0.0",
-        "debug": "^4.3.4",
+        "debug": "^4.3.5",
         "ejs": "^3.1.10",
         "get-package-type": "^0.1.0",
         "globby": "^11.1.0",
@@ -7018,13 +7018,30 @@
         "is-wsl": "^2.2.0",
         "minimatch": "^9.0.4",
         "string-width": "^4.2.3",
-        "supports-color": "^9.4.0",
+        "supports-color": "^8",
         "widest-line": "^3.1.0",
         "wordwrap": "^1.0.0",
         "wrap-ansi": "^7.0.0"
       },
       "engines": {
         "node": ">=18.0.0"
+      }
+    },
+    "node_modules/@oclif/plugin-help/node_modules/debug": {
+      "version": "4.3.5",
+      "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.5.tgz",
+      "integrity": "sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==",
+      "license": "MIT",
+      "dependencies": {
+        "ms": "2.1.2"
+      },
+      "engines": {
+        "node": ">=6.0"
+      },
+      "peerDependenciesMeta": {
+        "supports-color": {
+          "optional": true
+        }
       }
     },
     "node_modules/@oclif/plugin-help/node_modules/minimatch": {
@@ -7040,18 +7057,6 @@
       },
       "funding": {
         "url": "https://github.com/sponsors/isaacs"
-      }
-    },
-    "node_modules/@oclif/plugin-help/node_modules/supports-color": {
-      "version": "9.4.0",
-      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-9.4.0.tgz",
-      "integrity": "sha512-VL+lNrEoIXww1coLPOmiEmK/0sGigko5COxI09KzHc2VJXJsQ37UaQ+8quuxjDeA7+KnLGTWRyOXSLLR2Wb4jw==",
-      "license": "MIT",
-      "engines": {
-        "node": ">=12"
-      },
-      "funding": {
-        "url": "https://github.com/chalk/supports-color?sponsor=1"
       }
     },
     "node_modules/@oclif/plugin-not-found": {
