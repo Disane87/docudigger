@@ -1,3 +1,10 @@
+## [2.0.6-dev.2](https://github.com/disane87/docudigger/compare/v2.0.6-dev.1...v2.0.6-dev.2) (2024-06-07)
+
+
+### 🛠️ Fixes
+
+* update Puppeteer setup logic to use debug flag ([d2b1cb8](https://github.com/disane87/docudigger/commit/d2b1cb89a5c0490f3a4d9eaeaa6e94b993ca1ff4)), closes [#830](https://github.com/disane87/docudigger/issues/830)
+
 ## [2.0.6-dev.1](https://github.com/disane87/docudigger/compare/v2.0.5...v2.0.6-dev.1) (2024-06-07)
 
 
