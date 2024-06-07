@@ -74,6 +74,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         const loginSuccessful = await login(this.currentPage, amazonSelectors, options, amazon, this.logger);
         if (!loginSuccessful) {
             this.logger.error(`Auth not successful. Exiting.`);
+            this.exit();
             return;
         }
 
@@ -139,48 +140,49 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         }
     }
 
-    private async processOrderPage(orderPage: number, processedOrders: Scrape[], orderPageCount: number, currentYear: number) {
+    private async processOrderPage(orderPage: number, processedOrders: Scrape[], orderPageCount: number, currentYear: number): Promise<boolean | HTTPResponse> {
         const amazonSelectors = this.selectors;
         const amazon = this.definition;
-
+    
         this.logger.info(`Checking page ${orderPage} for orders`);
         const orderCards = await this.currentPage.$$(amazonSelectors.orderCards);
         this.logger.info(`Got ${orderCards.length} orders. Processing...`);
-
+    
         let onlyNewInvoiceHandled = false;
-
+    
         for (const [orderIndex, orderCard] of orderCards.entries()) {
-
+    
+            // Fetch order details while on the order page
             const { orderNumber, order } = await this.getOrder(orderCard);
-
+    
+            // Proceed with clicking invoice span and processing invoices
             await this.clickInvoiceSpan(orderCard, orderIndex);
-
+    
             const invoiceUrls = await this.getInvoiceUrls(orderIndex);
-
+    
             if (this.flags.onlyNew && (orderNumber == this.lastScrapeWithInvoices?.number)) {
                 this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
-                // await this.endProcess(DateTime.now(), processedOrders, this.flags);
                 onlyNewInvoiceHandled = true;
             }
-
+    
             order.invoices = this.getInvoices(invoiceUrls, orderIndex);
             processedOrders.push(order);
             this.logger.info(`Processing "${processedOrders.length}" orders`);
-
+    
             if (this.flags.onlyNew && onlyNewInvoiceHandled) {
                 break;
             }
-
+    
             await this.getInvoiceDocumentsFromOrder(order);
         }
-
+    
         if(onlyNewInvoiceHandled) {
             return true;
         }
-
+    
         return await this.checkForLastPage(orderPage, orderPageCount, currentYear, amazon);
-        
     }
+    
 
     private async getOrderPageCount() {
         this.logger.debug(`Determining order pages...`);
@@ -302,25 +304,34 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
         return invoiceUrls;
     }
 
-    private async getOrder(orderCard: ElementHandle<Element>) {
+    private async getOrder(orderCard: ElementHandle<Element>): Promise<{ orderNumber: string, order: Scrape }> {
         this.logger.debug(`Getting order...`);
         const amazonSelectors = this.selectors;
         const amazon = this.definition;
-        const orderNumber: string = await orderCard.$eval(amazonSelectors.orderNr, (handle: HTMLElement) => handle.innerText.trim());
-
-        const orderDate = await orderCard.$eval(amazonSelectors.orderDate, (handle: HTMLElement) => handle.innerText);
-        const orderDateLuxon = DateTime.fromFormat(orderDate, `DDD`, { locale: amazon.lang }).toISODate();
-        const order: Scrape = {
-            date: orderDateLuxon,
-            datePlain: orderDate,
-            invoices: [],
-            number: orderNumber
-        };
-
-        this.logger.debug(`Got Order: ${orderNumber}`);
-        this.logger.info(`Order date: ${orderDate}`);
-        return { orderNumber, order };
+        
+        try {
+            const orderNumber: string = await orderCard.$eval(amazonSelectors.orderNr, (handle: HTMLElement) => handle.innerText.trim());
+            this.logger.info(`Order number: ${orderNumber}`);
+    
+            // Ensure the orderDate is fetched from the orderCard element, not from the PDF page
+            const orderDate = await orderCard.$eval(amazonSelectors.orderDate, (handle: HTMLElement) => handle.innerText);
+            const orderDateLuxon = DateTime.fromFormat(orderDate, `DDD`, { locale: amazon.lang }).toISODate();
+            const order: Scrape = {
+                date: orderDateLuxon,
+                datePlain: orderDate,
+                invoices: [],
+                number: orderNumber
+            };
+    
+            this.logger.debug(`Got Order: ${orderNumber}`);
+            this.logger.info(`Order date: ${orderDate}`);
+            return { orderNumber, order };
+        } catch (error) {
+            this.logger.error(`Failed to get order details: ${error.message}`);
+            throw error;
+        }
     }
+    
 
     private async endProcess(starttimestamp: DateTime, orders: Scrape[], options: AmazonOptions) {
         const endtimestamp = DateTime.now();
@@ -344,10 +355,10 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             orderPage: `https://www.amazon.${tld}/gp/css/order-history`
         };
         const amazonSelectors: AmazonSelectors = {
-            orderCards: `div.a-box-group.js-order-card`,
+            orderCards: `div.order.js-order-card`,
             invoiceSpans: `span.hide-if-no-js .a-declarative[data-action="a-popover"]`,
             orderNr: `.yohtmlc-order-id span:nth-last-child(1) bdi`,
-            orderDate: `.order-info .a-box-inner .a-fixed-right-grid-col .a-column.a-span4 div:nth-last-child(1)`,
+            orderDate: `.a-column .a-row:nth-last-child(1) span`,
             popover: `#a-popover-content-{{index}}`,
             invoiceList: `ul.invoice-list`,
             invoiceLinks: `a[href*="invoice.pdf"]`,
@@ -355,7 +366,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             yearFilter: `select[name="timeFilter"] option`,
             authError: `#auth-error-message-box .a-unordered-list li`,
             authWarning: `#auth-warning-message-box .a-unordered-list li`,
-            captchaImage: `div#image-captcha-section img#auth-captcha-image`
+            captchaImage: `div.cvf-captcha-img img[alt~="captcha"]`,
         };
         return { amazonSelectors, amazon };
     }

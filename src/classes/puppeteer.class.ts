@@ -18,7 +18,7 @@ export class Puppeteer {
 
   public async setup(): Promise<Browser> {
     this.browser = await puppeteer.launch({
-      headless: true,
+      headless: this.inDocker ? true : (this.debug ? false : true),
       args: this.arguments,
       dumpio: false,
       devtools: this.debug,

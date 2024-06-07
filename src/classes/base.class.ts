@@ -19,13 +19,14 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
         logLevel: Flags.custom<LogLevel>({
             summary: `Specify level for logging.`,
             options: Object.values(LogLevel),
-            default: LogLevel.info
+            default: LogLevel.info,
+            env: `LOG_LEVEL`,
         })(),
 
         debug: Flags.boolean({ char: `d`, default: true, env: `DEBUG`, parse: parseBool  }),
         logPath: Flags.string({ char: `l`, description: `Log path`, default: `./logs/`, env: `LOG_PATH` }),
         recurring: Flags.boolean({ char: `r`, default: true, env: `RECURRING`, parse: parseBool  }),
-        recurringCron: Flags.string(({ char: `c`, description: `Cron pattern to execute periodically`, env: `RECURRING_PATTERN`, default: `* * * * *`, dependsOn: [`recurring`] }))
+        recurringCron: Flags.string(({ char: `c`, description: `Cron pattern to execute periodically`, env: `RECURRING_PATTERN`, default: `*/30 * * * *`, dependsOn: [`recurring`] }))
 
     };
 
@@ -36,7 +37,10 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
         await this.initFlags();
 
         this.logger = createLogger(this.flags?.logLevel || LogLevel.info, this.flags?.logPath || `./logs/`, this.id);
+        this.logger.debug(`Command ${this.id} initialized`);
+        this.logger.debug(`Flags: ${JSON.stringify(this.flags)}`);
         exitListener(this.logger);
+        return Promise.resolve();
     }
 
     protected async initFlags(){
