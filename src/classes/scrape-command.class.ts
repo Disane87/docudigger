@@ -76,7 +76,7 @@ export abstract class ScrapeCommand<
     this.logger.debug(`processJsonFile: ${this.processJsonFile}`);
     this.logger.debug(`fileDestinationFolder: ${this.flags.fileDestinationFolder}`);
     this.logger.debug(`Running in Docker: ${isRunningInDocker()}`);
-    this.browser = await new Puppeteer(true, this.pupeteerArgs, isRunningInDocker()).setup();
+    this.browser = await new Puppeteer(this.flags.debug, this.pupeteerArgs, isRunningInDocker()).setup();
   }
 
   protected async initFlags() {

@@ -1,14 +1,20 @@
 import * as fs from "fs";
 
 export const isRunningInDocker = () => {
-    const dockerPath = `/proc/1/cgroup`;
     try {
-        if (fs.existsSync(dockerPath)) {
-            const content = fs.readFileSync(dockerPath, `utf8`);
-            return content.includes(`docker`);
+        // Check if /.dockerenv file exists
+        if (fs.existsSync(`/.dockerenv`)) {
+          return true;
         }
-        return false;
-    } catch (err) {
-        return false;
-    }
+    
+        // Check if /proc/self/cgroup contains 'docker'
+        const cgroup = fs.readFileSync(`/proc/self/cgroup`, `utf8`);
+        if (cgroup.includes(`docker`)) {
+          return true;
+        }
+      } catch (err) {
+        // Log error if needed, but ignore for now
+      }
+    
+      return false;
 };
