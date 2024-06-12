@@ -2366,9 +2366,9 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.2.4",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.2.4.tgz",
-      "integrity": "sha512-ILkQGUq9DJpFYL52x8tHcJc4ZVxIL27tTTxkBGrnoHE7IcP8nFlK3S3unoADAHCTtbcp2vRPglkBUJMwnKarlQ==",
+      "version": "5.3.0",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.3.0.tgz",
+      "integrity": "sha512-LRurBH7ApwwlYPjuSqoXAWaWWNp/HEkWBCNHxHt58byebUWHy8AXHALNEmEN3AYfXZpdeWrPnRlW/d3rxcoYMg==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
@@ -2388,22 +2388,22 @@
       }
     },
     "node_modules/@oclif/plugin-plugins/node_modules/@oclif/core": {
-      "version": "4.0.3",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.3.tgz",
-      "integrity": "sha512-yM8R/M2WfSNfL9eF8clS/SbQvanvHZJgoij5bLs3ro7uAFCkL/LYcagyj0UVGbysx5AI+SNIof6OHQUXYZpOZw==",
+      "version": "4.0.6",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.6.tgz",
+      "integrity": "sha512-z/4YUVQsf2pHsXRze5etbmvAYDhoUhIzpM6oJGEdsdWfvQJ6YQBogH7TdX/ItuGda6+vpfXg/4U1CtPexSF+bA==",
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
         "ansis": "^3.1.1",
         "clean-stack": "^3.0.1",
         "cli-spinners": "^2.9.2",
-        "cosmiconfig": "^9.0.0",
         "debug": "^4.3.5",
         "ejs": "^3.1.10",
         "get-package-type": "^0.1.0",
         "globby": "^11.1.0",
         "indent-string": "^4.0.0",
         "is-wsl": "^2.2.0",
+        "lilconfig": "^3.1.2",
         "minimatch": "^9.0.4",
         "string-width": "^4.2.3",
         "supports-color": "^8",
@@ -15204,6 +15204,18 @@
       },
       "engines": {
         "node": ">= 0.8.0"
+      }
+    },
+    "node_modules/lilconfig": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.2.tgz",
+      "integrity": "sha512-eop+wDAvpItUys0FWkHIKeC9ybYrTGbU41U5K7+bttZZeohvnY7M9dZ5kB21GNWiFT2q1OoPTvncPCgSOVO5ow==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=14"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/antonk52"
       }
     },
     "node_modules/lines-and-columns": {
