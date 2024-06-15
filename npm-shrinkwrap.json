@@ -51,7 +51,7 @@
         "env-cmd": "^10.1.0",
         "envfile": "^7.1.0",
         "eslint": "^8",
-        "eslint-config-love": "v51",
+        "eslint-config-love": "53",
         "eslint-config-oclif": "^5",
         "eslint-config-oclif-typescript": "^3",
         "eslint-config-prettier": "^9",
@@ -12121,16 +12121,16 @@
       }
     },
     "node_modules/eslint-config-love": {
-      "version": "51.0.1",
-      "resolved": "https://registry.npmjs.org/eslint-config-love/-/eslint-config-love-51.0.1.tgz",
-      "integrity": "sha512-VO6Kxi18zuT5WffzLtM7p1T2YmrcgyYFeIy/YBRyUziNok2n6BtfW2d+A+2buh+8LQ8+jKgI4v5LOIVOOLF7XQ==",
+      "version": "53.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-love/-/eslint-config-love-53.0.0.tgz",
+      "integrity": "sha512-lvr93SbSbF/JMbTqQFb07kd+7R9fiRGcTrk6mCLQvYClkB4e4avNG1WfGd1YMnZSyuK9UFAbNiVlfhfHEuvSUA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "eslint-plugin-import": "^2.25.2",
         "eslint-plugin-n": "^17.0.0",
         "eslint-plugin-promise": "^6.0.0",
-        "typescript-eslint": "^7.0.1"
+        "typescript-eslint": "^7.11.0"
       },
       "peerDependencies": {
         "eslint": "^8.0.1",
