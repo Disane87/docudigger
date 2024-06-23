@@ -1950,13 +1950,13 @@
       "license": "BSD-3-Clause"
     },
     "node_modules/@inquirer/confirm": {
-      "version": "3.1.9",
-      "resolved": "https://registry.npmjs.org/@inquirer/confirm/-/confirm-3.1.9.tgz",
-      "integrity": "sha512-UF09aejxCi4Xqm6N/jJAiFXArXfi9al52AFaSD+2uIHnhZGtd1d6lIGTRMPouVSJxbGEi+HkOWSYaiEY/+szUw==",
+      "version": "3.1.10",
+      "resolved": "https://registry.npmjs.org/@inquirer/confirm/-/confirm-3.1.10.tgz",
+      "integrity": "sha512-/aAHu83Njy6yf44T+ZrRPUkMcUqprrOiIKsyMvf9jOV+vF5BNb2ja1aLP33MK36W8eaf91MTL/mU/e6METuENg==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "@inquirer/core": "^8.2.2",
+        "@inquirer/core": "^8.2.3",
         "@inquirer/type": "^1.3.3"
       },
       "engines": {
@@ -1964,16 +1964,16 @@
       }
     },
     "node_modules/@inquirer/core": {
-      "version": "8.2.2",
-      "resolved": "https://registry.npmjs.org/@inquirer/core/-/core-8.2.2.tgz",
-      "integrity": "sha512-K8SuNX45jEFlX3EBJpu9B+S2TISzMPGXZIuJ9ME924SqbdW6Pt6fIkKvXg7mOEOKJ4WxpQsxj0UTfcL/A434Ww==",
+      "version": "8.2.3",
+      "resolved": "https://registry.npmjs.org/@inquirer/core/-/core-8.2.3.tgz",
+      "integrity": "sha512-WrpDVPAaxJQjHid3Ra4FhUO70YBzkHSYVyW5X48L5zHYdudoPISJqTRRWSeamHfaXda7PNNaC5Py5MEo7QwBNA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@inquirer/figures": "^1.0.3",
         "@inquirer/type": "^1.3.3",
         "@types/mute-stream": "^0.0.4",
-        "@types/node": "^20.12.13",
+        "@types/node": "^20.14.6",
         "@types/wrap-ansi": "^3.0.0",
         "ansi-escapes": "^4.3.2",
         "chalk": "^4.1.2",
@@ -18659,15 +18659,15 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.13.8",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.13.8.tgz",
-      "integrity": "sha512-A/e31wMSXgerxwqwb7MvPusPLGap9Hrgbmq6bBlVS+PnBvH/gxzDAMaUNI2Abcpi5KOVB/YyAaODtFHiIf3Szw==",
+      "version": "4.13.9",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.13.9.tgz",
+      "integrity": "sha512-x4Z9h16vlpWrIf8xZwKwSEKfDPHF9XA/QR9MaJkLDjUQLFSU/qypbHl4YJ+yeUOlXCFgkAXCVwgfvtBrdsQNlQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.592.0",
         "@aws-sdk/client-s3": "^3.583.0",
-        "@inquirer/confirm": "^3.1.6",
+        "@inquirer/confirm": "^3.1.10",
         "@inquirer/input": "^2.1.9",
         "@inquirer/select": "^2.3.5",
         "@oclif/core": "^4",
