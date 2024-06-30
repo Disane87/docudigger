@@ -3120,13 +3120,13 @@
       "license": "BSD-3-Clause"
     },
     "node_modules/@inquirer/confirm": {
-      "version": "3.1.10",
-      "resolved": "https://registry.npmjs.org/@inquirer/confirm/-/confirm-3.1.10.tgz",
-      "integrity": "sha512-/aAHu83Njy6yf44T+ZrRPUkMcUqprrOiIKsyMvf9jOV+vF5BNb2ja1aLP33MK36W8eaf91MTL/mU/e6METuENg==",
+      "version": "3.1.11",
+      "resolved": "https://registry.npmjs.org/@inquirer/confirm/-/confirm-3.1.11.tgz",
+      "integrity": "sha512-3wWw10VPxQP279FO4bzWsf8YjIAq7NdwATJ4xS2h1uwsXZu/RmtOVV95rZ7yllS1h/dzu+uLewjMAzNDEj8h2w==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "@inquirer/core": "^8.2.3",
+        "@inquirer/core": "^8.2.4",
         "@inquirer/type": "^1.3.3"
       },
       "engines": {
@@ -3134,22 +3134,22 @@
       }
     },
     "node_modules/@inquirer/core": {
-      "version": "8.2.3",
-      "resolved": "https://registry.npmjs.org/@inquirer/core/-/core-8.2.3.tgz",
-      "integrity": "sha512-WrpDVPAaxJQjHid3Ra4FhUO70YBzkHSYVyW5X48L5zHYdudoPISJqTRRWSeamHfaXda7PNNaC5Py5MEo7QwBNA==",
+      "version": "8.2.4",
+      "resolved": "https://registry.npmjs.org/@inquirer/core/-/core-8.2.4.tgz",
+      "integrity": "sha512-7vsXSfxtrrbwMTirfaKwPcjqJy7pzeuF/bP62yo1NQrRJ5HjmMlrhZml/Ljm9ODc1RnbhJlTeSnCkjtFddKjwA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@inquirer/figures": "^1.0.3",
         "@inquirer/type": "^1.3.3",
         "@types/mute-stream": "^0.0.4",
-        "@types/node": "^20.14.6",
+        "@types/node": "^20.14.9",
         "@types/wrap-ansi": "^3.0.0",
         "ansi-escapes": "^4.3.2",
-        "chalk": "^4.1.2",
         "cli-spinners": "^2.9.2",
         "cli-width": "^4.1.0",
         "mute-stream": "^1.0.0",
+        "picocolors": "^1.0.1",
         "signal-exit": "^4.1.0",
         "strip-ansi": "^6.0.1",
         "wrap-ansi": "^6.2.0"
@@ -19844,15 +19844,15 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.13.10",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.13.10.tgz",
-      "integrity": "sha512-aIBEZYGv1rRFmBzh1qKVJc1FjCAbmMFFTHIDmJGf3TyAQuEfz95Lo7U4thjulqbBVg0QTUMFGgNtvCS2fkyHRg==",
+      "version": "4.13.11",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.13.11.tgz",
+      "integrity": "sha512-tHaSnZMXNT3Pliqpyg7xOvJ9Z6nWpof9xq1l8l/o9nsSQLWwh59k7qHr2vvhueONiJAx/3pmxChvhmh7rIwIBw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.592.0",
         "@aws-sdk/client-s3": "^3.600.0",
-        "@inquirer/confirm": "^3.1.10",
+        "@inquirer/confirm": "^3.1.11",
         "@inquirer/input": "^2.1.9",
         "@inquirer/select": "^2.3.5",
         "@oclif/core": "^4",
@@ -19883,9 +19883,9 @@
       }
     },
     "node_modules/oclif/node_modules/@oclif/core": {
-      "version": "4.0.6",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.6.tgz",
-      "integrity": "sha512-z/4YUVQsf2pHsXRze5etbmvAYDhoUhIzpM6oJGEdsdWfvQJ6YQBogH7TdX/ItuGda6+vpfXg/4U1CtPexSF+bA==",
+      "version": "4.0.7",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.7.tgz",
+      "integrity": "sha512-sU4Dx+RXCWAkrMw8tQFYAL6VfcHYKLPxVC9iKfgTXr4aDhcCssDwrbgpx0Di1dnNxvQlDGUhuCEInZuIY/nNfw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -20079,9 +20079,9 @@
       }
     },
     "node_modules/oclif/node_modules/minimatch": {
-      "version": "9.0.4",
-      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.4.tgz",
-      "integrity": "sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==",
+      "version": "9.0.5",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz",
+      "integrity": "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==",
       "dev": true,
       "license": "ISC",
       "dependencies": {
@@ -20479,6 +20479,13 @@
       "version": "1.2.0",
       "resolved": "https://registry.npmjs.org/pend/-/pend-1.2.0.tgz",
       "integrity": "sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg=="
+    },
+    "node_modules/picocolors": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.0.1.tgz",
+      "integrity": "sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==",
+      "dev": true,
+      "license": "ISC"
     },
     "node_modules/picomatch": {
       "version": "2.3.1",
