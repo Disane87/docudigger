@@ -18686,9 +18686,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.14.2",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.2.tgz",
-      "integrity": "sha512-Kv1sbEmos0o8dBHRd3oj+QXDdAstu9cYZPuUErS3cl0ZT5EzzqB0hm9DZNug+fRvxBqgmaE96Wi4oeslhr5bbg==",
+      "version": "4.14.3",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.3.tgz",
+      "integrity": "sha512-CD75VW8tqweivzlPJSEDRTx4wm0/fk55UEMApbHAKQ5lfHIhOCgj6V/CyIL9BID0DCiCh3jozUyCsclhQa6frQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18715,7 +18715,7 @@
         "semver": "^7.6.2",
         "sort-package-json": "^2.10.0",
         "tiny-jsonc": "^1.0.1",
-        "validate-npm-package-name": "^5.0.0"
+        "validate-npm-package-name": "^5.0.1"
       },
       "bin": {
         "oclif": "bin/run.js"
