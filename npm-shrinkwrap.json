@@ -2008,17 +2008,70 @@
       }
     },
     "node_modules/@inquirer/input": {
-      "version": "2.1.9",
-      "resolved": "https://registry.npmjs.org/@inquirer/input/-/input-2.1.9.tgz",
-      "integrity": "sha512-1xTCHmIe48x9CG1+8glAHrVVdH+QfYhzgBUbgyoVpp5NovnXgRcjSn/SNulepxf9Ol8HDq3gzw3ZCAUr+h1Eyg==",
+      "version": "2.2.1",
+      "resolved": "https://registry.npmjs.org/@inquirer/input/-/input-2.2.1.tgz",
+      "integrity": "sha512-Yl1G6h7qWydzrJwqN777geeJVaAFL5Ly83aZlw4xHf8Z/BoTMfKRheyuMaQwOG7LQ4e5nQP7PxXdEg4SzQ+OKw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "@inquirer/core": "^8.2.2",
-        "@inquirer/type": "^1.3.3"
+        "@inquirer/core": "^9.0.2",
+        "@inquirer/type": "^1.4.0"
       },
       "engines": {
         "node": ">=18"
+      }
+    },
+    "node_modules/@inquirer/input/node_modules/@inquirer/core": {
+      "version": "9.0.2",
+      "resolved": "https://registry.npmjs.org/@inquirer/core/-/core-9.0.2.tgz",
+      "integrity": "sha512-nguvH3TZar3ACwbytZrraRTzGqyxJfYJwv+ZwqZNatAosdWQMP1GV8zvmkNlBe2JeZSaw0WYBHZk52pDpWC9qA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@inquirer/figures": "^1.0.3",
+        "@inquirer/type": "^1.4.0",
+        "@types/mute-stream": "^0.0.4",
+        "@types/node": "^20.14.9",
+        "@types/wrap-ansi": "^3.0.0",
+        "ansi-escapes": "^4.3.2",
+        "cli-spinners": "^2.9.2",
+        "cli-width": "^4.1.0",
+        "mute-stream": "^1.0.0",
+        "signal-exit": "^4.1.0",
+        "strip-ansi": "^6.0.1",
+        "wrap-ansi": "^6.2.0",
+        "yoctocolors-cjs": "^2.1.2"
+      },
+      "engines": {
+        "node": ">=18"
+      }
+    },
+    "node_modules/@inquirer/input/node_modules/signal-exit": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz",
+      "integrity": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==",
+      "dev": true,
+      "license": "ISC",
+      "engines": {
+        "node": ">=14"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
+    "node_modules/@inquirer/input/node_modules/wrap-ansi": {
+      "version": "6.2.0",
+      "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz",
+      "integrity": "sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "ansi-styles": "^4.0.0",
+        "string-width": "^4.1.0",
+        "strip-ansi": "^6.0.0"
+      },
+      "engines": {
+        "node": ">=8"
       }
     },
     "node_modules/@inquirer/select": {
@@ -18686,16 +18739,16 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.14.3",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.3.tgz",
-      "integrity": "sha512-CD75VW8tqweivzlPJSEDRTx4wm0/fk55UEMApbHAKQ5lfHIhOCgj6V/CyIL9BID0DCiCh3jozUyCsclhQa6frQ==",
+      "version": "4.14.4",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.4.tgz",
+      "integrity": "sha512-Upqq1coaCl11jh1NmPd5HAI5tzENUyZ9zEhbXlyeS5UV4bVfgqL4ykBfzYRB7gJ/Li56Y20HQrEcnyoQhyR9JA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@aws-sdk/client-cloudfront": "^3.609.0",
         "@aws-sdk/client-s3": "^3.614.0",
         "@inquirer/confirm": "^3.1.11",
-        "@inquirer/input": "^2.1.9",
+        "@inquirer/input": "^2.2.1",
         "@inquirer/select": "^2.3.10",
         "@oclif/core": "^4",
         "@oclif/plugin-help": "^6.2.2",
