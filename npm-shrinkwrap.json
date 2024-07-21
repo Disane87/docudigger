@@ -2542,13 +2542,13 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "4.0.4",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.0.4.tgz",
-      "integrity": "sha512-O0lGcUl6sq4ijgjPimbx32O6DPCoHknzrNsA+X+XzWD9DsEv0SK6Tib2+22cOqLzLItr+gU73pIYttiD5+UWag==",
+      "version": "4.0.5",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.0.5.tgz",
+      "integrity": "sha512-211tiiwxg9Qds7lVGK5dHKX8JmjC0Lx6/PI5r64YL1rDa0XbkRu6FuBXKmiZcAx3oxNsFePmwUlZgBz/tgkXEQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "ansis": "^3.2.0",
+        "ansis": "^3.3.1",
         "debug": "^4.3.5"
       },
       "engines": {
