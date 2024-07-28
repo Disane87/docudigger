@@ -8841,9 +8841,9 @@
       "integrity": "sha512-QXu7BPrP29VllRxH8GwB7x5iX5qWKAAMLqKQGWTeLWVlNHNOpVMJ91dsxQAIWXpjuW5wqvxu3Jd/nRjrJ+0pqg=="
     },
     "node_modules/ansis": {
-      "version": "3.3.1",
-      "resolved": "https://registry.npmjs.org/ansis/-/ansis-3.3.1.tgz",
-      "integrity": "sha512-dW/sqnbVeWXW1UMRyKGHiJj+vBrlnnDcvyNMDB8BBI4Gu0tsohweIkvcqb3bNNwcVn70LTyvvnGgjUzUVFnK6Q==",
+      "version": "3.3.2",
+      "resolved": "https://registry.npmjs.org/ansis/-/ansis-3.3.2.tgz",
+      "integrity": "sha512-cFthbBlt+Oi0i9Pv/j6YdVWJh54CtjGACaMPCIrEV4Ha7HWsIjXDwseYV79TIL0B4+KfSwD5S70PeQDkPUd1rA==",
       "license": "ISC",
       "engines": {
         "node": ">=15"
@@ -18512,9 +18512,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.14.10",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.10.tgz",
-      "integrity": "sha512-mg7YwlBwtoerp6k1GZfzFAkepQdUfLdPk/ePBCxv5mYJIczpYK9FA69ZfXw2yi662bn0Urs0prGWtDtQ8vDXsQ==",
+      "version": "4.14.11",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.11.tgz",
+      "integrity": "sha512-JXamkm9DoynXo0wEjQs8zc9fW6HUl7GuChRA76oYiChvFwx83sWnmzQTD57JbcDh2Pl7JZ7o1kZwQDUnScPQtw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18551,14 +18551,14 @@
       }
     },
     "node_modules/oclif/node_modules/@oclif/core": {
-      "version": "4.0.16",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.16.tgz",
-      "integrity": "sha512-J3l9Jk2+pAClpyf/dSroZNIf74PWHYRwzHJkcIe9CKq8SxGR8h+fs2GO2nKJmUSzsvnA0sF5RhWJ4mRBvWFhVA==",
+      "version": "4.0.17",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.17.tgz",
+      "integrity": "sha512-zfdSRip9DVMOklMojWCLZEB4iOzy7LDTABCDzCXqmpZGS+o1e1xts4jGhnte3mi0WV0YthNfYqF16tqk6CWITA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
-        "ansis": "^3.3.1",
+        "ansis": "^3.3.2",
         "clean-stack": "^3.0.1",
         "cli-spinners": "^2.9.2",
         "debug": "^4.3.5",
