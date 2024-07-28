@@ -2232,15 +2232,15 @@
       }
     },
     "node_modules/@oclif/plugin-not-found": {
-      "version": "3.2.3",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-3.2.3.tgz",
-      "integrity": "sha512-hDHuvMFl7CfJ+GdtDVkLDAMc9J+9Tk1ZRSuFQT7vw4eBtv0EmiXtlTafQqCW9kXypQHgw6UigC3Dz1HXkPpwNQ==",
+      "version": "3.2.14",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-3.2.14.tgz",
+      "integrity": "sha512-p9QSwr0eCCpUojmpGzP+rG3e9PI1NHxCU+mnluhiHl9r8/+xEi56vP8WF/C43G8XstM/+nxyhKC0r3n2BO6lMQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "@inquirer/confirm": "^3.1.9",
+        "@inquirer/confirm": "^3.1.14",
         "@oclif/core": "^4",
-        "ansis": "^3.2.0",
+        "ansis": "^3.3.1",
         "fast-levenshtein": "^3.0.0"
       },
       "engines": {
@@ -18512,9 +18512,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.14.9",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.9.tgz",
-      "integrity": "sha512-W2RqjzcJWudQp/qUngbj/7f6oPoRrNTjAMZUn7hLO86nUgEkIF7JsgmQ5+TSC2nt35htti/ARfyM2mzQyPUNUA==",
+      "version": "4.14.10",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.10.tgz",
+      "integrity": "sha512-mg7YwlBwtoerp6k1GZfzFAkepQdUfLdPk/ePBCxv5mYJIczpYK9FA69ZfXw2yi662bn0Urs0prGWtDtQ8vDXsQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18525,7 +18525,7 @@
         "@inquirer/select": "^2.3.10",
         "@oclif/core": "^4",
         "@oclif/plugin-help": "^6.2.2",
-        "@oclif/plugin-not-found": "^3.2.3",
+        "@oclif/plugin-not-found": "^3.2.14",
         "@oclif/plugin-warn-if-update-available": "^3.0.19",
         "async-retry": "^1.3.3",
         "chalk": "^4",
@@ -18551,9 +18551,9 @@
       }
     },
     "node_modules/oclif/node_modules/@oclif/core": {
-      "version": "4.0.14",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.14.tgz",
-      "integrity": "sha512-oXXlUuDw6gWjIBI+mR5i4/SJRv9fz8N/d1xr1yMhW1incx/u0oYO2CpUNKn0sGDyONMdyOIVPMqgsU+as7jdrQ==",
+      "version": "4.0.16",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.16.tgz",
+      "integrity": "sha512-J3l9Jk2+pAClpyf/dSroZNIf74PWHYRwzHJkcIe9CKq8SxGR8h+fs2GO2nKJmUSzsvnA0sF5RhWJ4mRBvWFhVA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
