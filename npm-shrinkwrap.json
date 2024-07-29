@@ -2542,14 +2542,14 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "4.0.6",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.0.6.tgz",
-      "integrity": "sha512-PQf3dJEYHYDvU01A7Nu+hHUP76JuwsLaEnWxoI4QSiew+CFVRWnygIO1cl/FzH/eavK+zGJjf4ZPoFQ5wz5khQ==",
+      "version": "4.0.7",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.0.7.tgz",
+      "integrity": "sha512-yrWzyaagzv2XfJmdQi3V7S8dxlzjz36al8KdFKI7xQo+XAVyiUK4HaqxL71XYCPSa75Y9faWqCMyt+JgLMtW2w==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "ansis": "^3.3.1",
-        "debug": "^4.3.5"
+        "debug": "^4.3.6"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -11255,9 +11255,9 @@
       }
     },
     "node_modules/debug": {
-      "version": "4.3.5",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.5.tgz",
-      "integrity": "sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==",
+      "version": "4.3.6",
+      "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.6.tgz",
+      "integrity": "sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==",
       "license": "MIT",
       "dependencies": {
         "ms": "2.1.2"
