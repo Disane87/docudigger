@@ -2302,14 +2302,14 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.4.1",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.1.tgz",
-      "integrity": "sha512-Cx2RQgEH9ln9bAIfkAw4ssLY05F8httSOGYdemIsXJ4Y+/zO9wmQ5OcixZEjTSLYNn3jDJssXPjdAirB4wGB8g==",
+      "version": "5.4.2",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.2.tgz",
+      "integrity": "sha512-L85hRQJc8/c0l9/io4LqYOeWatq4L4g1tJswXGjlMW8ypxWpunYMnZVH6XxPKMjTPdlBVdkpelSgnJgggRlU7Q==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
         "ansis": "^3.3.2",
-        "debug": "^4.3.4",
+        "debug": "^4.3.6",
         "npm": "^10.8.2",
         "npm-package-arg": "^11.0.2",
         "npm-run-path": "^5.3.0",
