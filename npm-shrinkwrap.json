@@ -2707,13 +2707,13 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "4.0.7",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.0.7.tgz",
-      "integrity": "sha512-yrWzyaagzv2XfJmdQi3V7S8dxlzjz36al8KdFKI7xQo+XAVyiUK4HaqxL71XYCPSa75Y9faWqCMyt+JgLMtW2w==",
+      "version": "4.0.8",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.0.8.tgz",
+      "integrity": "sha512-1UDwN2zrNRquQiWfn5wcokeQOOlJMrrn5KPufcrXzrh5otX9C/rkAGyQsJnEisbruPjOO541hzdybUzvK7Kvwg==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "ansis": "^3.3.1",
+        "ansis": "^3.3.2",
         "debug": "^4.3.6"
       },
       "engines": {
