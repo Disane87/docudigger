@@ -2467,16 +2467,16 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.4.3",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.3.tgz",
-      "integrity": "sha512-aWFND5XeeOszXCWx3hCSb26FC+vyrclYTBVftfP8328jvisdScIV8hD5+V616aDtqwfNGr2b9DLpwdTVgxvMAA==",
+      "version": "5.4.4",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.4.tgz",
+      "integrity": "sha512-p30fo3JPtbOqTJOX9A/8qKV/14XWt8xFgG/goVfIkuKBAO+cdY78ag8pYatlpzsYzJhO27X1MFn0WkkPWo36Ww==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
         "ansis": "^3.3.2",
         "debug": "^4.3.6",
         "npm": "^10.8.2",
-        "npm-package-arg": "^11.0.2",
+        "npm-package-arg": "^11.0.3",
         "npm-run-path": "^5.3.0",
         "object-treeify": "^4.0.1",
         "semver": "^7.6.3",
@@ -16361,9 +16361,10 @@
       }
     },
     "node_modules/npm-package-arg": {
-      "version": "11.0.2",
-      "resolved": "https://registry.npmjs.org/npm-package-arg/-/npm-package-arg-11.0.2.tgz",
-      "integrity": "sha512-IGN0IAwmhDJwy13Wc8k+4PEbTPhpJnMtfR53ZbOyjkvmEcLS4nCwp6mvMWjS5sUjeiW3mpx6cHmuhKEu9XmcQw==",
+      "version": "11.0.3",
+      "resolved": "https://registry.npmjs.org/npm-package-arg/-/npm-package-arg-11.0.3.tgz",
+      "integrity": "sha512-sHGJy8sOC1YraBywpzQlIKBE4pBbGbiF95U6Auspzyem956E0+FtDtsx1ZxlOJkQCZ1AFXAY/yuvtFYrOxF+Bw==",
+      "license": "ISC",
       "dependencies": {
         "hosted-git-info": "^7.0.0",
         "proc-log": "^4.0.0",
