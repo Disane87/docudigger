@@ -2602,14 +2602,15 @@
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available": {
-      "version": "3.0.19",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.0.19.tgz",
-      "integrity": "sha512-CauYLxNuPtK9ig1ZlzFiCqxzGJJd73CKyJDiSzGkg3QRooyZkE9G+l1Lz18fHzj+TEeXUZ74t6RWWPC5p0TL4w==",
+      "version": "3.1.11",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.11.tgz",
+      "integrity": "sha512-Pv4EFxhpzspq0n2v0cdfqRwIMwYyd3YOIKny/1Ao71D0pKlpxJ63c9OFDNJAJcUjFOUHzODTtXXNwimOpzfbYg==",
       "dev": true,
+      "license": "MIT",
       "dependencies": {
-        "@oclif/core": "^3.26.6",
-        "chalk": "^5.3.0",
-        "debug": "^4.1.0",
+        "@oclif/core": "^4",
+        "ansis": "^3.3.1",
+        "debug": "^4.3.5",
         "http-call": "^5.2.2",
         "lodash": "^4.17.21"
       },
@@ -2617,17 +2618,33 @@
         "node": ">=18.0.0"
       }
     },
-    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/chalk": {
-      "version": "5.3.0",
-      "resolved": "https://registry.npmjs.org/chalk/-/chalk-5.3.0.tgz",
-      "integrity": "sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==",
+    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/@oclif/core": {
+      "version": "4.0.17",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.17.tgz",
+      "integrity": "sha512-zfdSRip9DVMOklMojWCLZEB4iOzy7LDTABCDzCXqmpZGS+o1e1xts4jGhnte3mi0WV0YthNfYqF16tqk6CWITA==",
       "dev": true,
       "license": "MIT",
-      "engines": {
-        "node": "^12.17.0 || ^14.13 || >=16.0.0"
+      "dependencies": {
+        "ansi-escapes": "^4.3.2",
+        "ansis": "^3.3.2",
+        "clean-stack": "^3.0.1",
+        "cli-spinners": "^2.9.2",
+        "debug": "^4.3.5",
+        "ejs": "^3.1.10",
+        "get-package-type": "^0.1.0",
+        "globby": "^11.1.0",
+        "indent-string": "^4.0.0",
+        "is-wsl": "^2.2.0",
+        "lilconfig": "^3.1.2",
+        "minimatch": "^9.0.5",
+        "string-width": "^4.2.3",
+        "supports-color": "^8",
+        "widest-line": "^3.1.0",
+        "wordwrap": "^1.0.0",
+        "wrap-ansi": "^7.0.0"
       },
-      "funding": {
-        "url": "https://github.com/chalk/chalk?sponsor=1"
+      "engines": {
+        "node": ">=18.0.0"
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/content-type": {
@@ -2680,6 +2697,22 @@
       "license": "MIT",
       "engines": {
         "node": ">=0.10.0"
+      }
+    },
+    "node_modules/@oclif/plugin-warn-if-update-available/node_modules/minimatch": {
+      "version": "9.0.5",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz",
+      "integrity": "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "brace-expansion": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16 || 14 >=14.17"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available/node_modules/safe-buffer": {
@@ -18695,9 +18728,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.14.19",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.19.tgz",
-      "integrity": "sha512-JdpLi1JbJ2OqSYCSLNzuLx9sn+ZgKNx3Z/zAL9f/BWsrQ6ohq3ElhjeAOSwOki3n533hjGqFHJW/hj1yuGYl0g==",
+      "version": "4.14.20",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.20.tgz",
+      "integrity": "sha512-SgnzNUeWHKNxI6W9ULbKNHE44jxMfYbjuMRNxw+k3LWE33g1umupqgqZ+sDMcXQXv7MSBGQZxBkHugxlgvNiHQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18709,7 +18742,7 @@
         "@oclif/core": "^4",
         "@oclif/plugin-help": "^6.2.7",
         "@oclif/plugin-not-found": "^3.2.15",
-        "@oclif/plugin-warn-if-update-available": "^3.0.19",
+        "@oclif/plugin-warn-if-update-available": "^3.1.11",
         "async-retry": "^1.3.3",
         "chalk": "^4",
         "change-case": "^4",
