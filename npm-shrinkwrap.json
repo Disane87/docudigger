@@ -2172,15 +2172,15 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.4.6",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.6.tgz",
-      "integrity": "sha512-UvalcVRL+JKb23P7GHgYAXlsyUtS7JCC3Iuvagnr7lHmZGrxqk+eJt9Z9ozLd0ViT03uy5SprvzB6d/oWi0X9A==",
+      "version": "5.4.7",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.7.tgz",
+      "integrity": "sha512-y2pbTSFT8/1yCd+ZyEjXqla2wgv3AfY/1GD72UzFlp130W8v2SPxYN3tW8/LhCe0Ka5bSqR67MQbMU80k3T+1w==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
         "ansis": "^3.3.2",
         "debug": "^4.3.6",
-        "npm": "^10.8.2",
+        "npm": "^10.8.3",
         "npm-package-arg": "^11.0.3",
         "npm-run-path": "^5.3.0",
         "object-treeify": "^4.0.1",
@@ -2194,16 +2194,16 @@
       }
     },
     "node_modules/@oclif/plugin-plugins/node_modules/@oclif/core": {
-      "version": "4.0.19",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.19.tgz",
-      "integrity": "sha512-VXnsYNVfmucXp5BdOA/OcWi8F/h2h8ofW1GxQDdspodnmnUgALEpqrxXBl5NFuA+iEihtAJeXzX260ICHYDaBg==",
+      "version": "4.0.21",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.21.tgz",
+      "integrity": "sha512-SvLTSclf104IVX8BY7nWqess1pBmeNl9qRFTWjOXg7B1/ESemfEtZYBDRAXAp1ILvazDng5IF/7YSbTxDVbwNg==",
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
         "ansis": "^3.3.2",
         "clean-stack": "^3.0.1",
         "cli-spinners": "^2.9.2",
-        "debug": "^4.3.5",
+        "debug": "^4.3.7",
         "ejs": "^3.1.10",
         "get-package-type": "^0.1.0",
         "globby": "^11.1.0",
@@ -15977,9 +15977,9 @@
       }
     },
     "node_modules/npm": {
-      "version": "10.8.2",
-      "resolved": "https://registry.npmjs.org/npm/-/npm-10.8.2.tgz",
-      "integrity": "sha512-x/AIjFIKRllrhcb48dqUNAAZl0ig9+qMuN91RpZo3Cb2+zuibfh+KISl6+kVVyktDz230JKc208UkQwwMqyB+w==",
+      "version": "10.8.3",
+      "resolved": "https://registry.npmjs.org/npm/-/npm-10.8.3.tgz",
+      "integrity": "sha512-0IQlyAYvVtQ7uOhDFYZCGK8kkut2nh8cpAdA9E6FvRSJaTgtZRZgNjlC5ZCct//L73ygrpY93CxXpRJDtNqPVg==",
       "bundleDependencies": [
         "@isaacs/string-locale-compare",
         "@npmcli/arborist",
@@ -16071,13 +16071,13 @@
         "@sigstore/tuf": "^2.3.4",
         "abbrev": "^2.0.0",
         "archy": "~1.0.0",
-        "cacache": "^18.0.3",
+        "cacache": "^18.0.4",
         "chalk": "^5.3.0",
         "ci-info": "^4.0.0",
         "cli-columns": "^4.0.0",
         "fastest-levenshtein": "^1.0.16",
         "fs-minipass": "^3.0.3",
-        "glob": "^10.4.2",
+        "glob": "^10.4.5",
         "graceful-fs": "^4.2.11",
         "hosted-git-info": "^7.0.2",
         "ini": "^4.1.3",
@@ -16086,7 +16086,7 @@
         "json-parse-even-better-errors": "^3.0.2",
         "libnpmaccess": "^8.0.6",
         "libnpmdiff": "^6.1.4",
-        "libnpmexec": "^8.1.3",
+        "libnpmexec": "^8.1.4",
         "libnpmfund": "^5.0.12",
         "libnpmhook": "^10.0.5",
         "libnpmorg": "^6.0.6",
@@ -16100,12 +16100,12 @@
         "minipass": "^7.1.1",
         "minipass-pipeline": "^1.2.4",
         "ms": "^2.1.2",
-        "node-gyp": "^10.1.0",
+        "node-gyp": "^10.2.0",
         "nopt": "^7.2.1",
         "normalize-package-data": "^6.0.2",
         "npm-audit-report": "^5.0.0",
         "npm-install-checks": "^6.3.0",
-        "npm-package-arg": "^11.0.2",
+        "npm-package-arg": "^11.0.3",
         "npm-pick-manifest": "^9.1.0",
         "npm-profile": "^10.0.0",
         "npm-registry-fetch": "^17.1.0",
@@ -16116,7 +16116,7 @@
         "proc-log": "^4.2.0",
         "qrcode-terminal": "^0.12.0",
         "read": "^3.0.1",
-        "semver": "^7.6.2",
+        "semver": "^7.6.3",
         "spdx-expression-parse": "^4.0.0",
         "ssri": "^10.0.6",
         "supports-color": "^9.4.0",
@@ -16660,7 +16660,7 @@
       }
     },
     "node_modules/npm/node_modules/cacache": {
-      "version": "18.0.3",
+      "version": "18.0.4",
       "inBundle": true,
       "license": "ISC",
       "dependencies": {
@@ -16813,7 +16813,7 @@
       }
     },
     "node_modules/npm/node_modules/debug": {
-      "version": "4.3.5",
+      "version": "4.3.6",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
@@ -16887,7 +16887,7 @@
       }
     },
     "node_modules/npm/node_modules/foreground-child": {
-      "version": "3.2.1",
+      "version": "3.3.0",
       "inBundle": true,
       "license": "ISC",
       "dependencies": {
@@ -16913,7 +16913,7 @@
       }
     },
     "node_modules/npm/node_modules/glob": {
-      "version": "10.4.2",
+      "version": "10.4.5",
       "inBundle": true,
       "license": "ISC",
       "dependencies": {
@@ -16926,9 +16926,6 @@
       },
       "bin": {
         "glob": "dist/esm/bin.mjs"
-      },
-      "engines": {
-        "node": ">=16 || 14 >=14.18"
       },
       "funding": {
         "url": "https://github.com/sponsors/isaacs"
@@ -17096,14 +17093,11 @@
       "license": "ISC"
     },
     "node_modules/npm/node_modules/jackspeak": {
-      "version": "3.4.0",
+      "version": "3.4.3",
       "inBundle": true,
       "license": "BlueOak-1.0.0",
       "dependencies": {
         "@isaacs/cliui": "^8.0.2"
-      },
-      "engines": {
-        "node": ">=14"
       },
       "funding": {
         "url": "https://github.com/sponsors/isaacs"
@@ -17182,7 +17176,7 @@
       }
     },
     "node_modules/npm/node_modules/libnpmexec": {
-      "version": "8.1.3",
+      "version": "8.1.4",
       "inBundle": true,
       "license": "ISC",
       "dependencies": {
@@ -17307,12 +17301,9 @@
       }
     },
     "node_modules/npm/node_modules/lru-cache": {
-      "version": "10.2.2",
+      "version": "10.4.3",
       "inBundle": true,
-      "license": "ISC",
-      "engines": {
-        "node": "14 || >=16.14"
-      }
+      "license": "ISC"
     },
     "node_modules/npm/node_modules/make-fetch-happen": {
       "version": "13.0.1",
@@ -17507,7 +17498,7 @@
       }
     },
     "node_modules/npm/node_modules/node-gyp": {
-      "version": "10.1.0",
+      "version": "10.2.0",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
@@ -17517,9 +17508,9 @@
         "graceful-fs": "^4.2.6",
         "make-fetch-happen": "^13.0.0",
         "nopt": "^7.0.0",
-        "proc-log": "^3.0.0",
+        "proc-log": "^4.1.0",
         "semver": "^7.3.5",
-        "tar": "^6.1.2",
+        "tar": "^6.2.1",
         "which": "^4.0.0"
       },
       "bin": {
@@ -17527,14 +17518,6 @@
       },
       "engines": {
         "node": "^16.14.0 || >=18.0.0"
-      }
-    },
-    "node_modules/npm/node_modules/node-gyp/node_modules/proc-log": {
-      "version": "3.0.0",
-      "inBundle": true,
-      "license": "ISC",
-      "engines": {
-        "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
       }
     },
     "node_modules/npm/node_modules/nopt": {
@@ -17603,7 +17586,7 @@
       }
     },
     "node_modules/npm/node_modules/npm-package-arg": {
-      "version": "11.0.2",
+      "version": "11.0.3",
       "inBundle": true,
       "license": "ISC",
       "dependencies": {
@@ -17765,7 +17748,7 @@
       }
     },
     "node_modules/npm/node_modules/postcss-selector-parser": {
-      "version": "6.1.0",
+      "version": "6.1.2",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
@@ -17889,7 +17872,7 @@
       "optional": true
     },
     "node_modules/npm/node_modules/semver": {
-      "version": "7.6.2",
+      "version": "7.6.3",
       "inBundle": true,
       "license": "ISC",
       "bin": {
