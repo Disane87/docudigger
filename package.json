@@ -58,7 +58,7 @@
     "env-cmd": "^10.1.0",
     "envfile": "^7.1.0",
     "eslint": "^8",
-    "eslint-config-love": "v51",
+    "eslint-config-love": "70",
     "eslint-config-oclif": "^5",
     "eslint-config-oclif-typescript": "^3",
     "eslint-config-prettier": "^9",
