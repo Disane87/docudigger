@@ -2416,9 +2416,9 @@
       }
     },
     "node_modules/@oclif/plugin-help": {
-      "version": "6.2.11",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.11.tgz",
-      "integrity": "sha512-Vo854dALtNhA34g6m4T9uWIrYfm/JFM82LWa5gLrsJGwpUGgeBwBX4P64HLo5ro59LF3YO2xPWViLaoK6gkm3g==",
+      "version": "6.2.12",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.12.tgz",
+      "integrity": "sha512-yLWIIQScGpr5YJzREXeRHRa0TYvTAZC+joHw/wCLw2diVOBkAlDGO67bYvfMN279YU00UJ46Yy22GEO2trtPug==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4"
@@ -2428,9 +2428,9 @@
       }
     },
     "node_modules/@oclif/plugin-help/node_modules/@oclif/core": {
-      "version": "4.0.21",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.21.tgz",
-      "integrity": "sha512-SvLTSclf104IVX8BY7nWqess1pBmeNl9qRFTWjOXg7B1/ESemfEtZYBDRAXAp1ILvazDng5IF/7YSbTxDVbwNg==",
+      "version": "4.0.22",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.22.tgz",
+      "integrity": "sha512-aXM2O4g7f+kPNzhhOfqGOVRVYDxTVrH7Y720MuH0Twq5WHMxI4XwntnyBaRscoCPG6FWhItZLtiZxsvaUdupGg==",
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
