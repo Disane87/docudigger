@@ -18811,9 +18811,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.14.36",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.14.36.tgz",
-      "integrity": "sha512-aVNdf3Jgu3HZEos83q7YE+/SQ9uGwLpldLSJ0eRBaapRnX7Pw/q9kT9A06THnG3OmX2qFcmwX8Rsus47Su11hQ==",
+      "version": "4.15.0",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.15.0.tgz",
+      "integrity": "sha512-o0gq69z5DrKl7KD5Ib/0csB92ewCougttbXfSoyFOvAD2GbR+RVZUptqCDry5xVM0vq49syOT5EWczJsfj5r2w==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18850,9 +18850,9 @@
       }
     },
     "node_modules/oclif/node_modules/@oclif/core": {
-      "version": "4.0.23",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.23.tgz",
-      "integrity": "sha512-wDl/eis7XDIM1pQWUGKLB+EQKJO9UrjaQ5NcwIbz7GW0gWuJfo9QAK75csgNUN/9Pbok9Ryt+sJgogS4RCIp5g==",
+      "version": "4.0.25",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.25.tgz",
+      "integrity": "sha512-3rX1dA40cZWzH6NKcNJGXrJn30XaxnkFXfapLMX0wwSWvBfXE/zIduHt03kLRxeFuEBUR5FBnU64odDWKhtFKg==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
