@@ -14989,6 +14989,41 @@
         "node": ">=0.10.0"
       }
     },
+    "node_modules/is-inside-container": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/is-inside-container/-/is-inside-container-1.0.0.tgz",
+      "integrity": "sha512-KIYLCCJghfHZxqjYBE7rEy0OBuTd5xCHS7tHVgvCLkx7StIoaxwNW3hCALgEUjFfeRk+MG/Qxmp/vtETEF3tRA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "is-docker": "^3.0.0"
+      },
+      "bin": {
+        "is-inside-container": "cli.js"
+      },
+      "engines": {
+        "node": ">=14.16"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/is-inside-container/node_modules/is-docker": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/is-docker/-/is-docker-3.0.0.tgz",
+      "integrity": "sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==",
+      "dev": true,
+      "license": "MIT",
+      "bin": {
+        "is-docker": "cli.js"
+      },
+      "engines": {
+        "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
     "node_modules/is-negative-zero": {
       "version": "2.0.3",
       "resolved": "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-2.0.3.tgz",
@@ -18811,9 +18846,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.15.0",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.15.0.tgz",
-      "integrity": "sha512-o0gq69z5DrKl7KD5Ib/0csB92ewCougttbXfSoyFOvAD2GbR+RVZUptqCDry5xVM0vq49syOT5EWczJsfj5r2w==",
+      "version": "4.15.1",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.15.1.tgz",
+      "integrity": "sha512-YCElE3iM7MUDIS62UNcjH0kHWJ+VIrujgkJAFeeNQMWmpN+rdSkE0UWdKfsaHHpYKLEYrEJfHMSQm/YrekCOMQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18850,9 +18885,9 @@
       }
     },
     "node_modules/oclif/node_modules/@oclif/core": {
-      "version": "4.0.25",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.25.tgz",
-      "integrity": "sha512-3rX1dA40cZWzH6NKcNJGXrJn30XaxnkFXfapLMX0wwSWvBfXE/zIduHt03kLRxeFuEBUR5FBnU64odDWKhtFKg==",
+      "version": "4.0.26",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.26.tgz",
+      "integrity": "sha512-Gtgj7l+XYYk4wqJ7fTd+fsuKusuQESrSbeue+pC1UGJWt9tyrn3TNZu/lGJSSvEQVcxZY+y09hTET+1e1bmULA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18865,7 +18900,7 @@
         "get-package-type": "^0.1.0",
         "globby": "^11.1.0",
         "indent-string": "^4.0.0",
-        "is-wsl": "^2.2.0",
+        "is-wsl": "^3",
         "lilconfig": "^3.1.2",
         "minimatch": "^9.0.5",
         "semver": "^7.6.3",
@@ -19000,6 +19035,22 @@
       },
       "funding": {
         "url": "https://github.com/sindresorhus/got?sponsor=1"
+      }
+    },
+    "node_modules/oclif/node_modules/is-wsl": {
+      "version": "3.1.0",
+      "resolved": "https://registry.npmjs.org/is-wsl/-/is-wsl-3.1.0.tgz",
+      "integrity": "sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "is-inside-container": "^1.0.0"
+      },
+      "engines": {
+        "node": ">=16"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/oclif/node_modules/lowercase-keys": {
