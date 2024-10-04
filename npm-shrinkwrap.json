@@ -2542,9 +2542,9 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.4.10",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.10.tgz",
-      "integrity": "sha512-Um3y52t1I1Wv2yIZ1TkAiASiFEWnROoZ4tn/+mgAT55em99LpRE2d+ujXVoP/HllsVbVun3QaHhv1t0YRz0udA==",
+      "version": "5.4.12",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.12.tgz",
+      "integrity": "sha512-E73/qValFhJv2UryX+1e8vCyAYvn3go2Neg1u6uyHMJ+vHMTg7g1vXaPNGacY8OJSInj1IudJbwIfPOajR4A2Q==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
@@ -2564,9 +2564,9 @@
       }
     },
     "node_modules/@oclif/plugin-plugins/node_modules/@oclif/core": {
-      "version": "4.0.23",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.23.tgz",
-      "integrity": "sha512-wDl/eis7XDIM1pQWUGKLB+EQKJO9UrjaQ5NcwIbz7GW0gWuJfo9QAK75csgNUN/9Pbok9Ryt+sJgogS4RCIp5g==",
+      "version": "4.0.27",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.27.tgz",
+      "integrity": "sha512-9j92jHr6k2tjQ6/mIwNi46Gqw+qbPFQ02mxT5T8/nxO2fgsPL3qL0kb9SR1il5AVfqpgLIG3uLUcw87rgaioUg==",
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
@@ -2578,7 +2578,7 @@
         "get-package-type": "^0.1.0",
         "globby": "^11.1.0",
         "indent-string": "^4.0.0",
-        "is-wsl": "^2.2.0",
+        "is-wsl": "^3",
         "lilconfig": "^3.1.2",
         "minimatch": "^9.0.5",
         "semver": "^7.6.3",
@@ -2590,6 +2590,21 @@
       },
       "engines": {
         "node": ">=18.0.0"
+      }
+    },
+    "node_modules/@oclif/plugin-plugins/node_modules/is-wsl": {
+      "version": "3.1.0",
+      "resolved": "https://registry.npmjs.org/is-wsl/-/is-wsl-3.1.0.tgz",
+      "integrity": "sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==",
+      "license": "MIT",
+      "dependencies": {
+        "is-inside-container": "^1.0.0"
+      },
+      "engines": {
+        "node": ">=16"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/@oclif/plugin-plugins/node_modules/isexe": {
@@ -14994,7 +15009,6 @@
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/is-inside-container/-/is-inside-container-1.0.0.tgz",
       "integrity": "sha512-KIYLCCJghfHZxqjYBE7rEy0OBuTd5xCHS7tHVgvCLkx7StIoaxwNW3hCALgEUjFfeRk+MG/Qxmp/vtETEF3tRA==",
-      "dev": true,
       "license": "MIT",
       "dependencies": {
         "is-docker": "^3.0.0"
@@ -15013,7 +15027,6 @@
       "version": "3.0.0",
       "resolved": "https://registry.npmjs.org/is-docker/-/is-docker-3.0.0.tgz",
       "integrity": "sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==",
-      "dev": true,
       "license": "MIT",
       "bin": {
         "is-docker": "cli.js"
