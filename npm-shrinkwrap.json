@@ -2416,9 +2416,9 @@
       }
     },
     "node_modules/@oclif/plugin-help": {
-      "version": "6.2.13",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.13.tgz",
-      "integrity": "sha512-IgLytXXYfuTs6dV7xhgt4xhE4Mjx8/29/4iH6jp9TKDblopCBnZ3q1VMlHfhhLsJ4Q+rSjP/QCHtiO3HnXk69Q==",
+      "version": "6.2.14",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.14.tgz",
+      "integrity": "sha512-Tz0QuOstZhr9EXftjihMScM0sXtjzDPrx683lKnEit/XGPdx3IJtH8+0uKxmmeDQ/VbGLNWb57ZLjB62H5yA9g==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4"
@@ -2428,9 +2428,9 @@
       }
     },
     "node_modules/@oclif/plugin-help/node_modules/@oclif/core": {
-      "version": "4.0.23",
-      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.23.tgz",
-      "integrity": "sha512-wDl/eis7XDIM1pQWUGKLB+EQKJO9UrjaQ5NcwIbz7GW0gWuJfo9QAK75csgNUN/9Pbok9Ryt+sJgogS4RCIp5g==",
+      "version": "4.0.27",
+      "resolved": "https://registry.npmjs.org/@oclif/core/-/core-4.0.27.tgz",
+      "integrity": "sha512-9j92jHr6k2tjQ6/mIwNi46Gqw+qbPFQ02mxT5T8/nxO2fgsPL3qL0kb9SR1il5AVfqpgLIG3uLUcw87rgaioUg==",
       "license": "MIT",
       "dependencies": {
         "ansi-escapes": "^4.3.2",
@@ -2442,7 +2442,7 @@
         "get-package-type": "^0.1.0",
         "globby": "^11.1.0",
         "indent-string": "^4.0.0",
-        "is-wsl": "^2.2.0",
+        "is-wsl": "^3",
         "lilconfig": "^3.1.2",
         "minimatch": "^9.0.5",
         "semver": "^7.6.3",
@@ -2454,6 +2454,21 @@
       },
       "engines": {
         "node": ">=18.0.0"
+      }
+    },
+    "node_modules/@oclif/plugin-help/node_modules/is-wsl": {
+      "version": "3.1.0",
+      "resolved": "https://registry.npmjs.org/is-wsl/-/is-wsl-3.1.0.tgz",
+      "integrity": "sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==",
+      "license": "MIT",
+      "dependencies": {
+        "is-inside-container": "^1.0.0"
+      },
+      "engines": {
+        "node": ">=16"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/@oclif/plugin-help/node_modules/minimatch": {
