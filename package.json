@@ -20,7 +20,7 @@
     "/CHANGELOG.md"
   ],
   "dependencies": {
-    "@oclif/core": "^3.26.6",
+    "@oclif/core": "^4.0.0",
     "@oclif/plugin-commands": "^3.3.4",
     "@oclif/plugin-help": "^6.0.22",
     "@oclif/plugin-plugins": "^5.1.3",
