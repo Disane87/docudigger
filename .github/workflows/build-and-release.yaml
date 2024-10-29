@@ -6,6 +6,8 @@ on:
       - "src/**"
       - "dockerfile"
       - ".releaserc"
+      - "package.json"
+      - "readme.md"
     branches:
       - "main"
       - "dev"
