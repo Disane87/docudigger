@@ -22,7 +22,7 @@ export class Puppeteer {
       args: this.arguments,
       dumpio: false,
       devtools: this.debug,
-      // executablePath: this.getExecutablePath(),
+      executablePath: this.getExecutablePath(),
     });
     return this.browser;
   }
@@ -33,6 +33,7 @@ export class Puppeteer {
 
   private locateChrome(): string {
     let paths: string[];
+    console.log("Platform: ", process.platform);
 
     switch (process.platform) {
       case `darwin`:
@@ -70,7 +71,7 @@ export class Puppeteer {
           `/usr/bin/chromium`,
           `/usr/bin/chromium-browser`,
           `/snap/bin/chromium`,
-          `/home/node/.cache/puppeteer/chrome`
+          // `/home/node/.cache/puppeteer/chrome`
         ];
     }
 

@@ -88,7 +88,7 @@
       "target": "./dist/commands",
       "globPatterns": [
         "**/*.+(js|cjs|mjs|ts|tsx|mts|cts)",
-        "!**/*.helper.ts"
+        "!**/*.helper.(ts|js|d)"
       ]
     },
     "plugins": [
@@ -128,9 +128,9 @@
     "prepare": "husky && npm install -g @commitlint/cli @commitlint/config-conventional",
     "clean": "shx rm -rf dist && npx mkdirp ./dist && shx rm -rf archive && npx mkdirp ./archive",
     "prebuild:image": "ts-node ./scripts/docker-version.ts",
-    "build:image": "env-cmd cross-var docker build --build-arg DOCUDIGGER_VERSION=$RELEASE_DOCKER_VERSION --pull --rm -f dockerfile -t ghcr.io/disane87/docudigger:$RELEASE_DOCKER_VERSION -t ghcr.io/disane87/docudigger:$GIT_BRANCH .",
+    "build:image": "env-cmd cross-var docker build --build-arg DOCUDIGGER_VERSION=$RELEASE_DOCKER_VERSION --pull --rm -f dockerfile -t local-docudigger:$RELEASE_DOCKER_VERSION -t ghcr.io/disane87/docudigger:$GIT_BRANCH .",
     "prestart:docker": "npm run build:image",
-    "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" docudigger",
+    "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" ghcr.io/disane87/docudigger:2.0.6-dev.6",
     "prepush:docker": "cross-var npm run build:image",
     "push:docker": "cross-var docker push ghcr.io/disane87/docudigger -a",
     "check:updates": "npx npm-check -u",
