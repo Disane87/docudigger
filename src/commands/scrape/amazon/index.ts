@@ -171,7 +171,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             this.logger.info(`Determined order pages ${orderPageCount}`);
         } catch (ex) {
             orderPageCount = 1;
-            this.logger.error(`Couldn't get orderPageCount ${orderPageCount} within ${this.selectorWaitTimeout}ms. Assume only one page.`);
+            this.logger.error(`Couldn't get orderPageCount ${orderPageCount} within ${this.selectorWaitTimeout}ms. Assume only one page. ${ex.message}`);
         }
         this.logger.info(`Page count: ${orderPageCount}`);
         return orderPageCount;
@@ -260,7 +260,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
             invoiceUrls = await invoiceList.$$eval(this.selectors.invoiceLinks, (handles: HTMLAnchorElement[]) => handles.map(a => a.href));
             this.logger.debug(`Got invoiceUrls ${(orderIndex + 1)} -> ${invoiceUrls}`);
         } catch (ex) {
-            this.logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${this.selectorWaitTimeout}ms. Skipping`);
+            this.logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${this.selectorWaitTimeout}ms. Skipping. ${ex.message}`);
         }
         return invoiceUrls;
     }

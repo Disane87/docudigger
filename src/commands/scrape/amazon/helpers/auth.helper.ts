@@ -1,4 +1,4 @@
-import { Command, ux } from "@oclif/core";
+import { Command } from "@oclif/core";
 import { AmazonSelectors } from "../../../../interfaces/selectors.interface";
 import { Page } from "../../../../classes/puppeteer.class";
 import { AmazonDefinition } from "../../../../interfaces/amazon.interface";
