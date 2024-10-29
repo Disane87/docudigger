@@ -1,3 +1,9 @@
+## [2.0.6-dev.7](https://github.com/disane87/docudigger/compare/v2.0.6-dev.6...v2.0.6-dev.7) (2024-10-29)
+
+### 🛠️ Fixes
+
+* chrome exec path ([a2f1788](https://github.com/disane87/docudigger/commit/a2f1788fb241f82eefbefe7b80e4571afacfe8ee))
+
 ## [2.0.6-dev.6](https://github.com/disane87/docudigger/compare/v2.0.6-dev.5...v2.0.6-dev.6) (2024-10-29)
 
 ### 🛠️ Fixes
