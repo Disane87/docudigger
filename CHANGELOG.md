@@ -1,3 +1,9 @@
+## [2.0.6-dev.5](https://github.com/disane87/docudigger/compare/v2.0.6-dev.4...v2.0.6-dev.5) (2024-10-29)
+
+### 📔 Docs
+
+* changed readme.md ([4585494](https://github.com/disane87/docudigger/commit/4585494b8814a54b69ad0fa3d0af85155252b966))
+
 ## [2.0.6-dev.4](https://github.com/disane87/docudigger/compare/v2.0.6-dev.3...v2.0.6-dev.4) (2024-10-29)
 
 ### 📔 Docs
