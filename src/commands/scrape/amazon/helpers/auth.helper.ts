@@ -38,10 +38,10 @@ export const login = async (
 
   while (!hasMessages) {
     if (!options.username && !options.password) {
-      options.username = await ux.prompt(`What is your amazaon username?`);
-      options.password = await ux.prompt(`What is your password?`, {
-        type: `hide`,
-      });
+      // options.username = await ux.action(`What is your amazaon username?`);
+      // options.password = await ux.prompt(`What is your password?`, {
+      //   type: `hide`,
+      // });
     }
 
     logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
@@ -99,10 +99,10 @@ export const login = async (
 
     if (page.url().indexOf(`/mfa?`) > -1) {
       logger.info(`MFA detected`);
-      const secondFactor = await ux.prompt(`What is your two-factor token?`, {
-        type: `mask`,
-      });
-      await page.type(`input#auth-mfa-otpcode`, secondFactor);
+      // const secondFactor = await ux.prompt(`What is your two-factor token?`, {
+      //   type: `mask`,
+      // });
+      // await page.type(`input#auth-mfa-otpcode`, secondFactor);
       await page.click(`input#auth-mfa-remember-device`);
       await page.click(`input[type=submit]`);
 
