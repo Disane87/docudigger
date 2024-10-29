@@ -1,3 +1,10 @@
+## [2.0.6-dev.4](https://github.com/disane87/docudigger/compare/v2.0.6-dev.3...v2.0.6-dev.4) (2024-10-29)
+
+### 📔 Docs
+
+* update global installation command ([fd66c17](https://github.com/disane87/docudigger/commit/fd66c17cf0f0d2fc9046fc865ccc48c02dd6f04d)), closes [#1009](https://github.com/disane87/docudigger/issues/1009)
+* update global installation command ([afc39ee](https://github.com/disane87/docudigger/commit/afc39eeb32f77ee910fc42343a5b154c19a30584)), closes [#1009](https://github.com/disane87/docudigger/issues/1009)
+
 ## [2.0.6-dev.3](https://github.com/disane87/docudigger/compare/v2.0.6-dev.2...v2.0.6-dev.3) (2024-10-29)
 
 ### 🛠️ Fixes
