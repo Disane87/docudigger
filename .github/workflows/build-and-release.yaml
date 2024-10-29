@@ -7,7 +7,7 @@ on:
       - "dockerfile"
       - ".releaserc"
       - "package.json"
-      - "readme.md"
+      - "README.md"
     branches:
       - "main"
       - "dev"
