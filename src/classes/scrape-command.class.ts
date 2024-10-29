@@ -8,6 +8,7 @@ import { WebsiteRun } from "../interfaces/website-run.interface";
 import { BaseCommand, BaseFlags } from "./base.class";
 import { Browser, Page, Puppeteer } from "./puppeteer.class";
 import { isRunningInDocker } from "../helpers/process.helper";
+import { FileHandler } from "../commands/scrape/amazon/helpers/file.helper";
 
 export type ScrapeFlags<T extends typeof Command> = Interfaces.InferredFlags<
   (typeof ScrapeCommand)[`baseFlags`] & T[`flags`]
@@ -63,11 +64,15 @@ export abstract class ScrapeCommand<
 
   public processJsonFile: string;
 
+  public fileHandler: FileHandler<T>;
+
   // public currentPage: Page;
 
   public async init(): Promise<void> {
     await super.init();
     await this.initFlags();
+
+    this.fileHandler = new FileHandler(this.logger, this.flags, this.pluginName);
 
     this.processJsonFile = path
       .resolve(path.join(this.flags.fileDestinationFolder, `process.json`))

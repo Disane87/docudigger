@@ -1,7 +1,7 @@
-import { ux } from "@oclif/core";
-import { AmazonSelectors } from "../interfaces/selectors.interface";
-import { Page } from "../classes/puppeteer.class";
-import { AmazonDefinition } from "../interfaces/amazon.interface";
+import { Command, ux } from "@oclif/core";
+import { AmazonSelectors } from "../../../../interfaces/selectors.interface";
+import { Page } from "../../../../classes/puppeteer.class";
+import { AmazonDefinition } from "../../../../interfaces/amazon.interface";
 
 export const login = async (
   page: Page,
@@ -9,6 +9,7 @@ export const login = async (
   options,
   amazonUrls: AmazonDefinition,
   logger,
+  command: Command
 ): Promise<boolean> => {
   let hasMessages = false;
 
@@ -58,12 +59,10 @@ export const login = async (
     const authErrors = await checkForAuthMessages(`Error`);
     const authWarning = await checkForAuthMessages(`Warning`);
 
-    if (authErrors?.length > 0) {
-      return false;
-    }
-
-    if (authWarning?.length > 0) {
-      return false;
+    if (authErrors?.length > 0 || authWarning?.length > 0) {
+      logger.error(`Auth not successful. Exiting.`);
+      command.exit();
+      return;
     }
 
     const hasCaptcha = !!(await page.$(`form.cvf-widget-form-captcha`));
