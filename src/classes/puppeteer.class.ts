@@ -22,7 +22,7 @@ export class Puppeteer {
       args: this.arguments,
       dumpio: false,
       devtools: this.debug,
-      executablePath: this.getExecutablePath(),
+      // executablePath: this.getExecutablePath(),
     });
     return this.browser;
   }
@@ -53,14 +53,14 @@ export class Puppeteer {
           process.env[`LocalAppData`] + `/Google/Chrome/Application/chrome.exe`,
           process.env[`ProgramFiles`] + `/Google/Chrome/Application/chrome.exe`,
           process.env[`ProgramFiles(x86)`] +
-            `/Google/Chrome/Application/chrome.exe`,
+          `/Google/Chrome/Application/chrome.exe`,
           process.env[`LocalAppData`] + `/Chromium/Application/chrome.exe`,
           process.env[`ProgramFiles`] + `/Chromium/Application/chrome.exe`,
           process.env[`ProgramFiles(x86)`] + `/Chromium/Application/chrome.exe`,
           process.env[`ProgramFiles(x86)`] +
-            `/Microsoft/Edge/Application/msedge.exe`,
+          `/Microsoft/Edge/Application/msedge.exe`,
           process.env[`ProgramFiles`] +
-            `/Microsoft/Edge/Application/msedge.exe`,
+          `/Microsoft/Edge/Application/msedge.exe`,
         ];
         break;
       default:
@@ -70,6 +70,7 @@ export class Puppeteer {
           `/usr/bin/chromium`,
           `/usr/bin/chromium-browser`,
           `/snap/bin/chromium`,
+          `/home/node/.cache/puppeteer/chrome`
         ];
     }
 
