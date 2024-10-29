@@ -62,6 +62,9 @@ USAGE
 ```
 <!-- usagestop -->
 
+> [!IMPORTANT]  
+> Don't forget to include `--ignore-scripts` in your install command.
+
 ## `docudigger scrape all`
 
 Scrapes all websites periodically (default for docker environment)
