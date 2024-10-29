@@ -1,3 +1,9 @@
+## [2.0.6-dev.6](https://github.com/disane87/docudigger/compare/v2.0.6-dev.5...v2.0.6-dev.6) (2024-10-29)
+
+### 🛠️ Fixes
+
+* changed docker ENV vars from LegacyKeyValueFormat to new format ([4d4b26d](https://github.com/disane87/docudigger/commit/4d4b26da109d167f22582c9bfa28f96bfc9aa929))
+
 ## [2.0.6-dev.5](https://github.com/disane87/docudigger/compare/v2.0.6-dev.4...v2.0.6-dev.5) (2024-10-29)
 
 ### 📔 Docs
