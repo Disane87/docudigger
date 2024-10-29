@@ -8,6 +8,7 @@ on:
       - ".releaserc"
       - "package.json"
       - "README.md"
+      - "dockerfile"
     branches:
       - "main"
       - "dev"

@@ -6,7 +6,7 @@ WORKDIR /home/node/docudigger
 
 # USER root
 
-RUN mkdir -p data 
+RUN mkdir -p data
 RUN mkdir -p logs
 
 ENV AMAZON_USERNAME ${AMAZON_USERNAME}
@@ -38,5 +38,6 @@ ENV PATH $PATH:/home/node/.npm-global/bin
 RUN npm install -g concurrently --ignore-scripts
 RUN npm install -g @disane-dev/docudigger@${DOCUDIGGER_VERSION} --ignore-scripts
 RUN npm install -g puppeteer
+RUN npx puppeteer browsers install chrome
 
 CMD ["concurrently","docudigger scrape all"]

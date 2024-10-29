@@ -8,7 +8,8 @@ ENV PATH $PATH:/home/node/.npm-global/bin
 
 COPY ["./dist/","./bin/","package*.json", "package-lock*.json", "npm-shrinkwrap*.json", "./"]
 RUN npm install --production --silent --ignore-scripts
-RUN npm install -g puppeteer --production --silent 
+RUN npm install -g puppeteer --production --silent
+RUN npx puppeteer browsers install chrome
 # RUN mv node_modules ../
 COPY . .
 EXPOSE 9229

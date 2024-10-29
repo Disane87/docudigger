@@ -110,7 +110,7 @@
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "prestart": "npm run lint",
     "start": "cd ./bin && dev scrape amazon",
-    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape all",
+    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape amazon",
     "prebuild": "npm run clean && npm run lint",
     "build": "tsc -b",
     "lint": "eslint ./src --fix",
