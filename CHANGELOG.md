@@ -1,3 +1,9 @@
+## [2.0.6-dev.8](https://github.com/disane87/docudigger/compare/v2.0.6-dev.7...v2.0.6-dev.8) (2024-10-29)
+
+### 🛠️ Fixes
+
+* fixed docker stuff ([5d4358e](https://github.com/disane87/docudigger/commit/5d4358ea8bbb8cec21b199e216074f25923e6616))
+
 ## [2.0.6-dev.7](https://github.com/disane87/docudigger/compare/v2.0.6-dev.6...v2.0.6-dev.7) (2024-10-29)
 
 ### 🛠️ Fixes
