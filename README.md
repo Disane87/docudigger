@@ -50,7 +50,7 @@ npm install
 
 <!-- usage -->
 ```sh-session
-$ npm install -g @disane-dev/docudigger
+$ npm install -g @disane-dev/docudigger --ignore-scripts
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
