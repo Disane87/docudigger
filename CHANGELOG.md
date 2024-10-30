@@ -1,3 +1,9 @@
+## [2.0.6-dev.10](https://github.com/disane87/docudigger/compare/v2.0.6-dev.9...v2.0.6-dev.10) (2024-10-30)
+
+### 🛠️ Fixes
+
+* possible fix for broken docker images [#1136](https://github.com/disane87/docudigger/issues/1136) ([00d8cca](https://github.com/disane87/docudigger/commit/00d8cca85845b63efdbc671e82b4ea9c566f0999))
+
 ## [2.0.6-dev.9](https://github.com/disane87/docudigger/compare/v2.0.6-dev.8...v2.0.6-dev.9) (2024-10-30)
 
 ### 🛠️ Fixes
