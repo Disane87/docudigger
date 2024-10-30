@@ -1,3 +1,9 @@
+## [2.0.6-dev.9](https://github.com/disane87/docudigger/compare/v2.0.6-dev.8...v2.0.6-dev.9) (2024-10-30)
+
+### 🛠️ Fixes
+
+* added pinned chrome version for puppeteer. possible fix for [#1136](https://github.com/disane87/docudigger/issues/1136) ([0d9c7b8](https://github.com/disane87/docudigger/commit/0d9c7b8dac51731f15c95cf42f508eb975f315eb))
+
 ## [2.0.6-dev.8](https://github.com/disane87/docudigger/compare/v2.0.6-dev.7...v2.0.6-dev.8) (2024-10-29)
 
 ### 🛠️ Fixes
