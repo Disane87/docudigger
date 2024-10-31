@@ -1,3 +1,9 @@
+## [2.0.6-dev.16](https://github.com/disane87/docudigger/compare/v2.0.6-dev.15...v2.0.6-dev.16) (2024-10-31)
+
+### 🛠️ Fixes
+
+* don't execute postinstall scripts when installing the npm package ([4f06994](https://github.com/disane87/docudigger/commit/4f069946631301b8ebe2d9d24d778f8399a66485)), closes [#1009](https://github.com/disane87/docudigger/issues/1009)
+
 ## [2.0.6-dev.15](https://github.com/disane87/docudigger/compare/v2.0.6-dev.14...v2.0.6-dev.15) (2024-10-31)
 
 ### 🛠️ Fixes
