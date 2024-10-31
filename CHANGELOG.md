@@ -1,3 +1,9 @@
+## [2.0.6-dev.11](https://github.com/disane87/docudigger/compare/v2.0.6-dev.10...v2.0.6-dev.11) (2024-10-31)
+
+### 🛠️ Fixes
+
+* bug fixes for [#1136](https://github.com/disane87/docudigger/issues/1136) ([24e3887](https://github.com/disane87/docudigger/commit/24e38871d78a34402d97085cebff084d02c76062))
+
 ## [2.0.6-dev.10](https://github.com/disane87/docudigger/compare/v2.0.6-dev.9...v2.0.6-dev.10) (2024-10-30)
 
 ### 🛠️ Fixes

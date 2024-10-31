@@ -1,6 +1,6 @@
 {
   "name": "@disane-dev/docudigger",
-  "version": "2.0.6-dev.10",
+  "version": "2.0.6-dev.11",
   "description": "Universal and extensible document scraper to get documents from pages (like customer portals etc.)",
   "author": "Marco Franke @Disane87",
   "bin": {
