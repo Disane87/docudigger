@@ -34,10 +34,12 @@ ENV NODE_ENV=production
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
 
+COPY ["*.tgz", "./"]
 
 RUN npm install -g concurrently --ignore-scripts
 RUN npm install -g @disane-dev/docudigger@${DOCUDIGGER_VERSION} --ignore-scripts
-RUN npm install -g puppeteer@22.10.0 --production --silent
-RUN npx puppeteer browsers install chrome@127.0.6533.88
+# RUN npm install -g ./disane-dev-docudigger-2.0.6-dev.10.tgz --ignore-scripts
+RUN npm install -g puppeteer --production --silent
+RUN npx puppeteer browsers install chrome
 
-CMD ["concurrently","docudigger scrape amazon"]
+CMD ["concurrently","docudigger scrape all"]

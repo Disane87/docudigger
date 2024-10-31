@@ -12,9 +12,10 @@ export const isRunningInDocker = () => {
     if (cgroup.includes(`docker`)) {
       return true;
     }
-  } catch (err) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (_err) {
     // Log error if needed, but ignore for now
-    console.error(err);
+    // console.error(err);
   }
 
   return false;

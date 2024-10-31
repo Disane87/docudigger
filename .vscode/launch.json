@@ -7,7 +7,7 @@
       "name": "Scrape amazon",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bin/dev",
-      "args": ["scrape", "amazon"],
+      "args": ["scrape", "all"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "envFile": "${workspaceFolder}/.env",

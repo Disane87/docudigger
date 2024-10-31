@@ -26,7 +26,7 @@
     "@oclif/plugin-plugins": "^5.1.3",
     "luxon": "^3.4.4",
     "node-cron": "^3.0.3",
-    "puppeteer": "^22.10.0",
+    "puppeteer": "^23.6.1",
     "winston": "^3.13.0"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "@types/chai": "^5.0.1",
     "@types/luxon": "^3.4.2",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^22.8.4",
+    "@types/node": "^22.8.5",
     "@types/node-cron": "^3.0.11",
     "@types/puppeteer": "^7.0.4",
     "@types/winston": "^2.4.4",
@@ -65,12 +65,12 @@
     "eslint-config-oclif-typescript": "^3.1.12",
     "eslint-config-prettier": "^9",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^17.7.0",
+    "eslint-plugin-n": "^17.12.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-promise": "^7.1.0",
     "globals": "^15.11.0",
     "husky": "^9.0.11",
-    "mocha": "^10.8.1",
+    "mocha": "^10.8.2",
     "oclif": "^4.11.3",
     "semantic-release": "^24.2.0",
     "semantic-release-github-pullrequest": "1.3.0",
@@ -88,7 +88,7 @@
       "target": "./dist/commands",
       "globPatterns": [
         "**/*.+(js|cjs|mjs|ts|tsx|mts|cts)",
-        "!**/*.helper.(ts|js|d)"
+        "!**/*.helper.(ts|js|d|d.ts|d.js)"
       ]
     },
     "plugins": [
@@ -110,7 +110,7 @@
     "postinstall": "ts-node ./scripts/postinstall.ts",
     "prestart": "npm run lint",
     "start": "cd ./bin && dev scrape amazon",
-    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape amazon",
+    "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape all",
     "prebuild": "npm run clean && npm run lint",
     "build": "tsc -b",
     "lint": "eslint ./src --fix",
@@ -127,10 +127,10 @@
     "docker:release": "npm run clean && npm run push:docker",
     "prepare": "husky && npm install -g @commitlint/cli @commitlint/config-conventional",
     "clean": "shx rm -rf dist && npx mkdirp ./dist && shx rm -rf archive && npx mkdirp ./archive",
-    "prebuild:image": "ts-node ./scripts/docker-version.ts",
-    "build:image": "env-cmd cross-var docker build --build-arg DOCUDIGGER_VERSION=$RELEASE_DOCKER_VERSION --pull --rm -f dockerfile -t local-docudigger:$RELEASE_DOCKER_VERSION -t ghcr.io/disane87/docudigger:$GIT_BRANCH .",
+    "prebuild:image": "npm pack && ts-node ./scripts/docker-version.ts",
+    "build:image": "env-cmd cross-var docker build --build-arg DOCUDIGGER_VERSION=$RELEASE_DOCKER_VERSION --pull --rm -f dockerfile -t ghcr.io/disane87/docudigger:$RELEASE_DOCKER_VERSION -t ghcr.io/disane87/docudigger:$GIT_BRANCH .",
     "prestart:docker": "npm run build:image",
-    "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" ghcr.io/disane87/docudigger:2.0.6-dev.6",
+    "start:docker": "docker run --env-file .env -v \"C:/temp/docudigger/:/app/docudigger\" ghcr.io/disane87/docudigger:dev",
     "prepush:docker": "cross-var npm run build:image",
     "push:docker": "cross-var docker push ghcr.io/disane87/docudigger -a",
     "check:updates": "npx npm-check -u",
