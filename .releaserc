@@ -71,6 +71,11 @@
               "hidden": true
             },
             {
+              "type": "deps",
+              "section": "📦 Dependencies",
+              "hidden": false
+            },
+            {
               "type": "chore",
               "section": "🧹 Other",
               "hidden": true
