@@ -107,7 +107,7 @@
     }
   },
   "scripts": {
-    "postinstall": "ts-node ./scripts/postinstall.ts",
+    "postinstall": "npx --yes ignore-dependency-scripts \"ts-node ./scripts/postinstall.ts\"",
     "prestart": "npm run lint",
     "start": "cd ./bin && dev scrape amazon",
     "start:debug": "node --inspect=0.0.0.0:9229 ./bin/run scrape all",
