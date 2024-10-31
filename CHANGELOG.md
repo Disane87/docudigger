@@ -1,3 +1,9 @@
+## [2.0.6-dev.13](https://github.com/disane87/docudigger/compare/v2.0.6-dev.12...v2.0.6-dev.13) (2024-10-31)
+
+### 🛠️ Fixes
+
+* added UserAgent to prevent Captchas (hopefully) ([9acf77d](https://github.com/disane87/docudigger/commit/9acf77d131d57dc80ff58cf86750278b4928cec2))
+
 ## [2.0.6-dev.12](https://github.com/disane87/docudigger/compare/v2.0.6-dev.11...v2.0.6-dev.12) (2024-10-31)
 
 ### 🛠️ Fixes
