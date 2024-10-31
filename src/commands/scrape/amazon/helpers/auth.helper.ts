@@ -65,32 +65,11 @@ export const login = async (
       return;
     }
 
-    const hasCaptcha = !!(await page.$(`form.cvf-widget-form-captcha`));
+    const hasCaptcha = !!(await page.$(selectors.captchaPage));
 
     if (hasCaptcha) {
-      const captchaImageUrl = await page.$eval(
-        selectors.captchaImage,
-        (image: HTMLImageElement) => image.src,
-      );
-      if (captchaImageUrl) {
-        logger.error(`Auth with captcha is currently unsupported`);
-
-        // const captchaImagePage = await browser.newPage();
-        // const captchaResponse = await captchaImagePage.goto(captchaImageUrl);
-        // const tempFolder = `./cache/`;
-        // const imageFilePath = path.join(tempFolder, path.basename(captchaImageUrl.split(`?`)[0]));
-
-        // !fs.existsSync(tempFolder) && fs.mkdirSync(tempFolder);
-        // await fs.writeFileSync(imageFilePath, await captchaResponse.buffer());
-
-        // const text = await tessaract.recognize(fs.readFileSync(imageFilePath), {
-        //     lang: `eng`, // default
-        //     debug: true,
-        //     psm: 1
-        // });
-        // await captchaImagePage.close();
-        return false;
-      }
+      logger.error(`Captcha detected. Auth with captcha is currently unsupported. Sorry 😣`);
+      return false
     }
 
     // Check if this is the sign in page again i.e. for false password

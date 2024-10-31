@@ -12,5 +12,6 @@ export const amazonSelectors: AmazonSelectors = {
   yearFilter: `select[name='orderFilter']#orderFilter`,
   authError: `#auth-error-message-box .a-unordered-list li`,
   authWarning: `#auth-warning-message-box .a-unordered-list li`,
-  captchaImage: `div.cvf-captcha-img img[alt~="captcha"]`,
+  // captchaImage: `div.cvf-captcha-img img[alt~="captcha"]`,
+  captchaPage: "form.cvf-widget-form-captcha"
 };
