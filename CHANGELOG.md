@@ -1,3 +1,9 @@
+## [2.0.7-dev.2](https://github.com/disane87/docudigger/compare/v2.0.7-dev.1...v2.0.7-dev.2) (2024-10-31)
+
+### 🛠️ Fixes
+
+* fixed a bug where internal pagecount was increased by one ([e50762a](https://github.com/disane87/docudigger/commit/e50762a5fe97eff877656dc1d8c0a9dde3b0d659))
+
 ## [2.0.7-dev.1](https://github.com/disane87/docudigger/compare/v2.0.6...v2.0.7-dev.1) (2024-10-31)
 
 ### 🛠️ Fixes
