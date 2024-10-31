@@ -42,6 +42,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   public async run(): Promise<void> {
     this.options = this.flags;
     await this.handleOnlyNewOption();
+
     this.logger.debug(`Options: ${JSON.stringify(this.options, null, 4)}`);
     this.currentPage = await this.newPage();
 
