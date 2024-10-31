@@ -1,3 +1,9 @@
+## [2.0.6-dev.12](https://github.com/disane87/docudigger/compare/v2.0.6-dev.11...v2.0.6-dev.12) (2024-10-31)
+
+### 🛠️ Fixes
+
+* auth fixed ([fc34b3c](https://github.com/disane87/docudigger/commit/fc34b3c118111bf0cc79773fbb769bc998d51df5))
+
 ## [2.0.6-dev.11](https://github.com/disane87/docudigger/compare/v2.0.6-dev.10...v2.0.6-dev.11) (2024-10-31)
 
 ### 🛠️ Fixes
