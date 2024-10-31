@@ -1,15 +1,180 @@
+
+## [2.0.6-dev.16](https://github.com/disane87/docudigger/compare/v2.0.6-dev.15...v2.0.6-dev.16) (2024-10-31)
+
+### 🛠️ Fixes
+
+* don't execute postinstall scripts when installing the npm package ([4f06994](https://github.com/disane87/docudigger/commit/4f069946631301b8ebe2d9d24d778f8399a66485)), closes [#1009](https://github.com/disane87/docudigger/issues/1009)
+
+## [2.0.6-dev.15](https://github.com/disane87/docudigger/compare/v2.0.6-dev.14...v2.0.6-dev.15) (2024-10-31)
+
+### 🛠️ Fixes
+
+* selector for Captcha added in selectors list ([d2176c6](https://github.com/disane87/docudigger/commit/d2176c680aa2fae50eb848777e553319c56366d7))
+
+## [2.0.6-dev.14](https://github.com/disane87/docudigger/compare/v2.0.6-dev.13...v2.0.6-dev.14) (2024-10-31)
+
+### 🛠️ Fixes
+
+* fixes a bug where possibleYears is not correctly determined ([62709b5](https://github.com/disane87/docudigger/commit/62709b598637cb4649b7aa6c83706270f34de62a)), closes [#1140](https://github.com/disane87/docudigger/issues/1140)
+
+## [2.0.6-dev.13](https://github.com/disane87/docudigger/compare/v2.0.6-dev.12...v2.0.6-dev.13) (2024-10-31)
+
+### 🛠️ Fixes
+
+* added UserAgent to prevent Captchas (hopefully) ([9acf77d](https://github.com/disane87/docudigger/commit/9acf77d131d57dc80ff58cf86750278b4928cec2))
+
+## [2.0.6-dev.12](https://github.com/disane87/docudigger/compare/v2.0.6-dev.11...v2.0.6-dev.12) (2024-10-31)
+
+### 🛠️ Fixes
+
+* auth fixed ([fc34b3c](https://github.com/disane87/docudigger/commit/fc34b3c118111bf0cc79773fbb769bc998d51df5))
+
+## [2.0.6-dev.11](https://github.com/disane87/docudigger/compare/v2.0.6-dev.10...v2.0.6-dev.11) (2024-10-31)
+
+### 🛠️ Fixes
+
+* bug fixes for [#1136](https://github.com/disane87/docudigger/issues/1136) ([24e3887](https://github.com/disane87/docudigger/commit/24e38871d78a34402d97085cebff084d02c76062))
+
+## [2.0.6-dev.10](https://github.com/disane87/docudigger/compare/v2.0.6-dev.9...v2.0.6-dev.10) (2024-10-30)
+
+### 🛠️ Fixes
+
+* possible fix for broken docker images [#1136](https://github.com/disane87/docudigger/issues/1136) ([00d8cca](https://github.com/disane87/docudigger/commit/00d8cca85845b63efdbc671e82b4ea9c566f0999))
+
+## [2.0.6-dev.9](https://github.com/disane87/docudigger/compare/v2.0.6-dev.8...v2.0.6-dev.9) (2024-10-30)
+
+### 🛠️ Fixes
+
+* added pinned chrome version for puppeteer. possible fix for [#1136](https://github.com/disane87/docudigger/issues/1136) ([0d9c7b8](https://github.com/disane87/docudigger/commit/0d9c7b8dac51731f15c95cf42f508eb975f315eb))
+
+## [2.0.6-dev.8](https://github.com/disane87/docudigger/compare/v2.0.6-dev.7...v2.0.6-dev.8) (2024-10-29)
+
+### 🛠️ Fixes
+
+* fixed docker stuff ([5d4358e](https://github.com/disane87/docudigger/commit/5d4358ea8bbb8cec21b199e216074f25923e6616))
+
+## [2.0.6-dev.7](https://github.com/disane87/docudigger/compare/v2.0.6-dev.6...v2.0.6-dev.7) (2024-10-29)
+
+### 🛠️ Fixes
+
+* chrome exec path ([a2f1788](https://github.com/disane87/docudigger/commit/a2f1788fb241f82eefbefe7b80e4571afacfe8ee))
+
+## [2.0.6-dev.6](https://github.com/disane87/docudigger/compare/v2.0.6-dev.5...v2.0.6-dev.6) (2024-10-29)
+
+### 🛠️ Fixes
+
+* changed docker ENV vars from LegacyKeyValueFormat to new format ([4d4b26d](https://github.com/disane87/docudigger/commit/4d4b26da109d167f22582c9bfa28f96bfc9aa929))
+
+## [2.0.6-dev.5](https://github.com/disane87/docudigger/compare/v2.0.6-dev.4...v2.0.6-dev.5) (2024-10-29)
+
+### 📔 Docs
+
+* changed readme.md ([4585494](https://github.com/disane87/docudigger/commit/4585494b8814a54b69ad0fa3d0af85155252b966))
+
+## [2.0.6-dev.4](https://github.com/disane87/docudigger/compare/v2.0.6-dev.3...v2.0.6-dev.4) (2024-10-29)
+
+### 📔 Docs
+
+* update global installation command ([fd66c17](https://github.com/disane87/docudigger/commit/fd66c17cf0f0d2fc9046fc865ccc48c02dd6f04d)), closes [#1009](https://github.com/disane87/docudigger/issues/1009)
+* update global installation command ([afc39ee](https://github.com/disane87/docudigger/commit/afc39eeb32f77ee910fc42343a5b154c19a30584)), closes [#1009](https://github.com/disane87/docudigger/issues/1009)
+
+## [2.0.6-dev.3](https://github.com/disane87/docudigger/compare/v2.0.6-dev.2...v2.0.6-dev.3) (2024-10-29)
+
+### 🛠️ Fixes
+
+* :bug: fixed a bug where a full scrape failed and the `timeFilter` wasn't correctly determined ([06ac4bb](https://github.com/disane87/docudigger/commit/06ac4bb80d176769fc0a4025fce26925e2a80345))
+* **deps:** update dependency @oclif/plugin-help to v6.2.1 ([#833](https://github.com/disane87/docudigger/issues/833)) ([3a620b2](https://github.com/disane87/docudigger/commit/3a620b2323c73ef3a169ca63926d5b345d3bcc2d))
+* **deps:** update dependency @oclif/plugin-help to v6.2.10 ([#1025](https://github.com/disane87/docudigger/issues/1025)) ([29ba881](https://github.com/disane87/docudigger/commit/29ba8811afb8ea751ea6c561783a198e3b4f7ca8))
+* **deps:** update dependency @oclif/plugin-help to v6.2.11 ([#1043](https://github.com/disane87/docudigger/issues/1043)) ([2c94544](https://github.com/disane87/docudigger/commit/2c945441086ee0e9ffa1275e732c81e7d5790dc3))
+* **deps:** update dependency @oclif/plugin-help to v6.2.12 ([#1062](https://github.com/disane87/docudigger/issues/1062)) ([863d079](https://github.com/disane87/docudigger/commit/863d079cbc2f74f29f8752bb1bdd1a63cf17c871))
+* **deps:** update dependency @oclif/plugin-help to v6.2.13 ([#1076](https://github.com/disane87/docudigger/issues/1076)) ([dfcdba1](https://github.com/disane87/docudigger/commit/dfcdba169a2b6a89dcf08afc0c106c4f6be720cc))
+* **deps:** update dependency @oclif/plugin-help to v6.2.14 ([#1089](https://github.com/disane87/docudigger/issues/1089)) ([a7e13ba](https://github.com/disane87/docudigger/commit/a7e13baca17a8de76b92e9a4373813b862fcb029))
+* **deps:** update dependency @oclif/plugin-help to v6.2.15 ([#1104](https://github.com/disane87/docudigger/issues/1104)) ([b7ed004](https://github.com/disane87/docudigger/commit/b7ed004192cea8f388ea4932cbab344a65999556))
+* **deps:** update dependency @oclif/plugin-help to v6.2.16 ([#1115](https://github.com/disane87/docudigger/issues/1115)) ([81ed300](https://github.com/disane87/docudigger/commit/81ed300b23df223a48e9fa5a937cab3003b49da9))
+* **deps:** update dependency @oclif/plugin-help to v6.2.2 ([#846](https://github.com/disane87/docudigger/issues/846)) ([e200b04](https://github.com/disane87/docudigger/commit/e200b04cd0a6afa1b222fde90077ce97678fdebe))
+* **deps:** update dependency @oclif/plugin-help to v6.2.3 ([#853](https://github.com/disane87/docudigger/issues/853)) ([2a00416](https://github.com/disane87/docudigger/commit/2a004165a6850aea2336cb7c8b72b03c43c5fcb6))
+* **deps:** update dependency @oclif/plugin-help to v6.2.4 ([#887](https://github.com/disane87/docudigger/issues/887)) ([6687bbc](https://github.com/disane87/docudigger/commit/6687bbc247c4cafd08c3ab047fa41da0cb19d55d))
+* **deps:** update dependency @oclif/plugin-help to v6.2.5 ([#905](https://github.com/disane87/docudigger/issues/905)) ([a8b5230](https://github.com/disane87/docudigger/commit/a8b5230f487555f4e4a19b046ba709f5f096c320))
+* **deps:** update dependency @oclif/plugin-help to v6.2.6 ([#916](https://github.com/disane87/docudigger/issues/916)) ([3a60e93](https://github.com/disane87/docudigger/commit/3a60e93cd956824d956f9f0b1756167d7dfe0073))
+* **deps:** update dependency @oclif/plugin-help to v6.2.7 ([#956](https://github.com/disane87/docudigger/issues/956)) ([71afe45](https://github.com/disane87/docudigger/commit/71afe45507101e4f0a42ef4f481ec2cc4cb519c9))
+* **deps:** update dependency @oclif/plugin-help to v6.2.8 ([#989](https://github.com/disane87/docudigger/issues/989)) ([cb4f37e](https://github.com/disane87/docudigger/commit/cb4f37e76362c6e261803f75890ff3015b233fc7))
+* **deps:** update dependency @oclif/plugin-help to v6.2.9 ([#1021](https://github.com/disane87/docudigger/issues/1021)) ([d5ac4c2](https://github.com/disane87/docudigger/commit/d5ac4c2b2f38342fbbb13eff17a2ee2d2e47e7b6))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.4 ([#835](https://github.com/disane87/docudigger/issues/835)) ([d35ab20](https://github.com/disane87/docudigger/commit/d35ab2030a55c9bf9fa443ca225ee25a1400cfee))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.0 ([#843](https://github.com/disane87/docudigger/issues/843)) ([024cde2](https://github.com/disane87/docudigger/commit/024cde25fa8baadb45938fb0e965b108f96a08ef))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.1 ([#847](https://github.com/disane87/docudigger/issues/847)) ([6814faa](https://github.com/disane87/docudigger/commit/6814faa3a03c711233849c0197999c0f0adc68d2))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.2 ([#851](https://github.com/disane87/docudigger/issues/851)) ([b4b1042](https://github.com/disane87/docudigger/commit/b4b104287d877228786f4be7e3b5ed1f6826bfab))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.3 ([#888](https://github.com/disane87/docudigger/issues/888)) ([3d3b411](https://github.com/disane87/docudigger/commit/3d3b411ba85a20e859043a512933e99b8f342271))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.4 ([#906](https://github.com/disane87/docudigger/issues/906)) ([48e0d1b](https://github.com/disane87/docudigger/commit/48e0d1bd93e8ed48fa7c87cc43936698e32ddfaa))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.5 ([#914](https://github.com/disane87/docudigger/issues/914)) ([2e1918f](https://github.com/disane87/docudigger/commit/2e1918f3284e7b3583eaa39e21fd0f874c1242d3))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.6 ([#917](https://github.com/disane87/docudigger/issues/917)) ([b42a21a](https://github.com/disane87/docudigger/commit/b42a21aa6ccb5a10f73eba8cca1406988034a5c5))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.7 ([#920](https://github.com/disane87/docudigger/issues/920)) ([85e57f9](https://github.com/disane87/docudigger/commit/85e57f9f3d8cb61ca3e9985141f426f100c62460))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.8 ([#941](https://github.com/disane87/docudigger/issues/941)) ([35f0fa1](https://github.com/disane87/docudigger/commit/35f0fa15e53141cf3d38aa6819f88861cbba4977))
+* **deps:** update dependency @oclif/plugin-plugins to v5.3.9 ([#957](https://github.com/disane87/docudigger/issues/957)) ([3d61151](https://github.com/disane87/docudigger/commit/3d61151ea225c285d10be60c6b05a2e82a8567a2))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.0 ([#979](https://github.com/disane87/docudigger/issues/979)) ([118a988](https://github.com/disane87/docudigger/commit/118a988f9fab2ac32f8c5bbe68450f71c2092c41))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.1 ([#981](https://github.com/disane87/docudigger/issues/981)) ([116cb0f](https://github.com/disane87/docudigger/commit/116cb0f6abe4be2cac50dbdac0eb2247652e3a01))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.10 ([#1073](https://github.com/disane87/docudigger/issues/1073)) ([7c8725a](https://github.com/disane87/docudigger/commit/7c8725aab6a5ef7a9f16bffcd8b109e9602e759e))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.12 ([#1086](https://github.com/disane87/docudigger/issues/1086)) ([fda4a85](https://github.com/disane87/docudigger/commit/fda4a85639c790fe3ad13c24964842b977f1433b))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.13 ([#1088](https://github.com/disane87/docudigger/issues/1088)) ([1305f1f](https://github.com/disane87/docudigger/commit/1305f1fe79aeef289ccbb7be11b485fdb38919df))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.14 ([#1090](https://github.com/disane87/docudigger/issues/1090)) ([7c3a3e8](https://github.com/disane87/docudigger/commit/7c3a3e88f218c0be7f7484f6ce2fd42264e6be6f))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.15 ([#1102](https://github.com/disane87/docudigger/issues/1102)) ([2142dec](https://github.com/disane87/docudigger/commit/2142decce656c13842383dd65b76ef64ab1e6082))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.2 ([#982](https://github.com/disane87/docudigger/issues/982)) ([f9ff5d0](https://github.com/disane87/docudigger/commit/f9ff5d04ca221221b2802247ac82bc1fa3800c59))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.3 ([#1001](https://github.com/disane87/docudigger/issues/1001)) ([6cff74e](https://github.com/disane87/docudigger/commit/6cff74e617297e6ea353911755b306e8557323d8))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.4 ([#1003](https://github.com/disane87/docudigger/issues/1003)) ([b9ffaa4](https://github.com/disane87/docudigger/commit/b9ffaa49825501b81f6a61bc6875744c5d4e680c))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.5 ([#1017](https://github.com/disane87/docudigger/issues/1017)) ([42e1034](https://github.com/disane87/docudigger/commit/42e10347489f8c156946d1ae62fc42cfcb8b2bfb))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.6 ([#1018](https://github.com/disane87/docudigger/issues/1018)) ([ff87dd9](https://github.com/disane87/docudigger/commit/ff87dd90fbc71162fd90e527f9bbbcaa098189ae))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.7 ([#1044](https://github.com/disane87/docudigger/issues/1044)) ([6a8c14e](https://github.com/disane87/docudigger/commit/6a8c14ef663f23a7046b36f62b31ac2ae0587b92))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.8 ([#1053](https://github.com/disane87/docudigger/issues/1053)) ([9a1c207](https://github.com/disane87/docudigger/commit/9a1c207c74734dada3489620aa98b826bf6fce92))
+* **deps:** update dependency @oclif/plugin-plugins to v5.4.9 ([#1059](https://github.com/disane87/docudigger/issues/1059)) ([6646005](https://github.com/disane87/docudigger/commit/664600545eb70f75507e7aef050681f70257415e))
+* **deps:** update dependency luxon to v3.5.0 ([#983](https://github.com/disane87/docudigger/issues/983)) ([b16f7f3](https://github.com/disane87/docudigger/commit/b16f7f3b44135b60e0a295fa3556417d805bb86c))
+* **deps:** update dependency puppeteer to v22.10.1 ([#840](https://github.com/disane87/docudigger/issues/840)) ([cf5cdcf](https://github.com/disane87/docudigger/commit/cf5cdcfe6857395ce6e73758a793cb4c23704fca))
+* **deps:** update dependency puppeteer to v22.11.0 ([#842](https://github.com/disane87/docudigger/issues/842)) ([557bd68](https://github.com/disane87/docudigger/commit/557bd6847cc284eb9126c8228cebac6dca13f11a))
+* **deps:** update dependency puppeteer to v22.11.1 ([#856](https://github.com/disane87/docudigger/issues/856)) ([97e178b](https://github.com/disane87/docudigger/commit/97e178b815f76bb20f6e67efeca63994fe0d24c6))
+* **deps:** update dependency puppeteer to v22.11.2 ([#863](https://github.com/disane87/docudigger/issues/863)) ([9580fc4](https://github.com/disane87/docudigger/commit/9580fc4ca3d38e13c0c67bb0597fa3c23759c4c7))
+* **deps:** update dependency puppeteer to v22.12.0 ([#871](https://github.com/disane87/docudigger/issues/871)) ([f86ce54](https://github.com/disane87/docudigger/commit/f86ce5454c7a15cded007d925dc898288d425855))
+* **deps:** update dependency puppeteer to v22.12.1 ([#881](https://github.com/disane87/docudigger/issues/881)) ([88c4570](https://github.com/disane87/docudigger/commit/88c4570af8b93e4299c407597fb3fd37f587a366))
+* **deps:** update dependency puppeteer to v22.13.0 ([#913](https://github.com/disane87/docudigger/issues/913)) ([fc37bbe](https://github.com/disane87/docudigger/commit/fc37bbe5936ad5aeab371c4a19734da91bb88022))
+* **deps:** update dependency puppeteer to v22.13.1 ([#929](https://github.com/disane87/docudigger/issues/929)) ([abfedd9](https://github.com/disane87/docudigger/commit/abfedd9959f1e5579457043ffea5a9f52f2d27c1))
+* **deps:** update dependency puppeteer to v22.14.0 ([#959](https://github.com/disane87/docudigger/issues/959)) ([d4c93fb](https://github.com/disane87/docudigger/commit/d4c93fb8d9b27a200a07d0cd111e67f5415f0177))
+* **deps:** update dependency puppeteer to v22.15.0 ([#976](https://github.com/disane87/docudigger/issues/976)) ([10286c5](https://github.com/disane87/docudigger/commit/10286c5bbd185356f2c9f3c14eaf9bc07f26c1b3))
+* **deps:** update dependency winston to v3.13.1 ([#912](https://github.com/disane87/docudigger/issues/912)) ([77c619b](https://github.com/disane87/docudigger/commit/77c619b29021861e242b8c0ef9f4bd435a6e40e1))
+* **deps:** update dependency winston to v3.14.0 ([#996](https://github.com/disane87/docudigger/issues/996)) ([a95c349](https://github.com/disane87/docudigger/commit/a95c34909ab0bf974d26225b990288d97b7558b8))
+* **deps:** update dependency winston to v3.14.1 ([#998](https://github.com/disane87/docudigger/issues/998)) ([7003a54](https://github.com/disane87/docudigger/commit/7003a547af9f5a15c0c00ee841c097afa6dc18bc))
+* **deps:** update dependency winston to v3.14.2 ([#1007](https://github.com/disane87/docudigger/issues/1007)) ([be44cad](https://github.com/disane87/docudigger/commit/be44cad16b3ac6db8f1f5a35b58584e5f680e526))
+* **deps:** update dependency winston to v3.15.0 ([#1087](https://github.com/disane87/docudigger/issues/1087)) ([1ea502f](https://github.com/disane87/docudigger/commit/1ea502f671487a2c78c7256fdd60d7176e5d3d4d))
+
+## [2.0.6-dev.2](https://github.com/disane87/docudigger/compare/v2.0.6-dev.1...v2.0.6-dev.2) (2024-06-07)
+
+
+### 🛠️ Fixes
+
+* update Puppeteer setup logic to use debug flag ([d2b1cb8](https://github.com/disane87/docudigger/commit/d2b1cb89a5c0490f3a4d9eaeaa6e94b993ca1ff4)), closes [#830](https://github.com/disane87/docudigger/issues/830)
+
+## [2.0.6-dev.1](https://github.com/disane87/docudigger/compare/v2.0.5...v2.0.6-dev.1) (2024-06-07)
 ## [2.0.6](https://github.com/disane87/docudigger/compare/v2.0.5...v2.0.6) (2024-06-04)
 
 
 ### 🛠️ Fixes
 
+
+* bugfixes with orders and some enhancements ([9e366a1](https://github.com/disane87/docudigger/commit/9e366a1bd94ede5af059f8432209ee3158d817bd)), closes [#829](https://github.com/disane87/docudigger/issues/829) [#828](https://github.com/disane87/docudigger/issues/828) [#827](https://github.com/disane87/docudigger/issues/827)
+
 * first page was skipped ([02b1fb7](https://github.com/disane87/docudigger/commit/02b1fb7a6c71a6f986d84d15df3ad6c714134db1))
 * fixed a bug where the first year was not correctly selected ([d2c7793](https://github.com/disane87/docudigger/commit/d2c77935805aed708f4672c8d2e28de3ffd554a9))
 * **deps:** update dependency @oclif/core to v3.26.8 ([#811](https://github.com/disane87/docudigger/issues/811)) ([c8c4704](https://github.com/disane87/docudigger/commit/c8c470444bb9df7e5cff23698c3fc24977fa8ac3))
 * **deps:** update dependency @oclif/core to v3.26.9 ([#813](https://github.com/disane87/docudigger/issues/813)) ([4adab6c](https://github.com/disane87/docudigger/commit/4adab6cb095cce0ac1bf6874d5ed9f9fa5c15169))
+
+* **deps:** update dependency @oclif/core to v3.27.0 ([#817](https://github.com/disane87/docudigger/issues/817)) ([86bb8d0](https://github.com/disane87/docudigger/commit/86bb8d0e0dcf3650f8b7171c534f90346397c130))
+* **deps:** update dependency @oclif/plugin-help to v6.1.0 ([#802](https://github.com/disane87/docudigger/issues/802)) ([891e7e1](https://github.com/disane87/docudigger/commit/891e7e1d8624767697200a6fa37df848a4250471))
+* **deps:** update dependency @oclif/plugin-help to v6.2.0 ([#825](https://github.com/disane87/docudigger/issues/825)) ([7473319](https://github.com/disane87/docudigger/commit/7473319a4875414906136d53935053a9f47d3c21))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.0 ([#803](https://github.com/disane87/docudigger/issues/803)) ([ddea6b2](https://github.com/disane87/docudigger/commit/ddea6b261359c4b3efd855c34e8c82d3aa0deae5))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.1 ([#805](https://github.com/disane87/docudigger/issues/805)) ([83a6e66](https://github.com/disane87/docudigger/commit/83a6e66bbf43ee6024ea2c6065fe8a390751f66b))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.2 ([#818](https://github.com/disane87/docudigger/issues/818)) ([9977bf8](https://github.com/disane87/docudigger/commit/9977bf868e7fca00530bc124989e70a28dc14883))
+* **deps:** update dependency @oclif/plugin-plugins to v5.2.3 ([#824](https://github.com/disane87/docudigger/issues/824)) ([3f200c3](https://github.com/disane87/docudigger/commit/3f200c323ffbcf49d0a0631c5d5454311b89ccb0))
+
 * **deps:** update dependency @oclif/plugin-help to v6.1.0 ([#802](https://github.com/disane87/docudigger/issues/802)) ([891e7e1](https://github.com/disane87/docudigger/commit/891e7e1d8624767697200a6fa37df848a4250471))
 * **deps:** update dependency @oclif/plugin-plugins to v5.2.0 ([#803](https://github.com/disane87/docudigger/issues/803)) ([ddea6b2](https://github.com/disane87/docudigger/commit/ddea6b261359c4b3efd855c34e8c82d3aa0deae5))
 * **deps:** update dependency @oclif/plugin-plugins to v5.2.1 ([#805](https://github.com/disane87/docudigger/issues/805)) ([83a6e66](https://github.com/disane87/docudigger/commit/83a6e66bbf43ee6024ea2c6065fe8a390751f66b))
+
 
 ## [2.0.5-dev.2](https://github.com/disane87/docudigger/compare/v2.0.5-dev.1...v2.0.5-dev.2) (2024-06-04)
 

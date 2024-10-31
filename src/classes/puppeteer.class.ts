@@ -18,7 +18,7 @@ export class Puppeteer {
 
   public async setup(): Promise<Browser> {
     this.browser = await puppeteer.launch({
-      headless: true,
+      headless: this.inDocker ? true : !this.debug,
       args: this.arguments,
       dumpio: false,
       devtools: this.debug,
@@ -33,6 +33,7 @@ export class Puppeteer {
 
   private locateChrome(): string {
     let paths: string[];
+    console.log("Platform: ", process.platform);
 
     switch (process.platform) {
       case `darwin`:
@@ -53,14 +54,14 @@ export class Puppeteer {
           process.env[`LocalAppData`] + `/Google/Chrome/Application/chrome.exe`,
           process.env[`ProgramFiles`] + `/Google/Chrome/Application/chrome.exe`,
           process.env[`ProgramFiles(x86)`] +
-            `/Google/Chrome/Application/chrome.exe`,
+          `/Google/Chrome/Application/chrome.exe`,
           process.env[`LocalAppData`] + `/Chromium/Application/chrome.exe`,
           process.env[`ProgramFiles`] + `/Chromium/Application/chrome.exe`,
           process.env[`ProgramFiles(x86)`] + `/Chromium/Application/chrome.exe`,
           process.env[`ProgramFiles(x86)`] +
-            `/Microsoft/Edge/Application/msedge.exe`,
+          `/Microsoft/Edge/Application/msedge.exe`,
           process.env[`ProgramFiles`] +
-            `/Microsoft/Edge/Application/msedge.exe`,
+          `/Microsoft/Edge/Application/msedge.exe`,
         ];
         break;
       default:
@@ -70,6 +71,7 @@ export class Puppeteer {
           `/usr/bin/chromium`,
           `/usr/bin/chromium-browser`,
           `/snap/bin/chromium`,
+          // `/home/node/.cache/puppeteer/chrome`
         ];
     }
 

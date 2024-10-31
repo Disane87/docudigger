@@ -8,6 +8,7 @@ import { WebsiteRun } from "../interfaces/website-run.interface";
 import { BaseCommand, BaseFlags } from "./base.class";
 import { Browser, Page, Puppeteer } from "./puppeteer.class";
 import { isRunningInDocker } from "../helpers/process.helper";
+import { FileHandler } from "../commands/scrape/amazon/helpers/file.helper";
 
 export type ScrapeFlags<T extends typeof Command> = Interfaces.InferredFlags<
   (typeof ScrapeCommand)[`baseFlags`] & T[`flags`]
@@ -63,11 +64,15 @@ export abstract class ScrapeCommand<
 
   public processJsonFile: string;
 
+  public fileHandler: FileHandler<T>;
+
   // public currentPage: Page;
 
   public async init(): Promise<void> {
     await super.init();
     await this.initFlags();
+
+    this.fileHandler = new FileHandler(this.logger, this.flags, this.pluginName);
 
     this.processJsonFile = path
       .resolve(path.join(this.flags.fileDestinationFolder, `process.json`))
@@ -76,7 +81,7 @@ export abstract class ScrapeCommand<
     this.logger.debug(`processJsonFile: ${this.processJsonFile}`);
     this.logger.debug(`fileDestinationFolder: ${this.flags.fileDestinationFolder}`);
     this.logger.debug(`Running in Docker: ${isRunningInDocker()}`);
-    this.browser = await new Puppeteer(true, this.pupeteerArgs, isRunningInDocker()).setup();
+    this.browser = await new Puppeteer(this.flags.debug, this.pupeteerArgs, isRunningInDocker()).setup();
   }
 
   protected async initFlags() {
@@ -91,7 +96,9 @@ export abstract class ScrapeCommand<
   }
 
   public async newPage(): Promise<Page> {
-    return await this.browser.newPage();
+    const page = await this.browser.newPage();
+    page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+    return page;
   }
 
   async getActivePage(timeout: number = 500) {
@@ -110,7 +117,7 @@ export abstract class ScrapeCommand<
       }
       if (arr.length == 1) return arr[0];
     }
-    throw `Unable to get active page. Plase open up a github issue`;
+    throw `Unable to get active page. Please open up a github issue`;
   }
 
   public async closeBrowser() {

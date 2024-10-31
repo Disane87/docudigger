@@ -5,31 +5,21 @@
       "type": "node",
       "request": "launch",
       "name": "Scrape amazon",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bin/dev",
-      "args": [
-        "scrape",
-        "amazon",
-        "--onlyNew"
-      ],
+      "args": ["scrape", "all"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
-      "envFile": "${workspaceFolder}/.env"
+      "envFile": "${workspaceFolder}/.env",
+      "autoAttachChildProcesses": true
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Write env",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bin/dev",
-      "args": [
-        "config",
-        "example"
-      ],
+      "args": ["config", "example"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -37,13 +27,9 @@
       "type": "node",
       "request": "launch",
       "name": "Help",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bin/dev",
-      "args": [
-        "help"
-      ],
+      "args": ["help"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -51,14 +37,9 @@
       "type": "node",
       "request": "launch",
       "name": "Scape all",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bin/dev",
-      "args": [
-        "scrape",
-        "all"
-      ],
+      "args": ["scrape", "all"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -66,14 +47,9 @@
       "type": "node",
       "request": "launch",
       "name": "Get all flags",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bin/dev",
-      "args": [
-        "commands",
-        "--json"
-      ],
+      "args": ["commands", "--json"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -90,9 +66,7 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "console",
       "sourceMaps": true,
-      "skipFiles": [
-          "<node_internals>/**"
-      ]
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }

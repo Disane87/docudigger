@@ -54,13 +54,16 @@ $ npm install -g @disane-dev/docudigger
 $ docudigger COMMAND
 running command...
 $ docudigger (--version)
-@disane-dev/docudigger/2.0.6 linux-x64 node-v20.13.1
+@disane-dev/docudigger/2.0.6-dev.16 linux-x64 node-v20.18.0
 $ docudigger --help [COMMAND]
 USAGE
   $ docudigger COMMAND
 ...
 ```
 <!-- usagestop -->
+
+> [!IMPORTANT]  
+> Don't forget to include `--ignore-scripts` in your install command.
 
 ## `docudigger scrape all`
 
@@ -99,7 +102,7 @@ USAGE
     [--yearFilter <value>] [--pageFilter <value>] [--onlyNew]
 
 FLAGS
-  -c, --recurringCron=<value>        [default: * * * * *] Cron pattern to execute periodically
+  -c, --recurringCron=<value>        [default: */30 * * * *] Cron pattern to execute periodically
   -d, --debug
   -l, --logPath=<value>              [default: ./logs/] Log path
   -p, --password=<value>             (required) Password
@@ -133,7 +136,7 @@ docker run \
   -e AMAZON_USERNAME='[YOUR MAIL]' \
   -e AMAZON_PASSWORD='[YOUR PW]' \
   -e AMAZON_TLD='de' \
-  -e AMAZON_YEAR_FILTER='2020' \
+  -e AMAZON_YEAR_FILTER='2024' \
   -e AMAZON_PAGE_FILTER='1' \
   -e LOG_LEVEL='info' \
   -v "C:/temp/docudigger/:/home/node/docudigger" \

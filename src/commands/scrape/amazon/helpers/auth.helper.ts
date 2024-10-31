@@ -1,7 +1,7 @@
-import { ux } from "@oclif/core";
-import { AmazonSelectors } from "../interfaces/selectors.interface";
-import { Page } from "../classes/puppeteer.class";
-import { AmazonDefinition } from "../interfaces/amazon.interface";
+import { Command } from "@oclif/core";
+import { AmazonSelectors } from "../../../../interfaces/selectors.interface";
+import { Page } from "../../../../classes/puppeteer.class";
+import { AmazonDefinition } from "../../../../interfaces/amazon.interface";
 
 export const login = async (
   page: Page,
@@ -9,6 +9,7 @@ export const login = async (
   options,
   amazonUrls: AmazonDefinition,
   logger,
+  command: Command
 ): Promise<boolean> => {
   let hasMessages = false;
 
@@ -37,10 +38,10 @@ export const login = async (
 
   while (!hasMessages) {
     if (!options.username && !options.password) {
-      options.username = await ux.prompt(`What is your amazaon username?`);
-      options.password = await ux.prompt(`What is your password?`, {
-        type: `hide`,
-      });
+      // options.username = await ux.action(`What is your amazaon username?`);
+      // options.password = await ux.prompt(`What is your password?`, {
+      //   type: `hide`,
+      // });
     }
 
     logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
@@ -58,40 +59,17 @@ export const login = async (
     const authErrors = await checkForAuthMessages(`Error`);
     const authWarning = await checkForAuthMessages(`Warning`);
 
-    if (authErrors?.length > 0) {
-      return false;
+    if (authErrors?.length > 0 || authWarning?.length > 0) {
+      logger.error(`Auth not successful. Exiting.`);
+      command.exit();
+      return;
     }
 
-    if (authWarning?.length > 0) {
-      return false;
-    }
-
-    const hasCaptcha = !!(await page.$(`form.cvf-widget-form-captcha`));
+    const hasCaptcha = !!(await page.$(selectors.captchaPage));
 
     if (hasCaptcha) {
-      const captchaImageUrl = await page.$eval(
-        selectors.captchaImage,
-        (image: HTMLImageElement) => image.src,
-      );
-      if (captchaImageUrl) {
-        logger.error(`Auth with captcha is currently unsupported`);
-
-        // const captchaImagePage = await browser.newPage();
-        // const captchaResponse = await captchaImagePage.goto(captchaImageUrl);
-        // const tempFolder = `./cache/`;
-        // const imageFilePath = path.join(tempFolder, path.basename(captchaImageUrl.split(`?`)[0]));
-
-        // !fs.existsSync(tempFolder) && fs.mkdirSync(tempFolder);
-        // await fs.writeFileSync(imageFilePath, await captchaResponse.buffer());
-
-        // const text = await tessaract.recognize(fs.readFileSync(imageFilePath), {
-        //     lang: `eng`, // default
-        //     debug: true,
-        //     psm: 1
-        // });
-        // await captchaImagePage.close();
-        return false;
-      }
+      logger.error(`Captcha detected. Auth with captcha is currently unsupported. Sorry 😣`);
+      return false
     }
 
     // Check if this is the sign in page again i.e. for false password
@@ -100,10 +78,10 @@ export const login = async (
 
     if (page.url().indexOf(`/mfa?`) > -1) {
       logger.info(`MFA detected`);
-      const secondFactor = await ux.prompt(`What is your two-factor token?`, {
-        type: `mask`,
-      });
-      await page.type(`input#auth-mfa-otpcode`, secondFactor);
+      // const secondFactor = await ux.prompt(`What is your two-factor token?`, {
+      //   type: `mask`,
+      // });
+      // await page.type(`input#auth-mfa-otpcode`, secondFactor);
       await page.click(`input#auth-mfa-remember-device`);
       await page.click(`input[type=submit]`);
 
