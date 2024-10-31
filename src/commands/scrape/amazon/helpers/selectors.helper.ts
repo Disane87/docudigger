@@ -9,7 +9,7 @@ export const amazonSelectors: AmazonSelectors = {
   invoiceList: `ul.invoice-list`,
   invoiceLinks: `a[href*="invoice.pdf"]`,
   pagination: `ul.a-pagination li.a-normal:nth-last-child(2) a`,
-  yearFilter: `select[name="orderFilter"]#orderFilter`,
+  yearFilter: `select[name='orderFilter']#orderFilter`,
   authError: `#auth-error-message-box .a-unordered-list li`,
   authWarning: `#auth-warning-message-box .a-unordered-list li`,
   captchaImage: `div.cvf-captcha-img img[alt~="captcha"]`,

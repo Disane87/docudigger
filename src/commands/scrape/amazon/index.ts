@@ -51,6 +51,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     this.definition = amazon;
 
     const loggedIn = await login(this.currentPage, amazonSelectors, this.options, amazon, this.logger, this);
+    let processedOrders: Scrape[] = [];
 
     if (loggedIn) {
       if (this.options.debug) {
@@ -63,10 +64,15 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       await this.goToOrderPage(amazon);
 
       this.possibleYears = await this.getPossibleYears(this.options.yearFilter);
-      const processedOrders = await this.processYears();
+      if (this.possibleYears.length === 0) {
 
-      await this.endProcess(DateTime.now(), processedOrders, this.options);
+        this.logger.info(`No years determined. Exiting.`);
+      } else {
+        processedOrders = await this.processYears();
+      }
+
     }
+    await this.endProcess(DateTime.now(), processedOrders, this.options);
   }
 
   private async handleOnlyNewOption(): Promise<void> {
@@ -239,8 +245,13 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
     if (!yearFilter) {
       this.logger.info("Year filter undefined. Getting all possible years");
-      await this.currentPage.waitForSelector(`${this.selectors.yearFilter} option[value^='year-']`);
-      possibleYears = await (await this.currentPage.$$eval(this.selectors.yearFilter, (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText)))).filter(n => n)
+      this.logger.debug(`Waiting for selector. ${this.selectors.yearFilter} option[value^='year-']`);
+
+      possibleYears = (await this.currentPage.$$eval(`${this.selectors.yearFilter} option[value^='year-']`,
+        (handles: Array<HTMLOptionElement>) => handles.map(option => parseInt(option.innerText))
+      )).filter(n => n)
+
+      this.logger.debug(`Got possible years ${possibleYears}`);
     } else {
       this.logger.info(`Year filter set to ${yearFilter}`);
       possibleYears = [yearFilter];
