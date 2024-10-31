@@ -1,3 +1,9 @@
+## [2.0.6-dev.14](https://github.com/disane87/docudigger/compare/v2.0.6-dev.13...v2.0.6-dev.14) (2024-10-31)
+
+### 🛠️ Fixes
+
+* fixes a bug where possibleYears is not correctly determined ([62709b5](https://github.com/disane87/docudigger/commit/62709b598637cb4649b7aa6c83706270f34de62a)), closes [#1140](https://github.com/disane87/docudigger/issues/1140)
+
 ## [2.0.6-dev.13](https://github.com/disane87/docudigger/compare/v2.0.6-dev.12...v2.0.6-dev.13) (2024-10-31)
 
 ### 🛠️ Fixes
