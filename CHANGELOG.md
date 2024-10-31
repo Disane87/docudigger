@@ -1,3 +1,9 @@
+## [2.0.6-dev.15](https://github.com/disane87/docudigger/compare/v2.0.6-dev.14...v2.0.6-dev.15) (2024-10-31)
+
+### 🛠️ Fixes
+
+* selector for Captcha added in selectors list ([d2176c6](https://github.com/disane87/docudigger/commit/d2176c680aa2fae50eb848777e553319c56366d7))
+
 ## [2.0.6-dev.14](https://github.com/disane87/docudigger/compare/v2.0.6-dev.13...v2.0.6-dev.14) (2024-10-31)
 
 ### 🛠️ Fixes
