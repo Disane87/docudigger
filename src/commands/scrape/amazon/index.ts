@@ -119,13 +119,13 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       }
       this.logger.debug(`Got ${orderPageCount} for year ${currentYear}`);
 
-      for (const orderPage of [...Array(orderPageCount).keys()].map(pageNo => pageNo + 1)) {
+      for (const orderPage of [...Array(orderPageCount).keys()].map(pageNo => pageNo)) {
         if (this.options.pageFilter && orderPage != this.options.pageFilter) {
           this.logger.info(`Skipping page ${orderPage} due to page filter`);
           continue;
         }
 
-        this.logger.info(`Processing page ${orderPage}`);
+        this.logger.info(`Processing page ${orderPage + 1}`);
         await this.goToYearAndPage(currentYear, orderPage, this.definition);
         const onlyNewInvoiceHandled = await this.processOrderPage(orderPage, processedOrders);
         if (onlyNewInvoiceHandled) {
@@ -141,7 +141,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   }
 
   private async processOrderPage(orderPage: number, processedOrders: Scrape[]): Promise<boolean> {
-    this.logger.info(`Checking page ${orderPage} for orders`);
+    this.logger.info(`Checking page ${orderPage + 1} for orders`);
     const orderCards = await this.currentPage.$$(this.selectors.orderCards);
     this.logger.info(`Got ${orderCards.length} orders. Processing...`);
 
