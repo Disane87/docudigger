@@ -1,12 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "baseBranches": [
     "dev"
   ],
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
@@ -14,8 +16,8 @@
         "patch",
         "digest",
         "pin",
-        "lockFileMaintenance", 
-        "rollback", 
+        "lockFileMaintenance",
+        "rollback",
         "bump"
       ],
       "automerge": true,
