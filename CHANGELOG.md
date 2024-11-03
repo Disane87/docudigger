@@ -1,3 +1,11 @@
+## [2.0.7-dev.3](https://github.com/disane87/docudigger/compare/v2.0.7-dev.2...v2.0.7-dev.3) (2024-11-03)
+
+### 🛠️ Fixes
+
+* **deps:** update dependency @oclif/plugin-commands to v4.1.6 ([#1149](https://github.com/disane87/docudigger/issues/1149)) ([6a09fcd](https://github.com/disane87/docudigger/commit/6a09fcd71b2c95225a22ef8ea150a4d592d6768b))
+* **deps:** update dependency @oclif/plugin-commands to v4.1.7 ([#1151](https://github.com/disane87/docudigger/issues/1151)) ([f4ea2c4](https://github.com/disane87/docudigger/commit/f4ea2c44589592af9446b71bf6751c32c50d070a))
+* **deps:** update dependency winston to v3.16.0 ([#1148](https://github.com/disane87/docudigger/issues/1148)) ([1be27d3](https://github.com/disane87/docudigger/commit/1be27d318db36c7ecd58967bde668c6561372f05))
+
 ## [2.0.7-dev.2](https://github.com/disane87/docudigger/compare/v2.0.7-dev.1...v2.0.7-dev.2) (2024-10-31)
 
 ### 🛠️ Fixes
