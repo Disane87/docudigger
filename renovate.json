@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended", ":dependencyDashboard"
+    "config:recommended", 
+    ":dependencyDashboard",
+    ":semanticCommitTypeAll(chore)"
   ],
   "baseBranches": [
     "dev"
