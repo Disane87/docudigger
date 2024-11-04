@@ -8,7 +8,7 @@
           {
             "type": "chore",
             "scope": "deps",
-            "release": true
+            "release": false
           },
           {
             "type": "chore",
