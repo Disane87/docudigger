@@ -4128,9 +4128,9 @@
       }
     },
     "node_modules/@semantic-release/github": {
-      "version": "11.0.0",
-      "resolved": "https://registry.npmjs.org/@semantic-release/github/-/github-11.0.0.tgz",
-      "integrity": "sha512-Uon6G6gJD8U1JNvPm7X0j46yxNRJ8Ui6SgK4Zw5Ktu8RgjEft3BGn+l/RX1TTzhhO3/uUcKuqM+/9/ETFxWS/Q==",
+      "version": "11.0.1",
+      "resolved": "https://registry.npmjs.org/@semantic-release/github/-/github-11.0.1.tgz",
+      "integrity": "sha512-Z9cr0LgU/zgucbT9cksH0/pX9zmVda9hkDPcgIE0uvjMQ8w/mElDivGjx1w1pEQ+MuQJ5CBq3VCF16S6G4VH3A==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -4377,9 +4377,9 @@
       }
     },
     "node_modules/@semantic-release/github/node_modules/globby": {
-      "version": "14.0.1",
-      "resolved": "https://registry.npmjs.org/globby/-/globby-14.0.1.tgz",
-      "integrity": "sha512-jOMLD2Z7MAhyG8aJpNOpmziMOP4rPLcc95oQPKXBazW82z+CEgPFBQvEpRUa1KeIMUJo4Wsm+q6uzO/Q/4BksQ==",
+      "version": "14.0.2",
+      "resolved": "https://registry.npmjs.org/globby/-/globby-14.0.2.tgz",
+      "integrity": "sha512-s3Fq41ZVh7vbbe2PN3nrW7yC7U7MFVc5c98/iTl9c2GawNMKx/J648KQRW6WKkuU8GIbbh2IXfIRQjOZnXcTnw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -4428,9 +4428,9 @@
       }
     },
     "node_modules/@semantic-release/github/node_modules/mime": {
-      "version": "4.0.3",
-      "resolved": "https://registry.npmjs.org/mime/-/mime-4.0.3.tgz",
-      "integrity": "sha512-KgUb15Oorc0NEKPbvfa0wRU+PItIEZmiv+pyAO2i0oTIVTJhlzMclU7w4RXWQrSOVH5ax/p/CkIO7KI4OyFJTQ==",
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/mime/-/mime-4.0.4.tgz",
+      "integrity": "sha512-v8yqInVjhXyqP6+Kw4fV3ZzeMRqEW6FotRsKXjRS5VMTNIuXsdRoAvklpoRgSqXm6o9VNH4/C0mgedko9DdLsQ==",
       "dev": true,
       "funding": [
         "https://github.com/sponsors/broofa"
