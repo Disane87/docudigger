@@ -3145,13 +3145,13 @@
       }
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "4.1.7",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-4.1.7.tgz",
-      "integrity": "sha512-BdC857uNq2Ar7pwDYubAoVM8pkl6nTwjieBsvUQt/mUYdHaYZEZRmZ/J2ZnqK0BcDit4VlLdK+y5E8h30jcCYw==",
+      "version": "4.1.8",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-4.1.8.tgz",
+      "integrity": "sha512-WiRyiq5YQdHdfTBHWpAcjePVf8mFEVyBNAniSVH/LWZCMkcR/uhoxb0gzBc9Q0DwqIbU2iqFyTa/FO+4sf9xXg==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
-        "@oclif/table": "^0.3.2",
+        "@oclif/table": "^0.3.3",
         "lodash": "^4.17.21",
         "object-treeify": "^4.0.1"
       },
