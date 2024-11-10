@@ -3174,9 +3174,9 @@
       }
     },
     "node_modules/@oclif/plugin-not-found": {
-      "version": "3.2.24",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-3.2.24.tgz",
-      "integrity": "sha512-oseOiNfvcaB4tB9YLnUo16DlW61yi/glfpxk6Z6e5BzQkmD0D0vptfBB6/gLf0/vP+0/C8NZbJoqwae08mRpOA==",
+      "version": "3.2.25",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-3.2.25.tgz",
+      "integrity": "sha512-Hm07ouLZq8I9/V46F2BqWEzFexdjaxGHFbwckxXu3YlVq4/xp6lOJXlF5olu4dbTUaJs532Hth4Uh0OIsp9CSw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -17073,9 +17073,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.15.22",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.15.22.tgz",
-      "integrity": "sha512-jqtIiPVnLQlNL29Vs+5fFz+q6O5+ENGGngmTugRs+V/bAtZY84AxcdSHftm0hfs/TIULgZ3F5q6CtaylXPY3DA==",
+      "version": "4.15.23",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.15.23.tgz",
+      "integrity": "sha512-nrQ5B53v/yk5R7Q2SGUxsX8237kl2ezd+rSISsN7s5Vfcrs55/fgBj46wrBxSGBgiQMWy3QZmOOAoW026EdYTw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -17086,7 +17086,7 @@
         "@inquirer/select": "^2.5.0",
         "@oclif/core": "^4.0.31",
         "@oclif/plugin-help": "^6.2.16",
-        "@oclif/plugin-not-found": "^3.2.24",
+        "@oclif/plugin-not-found": "^3.2.25",
         "@oclif/plugin-warn-if-update-available": "^3.1.20",
         "async-retry": "^1.3.3",
         "chalk": "^4",
