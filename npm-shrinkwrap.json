@@ -10161,9 +10161,9 @@
       }
     },
     "node_modules/eslint-config-oclif": {
-      "version": "5.2.1",
-      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.2.1.tgz",
-      "integrity": "sha512-f0I7oB3lkbEnTqH+F18tKNmZG78aDjiCWz7co0Zbz6s12k655jUvb6FtzHniCmATqaHfcVVdrOldBT6P3bKpxA==",
+      "version": "5.2.2",
+      "resolved": "https://registry.npmjs.org/eslint-config-oclif/-/eslint-config-oclif-5.2.2.tgz",
+      "integrity": "sha512-NNTyyolSmKJicgxtoWZ/hoy2Rw56WIoWCFxgnBkXqDgi9qPKMwZs2Nx2b6SHLJvCiWWhZhWr5V46CFPo3PSPag==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
