@@ -51,7 +51,7 @@
         "env-cmd": "^10.1.0",
         "envfile": "^7.1.0",
         "eslint": "^9.13.0",
-        "eslint-config-love": "^96.0.0",
+        "eslint-config-love": "^103.0.0",
         "eslint-config-oclif": "^5.2.1",
         "eslint-config-oclif-typescript": "^3.1.12",
         "eslint-config-prettier": "^9",
@@ -10136,9 +10136,9 @@
       }
     },
     "node_modules/eslint-config-love": {
-      "version": "96.0.0",
-      "resolved": "https://registry.npmjs.org/eslint-config-love/-/eslint-config-love-96.0.0.tgz",
-      "integrity": "sha512-IoXpOWvPL8Me8zACmldwjknRfZ2HhA7HJ563mTaT4hEd5aPvecdOsvwTdGTJTYfeJPcZApIloMCyUJS1OjA1dA==",
+      "version": "103.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-love/-/eslint-config-love-103.0.0.tgz",
+      "integrity": "sha512-FsyI7VxYXnIaBg+1WfD2zBEi41zZqFJtMz9zsqdQ5DWlYL14SD7oZ2HX6zYgmztVgsOZyLZnilKXyJ2ndi3jSQ==",
       "dev": true,
       "funding": [
         {
@@ -10149,11 +10149,12 @@
       ],
       "license": "MIT",
       "dependencies": {
-        "@typescript-eslint/utils": "^8.3.0",
+        "@typescript-eslint/utils": "^8.15.0",
+        "eslint-plugin-eslint-comments": "^3.2.0",
         "eslint-plugin-import": "^2.31.0",
         "eslint-plugin-n": "^17.0.0",
         "eslint-plugin-promise": "^7.0.0",
-        "typescript-eslint": "^8.3.0"
+        "typescript-eslint": "^8.15.0"
       },
       "peerDependencies": {
         "eslint": "^9.0.0",
@@ -10964,6 +10965,36 @@
       "dev": true,
       "engines": {
         "node": ">=4"
+      }
+    },
+    "node_modules/eslint-plugin-eslint-comments": {
+      "version": "3.2.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-eslint-comments/-/eslint-plugin-eslint-comments-3.2.0.tgz",
+      "integrity": "sha512-0jkOl0hfojIHHmEHgmNdqv4fmh7300NdpA9FFpF7zaoLvB/QeXOGNLIo86oAveJFrfB1p05kC8hpEMHM8DwWVQ==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "escape-string-regexp": "^1.0.5",
+        "ignore": "^5.0.5"
+      },
+      "engines": {
+        "node": ">=6.5.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/mysticatea"
+      },
+      "peerDependencies": {
+        "eslint": ">=4.19.1"
+      }
+    },
+    "node_modules/eslint-plugin-eslint-comments/node_modules/escape-string-regexp": {
+      "version": "1.0.5",
+      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+      "integrity": "sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.8.0"
       }
     },
     "node_modules/eslint-plugin-import": {
