@@ -3804,13 +3804,13 @@
       }
     },
     "node_modules/@oclif/plugin-commands": {
-      "version": "4.1.10",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-4.1.10.tgz",
-      "integrity": "sha512-DbzZglNGWjLuNuGFOV0qHAGMA5/xYBWcUlY263J3I2wJM4KZrvcKJTr9kbb8YC1tY46gS+An6UITiQpEwFyGWg==",
+      "version": "4.1.11",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-commands/-/plugin-commands-4.1.11.tgz",
+      "integrity": "sha512-HwJNp41dtbkJEkxWx/8Iv8G/RACHKPtERDqUx6l5M4Kmg9GgJfV8f3yPO5Y6Bkkb5uRdDAnVYuUfdLgOi94n5g==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
-        "@oclif/table": "^0.3.3",
+        "@oclif/table": "^0.3.5",
         "lodash": "^4.17.21",
         "object-treeify": "^4.0.1"
       },
@@ -4033,9 +4033,9 @@
       }
     },
     "node_modules/@oclif/table": {
-      "version": "0.3.3",
-      "resolved": "https://registry.npmjs.org/@oclif/table/-/table-0.3.3.tgz",
-      "integrity": "sha512-sz6gGT1JAPP743vxl1491hxboIu0ZFHaP3gyvhz5Prgsuljp2NGyyu7JPEMeVImCnZ9N3K9cy3VXxRFEwRH/ig==",
+      "version": "0.3.5",
+      "resolved": "https://registry.npmjs.org/@oclif/table/-/table-0.3.5.tgz",
+      "integrity": "sha512-1IjoVz7WAdUdBW5vYIRc6wt9N7Ezwll6AtdmeqLQ8lUmB9gQJVyeb7dqXtUaUvIG7bZMvryfPe6Xibeo5FTCWA==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
