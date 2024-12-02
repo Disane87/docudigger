@@ -17533,9 +17533,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.15.30",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.15.30.tgz",
-      "integrity": "sha512-FL2vEfmglnNMLyOVNfemYG2KL534AlAi7cFBcD2TWtrQKoHTi7JHe4k9j8TPca6KCqDNvsuhuxP3AClZeHiCcg==",
+      "version": "4.16.0",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.16.0.tgz",
+      "integrity": "sha512-Y5bcJc4vwhAW0UN9ctZvfLYZz+nC4rQJPmmpKFXLj7A6uKS1c+GrNa4WwZnk9D4eN32kP/awyRRdd2lbX/S+KQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
