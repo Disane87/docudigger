@@ -3929,18 +3929,18 @@
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available": {
-      "version": "3.1.21",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.21.tgz",
-      "integrity": "sha512-yG03rR6Z795lSlkuS+6A9JBSq/VQZ40XspTsKdXa/PUJl52RTeZeOHlaecuv4TddAE6T8VsPdWvry68q5TPE4w==",
+      "version": "3.1.28",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.28.tgz",
+      "integrity": "sha512-15UI0yrzsodQLltntbUOmR7Nyd1tmUWzbcnR7QJvWMgEMuImNjqNdSaeXUFc3UBtaK266YatJYJWL5SCb/MTWw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
-        "ansis": "^3.3.1",
-        "debug": "^4.3.5",
+        "ansis": "^3.4.0",
+        "debug": "^4.4.0",
         "http-call": "^5.2.2",
         "lodash": "^4.17.21",
-        "registry-auth-token": "^5.0.2"
+        "registry-auth-token": "^5.0.3"
       },
       "engines": {
         "node": ">=18.0.0"
@@ -17361,9 +17361,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.17.1",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.1.tgz",
-      "integrity": "sha512-hxOTY63vH2W+yW5ecBviF++ZX0GLKyRB2D0g8kA+0Q+1AEtwYM5UQ+xwO7lksVLkhPUDBgbN3tAwcL2aBSnGNQ==",
+      "version": "4.17.2",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.2.tgz",
+      "integrity": "sha512-CEg56Z2o2k+PZqMIbo0qUYrXsBl18Fj7eWCPCU6Kn1dxrkMh7/8H0Ch1GSXAOGGshf7iT4FOtzLe/3iSEr2JSw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -17375,7 +17375,7 @@
         "@oclif/core": "^4.2.0",
         "@oclif/plugin-help": "^6.2.17",
         "@oclif/plugin-not-found": "^3.2.30",
-        "@oclif/plugin-warn-if-update-available": "^3.1.21",
+        "@oclif/plugin-warn-if-update-available": "^3.1.28",
         "async-retry": "^1.3.3",
         "chalk": "^4",
         "change-case": "^4",
@@ -18606,10 +18606,11 @@
       }
     },
     "node_modules/registry-auth-token": {
-      "version": "5.0.2",
-      "resolved": "https://registry.npmjs.org/registry-auth-token/-/registry-auth-token-5.0.2.tgz",
-      "integrity": "sha512-o/3ikDxtXaA59BmZuZrJZDJv8NMDGSj+6j6XaeBmHw8eY1i1qd9+6H+LjVvQXx3HN6aRCGa1cUdJ9RaJZUugnQ==",
+      "version": "5.0.3",
+      "resolved": "https://registry.npmjs.org/registry-auth-token/-/registry-auth-token-5.0.3.tgz",
+      "integrity": "sha512-1bpc9IyC+e+CNFRaWyn77tk4xGG4PPUyfakSmA6F6cvUDjrm58dfyJ3II+9yb10EDkHoy1LaPSmHaWLOH3m6HA==",
       "dev": true,
+      "license": "MIT",
       "dependencies": {
         "@pnpm/npm-conf": "^2.1.0"
       },
