@@ -4045,9 +4045,9 @@
       }
     },
     "node_modules/@semantic-release/commit-analyzer": {
-      "version": "13.0.0",
-      "resolved": "https://registry.npmjs.org/@semantic-release/commit-analyzer/-/commit-analyzer-13.0.0.tgz",
-      "integrity": "sha512-KtXWczvTAB1ZFZ6B4O+w8HkfYm/OgQb1dUGNFZtDgQ0csggrmkq8sTxhd+lwGF8kMb59/RnG9o4Tn7M/I8dQ9Q==",
+      "version": "13.0.1",
+      "resolved": "https://registry.npmjs.org/@semantic-release/commit-analyzer/-/commit-analyzer-13.0.1.tgz",
+      "integrity": "sha512-wdnBPHKkr9HhNhXOhZD5a2LNl91+hs8CC2vsAVYxtZH3y0dV3wKn+uZSN61rdJQZ8EGxzWB3inWocBHV9+u/CQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -4056,7 +4056,7 @@
         "conventional-commits-filter": "^5.0.0",
         "conventional-commits-parser": "^6.0.0",
         "debug": "^4.0.0",
-        "import-from-esm": "^1.0.3",
+        "import-from-esm": "^2.0.0",
         "lodash-es": "^4.17.21",
         "micromatch": "^4.0.2"
       },
@@ -4777,9 +4777,9 @@
       }
     },
     "node_modules/@semantic-release/release-notes-generator": {
-      "version": "14.0.2",
-      "resolved": "https://registry.npmjs.org/@semantic-release/release-notes-generator/-/release-notes-generator-14.0.2.tgz",
-      "integrity": "sha512-ur2l2tVLBfX3fSEO2rCy2X6Kzg5S7BHGqdwTHvJrpWp4mOEN7W4K/2kWAjvfAlwMenEKjMnDIhBbxxjnP0S9hw==",
+      "version": "14.0.3",
+      "resolved": "https://registry.npmjs.org/@semantic-release/release-notes-generator/-/release-notes-generator-14.0.3.tgz",
+      "integrity": "sha512-XxAZRPWGwO5JwJtS83bRdoIhCiYIx8Vhr+u231pQAsdFIAbm19rSVJLdnBN+Avvk7CKvNQE/nJ4y7uqKH6WTiw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -4789,7 +4789,7 @@
         "conventional-commits-parser": "^6.0.0",
         "debug": "^4.0.0",
         "get-stream": "^7.0.0",
-        "import-from-esm": "^1.0.3",
+        "import-from-esm": "^2.0.0",
         "into-stream": "^7.0.0",
         "lodash-es": "^4.17.21",
         "read-package-up": "^11.0.0"
@@ -12247,9 +12247,9 @@
       }
     },
     "node_modules/import-from-esm": {
-      "version": "1.3.4",
-      "resolved": "https://registry.npmjs.org/import-from-esm/-/import-from-esm-1.3.4.tgz",
-      "integrity": "sha512-7EyUlPFC0HOlBDpUFGfYstsU7XHxZJKAAMzCT8wZ0hMW7b+hG51LIKTDcsgtz8Pu6YC0HqRVbX+rVUtsGMUKvg==",
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/import-from-esm/-/import-from-esm-2.0.0.tgz",
+      "integrity": "sha512-YVt14UZCgsX1vZQ3gKjkWVdBdHQ6eu3MPU1TBgL1H5orXe2+jWD006WCPPtOuwlQm10NuzOW5WawiF1Q9veW8g==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -12257,7 +12257,7 @@
         "import-meta-resolve": "^4.0.0"
       },
       "engines": {
-        "node": ">=16.20"
+        "node": ">=18.20"
       }
     },
     "node_modules/import-meta-resolve": {
@@ -18267,9 +18267,9 @@
       }
     },
     "node_modules/semantic-release": {
-      "version": "24.2.0",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-24.2.0.tgz",
-      "integrity": "sha512-fQfn6e/aYToRtVJYKqneFM1Rg3KP2gh3wSWtpYsLlz6uaPKlISrTzvYAFn+mYWo07F0X1Cz5ucU89AVE8X1mbg==",
+      "version": "24.2.1",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-24.2.1.tgz",
+      "integrity": "sha512-z0/3cutKNkLQ4Oy0HTi3lubnjTsdjjgOqmxdPjeYWe6lhFqUPfwslZxRHv3HDZlN4MhnZitb9SLihDkZNxOXfQ==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18289,7 +18289,7 @@
         "git-log-parser": "^1.2.0",
         "hook-std": "^3.0.0",
         "hosted-git-info": "^8.0.0",
-        "import-from-esm": "^1.3.1",
+        "import-from-esm": "^2.0.0",
         "lodash-es": "^4.17.21",
         "marked": "^12.0.0",
         "marked-terminal": "^7.0.0",
@@ -18577,9 +18577,9 @@
       }
     },
     "node_modules/semantic-release/node_modules/execa": {
-      "version": "9.5.1",
-      "resolved": "https://registry.npmjs.org/execa/-/execa-9.5.1.tgz",
-      "integrity": "sha512-QY5PPtSonnGwhhHDNI7+3RvY285c7iuJFFB+lU+oEzMY/gEGJ808owqJsrr8Otd1E/x07po1LkUBmdAc5duPAg==",
+      "version": "9.5.2",
+      "resolved": "https://registry.npmjs.org/execa/-/execa-9.5.2.tgz",
+      "integrity": "sha512-EHlpxMCpHWSAh1dgS6bVeoLAXGnJNdR93aabr4QCGbzOM73o5XmRfM/e5FUqsw3aagP8S8XEWUWFAxnRBnAF0Q==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -18634,9 +18634,9 @@
       }
     },
     "node_modules/semantic-release/node_modules/hosted-git-info": {
-      "version": "8.0.0",
-      "resolved": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-8.0.0.tgz",
-      "integrity": "sha512-4nw3vOVR+vHUOT8+U4giwe2tcGv+R3pwwRidUe67DoMBTjhrfr6rZYJVVwdkBE+Um050SG+X9tf0Jo4fOpn01w==",
+      "version": "8.0.2",
+      "resolved": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-8.0.2.tgz",
+      "integrity": "sha512-sYKnA7eGln5ov8T8gnYlkSOxFJvywzEx9BueN6xo/GKO8PGiI6uK6xx+DIGe45T3bdVjLAQDQW1aicT8z8JwQg==",
       "dev": true,
       "license": "ISC",
       "dependencies": {
