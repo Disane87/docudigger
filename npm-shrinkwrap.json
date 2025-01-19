@@ -8891,13 +8891,13 @@
       }
     },
     "node_modules/@oclif/test": {
-      "version": "4.1.7",
-      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.1.7.tgz",
-      "integrity": "sha512-KFfPfwCFKOUfqPkBk7Dl204fnQZQUpjib8kG/5RGDLa+IlV11e5d5DQQy3xfJdIGKJ8plg9fP0wjC57a1frt8g==",
+      "version": "4.1.8",
+      "resolved": "https://registry.npmjs.org/@oclif/test/-/test-4.1.8.tgz",
+      "integrity": "sha512-ZXv0SYrjZ9SKpRoQa4XwhW4V1ujh99sor92l6ZpeSbh96Zs45gtiwkk3XebZ65DFBYFFItTKsX01J8P8YPiw0Q==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "ansis": "^3.8.1",
+        "ansis": "^3.9.0",
         "debug": "^4.4.0"
       },
       "engines": {
@@ -11599,9 +11599,9 @@
       }
     },
     "node_modules/ansis": {
-      "version": "3.8.1",
-      "resolved": "https://registry.npmjs.org/ansis/-/ansis-3.8.1.tgz",
-      "integrity": "sha512-gzGUTqsBugYCegbhldz7Ox9NrizAlCSAP5Y6rRD9agN76osoyhKznznmaB4G5BAVvrqwksPOGdnYh1Q000cUqw==",
+      "version": "3.9.0",
+      "resolved": "https://registry.npmjs.org/ansis/-/ansis-3.9.0.tgz",
+      "integrity": "sha512-PcDrVe15ldexeZMsVLBAzBwF2KhZgaU0R+CHxH+x5kqn/pO+UWVBZJ+NEXMPpEOLUFeNsnNdoWYc2gwO+MVkDg==",
       "license": "ISC",
       "engines": {
         "node": ">=16"
