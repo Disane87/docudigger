@@ -3466,13 +3466,13 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.4.32",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.32.tgz",
-      "integrity": "sha512-zfaZVocNQy8CgEU0Rd+qofIZw+LAbNzBl1jxxf9voFNIwBTkQvMdoOXjof9iRUTVOPvUqF1CkeD8Rt26bFeKEw==",
+      "version": "5.4.33",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.33.tgz",
+      "integrity": "sha512-rGeYqlJ3KghB95b0SAPDTSaV8qtbxIOnH71Qgb+QqdPqKL1iD402DrjmTDT6XpaFVeK04g3XhiB7K3JKjgFABA==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4.2.6",
-        "ansis": "^3.10.0",
+        "ansis": "^3.14.0",
         "debug": "^4.4.0",
         "npm": "^10.9.2",
         "npm-package-arg": "^11.0.3",
@@ -6484,12 +6484,12 @@
       }
     },
     "node_modules/ansis": {
-      "version": "3.10.0",
-      "resolved": "https://registry.npmjs.org/ansis/-/ansis-3.10.0.tgz",
-      "integrity": "sha512-hxDKLYT7hy3Y4sF3HxI926A3urzPxi73mZBB629m9bCVF+NyKNxbwCqqm+C/YrGPtxLwnl6d8/ZASCsz6SyvJA==",
+      "version": "3.14.0",
+      "resolved": "https://registry.npmjs.org/ansis/-/ansis-3.14.0.tgz",
+      "integrity": "sha512-R1LnSpYZWMDEFoAyCrfgToVz4ES25luDpjlZsUlD5GXdPWb91U+TZGkxWAOvt+7zWRY/ctOxhtTx5HUtL3qmbA==",
       "license": "ISC",
       "engines": {
-        "node": ">=16"
+        "node": ">=14"
       }
     },
     "node_modules/any-promise": {
