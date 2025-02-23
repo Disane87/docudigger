@@ -16698,9 +16698,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.17.30",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.30.tgz",
-      "integrity": "sha512-EFsvSWfwZcEimh1B2LwsFKyMYOwGRdRfbheXNnIfWDvk46O3I6n+o66p/duobr6tZ4G+CNLVwSP0kQhhQZngQQ==",
+      "version": "4.17.31",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.31.tgz",
+      "integrity": "sha512-V58OPd6f9GBndCGC4jAEFEl3zJitsjEns+B/GabpqvJ2ZEIj6swOzsJB4U+quSKVizDtVywJ1hCwgYygOjo4Eg==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -16709,7 +16709,7 @@
         "@inquirer/confirm": "^3.1.22",
         "@inquirer/input": "^2.2.4",
         "@inquirer/select": "^2.5.0",
-        "@oclif/core": "^4.2.3",
+        "@oclif/core": "^4.2.8",
         "@oclif/plugin-help": "^6.2.25",
         "@oclif/plugin-not-found": "^3.2.32",
         "@oclif/plugin-warn-if-update-available": "^3.1.31",
