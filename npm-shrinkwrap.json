@@ -3137,9 +3137,9 @@
       }
     },
     "node_modules/@oclif/plugin-plugins": {
-      "version": "5.4.33",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.33.tgz",
-      "integrity": "sha512-rGeYqlJ3KghB95b0SAPDTSaV8qtbxIOnH71Qgb+QqdPqKL1iD402DrjmTDT6XpaFVeK04g3XhiB7K3JKjgFABA==",
+      "version": "5.4.34",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-5.4.34.tgz",
+      "integrity": "sha512-19sX+tHyR6M24GHbnedqqtk6w9QBgFZoa1y4zPmHf6VYaBeBmMBaq2dsLsdG0zv8LnWxaqguocICoxZTrV9f6A==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4.2.6",
@@ -3149,7 +3149,7 @@
         "npm-package-arg": "^11.0.3",
         "npm-run-path": "^5.3.0",
         "object-treeify": "^4.0.1",
-        "semver": "^7.7.0",
+        "semver": "^7.7.1",
         "validate-npm-package-name": "^5.0.1",
         "which": "^4.0.0",
         "yarn": "^1.22.22"
@@ -18805,9 +18805,9 @@
       }
     },
     "node_modules/semver": {
-      "version": "7.7.0",
-      "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.0.tgz",
-      "integrity": "sha512-DrfFnPzblFmNrIZzg5RzHegbiRWg7KMR7btwi2yjHwx06zsUbO5g613sVwEV7FTwmzJu+Io0lJe2GJ3LxqpvBQ==",
+      "version": "7.7.1",
+      "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.1.tgz",
+      "integrity": "sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==",
       "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
