@@ -340,9 +340,9 @@
       }
     },
     "node_modules/@aws-sdk/client-cloudfront": {
-      "version": "3.758.0",
-      "resolved": "https://registry.npmjs.org/@aws-sdk/client-cloudfront/-/client-cloudfront-3.758.0.tgz",
-      "integrity": "sha512-kAIMe+cwH+ZuK/rM3L8NdM8rS5cnCoFTgCbjF4GVjDnZJ8JlNm3oRIKAK55mmgtGLuqEz1h6QVLrV01/fNvYaA==",
+      "version": "3.764.0",
+      "resolved": "https://registry.npmjs.org/@aws-sdk/client-cloudfront/-/client-cloudfront-3.764.0.tgz",
+      "integrity": "sha512-nXKaM9/T9viu5IXcPueTjf10VHOMX4J1FHWITDdk0s/vY2YZidGAZmeHLA0QXM0SxOQw/xga4d4k5HKdup2DSw==",
       "dev": true,
       "license": "Apache-2.0",
       "dependencies": {
@@ -17199,13 +17199,13 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.17.35",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.35.tgz",
-      "integrity": "sha512-OhJONqakHilBEBYmaG1UchO+udb5qK3Ut6I91++MiIJYzWFtSh/HYJbBZgQPbPimpG8qjvYis8xJjPEB7SVBuQ==",
+      "version": "4.17.36",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.36.tgz",
+      "integrity": "sha512-lvgnJbj0mV50It2FE7cP5u6L6oqCmBjgD4Fxk0GGDz0kPHKl5jRhQ2LOkwTcepT3r/h6uY65Jiu8287W/o/NPw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
-        "@aws-sdk/client-cloudfront": "^3.758.0",
+        "@aws-sdk/client-cloudfront": "^3.764.0",
         "@aws-sdk/client-s3": "^3.749.0",
         "@inquirer/confirm": "^3.1.22",
         "@inquirer/input": "^2.2.4",
