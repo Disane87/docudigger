@@ -17130,9 +17130,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.17.39",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.39.tgz",
-      "integrity": "sha512-J5RwVQ85Qdw0GDTN3o3QpThHAh3fnsywHJsFsBLWDZqw6Z7Sqh0Z2HWis+a68HhzWF927PfvHovzIXXnaJCXIQ==",
+      "version": "4.17.40",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.17.40.tgz",
+      "integrity": "sha512-lS7tsZD0KJaKpwZe/7uC3awNRfFTJEKMAPlu18S0KfJWtdPf9sn4eIcwo+Vyd13rfmpHNx82rP+PtUUJ2n1nEw==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -17158,7 +17158,7 @@
         "normalize-package-data": "^6",
         "semver": "^7.7.1",
         "sort-package-json": "^2.15.1",
-        "tiny-jsonc": "^1.0.1",
+        "tiny-jsonc": "^1.0.2",
         "validate-npm-package-name": "^5.0.1"
       },
       "bin": {
@@ -20334,10 +20334,11 @@
       }
     },
     "node_modules/tiny-jsonc": {
-      "version": "1.0.1",
-      "resolved": "https://registry.npmjs.org/tiny-jsonc/-/tiny-jsonc-1.0.1.tgz",
-      "integrity": "sha512-ik6BCxzva9DoiEfDX/li0L2cWKPPENYvixUprFdl3YPi4bZZUhDnNI9YUkacrv+uIG90dnxR5mNqaoD6UhD6Bw==",
-      "dev": true
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/tiny-jsonc/-/tiny-jsonc-1.0.2.tgz",
+      "integrity": "sha512-f5QDAfLq6zIVSyCZQZhhyl0QS6MvAyTxgz4X4x3+EoCktNWEYJ6PeoEA97fyb98njpBNNi88ybpD7m+BDFXaCw==",
+      "dev": true,
+      "license": "MIT"
     },
     "node_modules/tinyexec": {
       "version": "0.3.2",
