@@ -13966,9 +13966,9 @@
       }
     },
     "node_modules/luxon": {
-      "version": "3.5.0",
-      "resolved": "https://registry.npmjs.org/luxon/-/luxon-3.5.0.tgz",
-      "integrity": "sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ==",
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/luxon/-/luxon-3.6.0.tgz",
+      "integrity": "sha512-WE7p0p7W1xji9qxkLYsvcIxZyfP48GuFrWIBQZIsbjCyf65dG1rv4n83HcOyEyhvzxJCrUoObCRNFgRNIQ5KNA==",
       "license": "MIT",
       "engines": {
         "node": ">=12"
