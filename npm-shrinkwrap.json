@@ -6085,9 +6085,9 @@
       }
     },
     "node_modules/@types/luxon": {
-      "version": "3.6.0",
-      "resolved": "https://registry.npmjs.org/@types/luxon/-/luxon-3.6.0.tgz",
-      "integrity": "sha512-RtEj20xRyG7cRp142MkQpV3GRF8Wo2MtDkKLz65MQs7rM1Lh8bz+HtfPXCCJEYpnDFu6VwAq/Iv2Ikyp9Jw/hw==",
+      "version": "3.6.1",
+      "resolved": "https://registry.npmjs.org/@types/luxon/-/luxon-3.6.1.tgz",
+      "integrity": "sha512-GEo4k1yY5PBaPLqEbk+vp2LhVCKPa/TQlTjuCf3exvx6fjB+jVuDa/Zopi8eznEkJf8yeZRzSK/kzG14g5aXPQ==",
       "dev": true,
       "license": "MIT"
     },
