@@ -98,7 +98,7 @@ Used to get invoices from amazon
 ```
 USAGE
   $ docudigger scrape amazon -u <value> -p <value> [--json] [--logLevel trace|debug|info|warn|error] [-d] [-l
-    <value>] [-c <value> -r] [--fileDestinationFolder <value>] [--fileFallbackExentension <value>] [-t <value>]
+    <value>] [-c <value> -r] [--fileDestinationFolder <value>] [--fileFallbackExtension <value>] [-t <value>]
     [--yearFilter <value>] [--pageFilter <value>] [--onlyNew]
 
 FLAGS
@@ -109,8 +109,8 @@ FLAGS
   -r, --recurring
   -t, --tld=<value>                  [default: de] Amazon top level domain
   -u, --username=<value>             (required) Username
-  --fileDestinationFolder=<value>    [default: ./data/] Amazon top level domain
-  --fileFallbackExentension=<value>  [default: .pdf] Amazon top level domain
+  --fileDestinationFolder=<value>    [default: ./data/] Where to save the invoices
+  --fileFallbackExtension=<value>    [default: .pdf] File extension for unknown file type
   --logLevel=<option>                [default: info] Specify level for logging.
                                      <options: trace|debug|info|warn|error>
   --onlyNew                          Gets only new invoices

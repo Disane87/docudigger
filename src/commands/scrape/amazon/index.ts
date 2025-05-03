@@ -217,12 +217,12 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     for (const [invoiceIndex, invoice] of order.invoices.entries()) {
       const invoiceUrl = invoice.url;
       await new Promise(resolve => setTimeout(resolve, 100));
-      const pdfPage = await this.newPage();
-      await pdfPage.goto(invoiceUrl);
+      const page = await this.newPage();
+      await page.goto(invoiceUrl);
       invoice.status = InvoiceStatus.opened;
 
       try {
-        const fileReaderString = await this.fileHandler.getFileReaderString(pdfPage, invoiceUrl);
+        const fileReaderString = await this.fileHandler.getFileReaderString(page, invoiceUrl);
         const fileBuffer = this.fileHandler.getFileBuffer(fileReaderString, invoice, order, invoiceUrl);
         if (fileBuffer) {
           this.logger.debug(`Buffer exists`);
@@ -235,7 +235,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       }
 
       this.logger.debug(`Closing invoice page`);
-      await pdfPage.close();
+      await page.close();
     }
   }
 
@@ -273,6 +273,22 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       this.logger.debug(`Got popover ${(orderIndex + 1)} -> ${popover}`);
       const invoiceList = await popover.waitForSelector(this.selectors.invoiceList, { timeout: this.selectorWaitTimeout });
       invoiceUrls = await invoiceList.$$eval(this.selectors.invoiceLinks, (handles: HTMLAnchorElement[]) => handles.map(a => a.href));
+
+      // if no invoices, fall back to the printable order summary link
+      if (invoiceUrls.length === 0) {
+        const printSummaryUrls = await invoiceList.$$eval(
+          'a[href*=".html"]:not([href*="contact.html"])',
+          (handles: HTMLAnchorElement[]) => handles.map(a => a.href)
+        );
+
+        if (printSummaryUrls.length > 0) {
+          this.logger.info(
+            `No invoices found, using Printable Order Summary URL [#${orderIndex + 1}]: ${JSON.stringify(printSummaryUrls)}`
+          );
+          invoiceUrls = printSummaryUrls;
+        }
+      }
+
       this.logger.debug(`Got invoiceUrls ${(orderIndex + 1)} -> ${invoiceUrls}`);
     } catch (ex) {
       this.logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${this.selectorWaitTimeout}ms. Skipping. ${ex.message}`);
@@ -319,13 +335,31 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     exit(this.logger, options.recurring);
   }
 
+  private getLoginPage(tld: string) {
+    switch (tld) {
+      case 'au':
+        return `https://www.amazon.com.au/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com.au%2Fgp%2Fyourstore%2Fhome%3Fpath%3D%252Fgp%252Fyourstore%252Fhome%26signIn%3D1%26useRedirectOnSuccess%3D1%26action%3Dsign-out%26ref_%3Dnav_AccountFlyout_signout&openid.assoc_handle=auflex&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0`;
+      default:
+        return `https://www.amazon.${tld}/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&`;
+    }
+  }
+
+  private getOrderPage(tld: string) {
+    switch (tld) {
+      case 'au':
+        return `https://www.amazon.com.au/gp/css/order-history`;
+      default:
+        return `https://www.amazon.${tld}/gp/css/order-history`;
+    }
+  }
+
   private getSelectors(tld: string): { amazonSelectors: AmazonSelectors, amazon: AmazonDefinition } {
     this.logger.debug(`Getting selectors...`);
     const amazon: AmazonDefinition = {
       lang: null,
       tld,
-      loginPage: `https://www.amazon.${tld}/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&`,
-      orderPage: `https://www.amazon.${tld}/gp/css/order-history`
+      loginPage: this.getLoginPage(tld),
+      orderPage: this.getOrderPage(tld)
     };
     return { amazonSelectors, amazon };
   }

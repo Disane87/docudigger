@@ -29,7 +29,7 @@ export abstract class ScrapeCommand<
     `--disable-setuid-sandbox`,
   ];
 
-  public selectorWaitTimeout = 2000;
+  public selectorWaitTimeout = 10000;
 
   protected flags!: ScrapeFlags<T>;
   static baseFlags = {
@@ -46,8 +46,8 @@ export abstract class ScrapeCommand<
       description: `Amazon top level domain`,
       env: `FILE_DESTINATION_FOLDER`,
     }),
-    fileFallbackExentension: Flags.string({
-      aliases: [`fileFallbackExentension`],
+    fileFallbackExtension: Flags.string({
+      aliases: [`fileFallbackExtension`],
       default: `.pdf`,
       description: `Amazon top level domain`,
       env: `FILE_FALLBACK_EXTENSION`,

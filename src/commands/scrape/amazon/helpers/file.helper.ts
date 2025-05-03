@@ -36,10 +36,18 @@ export class FileHandler<T extends typeof Command> {
       path.join(this.flags.fileDestinationFolder, this.flags.subFolderForPages ? this.pluginName : ``, `/`),
       `./`
     );
-    const fileExtention = path.extname(invoiceUrl).split(`?`)[0] ?? this.flags.fileFallbackExentension;
+
+    const urlLower = invoiceUrl.toLowerCase();
+    const isHTML = urlLower.includes('.html') && !urlLower.endsWith('.pdf');
+
+    const fileExtension = isHTML
+      ? '.html'
+      : (path.extname(invoiceUrl).split('?')[0] || this.flags.fileFallbackExtension);
+
     const fileName = `${order.date}_AMZ_${order.number}_${invoiceIndex + 1}`;
-    const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtention}`);
+    const fullFilePath = path.resolve(destPluginFileFolder, `${fileName}${fileExtension}`);
     const pathNormalized = path.normalize(fullFilePath);
+
     return { destPluginFileFolder, pathNormalized };
   }
 
