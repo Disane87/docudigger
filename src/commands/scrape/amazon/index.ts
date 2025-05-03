@@ -217,12 +217,12 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     for (const [invoiceIndex, invoice] of order.invoices.entries()) {
       const invoiceUrl = invoice.url;
       await new Promise(resolve => setTimeout(resolve, 100));
-      const pdfPage = await this.newPage();
-      await pdfPage.goto(invoiceUrl);
+      const page = await this.newPage();
+      await page.goto(invoiceUrl);
       invoice.status = InvoiceStatus.opened;
 
       try {
-        const fileReaderString = await this.fileHandler.getFileReaderString(pdfPage, invoiceUrl);
+        const fileReaderString = await this.fileHandler.getFileReaderString(page, invoiceUrl);
         const fileBuffer = this.fileHandler.getFileBuffer(fileReaderString, invoice, order, invoiceUrl);
         if (fileBuffer) {
           this.logger.debug(`Buffer exists`);
@@ -235,7 +235,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       }
 
       this.logger.debug(`Closing invoice page`);
-      await pdfPage.close();
+      await page.close();
     }
   }
 
