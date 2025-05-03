@@ -273,6 +273,22 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       this.logger.debug(`Got popover ${(orderIndex + 1)} -> ${popover}`);
       const invoiceList = await popover.waitForSelector(this.selectors.invoiceList, { timeout: this.selectorWaitTimeout });
       invoiceUrls = await invoiceList.$$eval(this.selectors.invoiceLinks, (handles: HTMLAnchorElement[]) => handles.map(a => a.href));
+
+      // if no invoices, fall back to the printable order summary link
+      if (invoiceUrls.length === 0) {
+        const printSummaryUrls = await invoiceList.$$eval(
+          'a[href*=".html"]:not([href*="contact.html"])',
+          (handles: HTMLAnchorElement[]) => handles.map(a => a.href)
+        );
+
+        if (printSummaryUrls.length > 0) {
+          this.logger.info(
+            `No invoices found, using Printable Order Summary URL [#${orderIndex + 1}]: ${JSON.stringify(printSummaryUrls)}`
+          );
+          invoiceUrls = printSummaryUrls;
+        }
+      }
+
       this.logger.debug(`Got invoiceUrls ${(orderIndex + 1)} -> ${invoiceUrls}`);
     } catch (ex) {
       this.logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${this.selectorWaitTimeout}ms. Skipping. ${ex.message}`);
