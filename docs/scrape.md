@@ -34,7 +34,7 @@ Scrapes amazon invoices
 ```
 USAGE
   $ document-scraper scrape amazon -u <value> -p <value> [-l <value>] [-l <value>] [--fileDestinationFolder
-    <value>] [--fileFallbackExentension <value>] [-t <value>] [--yearFilter <value>] [--pageFilter <value>] [-d]
+    <value>] [--fileFallbackExtension <value>] [-t <value>] [--yearFilter <value>] [--pageFilter <value>] [-d]
 
 FLAGS
   -d, --debug
@@ -43,8 +43,8 @@ FLAGS
   -p, --password=<value>             (required) Username
   -t, --tld=<value>                  [default: de] Amazon top level domain
   -u, --username=<value>             (required) Username
-  --fileDestinationFolder=<value>    [default: ./data/] Amazon top level domain
-  --fileFallbackExentension=<value>  [default: .pdf] Amazon top level domain
+  --fileDestinationFolder=<value>    [default: ./data/] Where to save the invoices
+  --fileFallbackExtension=<value>    [default: .pdf] File extension for unknown file type
   --pageFilter=<value>               Filters a page
   --yearFilter=<value>               Filters a year
 

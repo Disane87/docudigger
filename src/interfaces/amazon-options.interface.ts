@@ -9,7 +9,7 @@ export interface AmazonOptions {
     username: string,
     password: string,
     fileDestinationFolder: string,
-    fileFallbackExentension: string,
+    fileFallbackExtension: string,
     tld: string,
     yearFilter: number,
     pageFilter: number,
