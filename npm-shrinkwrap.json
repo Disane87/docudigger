@@ -3377,15 +3377,15 @@
       }
     },
     "node_modules/@oclif/plugin-warn-if-update-available": {
-      "version": "3.1.38",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.38.tgz",
-      "integrity": "sha512-lwYtVXdQaBJV94DglPu140Bc6NmmysHhX5PZtdxeNcUG2BgSX/Sre7oCzMEgmuhe4Lu2jDviMxTX81a8wv6v1w==",
+      "version": "3.1.42",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.42.tgz",
+      "integrity": "sha512-bcBfON81gYCx6x50HjrcL7gRiz7bEuLdQNifMsMcBtBq3IpOifyS8/l5R3REEy9kHJ1qdcSYehtopMvS4ov9lA==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4",
         "ansis": "^3.17.0",
-        "debug": "^4.4.0",
+        "debug": "^4.4.1",
         "http-call": "^5.2.2",
         "lodash": "^4.17.21",
         "registry-auth-token": "^5.1.0"
@@ -17199,9 +17199,9 @@
       }
     },
     "node_modules/oclif": {
-      "version": "4.20.0",
-      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.20.0.tgz",
-      "integrity": "sha512-crfnwuZpbosmaxDCCZ2hSePEwnQS92MrWRpSaOU4TzgvKQfitQL9k2o7zqV12VdxCAI0hB7tYWqS4LMocqBPcQ==",
+      "version": "4.20.1",
+      "resolved": "https://registry.npmjs.org/oclif/-/oclif-4.20.1.tgz",
+      "integrity": "sha512-XsC6MaYTEtIjkq43sXIrGiq+wtuzxCYWv43gIaFAg8KszOutojqlACwrz1dgCgUAwanwv+BNBNJLnvwQ84dpjg==",
       "dev": true,
       "license": "MIT",
       "dependencies": {
@@ -17213,7 +17213,7 @@
         "@oclif/core": "^4.4.0",
         "@oclif/plugin-help": "^6.2.29",
         "@oclif/plugin-not-found": "^3.2.57",
-        "@oclif/plugin-warn-if-update-available": "^3.1.38",
+        "@oclif/plugin-warn-if-update-available": "^3.1.41",
         "ansis": "^3.16.0",
         "async-retry": "^1.3.3",
         "change-case": "^4",
