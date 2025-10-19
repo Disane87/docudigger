@@ -5944,9 +5944,9 @@
       }
     },
     "node_modules/@types/node": {
-      "version": "22.18.1",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-22.18.1.tgz",
-      "integrity": "sha512-rzSDyhn4cYznVG+PCzGe1lwuMYJrcBS1fc3JqSa2PvtABwWo+dZ1ij5OVok3tqfpEBCBoaR4d7upFJk73HRJDw==",
+      "version": "22.18.11",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-22.18.11.tgz",
+      "integrity": "sha512-Gd33J2XIrXurb+eT2ktze3rJAfAp9ZNjlBdh4SVgyrKEOADwCbdUDaK7QgJno8Ue4kcajscsKqu6n8OBG3hhCQ==",
       "devOptional": true,
       "license": "MIT",
       "peer": true,
