@@ -30,7 +30,7 @@ jobs:
       matrix:
         node-version: [20.x]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -51,7 +51,7 @@ jobs:
         run: echo "Creating docker release for version $NEXT_VERSION"
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
