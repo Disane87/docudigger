@@ -3318,9 +3318,9 @@
       }
     },
     "node_modules/@oclif/plugin-help": {
-      "version": "6.2.33",
-      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.33.tgz",
-      "integrity": "sha512-9L07S61R0tuXrURdLcVtjF79Nbyv3qGplJ88DVskJBxShbROZl3hBG7W/CNltAK3cnMPlXV8K3kKh+C0N0p4xw==",
+      "version": "6.2.36",
+      "resolved": "https://registry.npmjs.org/@oclif/plugin-help/-/plugin-help-6.2.36.tgz",
+      "integrity": "sha512-NBQIg5hEMhvdbi4mSrdqRGl5XJ0bqTAHq6vDCCCDXUcfVtdk3ZJbSxtRVWyVvo9E28vwqu6MZyHOJylevqcHbA==",
       "license": "MIT",
       "dependencies": {
         "@oclif/core": "^4"
