@@ -2,14 +2,18 @@ import { Command } from "@oclif/core";
 import { AmazonSelectors } from "../../../../interfaces/selectors.interface";
 import { Page } from "../../../../classes/puppeteer.class";
 import { AmazonDefinition } from "../../../../interfaces/amazon.interface";
+import { AmazonOptions } from "../../../../interfaces/amazon-options.interface";
+import winston from "winston";
+import { OtpGenerator } from "../../../../interfaces/otp.interface";
 
 export const login = async (
   page: Page,
   selectors: AmazonSelectors,
-  options,
+  options: AmazonOptions,
   amazonUrls: AmazonDefinition,
-  logger,
-  command: Command
+  logger: winston.Logger,
+  command: Command,
+  otp: OtpGenerator
 ): Promise<boolean> => {
   let hasMessages = false;
 
@@ -36,14 +40,22 @@ export const login = async (
     }
   };
 
-  while (!hasMessages) {
-    if (!options.username && !options.password) {
-      // options.username = await ux.action(`What is your amazaon username?`);
-      // options.password = await ux.prompt(`What is your password?`, {
-      //   type: `hide`,
-      // });
-    }
+  // Create a single page to bootstrap CDP
+  const cdp = await page.createCDPSession();
 
+  await cdp.send(`WebAuthn.enable`);
+  await cdp.send(`WebAuthn.addVirtualAuthenticator`, {
+    options: {
+      protocol: `ctap2`,
+      transport: `internal`,
+      hasResidentKey: true,
+      hasUserVerification: true,
+      isUserVerified: true,
+      automaticPresenceSimulation: true,
+    }
+  });
+
+  while (!hasMessages) {
     logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
 
     await page.goto(amazonUrls.loginPage);
@@ -52,9 +64,13 @@ export const login = async (
     await page.click(`input[type=submit]`);
     await page.waitForNavigation();
 
+    logger.debug('Username successfully entered')
+
     await page.type(`input[type=password]`, options.password);
     await page.click(`input[type=submit]`);
     await page.waitForNavigation();
+
+    logger.debug('Password successfully entered')
 
     const authErrors = await checkForAuthMessages(`Error`);
     const authWarning = await checkForAuthMessages(`Warning`);
@@ -78,10 +94,9 @@ export const login = async (
 
     if (page.url().indexOf(`/mfa?`) > -1) {
       logger.info(`MFA detected`);
-      // const secondFactor = await ux.prompt(`What is your two-factor token?`, {
-      //   type: `mask`,
-      // });
-      // await page.type(`input#auth-mfa-otpcode`, secondFactor);
+      const secondFactor = await otp.generate(options)
+
+      await page.type(`input#auth-mfa-otpcode`, secondFactor);
       await page.click(`input#auth-mfa-remember-device`);
       await page.click(`input[type=submit]`);
 
