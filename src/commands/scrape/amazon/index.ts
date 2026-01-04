@@ -204,7 +204,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
   private async goToYearAndPage(year: number, orderPage: number, amazon: AmazonDefinition): Promise<HTTPResponse> {
     this.logger.debug(`Going to year... ${year} order page ${orderPage}`);
-    const nextPageUrl = new URL(`?ie=UTF8&orderFilter=year-${year}&search=&startIndex=${10 * (orderPage)}`, amazon.orderPage);
+    const nextPageUrl = new URL(`?ie=UTF8&timeFilter=year-${year}&search=&startIndex=${10 * (orderPage)}`, amazon.orderPage);
     return await this.currentPage.goto(nextPageUrl.toString());
   }
 
