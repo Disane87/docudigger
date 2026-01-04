@@ -159,7 +159,9 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
       const { orderNumber, order } = await this.getOrder(orderCard);
       // Find existing popovers *before* clicking the next invoice span to detect which popover is new
       const existingPopoverIds = await this.findExistingPopoverIds()
-      await this.clickInvoiceSpan(orderCard);
+      if (!await this.clickInvoiceSpan(orderCard)) {
+        continue;
+      }
       const invoiceUrls = await this.getInvoiceUrls(existingPopoverIds);
 
       if (this.options.onlyNew && (orderNumber == this.lastScrapeWithInvoices?.number)) {
@@ -208,10 +210,16 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     return await this.currentPage.goto(nextPageUrl.toString());
   }
 
-  private async clickInvoiceSpan(orderCard: ElementHandle<Element>): Promise<void> {
+  private async clickInvoiceSpan(orderCard: ElementHandle<Element>): Promise<boolean> {
     const invoiceSpan = await orderCard.$(this.selectors.invoiceSpans);
-    invoiceSpan.click();
+
+    if (invoiceSpan === null) {
+      return false;
+    }
+
+    await invoiceSpan.click();
     this.logger.debug(`Checking popover`);
+    return true;
   }
 
   private getInvoices(invoiceUrls: string[], orderNumber: string): Invoice[] {
