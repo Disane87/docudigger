@@ -40,20 +40,7 @@ export const login = async (
     }
   };
 
-  // Create a single page to bootstrap CDP
-  const cdp = await page.createCDPSession();
-
-  await cdp.send(`WebAuthn.enable`);
-  await cdp.send(`WebAuthn.addVirtualAuthenticator`, {
-    options: {
-      protocol: `ctap2`,
-      transport: `internal`,
-      hasResidentKey: true,
-      hasUserVerification: true,
-      isUserVerified: true,
-      automaticPresenceSimulation: true,
-    }
-  });
+  await deactivatePasskeys(page);
 
   while (!hasMessages) {
     logger.debug(`Selectors: ${JSON.stringify(selectors, null, 4)}`);
@@ -106,3 +93,18 @@ export const login = async (
     return true;
   }
 };
+
+async function deactivatePasskeys(page: Page) {
+  const cdp = await page.createCDPSession();
+  await cdp.send(`WebAuthn.enable`);
+  await cdp.send(`WebAuthn.addVirtualAuthenticator`, {
+    options: {
+      protocol: `ctap2`,
+      transport: `internal`,
+      hasResidentKey: true,
+      hasUserVerification: true,
+      isUserVerified: true,
+      automaticPresenceSimulation: true,
+    }
+  });
+}
