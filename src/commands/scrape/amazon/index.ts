@@ -111,7 +111,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
   private async goToOrderPage(amazon: AmazonDefinition): Promise<HTTPResponse> {
     this.logger.debug(`Going to order page...`);
-    return await this.goToYearAndPage(DateTime.now().year, 0, amazon);
+    return await this.goToYearAndPage(DateTime.now().year, 1, amazon);
   }
 
   private async processYears(): Promise<Scrape[]> {
@@ -191,7 +191,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   private async getOrderPageCount(year: number): Promise<number> {
     this.logger.debug(`Determining order pages...`);
     let orderPageCount: number = null;
-    await this.goToYearAndPage(year, 0, this.definition);
+    await this.goToYearAndPage(year, 1, this.definition);
 
     try {
       orderPageCount = await (await this.currentPage.waitForSelector(this.selectors.pagination, { timeout: this.selectorWaitTimeout })).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
@@ -206,7 +206,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
   private async goToYearAndPage(year: number, orderPage: number, amazon: AmazonDefinition): Promise<HTTPResponse> {
     this.logger.debug(`Going to year... ${year} order page ${orderPage}`);
-    const nextPageUrl = new URL(`?ie=UTF8&timeFilter=year-${year}&search=&startIndex=${10 * (orderPage)}`, amazon.orderPage);
+    const nextPageUrl = new URL(`?ie=UTF8&timeFilter=year-${year}&search=&startIndex=${10 * (orderPage - 1)}`, amazon.orderPage);
     return await this.currentPage.goto(nextPageUrl.toString());
   }
 
