@@ -59,7 +59,7 @@
     "envfile": "^7.1.0",
     "eslint": "^9.13.0",
     "eslint-config-love": "^96.0.0",
-    "eslint-config-oclif": "^5.2.1",
+    "eslint-config-oclif": "^6.0.0",
     "eslint-config-oclif-typescript": "^3.1.12",
     "eslint-config-prettier": "^9",
     "eslint-plugin-import": "^2.29.1",
