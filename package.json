@@ -50,7 +50,7 @@
     "@typescript-eslint/parser": "^8.12.2",
     "chai": "^5.1.1",
     "commitlint": "^19.5.0",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "conventional-changelog-conventionalcommits": "^9.0.0",
     "conventional-changelog-eslint": "^6.0.0",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
