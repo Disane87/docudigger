@@ -1,6 +1,7 @@
 import { LogLevel } from "../enums/loglevel";
+import { OtpOptions } from "./otp.interface";
 
-export interface AmazonOptions {
+export type AmazonOptions = {
     logLevel: LogLevel,
     debug: boolean,
     logPath: string,
@@ -15,4 +16,4 @@ export interface AmazonOptions {
     pageFilter: number,
     onlyNew: boolean,
     subFolderForPages: boolean,
-}
+} & OtpOptions

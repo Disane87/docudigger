@@ -23,7 +23,7 @@ export abstract class ScrapeCommand<
 > extends BaseCommand<T> {
   private browser: Browser;
 
-  private pupeteerArgs = [
+  private puppeteerArgs = [
     `--window-size=1920,1080`,
     `--no-sandbox`,
     `--disable-setuid-sandbox`,
@@ -81,7 +81,7 @@ export abstract class ScrapeCommand<
     this.logger.debug(`processJsonFile: ${this.processJsonFile}`);
     this.logger.debug(`fileDestinationFolder: ${this.flags.fileDestinationFolder}`);
     this.logger.debug(`Running in Docker: ${isRunningInDocker()}`);
-    this.browser = await new Puppeteer(this.flags.debug, this.pupeteerArgs, isRunningInDocker()).setup();
+    this.browser = await new Puppeteer(this.flags.debug, this.puppeteerArgs, isRunningInDocker()).setup();
   }
 
   protected async initFlags() {

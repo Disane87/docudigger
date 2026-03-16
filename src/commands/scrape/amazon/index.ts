@@ -13,6 +13,9 @@ import { Scrape } from "../../../interfaces/scrape.interface";
 import { AmazonSelectors } from "../../../interfaces/selectors.interface";
 import { WebsiteRun } from "../../../interfaces/website-run.interface";
 import { amazonSelectors } from "./helpers/selectors.helper";
+import { CompositeOtpGenerator } from "../../../classes/otp-generator.class";
+import { KeyBasedOtp } from "../../../classes/key-based-otp.class";
+import { LiteralOtp } from "../../../classes/literal-otp.class";
 
 export default class Amazon extends ScrapeCommand<typeof Amazon> {
   public pluginName = `amazon`;
@@ -26,7 +29,10 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
   static flags = {
     username: Flags.string({ char: `u`, description: `Username`, required: true, env: `AMAZON_USERNAME` }),
     password: Flags.string({ char: `p`, description: `Password`, required: true, env: `AMAZON_PASSWORD` }),
-    tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: `AMAZON_TLD` }),
+    otpKey: Flags.string({ description: "OTP key to derive TOTP codes from", env: `AMAZON_OTP_KEY`, exactlyOne: ['otp', 'otpProvider'], parse: async v => v.replace(/\s/g, '') }, ),
+    otp: Flags.string({ description: "OTP value", env: `AMAZON_OTP`, exactlyOne: ['otpKey', 'otpProvider']}, ),
+    otpProvider: Flags.url({ description: "OTP provider URL to fetch, e.g. vault://localhost:123/totp/code/my-key", env: `AMAZON_OTP_PROVIDER`, exactlyOne: ['otpKey', 'otp']}, ),
+    tld: Flags.string({ char: `t`, description: `Amazon top level domain`, default: `de`, env: `AMAZON_TLD`}),
     yearFilter: Flags.integer({ aliases: [`yearFilter`], description: `Filters a year`, env: `AMAZON_YEAR_FILTER` }),
     pageFilter: Flags.integer({ aliases: [`pageFilter`], description: `Filters a page`, env: `AMAZON_PAGE_FILTER` }),
   };
@@ -50,7 +56,9 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     this.selectors = amazonSelectors;
     this.definition = amazon;
 
-    const loggedIn = await login(this.currentPage, amazonSelectors, this.options, amazon, this.logger, this);
+    const otp = new CompositeOtpGenerator(new KeyBasedOtp(this.logger), new LiteralOtp(), null!);
+
+    const loggedIn = await login(this.currentPage, amazonSelectors, this.options, amazon, this.logger, this, otp);
     let processedOrders: Scrape[] = [];
 
     if (loggedIn) {
@@ -103,7 +111,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
   private async goToOrderPage(amazon: AmazonDefinition): Promise<HTTPResponse> {
     this.logger.debug(`Going to order page...`);
-    return await this.goToYearAndPage(DateTime.now().year, 0, amazon);
+    return await this.goToYearAndPage(DateTime.now().year, 1, amazon);
   }
 
   private async processYears(): Promise<Scrape[]> {
@@ -147,17 +155,21 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
     let onlyNewInvoiceHandled = false;
 
-    for (const [orderIndex, orderCard] of orderCards.entries()) {
+    for (const orderCard of orderCards) {
       const { orderNumber, order } = await this.getOrder(orderCard);
-      await this.clickInvoiceSpan(orderCard, orderIndex);
-      const invoiceUrls = await this.getInvoiceUrls(orderIndex);
+      // Find existing popovers *before* clicking the next invoice span to detect which popover is new
+      const existingPopoverIds = await this.findExistingPopoverIds()
+      if (!await this.clickInvoiceSpan(orderCard)) {
+        continue;
+      }
+      const invoiceUrls = await this.getInvoiceUrls(existingPopoverIds);
 
       if (this.options.onlyNew && (orderNumber == this.lastScrapeWithInvoices?.number)) {
         this.logger.info(`Order ${orderNumber} already handled. Exiting.`);
         onlyNewInvoiceHandled = true;
       }
 
-      order.invoices = this.getInvoices(invoiceUrls, orderIndex);
+      order.invoices = this.getInvoices(invoiceUrls, orderNumber);
       processedOrders.push(order);
       this.logger.info(`Processing "${processedOrders.length}" orders`);
 
@@ -171,10 +183,15 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     return onlyNewInvoiceHandled;
   }
 
+  private async findExistingPopoverIds(): Promise<string[]>
+  {
+    return await this.currentPage.$$eval('.a-popover', (popovers: Array<HTMLDivElement>) => popovers.map(e => e.id))
+  }
+
   private async getOrderPageCount(year: number): Promise<number> {
     this.logger.debug(`Determining order pages...`);
     let orderPageCount: number = null;
-    await this.goToYearAndPage(year, 0, this.definition);
+    await this.goToYearAndPage(year, 1, this.definition);
 
     try {
       orderPageCount = await (await this.currentPage.waitForSelector(this.selectors.pagination, { timeout: this.selectorWaitTimeout })).evaluate((handle: HTMLElement) => parseInt(handle.innerText));
@@ -189,17 +206,23 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
 
   private async goToYearAndPage(year: number, orderPage: number, amazon: AmazonDefinition): Promise<HTTPResponse> {
     this.logger.debug(`Going to year... ${year} order page ${orderPage}`);
-    const nextPageUrl = new URL(`?ie=UTF8&orderFilter=year-${year}&search=&startIndex=${10 * (orderPage)}`, amazon.orderPage);
+    const nextPageUrl = new URL(`?ie=UTF8&timeFilter=year-${year}&search=&startIndex=${10 * (orderPage - 1)}`, amazon.orderPage);
     return await this.currentPage.goto(nextPageUrl.toString());
   }
 
-  private async clickInvoiceSpan(orderCard: ElementHandle<Element>, orderIndex: number): Promise<void> {
+  private async clickInvoiceSpan(orderCard: ElementHandle<Element>): Promise<boolean> {
     const invoiceSpan = await orderCard.$(this.selectors.invoiceSpans);
-    invoiceSpan.click();
-    this.logger.debug(`Checking popover ${orderIndex + 1}`);
+
+    if (invoiceSpan === null) {
+      return false;
+    }
+
+    await invoiceSpan.click();
+    this.logger.debug(`Checking popover`);
+    return true;
   }
 
-  private getInvoices(invoiceUrls: string[], orderIndex: number): Invoice[] {
+  private getInvoices(invoiceUrls: string[], orderNumber: string): Invoice[] {
     this.logger.debug(`Getting invoices...`);
     if (invoiceUrls.length == 0) {
       this.logger.warn(`No invoices found. Order may be undelivered. Check again later.`);
@@ -207,7 +230,7 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     } else {
       const invoices: Array<Invoice> = invoiceUrls.map(invoiceUrl => ({ url: invoiceUrl, status: InvoiceStatus.determined } as Invoice));
       this.logger.info(`${invoices.length} invoices found 📃`);
-      this.logger.debug(`Got invoice url ${(orderIndex + 1)} -> ${invoiceUrls}`);
+      this.logger.debug(`Got invoice URL for ${orderNumber} -> ${invoiceUrls}`);
       return invoices;
     }
   }
@@ -263,17 +286,23 @@ export default class Amazon extends ScrapeCommand<typeof Amazon> {
     return possibleYears;
   }
 
-  private async getInvoiceUrls(orderIndex: number): Promise<string[]> {
+  private async getInvoiceUrls(previouslyExistingPopoverIds: string[]): Promise<string[]> {
     this.logger.debug(`Getting invoice urls...`);
     let invoiceUrls: string[] = [];
-    const popoverSelectorResolved = this.selectors.popover.replace(`{{index}}`, (orderIndex + 1).toString());
+
+    let popoverSelectorResolved = this.selectors.popover
+    if (previouslyExistingPopoverIds.length > 0) {
+      popoverSelectorResolved = `${this.selectors.popover}:not(${previouslyExistingPopoverIds.map(id => `#${id}`).join(',')})`;
+    }
+
+    this.logger.debug(`Popover selector ${popoverSelectorResolved}`)
 
     try {
       const popover = await this.currentPage.waitForSelector(popoverSelectorResolved, { timeout: this.selectorWaitTimeout });
-      this.logger.debug(`Got popover ${(orderIndex + 1)} -> ${popover}`);
+      this.logger.debug(`Got popover -> ${popover}`);
       const invoiceList = await popover.waitForSelector(this.selectors.invoiceList, { timeout: this.selectorWaitTimeout });
       invoiceUrls = await invoiceList.$$eval(this.selectors.invoiceLinks, (handles: HTMLAnchorElement[]) => handles.map(a => a.href));
-      this.logger.debug(`Got invoiceUrls ${(orderIndex + 1)} -> ${invoiceUrls}`);
+      this.logger.debug(`Got invoiceUrls -> ${invoiceUrls}`);
     } catch (ex) {
       this.logger.error(`Couldn't get popover ${popoverSelectorResolved} within ${this.selectorWaitTimeout}ms. Skipping. ${ex.message}`);
     }
